@@ -22,6 +22,9 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@mapbox/mapbox-gl-draw": "^1.0.4",
+    "@types/geojson": "^7946.0.0",
+    "@types/mapbox-gl": "^0.43.0",
+    "@yaga/generic-geojson": "^1.0.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "mapbox-gl": "^0.43.0",
@@ -47,6 +50,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "^2.4.2"
+    "typescript": "^2.3.0"
   }
 }

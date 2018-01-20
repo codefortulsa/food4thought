@@ -5,6 +5,11 @@ import * as mapboxgl from 'mapbox-gl';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
+// import {
+//     BBox, Feature, FeatureCollection, GeometryCollection, LineString,
+//     MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, GeometryObject
+// } from "geojson";
+
 
 @Component({
   selector: 'app-root',
@@ -16,11 +21,12 @@ export class AppComponent {
   mapToken : String;
   script: String;
   mealSites: any;
-  mealSites_hc = SITES;
   constructor(private _mapService: MapService) {
+    // this.mealSites = this._mapService.mealSites;
     this._mapService.mealSitesObservable.subscribe(
       (sites)=>{
         this.mealSites = sites;
+        console.log(this.mealSites);
       }
     )
   }
@@ -29,7 +35,7 @@ export class AppComponent {
     this._mapService.getAllSites();
 
 
-    mapboxgl.accessToken = this._mapService.mapToken;
+    (mapboxgl as any).accessToken = this._mapService.mapToken;
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
@@ -40,13 +46,16 @@ export class AppComponent {
     map.on('load', function(e) {
       // Add the data to your map as a layer with embedded fork and knife!
       // **************************************************
+
       map.addLayer({
         id: 'locations',
         type: 'symbol',
         // Add a GeoJSON source containing place coordinates and information.
         source: {
           type: 'geojson',
-          // STILL NEED TO RESOLVE ISSUES WITH TYPECASTING THIS DATA CORRECTLY!!
+
+          //this is the hard coded data points...
+          // this should be 'this.mealSites' if the data came through correctly :/
           data: SITES
         },
         layout: {
@@ -70,6 +79,7 @@ export class AppComponent {
 
 
           // THIS FUNCTION BUILDS THE LIST OF ALL ADDRESS ON THE MAP :)
+
           function buildLocationList(data) {
             // Iterate through the list of stores
             for (let i = 0; i < data.features.length; i++) {
@@ -155,34 +165,35 @@ export class AppComponent {
 
 
           // THIS IS FOR THE MAP IMG OBJECTS
-          SITES.features.forEach(function(marker, i) {
-            // Create a div element for the marker
-            var el = document.createElement('div');
-            // Add a class called 'marker' to each div
-            el.className = 'marker';
-            // By default the image for your custom marker will be anchored
-            // by its center. Adjust the position accordingly
-            // Create the custom markers, set their position, and add to map
-            new mapboxgl.Marker(el, { offset: [0, -23] })
-              .setLngLat(marker.geometry.coordinates)
-              .addTo(map);
 
-            el.addEventListener('click', function(e) {
-              var activeItem = document.getElementsByClassName('active');
-              // 1. Fly to the point
-              flyToStore(marker);
-              // 2. Close all other popups and display popup for clicked store
-              createPopUp(marker);
-              // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-              e.stopPropagation();
-              if (activeItem[0]) {
-                activeItem[0].classList.remove('active');
-              }
-              var listing = document.getElementById('listing-' + i);
-              console.log(listing);
-              listing.classList.add('active');
-            });
-          });
+          // SITES.features.forEach(function(marker, i) {
+          //   // Create a div element for the marker
+          //   var el = document.createElement('div');
+          //   // Add a class called 'marker' to each div
+          //   el.className = 'marker';
+          //   // By default the image for your custom marker will be anchored
+          //   // by its center. Adjust the position accordingly
+          //   // Create the custom markers, set their position, and add to map
+          //   new mapboxgl.Marker(el, { offset: [0, -23] })
+          //     .setLngLat(marker.geometry.coordinates)
+          //     .addTo(map);
+          //
+          //   el.addEventListener('click', function(e) {
+          //     var activeItem = document.getElementsByClassName('active');
+          //     // 1. Fly to the point
+          //     flyToStore(marker);
+          //     // 2. Close all other popups and display popup for clicked store
+          //     createPopUp(marker);
+          //     // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+          //     e.stopPropagation();
+          //     if (activeItem[0]) {
+          //       activeItem[0].classList.remove('active');
+          //     }
+          //     var listing = document.getElementById('listing-' + i);
+          //     console.log(listing);
+          //     listing.classList.add('active');
+          //   });
+          // });
 
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
