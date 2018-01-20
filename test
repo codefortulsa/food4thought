@@ -1,0 +1,55 @@
+
+curl https://api.mapbox.com/{api}/{version}
+
+https://api.mapbox.com/datasets/v1/vicagbasi/cjcjroncb3ioz34mm87c9ldvc?access_token=pk.eyJ1IjoidmljYWdiYXNpIiwiYSI6ImNqY2lpcWE2aTNteGEycWxscDl2NzhpZWQifQ.KJIJ5fZsHtxebZwwROAc5w
+
+
+=================================
+map.on('load', function(e) {
+// Add the data to your map as a layer
+map.addLayer({
+    id: 'locations',
+    type: 'symbol',
+    // Add a GeoJSON source containing place coordinates and information.
+    source: {
+      type: 'geojson',
+      data: SITES
+    },
+    layout: {
+      'icon-image': 'restaurant-15',
+      'icon-allow-overlap': true,
+    }
+  });
+
+  function buildLocationList(SITES) {
+    // Iterate through the list of stores
+    for (i = 0; i < data.features.length; i++) {
+      var currentFeature = data.features[i];
+      // Shorten data.feature.properties to just `prop` so we're not
+      // writing this long form over and over again.
+      var prop = currentFeature.properties;
+      // Select the listing container in the HTML and append a div
+      // with the class 'item' for each store
+      var listings = document.getElementById('listings');
+      var listing = listings.appendChild(document.createElement('div'));
+      listing.className = 'item';
+      listing.id = 'listing-' + i;
+
+      // Create a new link with the class 'title' for each store
+      // and fill it with the store address
+      var link = listing.appendChild(document.createElement('a'));
+      link.href = '#';
+      link.className = 'title';
+      link.dataPosition = i;
+      link.innerHTML = prop.address;
+
+      // Create a new div with the class 'details' for each store
+      // and fill it with the city and phone number
+      var details = listing.appendChild(document.createElement('div'));
+      details.innerHTML = prop.city;
+      if (prop.phone) {
+        details.innerHTML += ' &middot; ' + prop.phoneFormatted;
+      }
+    }
+  }
+});

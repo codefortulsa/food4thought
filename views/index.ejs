@@ -1,0 +1,178 @@
+!<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel='stylesheet' href='/styles.css' />
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script>
+        $(document).ready(function(){
+          if(!localStorage.getItem('mealSites')){
+            $.get("https://api.mapbox.com/datasets/v1/vicagbasi/cjcjroncb3ioz34mm87c9ldvc/features?access_token=pk.eyJ1IjoidmljYWdiYXNpIiwiYSI6ImNqY2lpcWE2aTNteGEycWxscDl2NzhpZWQifQ.KJIJ5fZsHtxebZwwROAc5w",
+                function(res) {
+                  console.log(res.owner);
+                  const x = res;
+                  localStorage.setItem('mealSites', JSON.stringify(res));
+                  console.log(res);
+                  console.log(x.size());
+            }, "json");
+
+          }
+
+
+        })
+    </script>
+
+    <title>EXPRESS.JS :)</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4 text-center">Summertime Meals</h1>
+        <p class="lead text-center">Search for food sides near you!</p>
+        <hr class="my-4">
+        <form>
+          <div class="form-row">
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="Address">
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="col-1">
+              <input type="text" class="form-control" placeholder="State">
+            </div>
+            <div class="col-1">
+              <input type="text" class="form-control" placeholder="Zip">
+            </div>
+            <div class="col-1">
+              <button type="Submit" class="btn btn-primary btn-sm">Find Sites</button>
+            </div>
+          </div>
+        </form>
+        <hr class="my-4">
+      </div>
+      <div class="container mainbod">
+
+      <div class='sidebar pad2'>
+        <div class="heading">
+          <h1>Food Sites</h1>
+        </div>
+        <div id="listings" class="listings"></div>
+      </div>
+      <div id='map' class='map pad2'>Map</div>
+      </div>
+      <script>
+
+        mapboxgl.accessToken = '<%= mapAccess %>';
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
+
+        });
+        map.on('load', function(e) {
+          // Add the data to your map as a layer
+          map.addLayer({
+            id: 'locations',
+            type: 'symbol',
+            // Add a GeoJSON source containing place coordinates and information.
+            source: {
+              type: 'geojson',
+              data:{
+                "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Store": "QuikTrip Store #11 in Tulsa",
+        "Address": "4545 N. Lewis Ave.",
+        "City ": "Tulsa",
+        "State": "OK",
+        "Full Address": "4545 N. Lewis Ave. Tulsa OK "
+      },
+      "geometry": {
+        "coordinates": [
+          -95.957723,
+          36.220189
+        ],
+        "type": "Point"
+      },
+      "id": "5d02f5b914ca06b926a97d5af9463429"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Store": "QuikTrip Store #102 in Tulsa",
+        "Address": "6008 S. 49th W. Ave.",
+        "City ": "Tulsa",
+        "State": "OK",
+        "Full Address": "6008 S. 49th W. Ave. Tulsa OK "
+      },
+      "geometry": {
+        "coordinates": [
+          -96.048054,
+          36.076772
+        ],
+        "type": "Point"
+      },
+      "id": "bea319ce9426e8aa18f65420aa8fae63"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Store": "QuikTrip Store #13 in Tulsa",
+        "Address": "3050 S Sheridan Rd",
+        "City ": "Tulsa",
+        "State": "OK",
+        "Full Address": "3050 S Sheridan Rd Tulsa OK "
+      },
+      "geometry": {
+        "coordinates": [
+          -95.905342,
+          36.119419
+        ],
+        "type": "Point"
+      },
+      "id": "d2a1567704f2d972706935372c7844ac"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Store": "QuikTrip Store #107 in Tulsa",
+        "Address": "807 W 71st St",
+        "City ": "Tulsa",
+        "State": "OK",
+        "Full Address": "807 W 71st St Tulsa OK "
+      },
+      "geometry": {
+        "coordinates": [
+          -96.002248,
+          36.062528
+        ],
+        "type": "Point"
+      },
+      "id": "ef0b38f4a16efaf553e96053036364dc"
+    }
+  ],
+              "type": "FeatureCollection"
+}
+            },
+            layout: {
+              'icon-image': 'restaurant-15',
+              'icon-allow-overlap': true,
+            }
+          });
+        });
+
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+      </script>
+
+
+  </body>
+</html>
