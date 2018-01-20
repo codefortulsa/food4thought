@@ -21,12 +21,40 @@ export class AppComponent {
   mapToken : String;
   script: String;
   mealSites: any;
+  map:mapboxgl.Map;
+
   constructor(private _mapService: MapService) {
     // this.mealSites = this._mapService.mealSites;
     this._mapService.mealSitesObservable.subscribe(
       (sites)=>{
         this.mealSites = sites;
         console.log(this.mealSites);
+        if(this.map && this.mealSites && this.map.isStyleLoaded()) {
+          this.map.addLayer({
+          id: 'locations',
+          type: 'symbol',
+          // Add a GeoJSON source containing place coordinates and information.
+          source: {
+            type: 'geojson',
+
+            //this is the hard coded data points...
+            // this should be 'this.mealSites' if the data came through correctly :/
+            data: this.mealSites
+          },
+          layout: {
+            'icon-image': 'restaurant-15',
+            'icon-allow-overlap': true,
+          }
+        });
+        // **************************************************
+
+        // ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
+        // this.map.addSource('places', {
+        //   type: 'geojson',
+        //   data: SITES
+        // });
+        this.buildLocationList(this.mealSites);
+      } else { this._mapService.getAllSites(); }
       }
     )
   }
@@ -36,46 +64,46 @@ export class AppComponent {
 
 
     (mapboxgl as any).accessToken = this._mapService.mapToken;
-    var map = new mapboxgl.Map({
+    this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
 
     });
     // This little number loads the data points onto the map :)
 
-    map.on('load', function(e) {
-      // Add the data to your map as a layer with embedded fork and knife!
-      // **************************************************
+    this.map.on('load', function(e) {
+    //   // Add the data to your map as a layer with embedded fork and knife!
+    //   // **************************************************
+    //   console.log(this.mealSites);
+    //   map.addLayer({
+    //     id: 'locations',
+    //     type: 'symbol',
+    //     // Add a GeoJSON source containing place coordinates and information.
+    //     source: {
+    //       type: 'geojson',
 
-      map.addLayer({
-        id: 'locations',
-        type: 'symbol',
-        // Add a GeoJSON source containing place coordinates and information.
-        source: {
-          type: 'geojson',
+    //       //this is the hard coded data points...
+    //       // this should be 'this.mealSites' if the data came through correctly :/
+    //       data: SITES
+    //     },
+    //     layout: {
+    //       'icon-image': 'restaurant-15',
+    //       'icon-allow-overlap': true,
+    //     }
+    //   });
+    //   // **************************************************
 
-          //this is the hard coded data points...
-          // this should be 'this.mealSites' if the data came through correctly :/
-          data: SITES
-        },
-        layout: {
-          'icon-image': 'restaurant-15',
-          'icon-allow-overlap': true,
-        }
-      });
-      // **************************************************
+    //   // ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
+    //   // map.addSource('places', {
+    //   //   type: 'geojson',
+    //   //   data: SITES
+    //   // });
+    //   buildLocationList(SITES);
 
-      // ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
-      // map.addSource('places', {
-      //   type: 'geojson',
-      //   data: SITES
-      // });
-      buildLocationList(SITES);
+    //   // **************************************************
 
-      // **************************************************
-
-      // MAP FINISHED LOADING
-    });
+    //   // MAP FINISHED LOADING
+    // });
 
 
           // THIS FUNCTION BUILDS THE LIST OF ALL ADDRESS ON THE MAP :)
@@ -99,7 +127,7 @@ export class AppComponent {
               var link = listing.appendChild(document.createElement('a'));
               link.href = '#';
               link.className = 'title';
-              link.dataPosition = i;
+              //link.dataPosition = i;
               link.innerHTML = prop["Site Name"];
 
               // Create a new div with the class 'details' for each store
@@ -114,30 +142,30 @@ export class AppComponent {
 
           // NOW ITS TIME TO ADD SOME INTERACTIVE FEATURE ON OUR LOCATION LIST :)
 
-          function flyToStore(currentFeature) {
-            map.flyTo({
-              center: currentFeature.geometry.coordinates,
-              zoom: 15
-            });
-          }
+          // function flyToStore(currentFeature) {
+          //   this.map.flyTo({
+          //     center: currentFeature.geometry.coordinates,
+          //     zoom: 15
+          //   });
+          // }
 
-          function createPopUp(currentFeature) {
-            var popUps = document.getElementsByClassName('mapboxgl-popup');
-            // Check if there is already a popup on the map and if so, remove it
-            if (popUps[0]) popUps[0].remove();
+          // function createPopUp(currentFeature) {
+          //   var popUps = document.getElementsByClassName('mapboxgl-popup');
+          //   // Check if there is already a popup on the map and if so, remove it
+          //   if (popUps[0]) popUps[0].remove();
 
-            var popup = new mapboxgl.Popup({ closeOnClick: false })
-              .setLngLat(currentFeature.geometry.coordinates)
-              .setHTML('<h3>'+currentFeature.properties['Site Name']+'</h3>' +
-                '<h4>' + currentFeature.properties['Site Address2'] + '</h4>')
-              .addTo(map);
-          }
+          //   var popup = new mapboxgl.Popup({ closeOnClick: false })
+          //     .setLngLat(currentFeature.geometry.coordinates)
+          //     .setHTML('<h3>'+currentFeature.properties['Site Name']+'</h3>' +
+          //       '<h4>' + currentFeature.properties['Site Address2'] + '</h4>')
+          //     .addTo(this.map);
+          // }
 
           // Add an event listener for when a user clicks on the map
 
-          // map.on('click', function(e) {
+          // this.map.on('click', function(e) {
           //   // Query all the rendered points in the view
-          //   var features = map.queryRenderedFeatures(e.point, { layers: ['locations'] });
+          //   var features = this.map.queryRenderedFeatures(e.point, { layers: ['locations'] });
           //   if (features.length) {
           //     var clickedPoint = features[0];
           //     // 1. Fly to the point
@@ -196,11 +224,43 @@ export class AppComponent {
           // });
 
     // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
-
+    this.map.addControl(new mapboxgl.NavigationControl());
+        }
   }
 
   findNearBy(){
 
   }
+  buildLocationList(data) {
+    // Iterate through the list of stores
+    for (let i = 0; i < data.features.length; i++) {
+      var currentFeature = data.features[i];
+      // Shorten data.feature.properties to just `prop` so we're not
+      // writing this long form over and over again.
+      var prop = currentFeature.properties;
+      // Select the listing container in the HTML and append a div
+      // with the class 'item' for each store
+      var listings = document.getElementById('listings');
+      var listing = listings.appendChild(document.createElement('div'));
+      listing.className = 'item';
+      listing.id = 'listing-' + i;
+
+      // Create a new link with the class 'title' for each store
+      // and fill it with the store address
+      var link = listing.appendChild(document.createElement('a'));
+      link.href = '#';
+      link.className = 'title';
+      //link.dataPosition = i;
+      link.innerHTML = prop["Site Name"];
+
+      // Create a new div with the class 'details' for each store
+      // and fill it with the city and phone number
+      var details = listing.appendChild(document.createElement('div'));
+      details.innerHTML = prop["Site City"];
+      if (prop["Site Phone"]) {
+        details.innerHTML += ' &middot; ' + prop["Site Phone"] + '<hr>';
+      }
+    }
+  }
 }
+
