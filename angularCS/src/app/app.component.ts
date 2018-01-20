@@ -5,10 +5,10 @@ import * as mapboxgl from 'mapbox-gl';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
-// import {
-//     BBox, Feature, FeatureCollection, GeometryCollection, LineString,
-//     MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, GeometryObject
-// } from "geojson";
+import {
+    BBox, Feature, FeatureCollection, GeometryCollection, LineString,
+    MultiLineString, MultiPoint, MultiPolygon, Point, Polygon, GeometryObject
+} from "geojson";
 
 
 @Component({
@@ -20,7 +20,7 @@ export class AppComponent {
   userLoc : UserLocation = new UserLocation();
   mapToken : String;
   script: String;
-  mealSites: any;
+  mealSites: FeatureCollection<Point | LineString | Polygon | MultiPoint | MultiLineString | MultiPolygon | GeometryCollection> ;
   constructor(private _mapService: MapService) {
     // this.mealSites = this._mapService.mealSites;
     this._mapService.mealSitesObservable.subscribe(
@@ -56,7 +56,7 @@ export class AppComponent {
 
           //this is the hard coded data points...
           // this should be 'this.mealSites' if the data came through correctly :/
-          data: SITES
+          data: this.mealSites;
         },
         layout: {
           'icon-image': 'restaurant-15',
@@ -99,15 +99,15 @@ export class AppComponent {
               var link = listing.appendChild(document.createElement('a'));
               link.href = '#';
               link.className = 'title';
-              link.dataPosition = i;
-              link.innerHTML = prop["Site Name"];
+              // link.dataPosition = i;
+              link.innerHTML = prop["Name"];
 
               // Create a new div with the class 'details' for each store
               // and fill it with the city and phone number
               var details = listing.appendChild(document.createElement('div'));
-              details.innerHTML = prop["Site City"];
-              if (prop["Site Phone"]) {
-                details.innerHTML += ' &middot; ' + prop["Site Phone"] + '<hr>';
+              details.innerHTML = prop["City"];
+              if (prop["Phone"]) {
+                details.innerHTML += ' &middot; ' + prop["Phone"] + '<hr>';
               }
             }
           }
@@ -128,8 +128,8 @@ export class AppComponent {
 
             var popup = new mapboxgl.Popup({ closeOnClick: false })
               .setLngLat(currentFeature.geometry.coordinates)
-              .setHTML('<h3>'+currentFeature.properties['Site Name']+'</h3>' +
-                '<h4>' + currentFeature.properties['Site Address2'] + '</h4>')
+              .setHTML('<h3>'+currentFeature.properties['Name']+'</h3>' +
+                '<h4>' + currentFeature.properties['Address2'] + '</h4>')
               .addTo(map);
           }
 
