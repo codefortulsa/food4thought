@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MapService } from './map.service';
 import { NgForm } from "@angular/forms";
 import * as mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from 'mapbox-gl-geocoder';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
-import { SITES } from '../assets/temp_sites'
+// import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
 
 
@@ -18,8 +19,8 @@ export class AppComponent {
   script: String;
   mealSites: any;
   map:mapboxgl.Map;
-  mapService: MapService
-
+  mapService: MapService;
+  // geocoder: MapboxGeocoder;
 
   constructor(private _mapService: MapService) {
     // this.mealSites = this._mapService.mealSites;
@@ -59,6 +60,15 @@ export class AppComponent {
       // Add zoom and rotation controls to the map.
       this.map.addControl(new mapboxgl.NavigationControl());
     });
+    // add geocoder controls
+    const geocoder = new MapboxGeocoder({
+      accessToken: this._mapService.mapToken,
+      // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
+    });
+
+    this.map.addControl(geocoder, 'top-left');
+
+
   })
     // Add an event listener for the links in the sidebar listing
     this.map.on('click', (e) => {
@@ -115,7 +125,7 @@ export class AppComponent {
     var popup = new mapboxgl.Popup({ closeOnClick: false })
       .setLngLat(currentFeature.geometry.coordinates)
       .setHTML('<h3>'+currentFeature.properties.Name+'</h3>' +
-        '<h4>' + currentFeature.properties.Address + '</h4>')
+        '<h5>' + currentFeature.properties.Address + '</h5>')
       .addTo(this.map);
   }
 
@@ -139,14 +149,14 @@ export class AppComponent {
       link.href = '#';
       link.className = 'title';
       link.setAttribute("dataPosition", i.toString());
-      link.innerHTML = prop.Address;
+      link.innerHTML = prop.Name;
 
       // Create a new div with the class 'details' for each store
       // and fill it with the city and phone number
       var details = listing.appendChild(document.createElement('div'));
-      details.innerHTML = prop.City;
+      details.innerHTML = prop.Address;
       if (prop.Phone) {
-        details.innerHTML += ' &middot; ' + prop.Phone;
+        details.innerHTML += ' &middot; ' + prop.Phone+"<hr>";
       }
 
 
