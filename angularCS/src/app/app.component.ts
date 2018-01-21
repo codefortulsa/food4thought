@@ -138,7 +138,7 @@ export class AppComponent {
       var link = listing.appendChild(document.createElement('a'));
       link.href = '#';
       link.className = 'title';
-      link.dataPosition = i;
+      var dataPosition = i
       link.innerHTML = prop.Address;
 
       // Create a new div with the class 'details' for each store
@@ -150,25 +150,25 @@ export class AppComponent {
       }
 
 
-      // link.addEventListener('click', (e) => {
-      //   // Update the currentFeature to the store associated with the clicked link
-      //   var clickedListing = data.features[link.dataPosition];
+      link.addEventListener('click', (e) => {
+        // Update the currentFeature to the store associated with the clicked link
+        var clickedListing = data.features[dataPosition];
 
-      //   // 1. Fly to the point associated with the clicked link
-      //   this.flyToStore(clickedListing);
+        // 1. Fly to the point associated with the clicked link
+        this.flyToStore(clickedListing);
 
-      //   // 2. Close all other popups and display popup for clicked store
-      //   this.createPopUp(clickedListing);
+        // 2. Close all other popups and display popup for clicked store
+        this.createPopUp(clickedListing);
 
-      //   // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-      //   var activeItem = document.getElementsByClassName('active');
+        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+        var activeItem = document.getElementsByClassName('active');
 
-      //   if (activeItem[0]) {
-      //     activeItem[0].classList.remove('active');
-      //   }
-      //   link.parentNode.classList.add('active');
+        if (activeItem[0]) {
+          activeItem[0].classList.remove('active');
+        }
+        link.parentElement.classList.add('active');
 
-      // });
+      });
     }
   }
 
