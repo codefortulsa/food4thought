@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MapService } from './map.service';
 import { NgForm } from "@angular/forms";
 import * as mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from 'mapbox-gl-geocoder';
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 // import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
@@ -61,14 +61,13 @@ export class AppComponent {
       this.map.addControl(new mapboxgl.NavigationControl());
     });
     // add geocoder controls
-    const geocoder = new MapboxGeocoder({
-      accessToken: this._mapService.mapToken,
-      // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
-    });
-
+    console.log(mapboxgl.accessToken);
+    console.log(this._mapService.mapToken);
+    var geocoder = new MapboxGeocoder({ accessToken: mapboxgl.accessToken });
+  
+  
     this.map.addControl(geocoder, 'top-left');
-
-
+    
   })
     // Add an event listener for the links in the sidebar listing
     this.map.on('click', (e) => {
