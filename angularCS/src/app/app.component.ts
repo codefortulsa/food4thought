@@ -28,7 +28,7 @@ export class AppComponent {
       (sites)=>{
         this.mealSites = sites;
         // console.log(this.mealSites);
-        if(this.map && this.mealSites && this.map.isStyleLoaded()) {
+        if(this.map && this.map.isStyleLoaded() || this.mealSites ) {
          //  this.map.addLayer({
          //    id: 'locations',
          //    type: 'symbol',
@@ -49,15 +49,19 @@ export class AppComponent {
          // **************************************************
 
          //ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
+         while(!this.map){
+         continue
+       }
          this.map.addSource('places', {
            type: 'geojson',
            data: this.mealSites
          });
-         buildLocationList(this.mealSites);
+
       } else { this._mapService.getAllSites(); }
     }
     )
     // this.map.addControl(new mapboxgl.NavigationControl());
+    buildLocationList(this.mealSites);
 
   }
 
@@ -70,6 +74,9 @@ export class AppComponent {
 
     });
 
+
+    // Add zoom and rotation controls to the map.
+
     this.mealSites.features.forEach(function(marker) {
       // Create a div element for the marker
       var el = document.createElement('div');
@@ -80,9 +87,10 @@ export class AppComponent {
       // Create the custom markers, set their position, and add to map
       new mapboxgl.Marker(el, { offset: [0, -23] })
         .setLngLat(marker.geometry.coordinates)
-        .addTo(this.map);
+        .addTo(map);
+
+
     });
-    // Add zoom and rotation controls to the map.
 
     el.addEventListener('click', function(e) {
       var activeItem = document.getElementsByClassName('active');
@@ -101,6 +109,7 @@ export class AppComponent {
     });
     //ngOnInit finished
   };
+
   function buildLocationList(data) {
     // Iterate through the list of stores
     for (let i = 0; i < data.features.length; i++) {
@@ -128,10 +137,11 @@ export class AppComponent {
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.City;
       if (prop.Phone) {
-        details.innerHTML += ' &middot; ' + prop.phoneFormatted;
+        details.innerHTML += ' &middot; ' + prop.Phone;
       }
     }
   }
+
   function flyToStore(currentFeature) {
     this.map.flyTo({
       center: currentFeature.geometry.coordinates,
