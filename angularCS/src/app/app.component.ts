@@ -48,9 +48,6 @@ export class AppComponent {
         // Add a GeoJSON source containing place coordinates and information.
         source: {
           type: 'geojson',
-
-          //this is the hard coded data points...
-          // this should be 'this.mealSites' if the data came through correctly :/
           data: this.mealSites
         },
         layout: {
@@ -58,54 +55,124 @@ export class AppComponent {
           'icon-allow-overlap': true,
         }
       });
-      // **************************************************
-      // ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
-      // map.addSource('places', {
-      //   type: 'geojson',
-      //   data: SITES
-      // });
-      this.buildLocationList(SITES);
+      buildLocationList(this.mealSites);
+      // Add zoom and rotation controls to the map.
+      this.map.addControl(new mapboxgl.NavigationControl());
+    });
+  })
+    // Add an event listener for the links in the sidebar listing
+    this.map.on('click', function(e) {
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['locations']
+      });
 
-      // **************************************************
-      // MAP FINISHED LOADING
+      if (features.length) {
+        var clickedPoint = features[0];
+
+
+        // 2. Close all other popups and display popup for clicked store
+        createPopUp(clickedPoint);
+
+        // 1. Fly to the point
+        flyToStore(clickedPoint);
+
+        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+       var activeItem = document.getElementsByClassName('active');
+        if (activeItem[0]) {
+          activeItem[0].classList.remove('active');
+        }
+
+        var selectedFeature = clickedPoint.properties.Address;
+
+        for (var i = 0; i < stores.features.length; i++ ) {
+          if (stores.features[i].properties.Address === selectedFeature) {
+              selectedFeatureIndex = i;
+          }
+        }
+
+        var listing = document.getElementById('listing-' + selectedFeatureIndex);
+        listing.classList.add('active');
+
+      }
     });
 
+  // end ngOnInit
 
-    // Add zoom and rotation controls to the map.
-    this.map.addControl(new mapboxgl.NavigationControl());
-        }
+},
+
+  function flyToStore(currentFeature) {
+  console.log(this.map)
+  this.map.flyTo({
+      center: currentFeature.geometry.coordinates,
+      zoom: 15
+    });
   }
 
-  buildLocationList(data) {
-    // Iterate through the list of stores
-    
-    for (let i = 0; i < data.features.length; i++) {
+  function createPopUp(currentFeature) {
+    var popUps = document.getElementsByClassName('mapboxgl-popup');
+    // Check if there is already a popup on the map and if so, remove it
+    if (popUps[0]) popUps[0].remove();
+
+    var popup = new mapboxgl.Popup({ closeOnClick: false })
+      .setLngLat(currentFeature.geometry.coordinates)
+      .setHTML('<h3>'+currentFeature.properties.Name+'</h3>' +
+        '<h4>' + currentFeature.properties.Address + '</h4>')
+      .addTo(this.map);
+  }
+
+  function buildLocationList(data) {
+    for (var i = 0; i < data.features.length; i++) {
+      // Create an array of all the stores and their properties
       var currentFeature = data.features[i];
       // Shorten data.feature.properties to just `prop` so we're not
       // writing this long form over and over again.
       var prop = currentFeature.properties;
-      // Select the listing container in the HTML and append a div
-      // with the class 'item' for each store
+      // Select the listing container in the HTML
       var listings = document.getElementById('listings');
+      // Append a div with the class 'item' for each store
       var listing = listings.appendChild(document.createElement('div'));
       listing.className = 'item';
-      listing.id = 'listing-' + i;
+      listing.id = "listing-" + i;
 
       // Create a new link with the class 'title' for each store
       // and fill it with the store address
       var link = listing.appendChild(document.createElement('a'));
       link.href = '#';
       link.className = 'title';
-      //link.dataPosition = i;
-      link.innerHTML = prop["Name"];
+      link.dataPosition = i;
+      link.innerHTML = prop.Address;
 
       // Create a new div with the class 'details' for each store
       // and fill it with the city and phone number
       var details = listing.appendChild(document.createElement('div'));
-      details.innerHTML = prop["City"];
-      if (prop["Phone"]) {
-        details.innerHTML += ' &middot; ' + prop["Phone"] + '<hr>';
+      details.innerHTML = prop.City;
+      if (prop.Phone) {
+        details.innerHTML += ' &middot; ' + prop.Phone;
       }
+
+
+      link.addEventListener('click', function(e) {
+        // Update the currentFeature to the store associated with the clicked link
+        var clickedListing = data.features[this.dataPosition];
+
+        // 1. Fly to the point associated with the clicked link
+        flyToStore(clickedListing);
+
+        // 2. Close all other popups and display popup for clicked store
+        createPopUp(clickedListing);
+
+        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+        var activeItem = document.getElementsByClassName('active');
+
+        if (activeItem[0]) {
+          activeItem[0].classList.remove('active');
+        }
+        this.parentNode.classList.add('active');
+
+      });
     }
   }
+
+
+
 }
