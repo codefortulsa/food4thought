@@ -55,14 +55,14 @@ export class AppComponent {
           'icon-allow-overlap': true,
         }
       });
-      buildLocationList(this.mealSites);
+      this.buildLocationList(this.mealSites);
       // Add zoom and rotation controls to the map.
       this.map.addControl(new mapboxgl.NavigationControl());
     });
   })
     // Add an event listener for the links in the sidebar listing
-    this.map.on('click', function(e) {
-      var features = map.queryRenderedFeatures(e.point, {
+    this.map.on('click', (e) => {
+      var features = this.map.queryRenderedFeatures(e.point, {
         layers: ['locations']
       });
 
@@ -71,10 +71,10 @@ export class AppComponent {
 
 
         // 2. Close all other popups and display popup for clicked store
-        createPopUp(clickedPoint);
+        this.createPopUp(clickedPoint);
 
         // 1. Fly to the point
-        flyToStore(clickedPoint);
+        this.flyToStore(clickedPoint);
 
         // 3. Highlight listing in sidebar (and remove highlight for all other listings)
        var activeItem = document.getElementsByClassName('active');
@@ -83,9 +83,9 @@ export class AppComponent {
         }
 
         var selectedFeature = clickedPoint.properties.Address;
-
-        for (var i = 0; i < stores.features.length; i++ ) {
-          if (stores.features[i].properties.Address === selectedFeature) {
+        let selectedFeatureIndex;
+        for (var i = 0; i < features.length; i++ ) {
+          if (features[i].properties.Address === selectedFeature) {
               selectedFeatureIndex = i;
           }
         }
@@ -98,9 +98,8 @@ export class AppComponent {
 
   // end ngOnInit
 
-},
-
-  function flyToStore(currentFeature) {
+}
+  flyToStore(currentFeature) {
   console.log(this.map)
   this.map.flyTo({
       center: currentFeature.geometry.coordinates,
@@ -108,7 +107,7 @@ export class AppComponent {
     });
   }
 
-  function createPopUp(currentFeature) {
+  createPopUp(currentFeature) {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
@@ -120,7 +119,7 @@ export class AppComponent {
       .addTo(this.map);
   }
 
-  function buildLocationList(data) {
+  buildLocationList(data) {
     for (var i = 0; i < data.features.length; i++) {
       // Create an array of all the stores and their properties
       var currentFeature = data.features[i];
@@ -151,25 +150,25 @@ export class AppComponent {
       }
 
 
-      link.addEventListener('click', function(e) {
-        // Update the currentFeature to the store associated with the clicked link
-        var clickedListing = data.features[this.dataPosition];
+      // link.addEventListener('click', (e) => {
+      //   // Update the currentFeature to the store associated with the clicked link
+      //   var clickedListing = data.features[link.dataPosition];
 
-        // 1. Fly to the point associated with the clicked link
-        flyToStore(clickedListing);
+      //   // 1. Fly to the point associated with the clicked link
+      //   this.flyToStore(clickedListing);
 
-        // 2. Close all other popups and display popup for clicked store
-        createPopUp(clickedListing);
+      //   // 2. Close all other popups and display popup for clicked store
+      //   this.createPopUp(clickedListing);
 
-        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-        var activeItem = document.getElementsByClassName('active');
+      //   // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+      //   var activeItem = document.getElementsByClassName('active');
 
-        if (activeItem[0]) {
-          activeItem[0].classList.remove('active');
-        }
-        this.parentNode.classList.add('active');
+      //   if (activeItem[0]) {
+      //     activeItem[0].classList.remove('active');
+      //   }
+      //   link.parentNode.classList.add('active');
 
-      });
+      // });
     }
   }
 
