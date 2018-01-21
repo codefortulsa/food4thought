@@ -254,3 +254,18 @@ FLY IN ONTO SPECIFIC ADDRESS CSS STUFF....a few things still don't work correctl
 .mapboxgl-popup {
   padding-bottom: 50px;
 }
+/* GEOCODER CONTROL CSS */
+
+.mapboxgl-ctrl-geocoder {
+  border: 0;
+  border-radius: 0;
+  position: relative;
+  top: 0;
+  width: 800px;
+  margin-top: 0;
+}
+
+.mapboxgl-ctrl-geocoder > div {
+  min-width: 100%;
+  margin-left: 0;
+}

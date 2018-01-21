@@ -3,7 +3,7 @@ curl https://api.mapbox.com/{api}/{version}
 
 https://api.mapbox.com/datasets/v1/vicagbasi/cjcjroncb3ioz34mm87c9ldvc?access_token=pk.eyJ1IjoidmljYWdiYXNpIiwiYSI6ImNqY2lpcWE2aTNteGEycWxscDl2NzhpZWQifQ.KJIJ5fZsHtxebZwwROAc5w
 
-
+.
 =================================
 map.on('load', function(e) {
 // Add the data to your map as a layer
