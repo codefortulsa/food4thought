@@ -138,7 +138,7 @@ export class AppComponent {
       var link = listing.appendChild(document.createElement('a'));
       link.href = '#';
       link.className = 'title';
-      var dataPosition = i
+      link.setAttribute("dataPosition", i.toString());
       link.innerHTML = prop.Address;
 
       // Create a new div with the class 'details' for each store
@@ -152,8 +152,12 @@ export class AppComponent {
 
       link.addEventListener('click', (e) => {
         // Update the currentFeature to the store associated with the clicked link
-        var clickedListing = data.features[dataPosition];
-
+        console.log("link event", e)
+        var clickedListing = this.mealSites.features[Number.parseInt(e.srcElement.getAttribute("dataPosition"))];
+        console.log(clickedListing);
+        console.log(Number.parseInt(link.getAttribute("dataPosition")));
+        console.log(data);
+        console.log(link.getAttribute("dataPosition"));
         // 1. Fly to the point associated with the clicked link
         this.flyToStore(clickedListing);
 
