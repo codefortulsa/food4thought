@@ -17,5 +17,8 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.6.5"
   }
 }

@@ -22,46 +22,15 @@ export class AppComponent {
   script: String;
   mealSites: any;
   map:mapboxgl.Map;
+  mapService: MapService
+
 
   constructor(private _mapService: MapService) {
     // this.mealSites = this._mapService.mealSites;
-    this._mapService.mealSitesObservable.subscribe(
-      (sites)=>{
-        this.mealSites = sites;
-        console.log(this.mealSites);
-        if(this.map && this.mealSites && this.map.isStyleLoaded()) {
-          this.map.addLayer({
-          id: 'locations',
-          type: 'symbol',
-          // Add a GeoJSON source containing place coordinates and information.
-          source: {
-            type: 'geojson',
-
-            //this is the hard coded data points...
-            // this should be 'this.mealSites' if the data came through correctly :/
-            data: this.mealSites
-          },
-          layout: {
-            'icon-image': 'restaurant-15',
-            'icon-allow-overlap': true,
-          }
-        });
-        // **************************************************
-
-        // ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
-        // this.map.addSource('places', {
-        //   type: 'geojson',
-        //   data: SITES
-        // });
-        this.buildLocationList(this.mealSites);
-      } else { this._mapService.getAllSites(); }
-      }
-    )
   }
 
   ngOnInit(){
-    this._mapService.getAllSites();
-
+    
 
     (mapboxgl as any).accessToken = this._mapService.mapToken;
     this.map = new mapboxgl.Map({
@@ -70,75 +39,77 @@ export class AppComponent {
 
     });
     // This little number loads the data points onto the map :)
+    console.log(this._mapService)
+    this.map.on('load', (e)=> {
+      this._mapService.getAllSites().then((geoData)=>{
 
-    this.map.on('load', function(e) {
-    //   // Add the data to your map as a layer with embedded fork and knife!
-    //   // **************************************************
-    //   console.log(this.mealSites);
-    //   map.addLayer({
-    //     id: 'locations',
-    //     type: 'symbol',
-    //     // Add a GeoJSON source containing place coordinates and information.
-    //     source: {
-    //       type: 'geojson',
+      // Add the data to your map as a layer with embedded fork and knife!
+      // **************************************************
+      let geoJson = geoData.json();
+      this.map.addLayer({
+        id: 'locations',
+        type: 'symbol',
+        // Add a GeoJSON source containing place coordinates and information.
+        source: {
+          type: 'geojson',
 
-    //       //this is the hard coded data points...
-    //       // this should be 'this.mealSites' if the data came through correctly :/
-    //       data: SITES
-    //     },
-    //     layout: {
-    //       'icon-image': 'restaurant-15',
-    //       'icon-allow-overlap': true,
-    //     }
-    //   });
-    //   // **************************************************
+          //this is the hard coded data points...
+          // this should be 'this.mealSites' if the data came through correctly :/
+          data: geoJson
+        },
+        layout: {
+          'icon-image': 'restaurant-15',
+          'icon-allow-overlap': true,
+        }
+      });
+      // **************************************************
 
-    //   // ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
-    //   // map.addSource('places', {
-    //   //   type: 'geojson',
-    //   //   data: SITES
-    //   // });
-    //   buildLocationList(SITES);
+      // ADDING CUSTOM MARKERS: THIS CHANGING THE FORK AND KNIFE IMAGE TO SOMETHING UNIQUE
+      // map.addSource('places', {
+      //   type: 'geojson',
+      //   data: SITES
+      // });
+      this.buildLocationList(SITES);
 
-    //   // **************************************************
+      // **************************************************
 
-    //   // MAP FINISHED LOADING
-    // });
+      // MAP FINISHED LOADING
+    });
 
 
           // THIS FUNCTION BUILDS THE LIST OF ALL ADDRESS ON THE MAP :)
 
-          function buildLocationList(data) {
-            // Iterate through the list of stores
-            for (let i = 0; i < data.features.length; i++) {
-              var currentFeature = data.features[i];
-              // Shorten data.feature.properties to just `prop` so we're not
-              // writing this long form over and over again.
-              var prop = currentFeature.properties;
-              // Select the listing container in the HTML and append a div
-              // with the class 'item' for each store
-              var listings = document.getElementById('listings');
-              var listing = listings.appendChild(document.createElement('div'));
-              listing.className = 'item';
-              listing.id = 'listing-' + i;
+          // function buildLocationList(data) {
+          //   // Iterate through the list of stores
+          //   for (let i = 0; i < data.features.length; i++) {
+          //     var currentFeature = data.features[i];
+          //     // Shorten data.feature.properties to just `prop` so we're not
+          //     // writing this long form over and over again.
+          //     var prop = currentFeature.properties;
+          //     // Select the listing container in the HTML and append a div
+          //     // with the class 'item' for each store
+          //     var listings = document.getElementById('listings');
+          //     var listing = listings.appendChild(document.createElement('div'));
+          //     listing.className = 'item';
+          //     listing.id = 'listing-' + i;
 
-              // Create a new link with the class 'title' for each store
-              // and fill it with the store address
-              var link = listing.appendChild(document.createElement('a'));
-              link.href = '#';
-              link.className = 'title';
-              //link.dataPosition = i;
-              link.innerHTML = prop["Site Name"];
+          //     // Create a new link with the class 'title' for each store
+          //     // and fill it with the store address
+          //     var link = listing.appendChild(document.createElement('a'));
+          //     link.href = '#';
+          //     link.className = 'title';
+          //     //link.dataPosition = i;
+          //     link.innerHTML = prop["Site Name"];
 
-              // Create a new div with the class 'details' for each store
-              // and fill it with the city and phone number
-              var details = listing.appendChild(document.createElement('div'));
-              details.innerHTML = prop["Site City"];
-              if (prop["Site Phone"]) {
-                details.innerHTML += ' &middot; ' + prop["Site Phone"] + '<hr>';
-              }
-            }
-          }
+          //     // Create a new div with the class 'details' for each store
+          //     // and fill it with the city and phone number
+          //     var details = listing.appendChild(document.createElement('div'));
+          //     details.innerHTML = prop["Site City"];
+          //     if (prop["Site Phone"]) {
+          //       details.innerHTML += ' &middot; ' + prop["Site Phone"] + '<hr>';
+          //     }
+          //   }
+          // }
 
           // NOW ITS TIME TO ADD SOME INTERACTIVE FEATURE ON OUR LOCATION LIST :)
 

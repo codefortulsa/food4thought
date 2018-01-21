@@ -21,16 +21,7 @@ export class MapService {
   constructor(private _http : Http, private _router : Router) { }
 
   getAllSites(){
-    this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.datasetToken}/features?access_token=${this.mapToken}`).subscribe(
-      (sites)=>{
-        this.mealSites = sites.json();
-        // console.log(this.mealSites);
-        this.mealSitesObservable.next(this.mealSites);
-      },
-      (errors)=>{
-        console.log(errors);
-      }
-    )
+    return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.datasetToken}/features?access_token=${this.mapToken}`).toPromise();
   }
 
 }
