@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MapService } from './map.service';
 import { NgForm } from "@angular/forms";
 import * as mapboxgl from 'mapbox-gl';
-import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import * as MapboxGeocoder from 'mapbox-gl-geocoder';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 // import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
