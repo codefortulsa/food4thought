@@ -9,6 +9,13 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
 }
 
 
+.tween {
+  transition: all 0.2s ease !important;
+  -webkit-transition: all 0.2s ease!important;
+  -moz-transition: all 0.2s ease !important;
+  -o-transition: all 0.2s ease !important;
+}
+
 
 ._lead, ._jumbotron {
   text-align: center !important;
@@ -73,9 +80,18 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
 }
 
 .btn-primary {
-  background-color: #5ed7ff;
-  border-color : #5ed7ff; 
+  background-color: rgba(94, 215, 255, 0.57);
+  border: 1px solid rgba(94, 215, 255, 0); 
   padding:1.5vh 3vh 1.5vh 3vh;
+  border-radius:10px;
+  font-size:2vh;
+  font-size: 900;
+}
+
+.btn-primary:hover {
+  background-color: rgba(94, 215, 255, 1);
+  border-color : #5ed7ff; 
+  padding:1.5vh 4vh 1.5vh 4vh;
   border-radius:10px;
 }
 
