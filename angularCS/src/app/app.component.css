@@ -57,7 +57,7 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
   letter-spacing: -4px;
   line-height:5vh;
   padding-top:30vh;
-  color: rgba(1, 81, 174, 0.81);
+  color: rgba(255,255,255,.95);
   
   
 }
@@ -102,28 +102,66 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
 }
 
 
+#appNavBar h2.summertimeMeals {
+  font-size:4vh !important;
+  color: rgba(255,255,255,.9);
+  line-height: 7vh;
+  
+}
+
+#appNavBar {
+  background-color: rgba(1, 81, 174, .9);
+  box-shadow: inset 0px 2px 2px rgba(2, 71, 150, .7), 2px 2px 1px rgba(0,0,0,.3);
+  min-height: 7vh;
+  height: 7vh;
+  padding: 0 2vh 0 2vh;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 1 !important;
+  opacity: none;
+  display: none !important;
+}
+
 .sidebar {
   height: 100% !important;
   min-height:300px !important;
   max-height:100vh !important;
-  padding:2vh;
+  padding:15vh 2vh 2vh 2vh;
   overflow:scroll;
   display: inline-block;
   max-width:400px;
   width:50vw;
   position: absolute !important;
-  top: 10vh;
+  top: 0;
   left: 0;
   bottom: 0;
   background-color: rgba(1, 81, 174, 0.81);
+  
+  
 }
 
+._container2 {
+  position: absolute;
+  width: 100vw;
+  height:100vh;
+  z-index: -100 !important;
+  padding-top:7vh;
+  
+}
 
 #mapSidebarContainer {
-  height:90vh;
-  min-height:90vh;
-  max-height:90vh;
-  position:relative;
+  
+  height:100vh;
+  min-height:100vh;
+  max-height:100vh;
+  position:absolute;
+  top: 7vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* margin-top: 7vh !important; */
+  z-index: -1 !important;
   
 }
 
@@ -131,8 +169,21 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
   height:100%;
   min-height:100%;
   max-height:100%;
+  z-index: -2 !important;
 }
 
+ #map .mapboxgl-ctrl-top-left {
+  top: 7vh !important;
+}
+
+.pad2[_ngcontent-c0] {
+  padding: 0 0 0 0 !important;
+}
+
+
+.mapboxgl-ctrl-top-left .mapboxgl-ctrl {
+  top: 7vh;
+}
 /* #menu {
         position: absolute;
         background: #fff;
@@ -179,6 +230,7 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
         display: inline-block;
         overflow: scroll;
         min-height: 500px;
+        display: none;
         /* background-color: salmon; */
       }
 
