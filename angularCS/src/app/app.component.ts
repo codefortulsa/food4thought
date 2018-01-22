@@ -6,7 +6,7 @@ import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 // import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
-import { turf } from "@turf/turf";
+// import { turf } from "@turf/turf";
 
 
 @Component({
@@ -88,20 +88,20 @@ export class AppComponent {
         'circle-stroke-color': '#fff'
       }
     });
-    geocoder.on('result', (ev) => {
-      var searchResult = ev.result.geometry;
-      this.map.getSource('single-point').setData(searchResult);
+    // geocoder.on('result', (ev) => {
+    //   var searchResult = ev.result.geometry;
+    //   this.map.getSource('single-point').setData(searchResult);
 
-      var options = { units: 'miles' };
-      this.mealSites.features.forEach(function(site) {
-        Object.defineProperty(site.properties, 'distance', {
-          value: turf.distance(searchResult, site.geometry, options),
-          writable: true,
-          enumerable: true,
-          configurable: true
-        });
-      });
-    });
+    //   var options = { units: 'miles' };
+    //   this.mealSites.features.forEach(function(site) {
+    //     Object.defineProperty(site.properties, 'distance', {
+    //       value: turf.distance(searchResult, site.geometry, options),
+    //       writable: true,
+    //       enumerable: true,
+    //       configurable: true
+    //     });
+    //   });
+    // });
 
   })
     // Add an event listener for the links in the sidebar listing
