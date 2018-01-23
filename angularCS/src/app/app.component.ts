@@ -127,66 +127,35 @@ export class AppComponent {
         'circle-stroke-color': '#fff'
       }
     });
-    // geocoder.on('result', (ev) => {
-    //   var searchResult: any = ev.result.geometry;
-    //   this.map.getSource('single-point').setData(searchResult);
+    geocoder.on('result', (ev) => {
+      var searchResult = ev.result.geometry;
+      this.map.getSource('single-point').setData(searchResult);
 
-      // var options = { units: 'miles'};
-      // console.log(this.mealSites.features);
-      // // this.mealSites.features
-    //
-    // });
+      var options = { units: 'miles'};
+      console.log(this.mealSites.features);
+      this.mealSites.features.forEach((site) => {
+        Object.defineProperty(site.properties, 'distance', {
+          value: turf.distance(searchResult, site.geometry, options),
+          writable: true,
+          enumerable: true,
+          configurable: true
+        });
+      });
+      console.log(this.mealSites.features);
+      this.mealSites.features.sort((a, b) => {
+        if (a.properties.distance > b.properties.distance) {
+          return 1;
+        }
+        if (a.properties.distance < b.properties.distance) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+    });
 
   })
-    // Add an event listener for the links in the sidebar listing
-    // this.map.on('click', (e) => {
-    //   var features = this.map.queryRenderedFeatures(e.point, {
-    //     layers: ['locations']
-    //   });
-    //
-    //   if (features.length) {
-    //     var clickedPoint = features[0];
-    //
-    //
-    //     // 2. Close all other popups and display popup for clicked store
-    //     this.createPopUp(clickedPoint);
-    //
-    //     // 1. Fly to the point
-    //     this.flyToStore(clickedPoint);
-    //
-    //     // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-    //    var activeItem = document.getElementsByClassName('active');
-    //     if (activeItem[0]) {
-    //       activeItem[0].classList.remove('active');
-    //     }
-    //
-    //     var selectedFeature = clickedPoint.properties.Address;
-    //     let selectedFeatureIndex;
-    //     for (var i = 0; i < features.length; i++ ) {
-    //       if (features[i].properties.Address === selectedFeature) {
-    //           selectedFeatureIndex = i;
-    //       }
-    //     }
-    //
-    //     var listing = document.getElementById('listing-' + selectedFeatureIndex);
-    //     listing.classList.add('active');
-    //
-    //   }
-    // });
 
-    // console.log(this.mealSites.features);
-    // this.mealSites.features.forEach(function(marker) {
-    //   // Create a div element for the marker
-    //   var el = document.createElement('div');
-    //   // Add a class called 'marker' to each div
-    //   el.className = 'marker';
-    //   // By default the image for your custom marker will be anchored
-    //   // by its center. Adjust the position accordingly
-    //   // Create the custom markers, set their position, and add to map
-    //   new mapboxgl.Marker(el, { offset: [0, -23] })
-    //     .setLngLat(marker.geometry.coordinates)
-    //     .addTo(this.map);
-    // });
 
   // end ngOnInit
 
