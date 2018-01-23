@@ -7,6 +7,8 @@ import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 // import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
 import * as turf from "@turf/turf";
+import { Units } from '@turf/turf';
+import { GeoJSONSource } from 'mapbox-gl/dist/mapbox-gl';
 
 
 @Component({
@@ -129,9 +131,11 @@ export class AppComponent {
     });
     geocoder.on('result', (ev) => {
       var searchResult = ev.result.geometry;
-      this.map.getSource('single-point').setData(searchResult);
+      let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
 
-      var options = { units: 'miles'};
+      source.setData(searchResult);
+      let units:Units = 'miles';
+      var options = { units: units};
       console.log(this.mealSites.features);
       this.mealSites.features.forEach((site) => {
         Object.defineProperty(site.properties, 'distance', {
