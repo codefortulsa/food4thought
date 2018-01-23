@@ -7,6 +7,7 @@
       $(".heading").click(function(){
         if($(".sidebarWrap").hasClass('.clickShow')){
           $(".sidebarWrap").animate({top: '0vh'});
+          $(".sidebarWrap").removeClass(".clickShow");
         } else {
         $(".sidebarWrap").animate({top: '75vh'});
         $(".sidebarWrap").addClass(".clickShow");}

@@ -319,12 +319,18 @@ color: rgba(1, 81, 174, 1);
       gets 2/3 of the page. You can adjust this to your personal liking. */
       .sidebar {
         color: black;
-        width: 33.3333%;
+        width: 35vw;
+        min-width:300px;
         display: inline-block;
         overflow: scroll;
         min-height: 500px;
         
         /* background-color: salmon; */
+      }
+
+
+      div.item a.title {
+        font-size: 2vh !important;
       }
 
       /* .map {
