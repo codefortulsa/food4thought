@@ -6,7 +6,7 @@ import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 // import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
-import { turf } from "@turf/turf";
+import * as turf from "@turf/turf";
 
 
 @Component({
@@ -89,18 +89,13 @@ export class AppComponent {
       }
     });
     geocoder.on('result', (ev) => {
-      var searchResult = ev.result.geometry;
+      var searchResult: any = ev.result.geometry;
       this.map.getSource('single-point').setData(searchResult);
 
-      var options = { units: 'miles' };
-      this.mealSites.features.forEach(function(site) {
-        Object.defineProperty(site.properties, 'distance', {
-          value: turf.distance(searchResult, site.geometry, options),
-          writable: true,
-          enumerable: true,
-          configurable: true
-        });
-      });
+      var options = { units: 'miles'};
+      console.log(this.mealSites.features);
+      // this.mealSites.features
+
     });
 
   })
@@ -155,12 +150,14 @@ export class AppComponent {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
-
+    var mealz = "";
     var popup = new mapboxgl.Popup({ closeOnClick: false })
       .setLngLat(currentFeature.geometry.coordinates)
       .setHTML('<h3>'+currentFeature.properties.Name+'</h3>' +
-        '<h5>' + currentFeature.properties.Address + '</h5>')
+        '<h5>' + currentFeature.properties.Address + '</h5>' +
+        "<span>Serving: </span>"+mealz)
       .addTo(this.map);
+
   }
 
   buildLocationList(data) {
@@ -219,7 +216,19 @@ export class AppComponent {
       });
     }
   }
+  getLocation(){
+    console.log("location function is working");
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        // this.location = position.coords;
+        console.log(position.coords);
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
 
+
+      });
+   }
+  }
 
 
 }
