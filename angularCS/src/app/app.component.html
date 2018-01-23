@@ -12,10 +12,12 @@
   <body> -->
     <div class="container">
       <div class="jumbotron">
-        <h3 class="display-4 text-center">Summertime Meals</h3>
-        <p class="lead text-center">Search for food sides near you!</p>
+        <h3 class="display-4 text-center">Summer Time Meals</h3>
+        <!-- <p class="lead text-center">Search for food sides near you!</p> -->
+        <p class="lead text-center">Type in your address to find near by food sites!</p>
+        <p class="text-center"> <button (click)="getLocation()" type="Submit" class="btn btn-primary btn-sm center">Current Location</button></p>
         <hr class="my-4">
-        <form (ngSubmit)="findNearBy()" id="findNearBy" #findNearBy='ngForm'>
+        <!-- <form (ngSubmit)="findNearBy()" id="findNearBy" #findNearBy='ngForm'>
           <div class="form-row">
             <div class="col-4">
               <input type="text" name="streetAddress" [(ngModel)]="userLoc.streetAddress" class="form-control" placeholder="Street Address">
@@ -39,7 +41,14 @@
               <button type="Submit" class="btn btn-primary btn-sm">Find Sites</button>
             </div>
           </div>
-        </form>
+        </form> -->
+        <div class='sidebar'>
+          <div class='heading'>
+            <h1>Our locations</h1>
+          </div>
+          <div id='listings' class='listings'></div>
+        </div>
+        <div id='map' class='map pad2'></div>
         <hr class="my-4">
       </div>
       <!-- <div class="container mainbod"> -->
@@ -47,13 +56,7 @@
       <div class='sidebar pad2'>
         <p *ngFor="let ting of listingTest">Name: {{ ting.name }} <br> {{ ting.desc }}</p>
       </div> -->
-      <div class='sidebar'>
-        <div class='heading'>
-          <h1>Our locations</h1>
-        </div>
-        <div id='listings' class='listings'></div>
-      </div>
-      <div id='map' class='map pad2'></div>
+
 
       <!-- </div> -->
 
