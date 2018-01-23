@@ -51,7 +51,10 @@ export class AppComponent {
       })
 
       this.buildLocationList(this.mealSites);
-
+      // directions module.......need to finish
+      // map.addControl(new MapboxDirections({
+      //     accessToken: this._mapService.mapToken
+      // }), 'top-left');
       // add geocoder controls
 
       var geocoder = new MapboxGeocoder({
@@ -59,7 +62,10 @@ export class AppComponent {
         // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
       });
 
-      this.map.addControl(geocoder, 'top-left');
+      this.map.addControl(geocoder, 'top-right');
+
+      // Add zoom and rotation controls to the map.
+      this.map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
       this.map.addSource('single-point', {
         type: 'geojson',
@@ -146,8 +152,7 @@ export class AppComponent {
           });
 
       });
-      // Add zoom and rotation controls to the map.
-      this.map.addControl(new mapboxgl.NavigationControl());
+
     });
 
 
@@ -215,31 +220,6 @@ export class AppComponent {
         var roundedDistance = Math.round(prop.distance * 100) / 100;
         details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>'+"<hr>";
       }
-
-
-      // link.addEventListener('click', (e) => {
-        // Update the currentFeature to the store associated with the clicked link
-      //   console.log("link event", e)
-      //   var clickedListing = this.mealSites.features[Number.parseInt(e.srcElement.getAttribute("dataPosition"))];
-      //   console.log(clickedListing);
-      //   console.log(Number.parseInt(link.getAttribute("dataPosition")));
-      //   console.log(data);
-      //   console.log(link.getAttribute("dataPosition"));
-      //   // 1. Fly to the point associated with the clicked link
-      //   this.flyToStore(clickedListing);
-      //
-      //   // 2. Close all other popups and display popup for clicked store
-      //   this.createPopUp(clickedListing);
-      //
-      //   // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-      //   var activeItem = document.getElementsByClassName('active');
-      //
-      //   if (activeItem[0]) {
-      //     activeItem[0].classList.remove('active');
-      //   }
-      //   link.parentElement.classList.add('active');
-      //
-      // });
 
     }
   };
