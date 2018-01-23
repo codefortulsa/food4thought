@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    
+}
+
+
+a, a:hover, ul li a, ul li a:hover {
+    transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease!important;
+    -moz-transition: all 0.2s ease !important;
+    -o-transition: all 0.2s ease !important;
+
+}
+
+#appNavBar {
+    background-color: rgba(1, 81, 174, .91);
+    border-bottom:1px solid rgba(2, 67, 141, 0.719);
+    min-height: 7vh;
+    height: 7vh;
+    max-height: 7vh;
+    padding: 0 2vh 0 2vh;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 1 !important;
+    white-space:nowrap;
+    
+  }
+
+  .tween {
+    transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease!important;
+    -moz-transition: all 0.2s ease !important;
+    -o-transition: all 0.2s ease !important;
+  }
+
+
+  #appNavBar h2.summertimeMeals a{
+    font-size:4vh !important;
+    color: rgba(255,255,255,.9);
+    line-height: 7vh;
+    font-family: 'proxima-soft-condensed', sans-serif;
+    display: inline-block;
+    float:left;
+    text-decoration: none;
+  }
+  
+  .headlineMap {
+    color: #5ed7ff;
+    font-family: "proxima-soft-condensed", sans-serif !important;
+  }
+
+  h2.summertimeMeals a:hover {
+      color: rgba(255,255,255,1);
+
+  }
+
+ul#navigationBar {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    list-style-type: none !important;
+    display: inline-block !important;
+    float:right;
+}
+
+#navigationBar li {
+    display: inline-block !important;
+    list-style-type: none !important;
+}
+
+#navigationBar li a {
+    color: rgba(255,255,255,.9);
+    margin-right: 5vh;
+    font-size: 2vh;
+    display: inline-block;
+    height: 6vh;
+    line-height: 5vh;
+    border-bottom: 2px solid rgba(255,255,255,0);
+    padding: 0 1vh;
+}
+  
+#navigationBar li a:hover {
+    border-bottom: 2px solid rgba(255,255,255,1);
+    text-decoration: none !important;
+}

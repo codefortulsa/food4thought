@@ -1,35 +1,47 @@
 
-    <div class="_container">
-        <div class="_jumbotron">
-          <div class="overlay">
-          <div id="frame">
-            <h1 id="summertimeMeals" class="tween">Meal<span class="headlineMap">Maps</span></h1>
-            <p class="_lead">Find free meals in your area.</p>
-          <p class="text-center"> <a href="#mapSidebarContainer"><button type="Submit" class="btn btn-primary btn-sm center tween">Find Food!</button></a></p>
-        </div>
-        </div><!--closes frame-->
-      </div><!--closes _jumbotron-->
-
-      
-      </div><!--closes _container-->
-      
-<div class="_container2">
     
-    <div id="mapSidebarContainer">
-      <div id='map' class='map pad2'></div>
-      <div class='sidebar'>
+  
+  
+<app-navigation></app-navigation>
+
+<div id="first" class="_container">
+    <div class="_jumbotron">
+      <div class="overlay">
+      <div id="frame">
+        <h1 id="summertimeMeals" class="tween">Meal<span class="headlineMap">Maps</span></h1>
+        <p class="_lead">Find free meals in your area.</p>
+      <p class="text-center"> <a href="#second"><button type="Submit" class="btn btn-primary btn-sm center tween">Find Food!</button></a></p>
+    </div>
+    </div><!--closes frame-->
+  </div><!--closes _jumbotron-->
+
+  
+  </div><!--closes _container-->
+<div id="second">  
+<div class="_container2">
+
+
+
+<div id="mapSidebarContainer">
+    
+    <div class='sidebar'>
+      <div class="sidebarWrap">
         <div class='heading'>
-          <h1>Our locations</h1>
-        </div>
+            <h2>Meal Sites Close To You</h2>
+          </div>
         <div id='listings' class='listings'></div>
-      </div><!-- closes sidebar -->
-    </div><!-- closes mapSidebarContainer-->
-  <router-outlet></router-outlet>
+      </div>
+    </div><!-- closes sidebar -->
+   
+  <div id='map' class='map pad2'></div>
+
+</div><!-- closes mapSidebarContainer-->
+<router-outlet></router-outlet>
+</div>
 </div>
 
-<div id="appNavBar">
-    <h2 class="summertimeMeals tween">Meal<span class="headlineMap">Maps</span></h2>
-   </div>
-  
-  
+
+
+
+
   

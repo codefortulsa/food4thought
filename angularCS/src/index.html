@@ -4,7 +4,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
-    
+      $(".heading").click(function(){
+        if($(".sidebarWrap").hasClass('clickShow')){
+          $(".sidebarWrap").animate({bottom: '75vh'});
+          $(".sidebarWrap").removeClass('clickShow');
+        }else {
+        $(".sidebarWrap").animate({top: '75vh'});
+        $("sidebarWrap").addClass("clickShow");}
+    });  
       $("a").on('click', function(event) {
           if (this.hash !== "") {
             event.preventDefault();
@@ -16,6 +23,7 @@
             });
           } 
         });
+      });
       </script>
     <link rel="stylesheet" href="https://use.typekit.net/plx7bvp.css">
     <script>
@@ -41,20 +49,20 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Geocoder plugin -->
   <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
-  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
+  <!-- <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' /> -->
 
   <!-- Turf.js plugin -->
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
 
 </head>
-<!-- <style>
+<!-- <!-- <style>
     #menu {
         position: absolute;
         background: #fff;
         padding: 10px;
         font-family: 'Open Sans', sans-serif;
     }
-</style> -->
+</style>  -->
 <body>
   <app-root></app-root>
 </body>

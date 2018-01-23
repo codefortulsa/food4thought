@@ -2,10 +2,13 @@
 
 #map { position:absolute; top:0; bottom:0; width:100%; } */
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+!important;
+}
 
-
-body, h1, h2, h3, h4, h5, h6, a, p, span, div {
-  font-family: "proxima-soft" !important;
+body, h1 {
+  font-family: "proxima-soft", sans-serif !important;
 }
 
 .mapboxgl-canvas {
@@ -26,11 +29,8 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
 ._lead, ._jumbotron {
   text-align: center !important;
 }
-._container {
-  height: 100vh;
-  max-height: 100vh;
 
-}
+
 
 ._jumbotron {
   
@@ -57,7 +57,8 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
   letter-spacing: -4px;
   line-height:5vh;
   padding-top:30vh;
-  color: rgba(255,255,255,.95);
+  color: rgba(255,255,255,.95) !important;
+  margin-bottom: 3vh;
   
   
 }
@@ -79,26 +80,33 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
 
 #frame {
   padding: 2vh;
-  border:1px solid rgba(255,255,255,.1);
+  /* border:1px solid rgba(255,255,255,.1); */
   width:100%;
   height:100%;
   border-radius:20px;
 }
 
 .btn-primary {
-  background-color: rgba(94, 215, 255, 0.57);
+  background-color: rgba(94, 215, 255, 0.47);
   border: 1px solid rgba(94, 215, 255, 0); 
-  padding:1.5vh 3vh 1.5vh 3vh;
+  padding:.95vh 3vh .95vh 3vh;
   border-radius:10px;
-  font-size:2vh;
+  font-size:2.75vh;
   font-size: 900;
+  color: rgba(255,255,255,1);
+  
+  line-height: 4vh;
 }
 
 .btn-primary:hover {
   background-color: rgba(94, 215, 255, 1);
   border-color : #5ed7ff; 
-  padding:1.5vh 4vh 1.5vh 4vh;
-  border-radius:10px;
+  padding:.95vh 4vh .95vh 4vh;
+  border-radius:15px;
+  /* color: rgba(1, 81, 174, 0.81); */
+  
+  
+  
 }
 
 
@@ -110,8 +118,8 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
 }
 
 #appNavBar {
-  background-color: rgba(1, 81, 174, .9);
-  box-shadow: inset 0px 2px 2px rgba(2, 71, 150, .7), 2px 2px 1px rgba(0,0,0,.3);
+  background-color: rgba(1, 81, 174, 1);
+  border-bottom:1px solid rgba(2, 67, 141, 0.719);
   min-height: 7vh;
   height: 7vh;
   padding: 0 2vh 0 2vh;
@@ -119,26 +127,33 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
   top:0;
   width: 100%;
   z-index: 1 !important;
-  opacity: none;
-  display: none !important;
+  
 }
 
 .sidebar {
   height: 100% !important;
   min-height:300px !important;
   max-height:100vh !important;
-  padding:15vh 2vh 2vh 2vh;
-  overflow:scroll;
+  padding:5vh 1vh 1vh 1vh;
+  
   display: inline-block;
   max-width:400px;
   width:50vw;
   position: absolute !important;
-  top: 0;
-  left: 0;
+  top:20px;
+  left: 1vh;
   bottom: 0;
-  background-color: rgba(1, 81, 174, 0.81);
+  background-color: rgba(255,255,255,0);
+  border-top-right-radius:20px;
+  border-top-left-radius:20px;
+  color: #fff;
   
-  
+}
+
+._container[_ngcontent-c0] {
+  margin-top: 7vh;
+  height: 93vh;
+  max-height: 93vh;
 }
 
 ._container2 {
@@ -146,44 +161,122 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
   width: 100vw;
   height:100vh;
   z-index: -100 !important;
-  padding-top:7vh;
+  /* background-color:rgba(1, 81, 174, 1); */
   
 }
 
+
+
 #mapSidebarContainer {
   
+  /* height:93vh;
+  min-height:93vh;
+  max-height:93vh; */
+
   height:100vh;
   min-height:100vh;
   max-height:100vh;
   position:absolute;
-  top: 7vh;
+  
   left: 0;
   right: 0;
   bottom: 0;
   /* margin-top: 7vh !important; */
   z-index: -1 !important;
   
+  
 }
+
+#second::before { 
+  display: block !important;; 
+  content: " " !important;; 
+  margin-top: -7vh !important;;
+  height: 7vh !important;; 
+  visibility: hidden !important;; 
+  pointer-events: none !important;;
+}
+
+
+
 
 #map {
   height:100%;
   min-height:100%;
   max-height:100%;
   z-index: -2 !important;
+  /* margin-top: 7vh; */
 }
 
- #map .mapboxgl-ctrl-top-left {
-  top: 7vh !important;
-}
+ /* #map .mapboxgl-ctrl-top-left {
+  margin-top: 7vh !important;
+} */
 
 .pad2[_ngcontent-c0] {
   padding: 0 0 0 0 !important;
 }
 
-
-.mapboxgl-ctrl-top-left .mapboxgl-ctrl {
-  top: 7vh;
+#listings {
+  height:80vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.56),rgba(255, 255, 255, 0.76)) ;
+  padding:3vh;
+  border: 1px solid #fff;
+  overflow:scroll;
 }
+
+.item div {
+    font-size: .6rem;
+}
+
+div.item {
+  padding-left: 0 !important;
+}
+
+div.item:hover {
+  padding-left:1vh !important;
+}
+
+.title {
+text-transform: uppercase;
+color: rgba(1, 81, 174, 1);
+}
+
+.heading h2 {
+  font-size: 2vh;
+
+}
+
+.sidebar, .sidebarWrap {
+  overflow: hidden !important;
+}
+
+.sidebarWrap {
+  position:relative;
+  
+  box-shadow: 2px -1px 2px 0px rgba(0,0,0,.05);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+
+.heading[_ngcontent-c0] {
+  color: rgba(255,255,255,.9);
+  text-align: center !important;
+  background: linear-gradient(rgba(2, 83, 175, 0.863), rgba(1, 81, 174, 0.92));
+  padding: 2vh 3vh 1.5vh 3vh;
+  
+  
+}
+
+/* .mapboxgl-ctrl-top-left {
+  top: 0;
+  right: 5vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+
+} */
 /* #menu {
         position: absolute;
         background: #fff;
@@ -230,7 +323,7 @@ body, h1, h2, h3, h4, h5, h6, a, p, span, div {
         display: inline-block;
         overflow: scroll;
         min-height: 500px;
-        display: none;
+        
         /* background-color: salmon; */
       }
 
