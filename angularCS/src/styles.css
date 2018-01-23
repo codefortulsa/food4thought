@@ -82,3 +82,15 @@ ul#navigationBar {
     border-bottom: 2px solid rgba(255,255,255,1);
     text-decoration: none !important;
 }
+
+/* .clickShow {
+    margin-top:75vh !important;
+} */
+
+/* .sidebarWrap {
+    top: 0vh !important;
+}
+
+.sidebarWrap.clickShow {
+    top:75vh !important;
+} */

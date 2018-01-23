@@ -5,12 +5,11 @@
   <script>
     $(document).ready(function() {
       $(".heading").click(function(){
-        if($(".sidebarWrap").hasClass('clickShow')){
-          $(".sidebarWrap").animate({bottom: '75vh'});
-          $(".sidebarWrap").removeClass('clickShow');
-        }else {
+        if($(".sidebarWrap").hasClass('.clickShow')){
+          $(".sidebarWrap").animate({top: '0vh'});
+        } else {
         $(".sidebarWrap").animate({top: '75vh'});
-        $("sidebarWrap").addClass("clickShow");}
+        $(".sidebarWrap").addClass(".clickShow");}
     });  
       $("a").on('click', function(event) {
           if (this.hash !== "") {
