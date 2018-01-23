@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.marker {
+    border: none;
+    cursor: pointer;
+    height: 56px;
+    width: 56px;
+    background-image: url("./assets/sgMapMarker.png");
+    background-color: rgba(0, 0, 0, 0);
+  }
