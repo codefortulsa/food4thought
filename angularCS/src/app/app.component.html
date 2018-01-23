@@ -1,15 +1,4 @@
-<!-- !<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link rel='stylesheet' href='/styles.css' />
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
-    <title>EXPRESS.JS :)</title>
-  </head>
-  <body> -->
+
     <div class="container">
       <div class="jumbotron">
         <h3 class="display-4 text-center">Summer Time Meals</h3>
@@ -17,31 +6,6 @@
         <p class="lead text-center">Type in your address to find near by food sites!</p>
         <p class="text-center"> <button (click)="getLocation()" type="Submit" class="btn btn-primary btn-sm center">Current Location</button></p>
         <hr class="my-4">
-        <!-- <form (ngSubmit)="findNearBy()" id="findNearBy" #findNearBy='ngForm'>
-          <div class="form-row">
-            <div class="col-4">
-              <input type="text" name="streetAddress" [(ngModel)]="userLoc.streetAddress" class="form-control" placeholder="Street Address">
-              <small class="form-text text-muted">{{ userLoc.streetAddress }}</small>
-            </div>
-            <div class="col-2">
-              <input type="text" name="city" [(ngModel)]="userLoc.city" class="form-control" placeholder="City">
-              <small class="form-text text-muted">{{ userLoc.city }}</small>
-
-            </div>
-            <div class="col-1">
-              <input type="text" name="state" [(ngModel)]="userLoc.state"  class="form-control" placeholder="State">
-              <small class="form-text text-muted">{{ userLoc.state }}</small>
-            </div>
-            <div class="col-1">
-              <input type="text" name="zip" [(ngModel)]="userLoc.zip" class="form-control" placeholder="Zip">
-              <small class="form-text text-muted">{{ userLoc.zip }}</small>
-
-            </div>
-            <div class="col-1">
-              <button type="Submit" class="btn btn-primary btn-sm">Find Sites</button>
-            </div>
-          </div>
-        </form> -->
         <div class='sidebar'>
           <div class='heading'>
             <h1>Our locations</h1>
@@ -72,98 +36,3 @@
 <router-outlet></router-outlet>
 <!-- ======================================================================================
 ====================================================================================== -->
-
-
-<!-- The content below is only a placeholder and can be replaced.-->
-
-<!-- <div class="container">
-  <div class="jumbotron">
-    <h1 class="display-4 text-center">Summertime Meals</h1>
-    <p class="lead text-center">Search for food sides near you!</p>
-    <hr class="my-4">
-    <form>
-      <div class="form-row">
-        <div class="col-4">
-          <input type="text" class="form-control" placeholder="Address">
-        </div>
-        <div class="col-2">
-          <input type="text" class="form-control" placeholder="City">
-        </div>
-        <div class="col-1">
-          <input type="text" class="form-control" placeholder="State">
-        </div>
-        <div class="col-1">
-          <input type="text" class="form-control" placeholder="Zip">
-        </div>
-        <div class="col-1">
-          <button type="Submit" class="btn btn-primary btn-sm">Find Sites</button>
-        </div>
-      </div>
-    </form>
-    <hr class="my-4">
-</div>
-
-<div id='map'></div>
-<div id='menu'>
-    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
-    <label for='basic'>basic</label>
-    <input id='streets' type='radio' name='rtoggle' value='streets'>
-    <label for='streets'>streets</label>
-    <input id='bright' type='radio' name='rtoggle' value='bright'>
-    <label for='bright'>bright</label>
-    <input id='light' type='radio' name='rtoggle' value='light'>
-    <label for='light'>light</label>
-    <input id='dark' type='radio' name='rtoggle' value='dark'>
-    <label for='dark'>dark</label>
-    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
-    <label for='satellite'>satellite</label>
-</div>
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoidmljYWdiYXNpIiwiYSI6ImNqY2lpcWE2aTNteGEycWxscDl2NzhpZWQifQ.KJIJ5fZsHtxebZwwROAc5w';
-  var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/basic-v9',
-      zoom: 13,
-      center: [4.899, 52.372]
-  });
-
-  var layerList = document.getElementById('menu');
-  var inputs = layerList.getElementsByTagName('input');
-
-  function switchLayer(layer) {
-      var layerId = layer.target.id;
-      map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
-  }
-
-  for (var i = 0; i < inputs.length; i++) {
-      inputs[i].onclick = switchLayer;
-  }
-</script>
- -->
-
-
-
-
-
-
-
-
-<!-- =================================================================================================================================== -->
-<!-- <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul> -->
