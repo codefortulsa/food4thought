@@ -43,27 +43,76 @@ export class AppComponent {
     this.map.on('load', (e)=> {
       this._mapService.getAllSites().then((geoData)=>{
 
-      // Add the data to your map as a layer with embedded fork and knife!
-      // **************************************************
       this.mealSites = geoData.json();
-      // this.map.addLayer({
-      //   id: 'locations',
-      //   type: 'symbol',
-      //   // Add a GeoJSON source containing place coordinates and information.
-      //   source: {
-      //     type: 'geojson',
-      //     data: this.mealSites
-      //   },
-      //   layout: {
-      //     'icon-image': 'restaurant-15',
-      //     'icon-allow-overlap': true,
-      //   }
-      // });
+
       this.map.addSource('places', {
         type: 'geojson',
         data: this.mealSites
       })
+
       this.buildLocationList(this.mealSites);
+
+      // add geocoder controls
+
+      var geocoder = new MapboxGeocoder({
+        accessToken: this._mapService.mapToken,
+        // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
+      });
+
+      this.map.addControl(geocoder, 'top-left');
+
+      this.map.addSource('single-point', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: [] // Notice that initially there are no features
+        }
+      });
+
+      this.map.addLayer({
+        id: 'point',
+        source: 'single-point',
+        type: 'circle',
+        paint: {
+          'circle-radius': 10,
+          'circle-color': '#007cbf',
+          'circle-stroke-width': 3,
+          'circle-stroke-color': '#fff'
+        }
+      });
+      geocoder.on('result', (ev) => {
+        var searchResult = ev.result.geometry;
+        let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
+
+        source.setData(searchResult);
+        let units:Units = 'miles';
+        var options = { units: units};
+        console.log(this.mealSites.features);
+        this.mealSites.features.forEach((site) => {
+          Object.defineProperty(site.properties, 'distance', {
+            value: turf.distance(searchResult, site.geometry, options),
+            writable: true,
+            enumerable: true,
+            configurable: true
+          });
+        });
+        console.log(this.mealSites.features);
+        this.mealSites.features.sort((a, b) => {
+          if (a.properties.distance > b.properties.distance) {
+            return 1;
+          }
+          if (a.properties.distance < b.properties.distance) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+        });
+        var listings = document.getElementById('listings');
+          while (listings.firstChild) {
+            listings.removeChild(listings.firstChild);
+          }
+        this.buildLocationList(this.mealSites);
+      });
 
       console.log(this.mealSites);
       this.mealSites.features.forEach((marker, i) => {
@@ -101,62 +150,7 @@ export class AppComponent {
       this.map.addControl(new mapboxgl.NavigationControl());
     });
 
-    // add geocoder controls
 
-    var geocoder = new MapboxGeocoder({
-      accessToken: this._mapService.mapToken,
-      // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
-    });
-
-    this.map.addControl(geocoder, 'top-left');
-
-    this.map.addSource('single-point', {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [] // Notice that initially there are no features
-      }
-    });
-
-    this.map.addLayer({
-      id: 'point',
-      source: 'single-point',
-      type: 'circle',
-      paint: {
-        'circle-radius': 10,
-        'circle-color': '#007cbf',
-        'circle-stroke-width': 3,
-        'circle-stroke-color': '#fff'
-      }
-    });
-    geocoder.on('result', (ev) => {
-      var searchResult = ev.result.geometry;
-      let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
-
-      source.setData(searchResult);
-      let units:Units = 'miles';
-      var options = { units: units};
-      console.log(this.mealSites.features);
-      this.mealSites.features.forEach((site) => {
-        Object.defineProperty(site.properties, 'distance', {
-          value: turf.distance(searchResult, site.geometry, options),
-          writable: true,
-          enumerable: true,
-          configurable: true
-        });
-      });
-      console.log(this.mealSites.features);
-      this.mealSites.features.sort((a, b) => {
-        if (a.properties.distance > b.properties.distance) {
-          return 1;
-        }
-        if (a.properties.distance < b.properties.distance) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      });
-    });
 
   })
 
@@ -215,7 +209,11 @@ export class AppComponent {
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.Address;
       if (prop.Phone) {
-        details.innerHTML += ' &middot; ' + prop.Phone+"<hr>";
+        details.innerHTML += ' &middot; ' + prop.Phone;
+      }
+      if (prop.distance) {
+        var roundedDistance = Math.round(prop.distance * 100) / 100;
+        details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>'+"<hr>";
       }
 
 
