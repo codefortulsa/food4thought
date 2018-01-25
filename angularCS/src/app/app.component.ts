@@ -217,18 +217,17 @@ export class AppComponent {
         details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>'+"<hr>";
       }
 
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', (e) => {
         // Update the currentFeature to the store associated with the clicked link
-        console.log(this.getAttribute("dataPosition"));
-        console.log(this.getAttribute("dataPosition"));
+        console.log((<Element>e.target).getAttribute("dataPosition"));
 
-        var clickedListing = data.features[Number((this.getAttribute("dataPosition"))];
+        var clickedListing = data.features[Number.parseInt((<Element>e.target).getAttribute("dataPosition"))];
 
         // 1. Fly to the point associated with the clicked link
-        flyToStore(clickedListing);
+        this.flyToStore(clickedListing);
 
         // 2. Close all other popups and display popup for clicked store
-        createPopUp(clickedListing);
+        this.createPopUp(clickedListing);
 
         // 3. Highlight listing in sidebar (and remove highlight for all other listings)
         var activeItem = document.getElementsByClassName('active');
@@ -236,7 +235,7 @@ export class AppComponent {
         if (activeItem[0]) {
           activeItem[0].classList.remove('active');
         }
-        this.parentNode.classList.add('active');
+        (<Element>e.target).parentElement.classList.add('active');
 
       });
 
