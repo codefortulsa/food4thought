@@ -7,8 +7,9 @@ import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
 // import { SITES } from '../assets/temp_sites'
 import { UserLocation } from "./userLocation";
 import * as turf from "@turf/turf";
-import { Units } from '@turf/turf';
-import { GeoJSONSource } from 'mapbox-gl/dist/mapbox-gl';
+import { Units, Coord, Feature } from '@turf/turf';
+import { GeoJSONSource, GeoJSONGeometry } from 'mapbox-gl/dist/mapbox-gl';
+import { FeatureCollection } from 'geojson';
 
 
 @Component({
@@ -73,7 +74,6 @@ export class AppComponent {
           features: [] // Notice that initially there are no features
         }
       });
-
       this.map.addLayer({
         id: 'point',
         source: 'single-point',
@@ -85,6 +85,8 @@ export class AppComponent {
           'circle-stroke-color': '#fff'
         }
       });
+      var geobtn = document.getElementById("myGeo")
+      geobtn.addEventListener("click", ()=>{this.nearbySites()});
       geocoder.on('result', (ev) => {
         var searchResult = ev.result.geometry;
         let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
@@ -153,8 +155,7 @@ export class AppComponent {
     });
   })
   
-  var geobtn = document.getElementById.("myGeo")
-  geobtn.addEventListener("click", nearbySites());
+
 
 
 
@@ -243,50 +244,94 @@ export class AppComponent {
       });
 
     }
-  };
+  }
 
   nearbySites(){
+    console.log("getting here");
+    console.log(this);
+    console.log(this.map);
     let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
-    var locate = getLocation()
-    source.setData(locate);
-    let units:Units = 'miles';
-    var options = { units: units};
-    console.log(this.mealSites.features);
-    this.mealSites.features.forEach((site) => {
-      Object.defineProperty(site.properties, 'distance', {
-        value: turf.distance(searchResult, site.geometry, options),
-        writable: true,
-        enumerable: true,
-        configurable: true
-      });
-    });
-    console.log(this.mealSites.features);
-    this.mealSites.features.sort((a, b) => {
-      if (a.properties.distance > b.properties.distance) {
-        return 1;
-      }
-      if (a.properties.distance < b.properties.distance) {
-        return -1;
-      }
-      // a must be equal to b
-      return 0;
-    });
-    var listings = document.getElementById('listings');
-      while (listings.firstChild) {
-        listings.removeChild(listings.firstChild);
-      }
-    this.buildLocationList(this.mealSites);
-  });
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        // this.location = position.coords;
+        let featureLocation:Feature<GeoJSONGeometry> = {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [position.coords.longitude, position.coords.latitude]
+          },
+          properties: {
+            timestamp: position.timestamp,
+            accuracy: position.coords.accuracy,
+            altitude: position.coords.altitude,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null
+          }
+        }
 
-  getLocation(){
+        console.log(featureLocation)
+        source.setData(featureLocation);
+        let units:Units = 'miles';
+        // let searchResult = <Coord>locate;
+        var options = { units: units};
+        console.log(this.mealSites.features);
+        this.mealSites.features.forEach((site) => {
+          Object.defineProperty(site.properties, 'distance', {
+            value: turf.distance(<Coord>featureLocation, site.geometry, options),
+            writable: true,
+            enumerable: true,
+            configurable: true
+          });
+        });
+        console.log(this.mealSites.features);
+        this.mealSites.features.sort((a, b) => {
+          if (a.properties.distance > b.properties.distance) {
+            return 1;
+          }
+          if (a.properties.distance < b.properties.distance) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+        });
+        var listings = document.getElementById('listings');
+        while (listings.firstChild) {
+          listings.removeChild(listings.firstChild);
+        }
+        this.flyToStore(featureLocation);
+        this.buildLocationList(this.mealSites);
+      });
+    }
+  }
+
+  getLocation():Feature<GeoJSONGeometry>{
     console.log("location function is working");
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position => {
         // this.location = position.coords;
+        let featureLocation:Feature = {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [position.coords.latitude, position.coords.longitude]
+          },
+          properties: {
+            timestamp: position.timestamp,
+            accuracy: position.coords.accuracy,
+            altitude: position.coords.altitude,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null
+          }
+        }
+        console.log(position);
         console.log(position.coords);
         console.log(position.coords.latitude);
         console.log(position.coords.longitude);
+        return featureLocation;
       });
+      return undefined;
    }
   }
 
