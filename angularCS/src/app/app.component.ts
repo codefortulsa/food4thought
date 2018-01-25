@@ -151,8 +151,11 @@ export class AppComponent {
       });
 
     });
-
   })
+  
+  var geobtn = document.getElementById.("myGeo")
+  geobtn.addEventListener("click", nearbySites());
+
 
 
   // end ngOnInit
@@ -241,19 +244,51 @@ export class AppComponent {
 
     }
   };
-  // getLocation(){
-  //   console.log("location function is working");
-  //   if(navigator.geolocation){
-  //     navigator.geolocation.getCurrentPosition(position => {
-  //       // this.location = position.coords;
-  //       console.log(position.coords);
-  //       console.log(position.coords.latitude);
-  //       console.log(position.coords.longitude);
-  //
-  //
-  //     });
-  //  }
-  // }
+
+  nearbySites(){
+    let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
+    var locate = getLocation()
+    source.setData(locate);
+    let units:Units = 'miles';
+    var options = { units: units};
+    console.log(this.mealSites.features);
+    this.mealSites.features.forEach((site) => {
+      Object.defineProperty(site.properties, 'distance', {
+        value: turf.distance(searchResult, site.geometry, options),
+        writable: true,
+        enumerable: true,
+        configurable: true
+      });
+    });
+    console.log(this.mealSites.features);
+    this.mealSites.features.sort((a, b) => {
+      if (a.properties.distance > b.properties.distance) {
+        return 1;
+      }
+      if (a.properties.distance < b.properties.distance) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+    var listings = document.getElementById('listings');
+      while (listings.firstChild) {
+        listings.removeChild(listings.firstChild);
+      }
+    this.buildLocationList(this.mealSites);
+  });
+
+  getLocation(){
+    console.log("location function is working");
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        // this.location = position.coords;
+        console.log(position.coords);
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
+      });
+   }
+  }
 
 
 }
