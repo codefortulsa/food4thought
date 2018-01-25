@@ -19,7 +19,6 @@ import { GeoJSONSource } from 'mapbox-gl/dist/mapbox-gl';
 export class AppComponent {
   userLoc : UserLocation = new UserLocation();
   mapToken : String;
-  script: String;
   mealSites: any;
   map:mapboxgl.Map;
   mapService: MapService;
@@ -135,7 +134,6 @@ export class AppComponent {
           .addTo(this.map);
 
           el.addEventListener('click', (e) => {
-
             // 1. Fly to the point
             this.flyToStore(marker);
             // 2. Close all other popups and display popup for clicked store
@@ -150,12 +148,9 @@ export class AppComponent {
             console.log(listing);
             listing.classList.add('active');
           });
-
       });
 
     });
-
-
 
   })
 
@@ -207,6 +202,7 @@ export class AppComponent {
       link.href = '#';
       link.className = 'title';
       link.setAttribute("dataPosition", i.toString());
+      // link.dataPosition = i;
       link.innerHTML = prop.Name;
 
       // Create a new div with the class 'details' for each store
@@ -220,6 +216,29 @@ export class AppComponent {
         var roundedDistance = Math.round(prop.distance * 100) / 100;
         details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>'+"<hr>";
       }
+
+      link.addEventListener('click', function(e) {
+        // Update the currentFeature to the store associated with the clicked link
+        console.log(this.getAttribute("dataPosition"));
+        console.log(this.getAttribute("dataPosition"));
+
+        var clickedListing = data.features[Number((this.getAttribute("dataPosition"))];
+
+        // 1. Fly to the point associated with the clicked link
+        flyToStore(clickedListing);
+
+        // 2. Close all other popups and display popup for clicked store
+        createPopUp(clickedListing);
+
+        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+        var activeItem = document.getElementsByClassName('active');
+
+        if (activeItem[0]) {
+          activeItem[0].classList.remove('active');
+        }
+        this.parentNode.classList.add('active');
+
+      });
 
     }
   };
