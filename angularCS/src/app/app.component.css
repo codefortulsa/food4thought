@@ -130,6 +130,11 @@ body, h1 {
   
 }
 
+#first {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 .sidebar {
   height: 100% !important;
   min-height:300px !important;
@@ -140,7 +145,7 @@ body, h1 {
   max-width:400px;
   width:50vw;
   position: absolute !important;
-  top: 5vh;
+  top: 6vh;
   left: 0vh;
   background-color: rgba(255,255,255,0);
   border-top-right-radius:20px;
