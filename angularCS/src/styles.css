@@ -3,7 +3,16 @@ body {
 }
 
 
-a, a:hover, ul li a, ul li a:hover {
+.marker {
+    border: none;
+    cursor: pointer;
+    height: 56px;
+    width: 56px;
+    background-image: url("./assets/marker.svg");
+    background-repeat:no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+  }
+a, a:hover, ul li a, ul li a:hover, .mapboxgl-popup-content , .mapboxgl-popup-content:hover, .sidebar, .sidebar:hover, div.item, div.item:hover, #orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, div.item:hover .cls-2 {
     transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease!important;
     -moz-transition: all 0.2s ease !important;
@@ -12,8 +21,9 @@ a, a:hover, ul li a, ul li a:hover {
 }
 
 #appNavBar {
-    background-color: rgba(1, 81, 174, .91);
-    border-bottom:1px solid rgba(2, 67, 141, 0.719);
+    background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2);
+    border-bottom:1px solid rgba(2, 67, 141, 1);
     min-height: 7vh;
     height: 7vh;
     max-height: 7vh;
@@ -25,6 +35,10 @@ a, a:hover, ul li a, ul li a:hover {
     white-space:nowrap;
     
   }
+
+#appNavBar svg {
+    display: none;
+}
 
   .tween {
     transition: all 0.2s ease !important;
@@ -82,6 +96,233 @@ ul#navigationBar {
     border-bottom: 2px solid rgba(255,255,255,1);
     text-decoration: none !important;
 }
+
+
+#listings {
+    height:60vh;
+    /* animation: fadeIn .1s ease ; */
+    /* border-right:1px solid rgba(94, 215, 255, 1);
+    border-left:1px solid rgba(94, 215, 255, 1); */
+    padding:3vh;
+    overflow:scroll;
+    background-color: #F8F4F0CC;
+    border-top: 1px solid rgba(255, 86, 34, 1);
+    /* box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+      background-color: rgba(61, 133, 226, 0.9); */
+  }
+
+
+  div#bottomlistings {
+    height: 4vh;
+    background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.7);
+    margin-top: 2vh;
+    
+}
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+      display: none !important;
+  }
+
+
+.mapboxgl-popup-close-button {
+    top: 3vh;
+    right: 3vh;
+    color: rgba(255,255,255,1);
+}
+
+.mapboxgl-popup-close-button:hover {
+    color: rgba(255, 86, 34, 0.884);
+}
+
+.mapboxgl-popup-content {
+    background-color: rgba(0,0,0,0);
+    border: 1px dashed rgba(2, 67, 141, 0.719);
+    padding:2.5vh;
+    border-radius: 10px;
+    animation: fadeIn .3s ease 1;
+    -webkit-animation: fadeIn .3s ease 1;
+    -moz-animation: fadeIn .3s ease 1;
+    -o-animation: fadeIn .3s ease 1;  
+}
+
+.mapboxgl-popup-content:hover {
+    border:1px solid rgba(94, 215, 255, 1);
+    
+}
+.mapboxgl-popup-content h3 {
+    color: rgba(255,255,255,.9) !important;
+    background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2);
+    border-top-right-radius:8px;
+    border-top-left-radius:8px;
+    padding:2vh 2vh 1.75vh 2vh;
+    font-size: 1.35vh;
+    font-weight:700;
+    letter-spacing: 1px;
+    margin: 0 0 0 0;
+    border-bottom: 1px solid rgba(255, 86, 34, 1);
+    text-align: center;
+    
+  }
+
+
+ 
+  h5::before {
+    content: 'Street Address :';
+    display: block;
+    margin-bottom:.5vh;
+    color: rgba(255,255,255,.96);
+    font-weight: 700;
+    font-size:1.25vh;
+    text-transform: uppercase;
+}
+
+
+
+  .mapboxgl-popup-content h5 {
+    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+    background-color: rgba(61, 133, 226, 0.9);
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    color: rgba(255,255,255,.86);
+    padding: 2vh 2vh 2.25vh 2vh;
+    font-size: 1.15vh;
+    letter-spacing: 1px;
+    font-weight: 400;
+
+  }
+
+  .mapboxgl-popup-content:hover h5 {
+    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
+    color: rgba(255,255,255,1);
+    }
+
+  .mapboxgl-popup-content:hover h5::before {
+    color: rgba(255,255,255,1);
+  }
+
+  .mapboxgl-ctrl-top-right {
+      width: 100vw;
+  }
+  .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+    padding: 2vh;
+    width:100%;
+    margin: 0 0 0 0;
+    text-align:center;
+  }
+
+  div.item:hover #orangeMarker .cls-1, div.item:hover #orangeMarker .cls-2 {
+      fill: rgba(94, 215, 255, 1);
+  }
+
+  input[type="text"] {
+      width: 100%;
+      height:4vh;
+      border-radius: 10px;
+      border: 1px solid rgba(2, 67, 141, 0);
+      text-indent: 3vh;
+  }
+
+  a.title {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size:1.25vh;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 86, 34, 0.884);
+      display:block;
+      padding:2vh 2vh 2vh 4.25vh;
+      
+      color: rgba(255,255,255,.9) !important;
+    background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2);
+    
+  }
+
+  a.title:hover {
+      text-decoration: none;
+  }
+div.item p {
+    margin-top:1vh;
+}
+div.item div {
+    font-size: 1.25vh;
+    color: rgba(255,255,255,.9);
+    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+    background-color: rgba(61, 133, 226, 0.9);
+    padding: 2vh 2vh 2vh 2vh;
+}
+
+div.item hr {
+    display: none;
+}
+
+
+#orangeMarker {
+    width: 16px;
+    margin-right: 1vh;
+    vertical-align: bottom;
+    top: 1.85vh;
+    position: absolute;
+    left: 2vh;
+}
+
+  div.item {
+      overflow: hidden;
+      background-color: rgba(255,255,255,.7);
+      margin-bottom: 2vh;
+      border-radius:10px;
+      position:relative;
+  }
+
+  div.item:hover {
+      background-color: rgba(255,255,255,1);
+      
+  }
+
+  section.pnumber {
+      display: block;
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top:1.5vh;
+      padding-top:1.5vh;
+  }
+
+  .pbold {
+      color: #fff;
+      font-weight: 700;
+  }
+
+  .sidebar[_ngcontent-c0] {
+    
+    padding: 2vh 2vh 0px 2vh !important;
+    }
+  @media screen and (max-width: 730px) {
+        ul#navigationBar{
+            display: none !important;
+        }
+        #appNavBar svg {
+            display:inline-block;
+            max-height: 3vh;
+            opacity: .8;
+            margin-top: 1vh;
+            float: right;
+            width: 3vh;
+
+        }
+        input[type="text"] {
+            width: 100%;
+            height:4vh;
+            border-radius: 10px;
+            border: 1px solid rgba(2, 67, 141, 0);
+            text-indent: 3vh;
+        }
+    }
+
+
+@-ms-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+@-moz-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+@-webkit-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+@keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+  
 
 /* .clickShow {
     margin-top:75vh !important;

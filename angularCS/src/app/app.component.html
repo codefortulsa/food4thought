@@ -10,7 +10,7 @@
       <div id="frame">
         <h1 id="summertimeMeals" class="tween">Meal<span class="headlineMap">Maps</span></h1>
         <p class="_lead">Find free meals in your area.</p>
-      <p class="text-center"> <a href="#second"><button type="Submit" class="btn btn-primary btn-sm center tween">Find Food!</button></a></p>
+      <p class="text-center"> <a href="#second"><button id="myGeo" (click)="getLocation()" type="Submit" class="btn btn-primary btn-sm center tween">Find Food!</button></a></p>
     </div>
     </div><!--closes frame-->
   </div><!--closes _jumbotron-->
@@ -27,9 +27,10 @@
     <div class='sidebar'>
       <div class="sidebarWrap">
         <div class='heading'>
-            <h2>Meal Sites Close To You</h2>
+            <h2>Meals In Your Area :</h2>
           </div>
         <div id='listings' class='listings'></div>
+        <div id="bottomlistings"></div>
       </div>
     </div><!-- closes sidebar -->
    
