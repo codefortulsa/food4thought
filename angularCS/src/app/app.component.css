@@ -521,8 +521,8 @@ FLY IN ONTO SPECIFIC ADDRESS CSS STUFF....a few things still don't work correctl
 .marker {
   border: none;
   cursor: pointer;
-  height: 56px;
-  width: 56px;
+  height: 28px;
+  width: 28px;
   background-image: url("../assets/sgMapMarker.png");
   background-color: rgba(0, 0, 0, 0);
 }
@@ -539,7 +539,7 @@ FLY IN ONTO SPECIFIC ADDRESS CSS STUFF....a few things still don't work correctl
   border-radius: 0;
   position: relative;
   top: 0;
-  /* width: 800px; */
+  width: 800px;
   margin-top: 0;
 }
 
