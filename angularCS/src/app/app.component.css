@@ -56,7 +56,7 @@ body, h1 {
   font-size:11.5vh;
   letter-spacing: -4px;
   line-height:5vh;
-  padding-top:30vh;
+  padding-top:37vh;
   color: rgba(255,255,255,.95) !important;
   margin-bottom: 3vh;
   
@@ -66,6 +66,7 @@ body, h1 {
 .headlineMap {
   color: #5ed7ff;
   font-family: "proxima-soft-condensed", sans-serif !important;
+  /* color: #2196F3;} */
 }
 
 ._lead {
@@ -88,9 +89,10 @@ body, h1 {
 
 .btn-primary {
   background-color: rgba(94, 215, 255, 0.47);
+  /* background-color: #2196F3; */
   border: 1px solid rgba(94, 215, 255, 0); 
   padding:.95vh 3vh .95vh 3vh;
-  border-radius:10px;
+  border-radius:6px;
   font-size:2.75vh;
   font-size: 900;
   color: rgba(255,255,255,1);
@@ -102,7 +104,7 @@ body, h1 {
   background-color: rgba(94, 215, 255, 1);
   border-color : #5ed7ff; 
   padding:.95vh 4vh .95vh 4vh;
-  border-radius:15px;
+  border-radius:6px;
   /* color: rgba(1, 81, 174, 0.81); */
   
   
@@ -142,7 +144,7 @@ body, h1 {
   padding:5vh 1vh 1vh 1vh;
   
   display: inline-block;
-  max-width:400px;
+  max-width:500px;
   width:50vw;
   position: absolute !important;
   top: 6vh;
@@ -204,6 +206,11 @@ body, h1 {
 
 
 #map {
+  position:fixed;
+  top:6vh;
+  bottom: 0;
+  left:0;
+  right:0;
   height:94vh;
   min-height:94vh;
   max-height:100%;
@@ -224,11 +231,13 @@ body, h1 {
 
 
 .heading h2 {
-  font-size: 1.5vh;
-  line-height:4vh;
-  color: rgba(255,255,255,.9) !important;
-    background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.4);
+  font-size: 1.2vh;
+  border-bottom:1px #ddd;
+  text-align: left;
+  color: rgba(48, 47, 47, 0.9) !important;
+  padding: 1vh 3vh 0vh 3vh;
+    /* background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.4); */
 
 }
 
@@ -237,8 +246,14 @@ body, h1 {
 }
 
 .sidebarWrap {
-  position:relative;
- border-radius:10px;
+ position:fixed;
+ width:30vw;
+ top:15.5vh;
+ border-radius:7px;
+ padding-bottom:4vh;
+ background-color: #Ffffff4d;
+box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+ /* border: 1px solid #5ed7ff; */
 }
 
 
@@ -246,7 +261,7 @@ body, h1 {
   
   color: rgba(255,255,255,.9);
   text-align: center !important;
- height:4vh;
+
   
   
 }

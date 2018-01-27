@@ -6,13 +6,20 @@ body {
 .marker {
     border: none;
     cursor: pointer;
-    height: 56px;
-    width: 56px;
+    height:20px;
+    width: 20px;
     background-image: url("./assets/marker.svg");
     background-repeat:no-repeat;
     background-color: rgba(0, 0, 0, 0);
+    transition: all 0.2s ease;
   }
-a, a:hover, ul li a, ul li a:hover, .mapboxgl-popup-content , .mapboxgl-popup-content:hover, .sidebar, .sidebar:hover, div.item, div.item:hover, #orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, div.item:hover .cls-2 {
+
+  .marker:hover {
+      height:18px;
+      width:18px;
+      
+  }
+.marker:hover, a, a:hover, ul li a, ul li a:hover, .mapboxgl-popup-content , .mapboxgl-popup-content:hover, .sidebar, .sidebar:hover, div.item, div.item:hover, #orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, div.item:hover .cls-2 {
     transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease!important;
     -moz-transition: all 0.2s ease !important;
@@ -22,7 +29,7 @@ a, a:hover, ul li a, ul li a:hover, .mapboxgl-popup-content , .mapboxgl-popup-co
 
 #appNavBar {
     background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2);
+    box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35);
     border-bottom:1px solid rgba(2, 67, 141, 1);
     min-height: 7vh;
     height: 7vh;
@@ -84,17 +91,20 @@ ul#navigationBar {
 #navigationBar li a {
     color: rgba(255,255,255,.9);
     margin-right: 5vh;
-    font-size: 2vh;
+    font-size: 1.75vh;
     display: inline-block;
     height: 6vh;
-    line-height: 5vh;
+    line-height: 6vh;
     border-bottom: 2px solid rgba(255,255,255,0);
     padding: 0 1vh;
+    font-family: "proxima-soft-condensed", sans-serif !important;
+text-transform: uppercase;
 }
   
 #navigationBar li a:hover {
-    border-bottom: 2px solid rgba(255,255,255,1);
+    /* border-bottom: 2px solid rgba(255,255,255,1); */
     text-decoration: none !important;
+    color: rgba(94, 215, 255,.6)
 }
 
 
@@ -105,7 +115,8 @@ ul#navigationBar {
     border-left:1px solid rgba(94, 215, 255, 1); */
     padding:3vh;
     overflow:scroll;
-    border-top: 1px solid rgba(255, 86, 34, 1);
+    margin-top: -1px;
+    /* border-top: 1px solid rgba(255, 86, 34, 1); */
     /* box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
       background-color: rgba(61, 133, 226, 0.9); */
   }
@@ -113,9 +124,10 @@ ul#navigationBar {
 
   div#bottomlistings {
     height: 4vh;
-    background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.7);
+    /* background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.7); */
     margin-top: 2vh;
+    display: none !important;
     
 }
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
@@ -211,7 +223,7 @@ ul#navigationBar {
   }
 
   div.item:hover #orangeMarker .cls-1, div.item:hover #orangeMarker .cls-2 {
-      fill: rgba(94, 215, 255, 1);
+      fill: rgba(255, 86, 34, 0.484);
   }
 
   input[type="text"] {
@@ -222,18 +234,24 @@ ul#navigationBar {
       text-indent: 3vh;
   }
 
+  .sidebar {
+      cursor: grab;
+  }
+
   a.title {
       font-weight: 700;
       text-transform: uppercase;
       font-size:1.25vh;
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 86, 34, 0.884);
+      /* border-bottom: 1px solid rgba(255, 86, 34, 0.884); */
+      border-bottom:1px solid rgba(115, 89, 81, 0.24);
       display:block;
-      padding:2vh 2vh 2vh 4.25vh;
-      
-      color: rgba(255,255,255,.9) !important;
-    background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2);
+      padding:2.5vh 0 .5vh 0;
+      color: rgb(49, 45, 43);
+      margin: 0 1.5vh 0 3.25vh;
+      /* color: rgba(255,255,255,.9) !important; */
+    /* background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2); */
     
   }
 
@@ -245,10 +263,10 @@ div.item p {
 }
 div.item div {
     font-size: 1.25vh;
-    color: rgba(255,255,255,.9);
+    /* color: rgba(255,255,255,.9);
     box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
-    background-color: rgba(61, 133, 226, 0.9);
-    padding: 2vh 2vh 2vh 2vh;
+    background-color: rgba(61, 133, 226, 0.9); */
+    padding:1vh 1.5vh 1.5vh 3.25vh;
 }
 
 div.item hr {
@@ -257,19 +275,19 @@ div.item hr {
 
 
 #orangeMarker {
-    width: 16px;
+    width: 11px;
     margin-right: 1vh;
     vertical-align: bottom;
-    top: 1.85vh;
+    top: 2.5vh;
     position: absolute;
-    left: 2vh;
+    left: 1.5vh;
 }
 
   div.item {
       overflow: hidden;
-      background-color: rgba(255,255,255,.7);
+      background: radial-gradient(rgba(255,255,255,.1), rgba(255,255,255,.2), rgba(255,255,255,.9));
       margin-bottom: 2vh;
-      border-radius:10px;
+      border-radius:6px;
       position:relative;
   }
 
@@ -280,13 +298,15 @@ div.item hr {
 
   section.pnumber {
       display: block;
-      border-top: 1px solid rgba(255,255,255,.1);
+      /* border-top: 1px solid rgba(255,255,255,.1); */
+      /* border-top: 1px solid rgba(0,0,0,.1);
       margin-top:1.5vh;
-      padding-top:1.5vh;
+      padding-top:1.5vh; */
   }
 
   .pbold {
-      color: #fff;
+      /* color: #fff; */
+      color: #000;
       font-weight: 700;
   }
 
