@@ -154,7 +154,7 @@ export class AppComponent {
 
     });
   })
-  
+
 
 
 
@@ -175,13 +175,18 @@ export class AppComponent {
 
   createPopUp(currentFeature) {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
+
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
 
     var popup = new mapboxgl.Popup({ closeOnClick: false })
+
       .setLngLat(currentFeature.geometry.coordinates)
+
       .setHTML('<h3>'+currentFeature.properties.Name+'</h3>' +
-        '<h5>' + currentFeature.properties.Address + '</h5>')
+        '<h5>' + currentFeature.properties.Address + '</h5>'+
+        "<p>Serving: "+currentFeature.properties.Meals+"</p>")
+      //
       .addTo(this.map);
 
   };
@@ -213,6 +218,9 @@ export class AppComponent {
       // and fill it with the city and phone number
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.Address;
+      if(prop.Meals.length > 0){
+        details.innerHTML += '<section><span class="pbold">SERVING : </span>'+prop.Meals+"</section>";
+      }
       if (prop.Phone) {
         details.innerHTML += '<section class="pnumber"><span class="pbold">CALL : </span>' + prop.Phone +'</section>';
       }
