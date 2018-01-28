@@ -203,22 +203,34 @@ export class AppComponent {
       // Create a new link with the class 'title' for each store
       // and fill it with the store address
       var link = listing.appendChild(document.createElement('a'));
-      link.href = '#';
+      link.href = '#map';
       link.className = 'title';
       link.setAttribute("dataPosition", i.toString());
       // link.dataPosition = i;
+<<<<<<< HEAD
       link.innerHTML = prop.Name;
+=======
+      link.innerHTML = '<svg id="orangeMarker" data-name="orangeMarker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 14"><defs><style>.cls-1,.cls-2{fill:#f15a24;}.cls-1{opacity:0.45;}</style></defs><title>Untitled-2</title><ellipse class="cls-1" cx="4.5" cy="13" rx="4" ry="1"/><path class="cls-2" d="M106.5,84h0a4.49,4.49,0,0,0-3.89,6.74l3.6,6.24a.33.33,0,0,0,.57,0l3.6-6.24A4.49,4.49,0,0,0,106.5,84Zm0,7.49a3,3,0,1,1,3-3A3,3,0,0,1,106.5,91.5Z" transform="translate(-102 -84)"/></svg>' + prop.Name;
+>>>>>>> lesleysbranch
 
       // Create a new div with the class 'details' for each store
       // and fill it with the city and phone number
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.Address;
       if (prop.Phone) {
+<<<<<<< HEAD
         details.innerHTML += ' &middot; ' + prop.Phone;
       }
       if (prop.distance) {
         var roundedDistance = Math.round(prop.distance * 100) / 100;
         details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>'+"<hr>";
+=======
+        details.innerHTML += '<section class="pnumber"><span class="pbold">CALL : </span>' + prop.Phone +'</section>';
+      }
+      if (prop.distance) {
+        var roundedDistance = Math.round(prop.distance * 100) / 100;
+        details.innerHTML += '<p class="roundedDistance"><strong>' + roundedDistance + ' miles away</strong></p>';
+>>>>>>> lesleysbranch
       }
 
       link.addEventListener('click', (e) => {

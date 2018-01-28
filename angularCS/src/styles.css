@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* You can add global styles to this file, and also import other style files */
 .marker {
     border: none;
@@ -7,3 +8,361 @@
     background-image: url("./assets/sgMapMarker.png");
     background-color: rgba(0, 0, 0, 0);
   }
+=======
+body {
+    
+}
+
+
+.marker {
+    border: none;
+    cursor: pointer;
+    height:20px;
+    width: 20px;
+    background-image: url("./assets/marker.svg");
+    background-repeat:no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.2s ease;
+  }
+
+  .marker:hover {
+      height:18px;
+      width:18px;
+      
+  }
+.marker:hover, a, a:hover, ul li a, ul li a:hover, .mapboxgl-popup-content , .mapboxgl-popup-content:hover, .sidebar, .sidebar:hover, div.item, div.item:hover, #orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, div.item:hover .cls-2 {
+    transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease!important;
+    -moz-transition: all 0.2s ease !important;
+    -o-transition: all 0.2s ease !important;
+
+}
+
+#appNavBar {
+    background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35);
+    border-bottom:1px solid rgba(2, 67, 141, 1);
+    min-height: 7vh;
+    height: 7vh;
+    max-height: 7vh;
+    padding: 0 2vh 0 2vh;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 1 !important;
+    white-space:nowrap;
+    
+  }
+
+#appNavBar svg {
+    display: none;
+}
+
+  .tween {
+    transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease!important;
+    -moz-transition: all 0.2s ease !important;
+    -o-transition: all 0.2s ease !important;
+  }
+
+
+  #appNavBar h2.summertimeMeals a{
+    font-size:4vh !important;
+    color: rgba(255,255,255,.9);
+    line-height: 7vh;
+    font-family: 'proxima-soft-condensed', sans-serif;
+    display: inline-block;
+    float:left;
+    text-decoration: none;
+  }
+  
+  .headlineMap {
+    color: #5ed7ff;
+    font-family: "proxima-soft-condensed", sans-serif !important;
+  }
+
+  h2.summertimeMeals a:hover {
+      color: rgba(255,255,255,1);
+
+  }
+
+ul#navigationBar {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    list-style-type: none !important;
+    display: inline-block !important;
+    float:right;
+}
+
+#navigationBar li {
+    display: inline-block !important;
+    list-style-type: none !important;
+}
+
+#navigationBar li a {
+    color: rgba(255,255,255,.9);
+    margin-right: 5vh;
+    font-size: 1.75vh;
+    display: inline-block;
+    height: 6vh;
+    line-height: 6vh;
+    border-bottom: 2px solid rgba(255,255,255,0);
+    padding: 0 1vh;
+    font-family: "proxima-soft-condensed", sans-serif !important;
+text-transform: uppercase;
+}
+  
+#navigationBar li a:hover {
+    /* border-bottom: 2px solid rgba(255,255,255,1); */
+    text-decoration: none !important;
+    color: rgba(94, 215, 255,.6)
+}
+
+
+#listings {
+    height:60vh;
+    /* animation: fadeIn .1s ease ; */
+    /* border-right:1px solid rgba(94, 215, 255, 1);
+    border-left:1px solid rgba(94, 215, 255, 1); */
+    padding:3vh;
+    overflow:scroll;
+    margin-top: -1px;
+    /* border-top: 1px solid rgba(255, 86, 34, 1); */
+    /* box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+      background-color: rgba(61, 133, 226, 0.9); */
+  }
+
+
+  div#bottomlistings {
+    height: 4vh;
+    /* background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.7); */
+    margin-top: 2vh;
+    display: none !important;
+    
+}
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+      display: none !important;
+  }
+
+
+.mapboxgl-popup-close-button {
+    top: 3vh;
+    right: 3vh;
+    color: rgba(255,255,255,1);
+}
+
+.mapboxgl-popup-close-button:hover {
+    color: rgba(255, 86, 34, 0.884);
+}
+
+.mapboxgl-popup-content {
+    background-color: rgba(0,0,0,0);
+    border: 1px dashed rgba(2, 67, 141, 0.719);
+    padding:2.5vh;
+    border-radius: 10px;
+    animation: fadeIn .3s ease 1;
+    -webkit-animation: fadeIn .3s ease 1;
+    -moz-animation: fadeIn .3s ease 1;
+    -o-animation: fadeIn .3s ease 1;  
+}
+
+.mapboxgl-popup-content:hover {
+    border:1px solid rgba(94, 215, 255, 1);
+    
+}
+.mapboxgl-popup-content h3 {
+    color: rgba(255,255,255,.9) !important;
+    background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2);
+    border-top-right-radius:8px;
+    border-top-left-radius:8px;
+    padding:2vh 2vh 1.75vh 2vh;
+    font-size: 1.35vh;
+    font-weight:700;
+    letter-spacing: 1px;
+    margin: 0 0 0 0;
+    border-bottom: 1px solid rgba(255, 86, 34, 1);
+    text-align: center;
+    
+  }
+
+
+ 
+  h5::before {
+    content: 'Street Address :';
+    display: block;
+    margin-bottom:.5vh;
+    color: rgba(255,255,255,.96);
+    font-weight: 700;
+    font-size:1.25vh;
+    text-transform: uppercase;
+}
+
+
+
+  .mapboxgl-popup-content h5 {
+    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+    background-color: rgba(61, 133, 226, 0.9);
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    color: rgba(255,255,255,.86);
+    padding: 2vh 2vh 2.25vh 2vh;
+    font-size: 1.15vh;
+    letter-spacing: 1px;
+    font-weight: 400;
+
+  }
+
+  .mapboxgl-popup-content:hover h5 {
+    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
+    color: rgba(255,255,255,1);
+    }
+
+  .mapboxgl-popup-content:hover h5::before {
+    color: rgba(255,255,255,1);
+  }
+
+  .mapboxgl-ctrl-top-right {
+      width: 100vw;
+  }
+  .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+    padding: 2vh;
+    width:100%;
+    margin: 0 0 0 0;
+    text-align:center;
+  }
+
+  div.item:hover #orangeMarker .cls-1, div.item:hover #orangeMarker .cls-2 {
+      fill: rgba(255, 86, 34, 0.484);
+  }
+
+  input[type="text"] {
+      width: 100%;
+      height:4vh;
+      border-radius: 10px;
+      border: 1px solid rgba(2, 67, 141, 0);
+      text-indent: 3vh;
+  }
+
+  .sidebar {
+      cursor: grab;
+  }
+
+  a.title {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size:1.25vh;
+      text-decoration: none;
+      /* border-bottom: 1px solid rgba(255, 86, 34, 0.884); */
+      border-bottom:1px solid rgba(115, 89, 81, 0.24);
+      display:block;
+      padding:2.5vh 0 .5vh 0;
+      color: rgb(49, 45, 43);
+      margin: 0 1.5vh 0 3.25vh;
+      /* color: rgba(255,255,255,.9) !important; */
+    /* background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2); */
+    
+  }
+
+  a.title:hover {
+      text-decoration: none;
+  }
+div.item p {
+    margin-top:1vh;
+}
+div.item div {
+    font-size: 1.25vh;
+    /* color: rgba(255,255,255,.9);
+    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+    background-color: rgba(61, 133, 226, 0.9); */
+    padding:1vh 1.5vh 1.5vh 3.25vh;
+}
+
+div.item hr {
+    display: none;
+}
+
+
+#orangeMarker {
+    width: 11px;
+    margin-right: 1vh;
+    vertical-align: bottom;
+    top: 2.5vh;
+    position: absolute;
+    left: 1.5vh;
+}
+
+  div.item {
+      overflow: hidden;
+      background: radial-gradient(rgba(255,255,255,.1), rgba(255,255,255,.2), rgba(255,255,255,.9));
+      margin-bottom: 2vh;
+      border-radius:6px;
+      position:relative;
+  }
+
+  div.item:hover {
+      background-color: rgba(255,255,255,1);
+      
+  }
+
+  section.pnumber {
+      display: block;
+      /* border-top: 1px solid rgba(255,255,255,.1); */
+      /* border-top: 1px solid rgba(0,0,0,.1);
+      margin-top:1.5vh;
+      padding-top:1.5vh; */
+  }
+
+  .pbold {
+      /* color: #fff; */
+      color: #000;
+      font-weight: 700;
+  }
+
+  .sidebar[_ngcontent-c0] {
+    
+    padding: 2vh 2vh 0px 2vh !important;
+    }
+  @media screen and (max-width: 730px) {
+        ul#navigationBar{
+            display: none !important;
+        }
+        #appNavBar svg {
+            display:inline-block;
+            max-height: 3vh;
+            opacity: .8;
+            margin-top: 1vh;
+            float: right;
+            width: 3vh;
+
+        }
+        input[type="text"] {
+            width: 100%;
+            height:4vh;
+            border-radius: 10px;
+            border: 1px solid rgba(2, 67, 141, 0);
+            text-indent: 3vh;
+        }
+    }
+
+
+@-ms-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+@-moz-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+@-webkit-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+@keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+  
+
+/* .clickShow {
+    margin-top:75vh !important;
+} */
+
+/* .sidebarWrap {
+    top: 0vh !important;
+}
+
+.sidebarWrap.clickShow {
+    top:75vh !important;
+} */
+>>>>>>> lesleysbranch

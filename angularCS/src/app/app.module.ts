@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http'
 import { AppRoutingModule } from './app-routing.module';
 import { MapService } from './map.service';
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent
   ],
   imports: [
     FormsModule,

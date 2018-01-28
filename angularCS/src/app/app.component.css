@@ -2,12 +2,286 @@
 
 #map { position:absolute; top:0; bottom:0; width:100%; } */
 
-#menu {
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+!important;
+}
+
+body, h1 {
+  font-family: "proxima-soft", sans-serif !important;
+}
+
+.mapboxgl-canvas {
+
+  min-width: 100vw;
+  position: relative !important;
+
+}
+
+.tween {
+  transition: all 0.2s ease !important;
+  -webkit-transition: all 0.2s ease!important;
+  -moz-transition: all 0.2s ease !important;
+  -o-transition: all 0.2s ease !important;
+}
+
+
+._lead, ._jumbotron {
+  text-align: center !important;
+}
+
+
+
+._jumbotron {
+  
+  height: 100%;
+  background-image: url(../assets/mapScreen.png);
+  background-attachment: fixed;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  color: rgba(255,255,255,.9);
+ 
+}
+
+.overlay {
+  background-color: rgba(2, 67, 141, .85) ;
+  height: 100%;
+  width:100%;
+  padding:2vh;
+}
+
+#summertimeMeals {
+  font-family: "proxima-soft-condensed", sans-serif !important;
+  font-size:11.5vh;
+  letter-spacing: -4px;
+  line-height:5vh;
+  padding-top:37vh;
+  color: rgba(255,255,255,.95) !important;
+  margin-bottom: 3vh;
+  
+  
+}
+
+.headlineMap {
+  color: #5ed7ff;
+  font-family: "proxima-soft-condensed", sans-serif !important;
+  /* color: #2196F3;} */
+}
+
+._lead {
+  
+  padding: 0 2vh 0 2vh;
+  display: block;
+  font-size:2.7vh !important;
+ 
+  line-height:5vh;
+  
+}
+
+#frame {
+  padding: 2vh;
+  /* border:1px solid rgba(255,255,255,.1); */
+  width:100%;
+  height:100%;
+  border-radius:20px;
+}
+
+.btn-primary {
+  background-color: rgba(94, 215, 255, 0.47);
+  /* background-color: #2196F3; */
+  border: 1px solid rgba(94, 215, 255, 0); 
+  padding:.95vh 3vh .95vh 3vh;
+  border-radius:6px;
+  font-size:2.75vh;
+  font-size: 900;
+  color: rgba(255,255,255,1);
+  
+  line-height: 4vh;
+}
+
+.btn-primary:hover {
+  background-color: rgba(94, 215, 255, 1);
+  border-color : #5ed7ff; 
+  padding:.95vh 4vh .95vh 4vh;
+  border-radius:6px;
+  /* color: rgba(1, 81, 174, 0.81); */
+  
+  
+  
+}
+
+
+#appNavBar h2.summertimeMeals {
+  font-size:4vh !important;
+  color: rgba(255,255,255,.9);
+  line-height: 7vh;
+  
+}
+
+#appNavBar {
+  background-color: rgba(1, 81, 174, 1);
+  border-bottom:1px solid rgba(2, 67, 141, 0.719);
+  min-height: 7vh;
+  height: 7vh;
+  padding: 0 2vh 0 2vh;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 1 !important;
+  
+}
+
+#first {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.sidebar {
+  height: 100% !important;
+  min-height:300px !important;
+  max-height:100vh !important;
+  padding:5vh 1vh 1vh 1vh;
+  
+  display: inline-block;
+  max-width:500px;
+  width:50vw;
+  position: absolute !important;
+  top: 6vh;
+  left: 0vh;
+  background-color: rgba(255,255,255,0);
+  border-top-right-radius:20px;
+  border-top-left-radius:20px;
+  color: #fff;
+  
+}
+
+._container[_ngcontent-c0] {
+  margin-top: 7vh;
+  height: 93vh;
+  max-height: 93vh;
+}
+
+._container2 {
+  position: absolute;
+  width: 100vw;
+  height:100vh;
+  z-index: -100 !important;
+  /* background-color:rgba(1, 81, 174, 1); */
+  
+}
+
+
+
+#mapSidebarContainer {
+  
+  /* height:93vh;
+  min-height:93vh;
+  max-height:93vh; */
+
+  height:100vh;
+  min-height:100vh;
+  max-height:100vh;
+  position:absolute;
+  
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* margin-top: 7vh !important; */
+  z-index: -1 !important;
+  
+  
+}
+
+#second::before { 
+  display: block !important;; 
+  content: " " !important;; 
+  margin-top: -7vh !important;;
+  height: 7vh !important;; 
+  visibility: hidden !important;; 
+  pointer-events: none !important;;
+}
+
+
+
+
+#map {
+  position:fixed;
+  top:6vh;
+  bottom: 0;
+  left:0;
+  right:0;
+  height:94vh;
+  min-height:94vh;
+  max-height:100%;
+  z-index: -2 !important;
+  /* margin-top: 7vh; */
+}
+
+ /* #map .mapboxgl-ctrl-top-left {
+  margin-top: 7vh !important;
+} */
+
+.pad2[_ngcontent-c0] {
+  padding: 0 0 0 0 !important;
+}
+
+
+
+
+
+.heading h2 {
+  font-size: 1.2vh;
+  border-bottom:1px #ddd;
+  text-align: left;
+  color: rgba(48, 47, 47, 0.9) !important;
+  padding: 1vh 3vh 0vh 3vh;
+    /* background-color: rgba(2, 67, 141, 1);
+    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.4); */
+
+}
+
+.sidebar, .sidebarWrap {
+  overflow: hidden !important;
+}
+
+.sidebarWrap {
+ position:fixed;
+ width:30vw;
+ top:15.5vh;
+ border-radius:7px;
+ padding-bottom:4vh;
+ background-color: #Ffffff4d;
+box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+ /* border: 1px solid #5ed7ff; */
+}
+
+
+.heading[_ngcontent-c0] {
+  
+  color: rgba(255,255,255,.9);
+  text-align: center !important;
+
+  
+  
+}
+
+/* .mapboxgl-ctrl-top-left {
+  top: 0;
+  right: 5vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+
+} */
+/* #menu {
         position: absolute;
         background: #fff;
         padding: 10px;
         font-family: 'Open Sans', sans-serif;
-    }
+    } */
 
     /* <style> */
       /* body {
@@ -46,177 +320,30 @@
       gets 2/3 of the page. You can adjust this to your personal liking. */
       .sidebar {
         color: black;
-        width: 33.3333%;
+        width: 35vw;
+        min-width:300px;
         display: inline-block;
         overflow: scroll;
-        height: 500px;
+        min-height: 500px;
+        
         /* background-color: salmon; */
       }
 
-      .map {
-        display: inline-block;
-        vertical-align: top;
-        height: 500px;
-        border-left: 1px solid #fff;
-        /* position: absolute; */
-        left: 0%;
-        width: 65%;
-        top: 0;
-        bottom: 0;
+
+      div.item a.title {
+        font-size: 2vh !important;
       }
-
-      .pad2 {
-        padding: 20px;
-        /* -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box; */
-      }
-      .mainbod {
-        height: 50%;
-      }
-
-    /* </style> */
-
-/* SIDE BAR LOAD DATA STUFF */
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-h1 {
-  font-size: 22px;
-  margin: 0;
-  font-weight: 400;
-  line-height: 20px;
-  padding: 20px 2px;
-}
-
-a {
-  color: #404040;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #101010;
-}
-
-/* .sidebar {
-  position: absolute;
-  width: 33.3333%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  border-right: 1px solid rgba(0, 0, 0, 0.25);
-} */
-
-.pad2 {
-  padding: 20px;
-}
-
-/* .map {
-  position: absolute;
-  left: 33.3333%;
-  width: 66.6666%;
-  top: 0;
-  bottom: 0;
-} */
-
-.heading {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  height: 60px;
-  line-height: 60px;
-  padding: 0 10px;
-}
-
-.listings {
-  height: 100%;
-  overflow: auto;
-  padding-bottom: 60px;
-}
-
-.listings .item {
-  display: block;
-  border-bottom: 1px solid #eee;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.listings .item:last-child { border-bottom: none; }
-
-.listings .item .title {
-  display: block;
-  color: #00853e;
-  font-weight: 700;
-}
-
-.listings .item .title small { font-weight: 400; }
-
-.listings .item.active .title,
-.listings .item .title:hover { color: #8cc63f; }
-
-.listings .item.active {
-  background-color: #f8f8f8;
-}
-
-::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-left: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-track {
-  background: none;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00853e;
-  border-radius: 0;
-}
-
-.clearfix { display: block; }
-
-.clearfix::after {
-  content: '.';
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
 
 /* ======================================================================
 FLY IN ONTO SPECIFIC ADDRESS CSS STUFF....a few things still don't work correctly
 ====================================================================== */
 
 /* Marker tweaks */
-.mapboxgl-popup-close-button {
-  display: none;
-}
-
-.mapboxgl-popup-content {
-  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-  padding: 0;
-  width: 180px;
-}
-
-.mapboxgl-popup-content-wrapper {
-  padding: 1%;
-}
 
 .mapboxgl-popup-content h3 {
-  background: #91c949;
-  color: #fff;
-  margin: 0;
-  display: block;
-  padding: 10px;
-  border-radius: 3px 3px 0 0;
-  font-weight: 700;
-  margin-top: -15px;
+  color: #fff !important;
 }
+
 
 .mapboxgl-popup-content h4 {
   margin: 0;
@@ -244,9 +371,15 @@ FLY IN ONTO SPECIFIC ADDRESS CSS STUFF....a few things still don't work correctl
 /* ADDING CUSTOM MARKERS STYLING! */
 .marker {
   border: none;
+<<<<<<< HEAD
   cursor: pointer;
   height: 28px;
   width: 28px;
+=======
+  cursor: pointer !important;;
+  height: 28px;
+  width: 28px !important;
+>>>>>>> lesleysbranch
   background-image: url("../assets/sgMapMarker.png");
   background-color: rgba(0, 0, 0, 0);
 }

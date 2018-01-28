@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics": "0.0.45",
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
@@ -30,13 +31,15 @@
     "@yaga/generic-geojson": "^1.0.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
+    "gl": "^4.0.4",
+    "mapbox": "^1.0.0-beta9",
     "mapbox-gl": "^0.43.0",
     "mapbox-gl-geocoder": "^2.0.1",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.3",
+    "@angular/cli": "^1.6.3",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
     "@types/jasmine": "~2.5.53",
