@@ -23,14 +23,21 @@ export class AppComponent {
   mealSites: any;
   map:mapboxgl.Map;
   mapService: MapService;
+  userGPS: [number, number]= [0, 0];
   // geocoder: MapboxGeocoder;
 
   constructor(private _mapService: MapService) {
     // this.mealSites = this._mapService.mealSites;
+
   }
 
   ngOnInit(){
-
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        // this.location = position.coords;
+        this.userGPS = [position.coords.latitude, position.coords.longitude];
+      })
+    }
 
     (mapboxgl as any).accessToken = this._mapService.mapToken;
     this.map = new mapboxgl.Map({
@@ -178,14 +185,17 @@ export class AppComponent {
 
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
-
+    console.log(String(this.userGPS[0]));
     var popup = new mapboxgl.Popup({ closeOnClick: false })
 
       .setLngLat(currentFeature.geometry.coordinates)
 
-      .setHTML('<h3>'+currentFeature.properties.Name+'</h3>' +
-        '<h5>' + currentFeature.properties.Address + '</h5>'+
-        "<p>Serving: "+currentFeature.properties.Meals+"</p>")
+      .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
+      '<h5>' + currentFeature.properties.Address + '</h5>'+
+        "<p>Serving: "+currentFeature.properties.Meals+"</p>"+
+        "<a href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
+        +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
+          '<p>Get Directions</p>'+'</a>')
       //
       .addTo(this.map);
 
@@ -208,7 +218,7 @@ export class AppComponent {
       // Create a new link with the class 'title' for each store
       // and fill it with the store address
       var link = listing.appendChild(document.createElement('a'));
-      link.href = '#map';
+      link.href = '';
       link.className = 'title';
       link.setAttribute("dataPosition", i.toString());
       // link.dataPosition = i;
@@ -228,6 +238,9 @@ export class AppComponent {
         var roundedDistance = Math.round(prop.distance * 100) / 100;
         details.innerHTML += '<p class="roundedDistance"><strong>' + roundedDistance + ' miles away</strong></p>';
       }
+      details.innerHTML += "<a href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
+      +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
+        '<span>Get Directions</span>'+'</a>'
 
       link.addEventListener('click', (e) => {
         // Update the currentFeature to the store associated with the clicked link
@@ -261,6 +274,7 @@ export class AppComponent {
     let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position => {
+        console.log(position.coords);
         // this.location = position.coords;
         let featureLocation:Feature<GeoJSONGeometry> = {
           type: "Feature",
@@ -318,6 +332,8 @@ export class AppComponent {
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position => {
         // this.location = position.coords;
+        this.userGPS = [position.coords.latitude, position.coords.longitude];
+        console.log(this.userGPS);
         let featureLocation:Feature = {
           type: "Feature",
           geometry: {
