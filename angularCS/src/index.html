@@ -4,14 +4,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
-      $(".heading").click(function(){
-        if($(".sidebarWrap").hasClass('.clickShow')){
-          $(".sidebarWrap").animate({top: '0vh'});
-          $(".sidebarWrap").removeClass(".clickShow");
-        } else {
-        $(".sidebarWrap").animate({top: '75vh'});
-        $(".sidebarWrap").addClass(".clickShow");}
-    });  
+      $('body').bind('touchstart', function(){});
+      $('#expandCollapse').append('SEE LESS -');
+    $(".heading").click(function(){
+      
+      if( $('.heading').hasClass('.isOpen')){
+        $('#listings').slideUp();
+        $('#bottomListings').slideUp();
+        $('.heading').removeClass('.isOpen')
+      } else {
+      $('#listings').slideDown();
+      $('#bottomListings').slideDown();
+      $('.heading').addClass('.isOpen');
+      }
+    })
       $("a").on('click', function(event) {
           if (this.hash !== "") {
             event.preventDefault();
@@ -23,6 +29,11 @@
             });
           } 
         });
+        $('#menuIcon').click(function(){
+          console.log('well?');
+          $('#navigationBar').show();
+        })
+
       });
       </script>
     <link rel="stylesheet" href="https://use.typekit.net/plx7bvp.css">
