@@ -80,11 +80,11 @@ body {
   font-size:2.75vh;
   color: rgba(255,255,255,1);
   line-height: 4vh;
+  border:0px;
 }
 
 .btn-primary:hover {
   background-color: rgba(94, 215, 255, 1);
-  border-color : #5ed7ff; 
   padding:.95vh 4vh .95vh 4vh;
   border-radius:6px;
 }
@@ -175,7 +175,7 @@ body {
 
 .sidebarWrap {
     position:fixed;
-    width:30vw;
+    width:27vw;
     top:65px;
     left: 2vw;
     border-radius:4px;

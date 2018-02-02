@@ -196,6 +196,14 @@ export class AppComponent {
         mealsServed += 'Lunch'
       }
     }
+    if(currentFeature.properties.Meals[mealType]==='S'){
+      if(currentFeature.properties.Meals.length > 1) {
+        mealsServed += ', Snacks';
+      }
+      else {
+        mealsServed += 'Snacks';
+      }
+    }
   }
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
@@ -254,8 +262,18 @@ export class AppComponent {
             details.innerHTML += '<span class="meal">Breakfast</span>';
             
           } if(prop.Meals[mt]==='L'){
+            if(prop.Meals.length === 1){
             details.innerHTML += '<span class="meal">Lunch</span>';
-            
+            } else {
+              details.innerHTML += '<span class="meal">, Lunch</span>'
+            }
+          }
+          if(prop.Meals[mt] === 'S'){
+            if(prop.Meals.length > 1) {
+              details.innerHTML += '<span class="meal">, Snacks</span>'
+            } else {
+              details.innerHTML += '<span class="meal">Snacks</span>'
+            }
           }
         }
         // this closes the section tag opened before the prop.Meals.length if statement...
