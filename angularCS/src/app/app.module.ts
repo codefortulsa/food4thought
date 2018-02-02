@@ -8,13 +8,15 @@ import { MapService } from './map.service';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AboutComponent } from './about/about.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent
   ],
   imports: [
     FormsModule,
