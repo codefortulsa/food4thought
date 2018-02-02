@@ -183,7 +183,20 @@ export class AppComponent {
 
   createPopUp(currentFeature) {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
-
+    var mealsServed = '';
+    for(var mealType = 0; mealType <= currentFeature.properties.Meals.length; mealType++){
+      if(currentFeature.properties.Meals[mealType] === 'B'){
+        mealsServed += 'Breakfast';
+      } 
+      if(currentFeature.properties.Meals[mealType]==='L'){
+        if(currentFeature.properties.Meals.length > 1) {
+        mealsServed += ', Lunch';
+      }
+       else{
+        mealsServed += 'Lunch'
+      }
+    }
+  }
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
     console.log(String(this.userGPS[0]));
@@ -193,7 +206,7 @@ export class AppComponent {
 
       .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
       '<div class="placeInfo"><h5>' + currentFeature.properties.Address +
-        "</h5><p>Serving: "+currentFeature.properties.Meals+"</p>"+
+        "</h5><p>Serving: "+mealsServed+"</p>"+
         "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
         +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
           'Get Directions'+'</a></div>')

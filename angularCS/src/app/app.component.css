@@ -100,23 +100,7 @@ body {
   min-height: 100vh;
 }
 
-.sidebar {
-  height: 100% !important;
-  min-height:300px !important;
-  max-height:100vh !important;
-  padding:5vh 1vh 1vh 1vh;
-  display: inline-block;
-  max-width:500px;
-  width:50vw;
-  position: absolute !important;
-  top: 6vh;
-  left: 0vh;
-  background-color: rgba(255,255,255,0);
-  border-top-right-radius:20px;
-  border-top-left-radius:20px;
-  color: #fff;
-  
-}
+
 
 ._container[_ngcontent-c0] {
   margin-top: 60px;
@@ -187,15 +171,13 @@ body {
 
 
 
-.sidebar, .sidebarWrap {
-  overflow: hidden !important;
-}
+
 
 .sidebarWrap {
     position:fixed;
     width:30vw;
     top:65px;
-    left: 2vh;
+    left: 2vw;
     border-radius:4px;
     z-index: 5;
 
@@ -222,15 +204,7 @@ body {
 
       }
 
-      .sidebar {
-        color: black;
-        width: 35vw;
-        min-width:300px;
-        display: inline-block;
-        overflow: scroll;
-        min-height: 500px;
-
-      }
+   
 
 
       
