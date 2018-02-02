@@ -5,17 +5,19 @@
   <script>
     $(document).ready(function() {
       $('body').bind('touchstart', function(){});
-      $('#expandCollapse').append('SEE LESS -');
+      $('#expandCollapse').html('all meal sites +');
     $(".heading").click(function(){
       
       if( $('.heading').hasClass('.isOpen')){
         $('#listings').slideUp();
         $('#bottomListings').slideUp();
+        $('#expandCollapse').html('all meal sites +');
         $('.heading').removeClass('.isOpen')
       } else {
       $('#listings').slideDown();
       $('#bottomListings').slideDown();
       $('.heading').addClass('.isOpen');
+      $('#expandCollapse').html('meal sites :');
       }
     })
       $("a").on('click', function(event) {

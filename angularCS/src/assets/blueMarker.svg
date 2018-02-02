@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 33 51.55">
+<defs><style>.a{fill:#3d85e2;opacity:0.43;isolation:isolate;}.b{fill:url(#a);}</style>
+<linearGradient id="a" x1="809.18" y1="351.41" x2="807.83" y2="414.06" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#29abe2"/>
+<stop offset="1" stop-color="#3d85e2"/>
+</linearGradient></defs>
+<ellipse class="a" cx="16.5" cy="47.85" rx="14.75" ry="3.7"/>
+<path class="b" d="M808.5,366.4a16.57,16.57,0,0,0-14.31,24.8l13.26,23a1.23,1.23,0,0,0,2.1,0l13.26-23a16.57,16.57,0,0,0-14.31-24.8Z" transform="translate(-792 -366.4)"/></svg>
