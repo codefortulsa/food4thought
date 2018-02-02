@@ -198,10 +198,7 @@ ul#navigationBar {
     -o-animation: fadeIn .3s ease 1;  
 }
 
-.mapboxgl-popup-content:hover {
-    border:1px solid rgba(94, 215, 255, 1);
-    
-}
+
 .mapboxgl-popup-content h3 {
     color: rgba(255,255,255,.9) !important;
     background-color: #1866bf;
