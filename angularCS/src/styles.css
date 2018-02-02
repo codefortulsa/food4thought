@@ -213,7 +213,7 @@ ul#navigationBar {
     letter-spacing: 1px;
     margin: 0 0 0 0;
     border-bottom: 1px solid rgba(255, 86, 34, 1);
-    text-align: center;
+    text-align: left;
     
   }
 
@@ -229,7 +229,9 @@ ul#navigationBar {
     text-transform: uppercase;
 }
 
-
+.mapboxgl-popup-content {
+    box-shadow: none !important;
+}
 
   .mapboxgl-popup-content .placeInfo {
     box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
@@ -351,6 +353,7 @@ input[type="text"] {
     background-color: #FFF3;
     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .51);
     border: none !important;
+    padding-right:10px;
     text-indent: 3vh;
     caret-color:rgba(255, 86, 34, 1);
     text-align:right;
