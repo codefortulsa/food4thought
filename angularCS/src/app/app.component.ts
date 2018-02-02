@@ -42,7 +42,8 @@ export class AppComponent {
     (mapboxgl as any).accessToken = this._mapService.mapToken;
     this.map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
+      // style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
+      style: './assets/style.json'
 
     });
     // This little number loads the data points onto the map :)
@@ -182,7 +183,24 @@ export class AppComponent {
 
   createPopUp(currentFeature) {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
+<<<<<<< HEAD
 
+=======
+    var mealsServed = '';
+    for(var mealType = 0; mealType <= currentFeature.properties.Meals.length; mealType++){
+      if(currentFeature.properties.Meals[mealType] === 'B'){
+        mealsServed += 'Breakfast';
+      } 
+      if(currentFeature.properties.Meals[mealType]==='L'){
+        if(currentFeature.properties.Meals.length > 1) {
+        mealsServed += ', Lunch';
+      }
+       else{
+        mealsServed += 'Lunch'
+      }
+    }
+  }
+>>>>>>> lesleysbranch
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) popUps[0].remove();
     console.log(String(this.userGPS[0]));
@@ -191,11 +209,19 @@ export class AppComponent {
       .setLngLat(currentFeature.geometry.coordinates)
 
       .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
+<<<<<<< HEAD
       '<h5>' + currentFeature.properties.Address + '</h5>'+
         "<p>Serving: "+currentFeature.properties.Meals+"</p>"+
         "<a href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
         +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
           '<p>Get Directions</p>'+'</a>')
+=======
+      '<div class="placeInfo"><h5>' + currentFeature.properties.Address +
+        "</h5><p>Serving: "+mealsServed+"</p>"+
+        "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
+        +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
+          'Get Directions'+'</a></div>')
+>>>>>>> lesleysbranch
       //
       .addTo(this.map);
 
@@ -208,6 +234,7 @@ export class AppComponent {
       // Shorten data.feature.properties to just `prop` so we're not
       // writing this long form over and over again.
       var prop = currentFeature.properties;
+      
       // Select the listing container in the HTML
       var listings = document.getElementById('listings');
       // Append a div with the class 'item' for each store
@@ -222,25 +249,51 @@ export class AppComponent {
       link.className = 'title';
       link.setAttribute("dataPosition", i.toString());
       // link.dataPosition = i;
-      link.innerHTML = '<svg id="orangeMarker" data-name="orangeMarker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 14"><defs><style>.cls-1,.cls-2{fill:#f15a24;}.cls-1{opacity:0.45;}</style></defs><title>Untitled-2</title><ellipse class="cls-1" cx="4.5" cy="13" rx="4" ry="1"/><path class="cls-2" d="M106.5,84h0a4.49,4.49,0,0,0-3.89,6.74l3.6,6.24a.33.33,0,0,0,.57,0l3.6-6.24A4.49,4.49,0,0,0,106.5,84Zm0,7.49a3,3,0,1,1,3-3A3,3,0,0,1,106.5,91.5Z" transform="translate(-102 -84)"/></svg>' + prop.Name;
+      link.innerHTML = prop.Name;
 
-      // Create a new div with the class 'details' for each store
-      // and fill it with the city and phone number
+      // ~*~*~*~*~*~*~* information about which meals are served per location...
+      
       var details = listing.appendChild(document.createElement('div'));
+      
       details.innerHTML = prop.Address;
+<<<<<<< HEAD
       if(prop.Meals.length > 0){
         details.innerHTML += '<section><span class="pbold">SERVING : </span>'+prop.Meals+"</section>";
+=======
+
+      details.innerHTML += '<br><span class="meal serving">Serving : </span>'
+
+      if(prop.Meals.length > 0){
+        var mealType = [];
+        for(let mt = 0; mt <= prop.Meals.length; mt++){
+          if(prop.Meals[mt] === 'B') {
+            details.innerHTML += '<span class="meal">Breakfast</span>';
+            
+          } if(prop.Meals[mt]==='L'){
+            details.innerHTML += '<span class="meal">Lunch</span>';
+            
+          }
+        }
+        // this closes the section tag opened before the prop.Meals.length if statement...
+       
+>>>>>>> lesleysbranch
       }
       if (prop.Phone) {
-        details.innerHTML += '<section class="pnumber"><span class="pbold">CALL : </span>' + prop.Phone +'</section>';
+        details.innerHTML += '<section class="pnumber"><span class="pbold">Call : </span>' + prop.Phone +'</section>';
       }
       if (prop.distance) {
         var roundedDistance = Math.round(prop.distance * 100) / 100;
-        details.innerHTML += '<p class="roundedDistance"><strong>' + roundedDistance + ' miles away</strong></p>';
+        details.innerHTML += '<p class="roundedDistance">' + roundedDistance + ' miles away</p>';
       }
+<<<<<<< HEAD
       details.innerHTML += "<a href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
       +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
         '<span>Get Directions</span>'+'</a>'
+=======
+      details.innerHTML += "<a class='getDirections' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
+      +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
+        'Get Directions</a>'
+>>>>>>> lesleysbranch
 
       link.addEventListener('click', (e) => {
         // Update the currentFeature to the store associated with the clicked link

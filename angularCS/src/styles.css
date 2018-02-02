@@ -6,20 +6,23 @@ body {
 .marker {
     border: none;
     cursor: pointer;
-    height:20px;
-    width: 20px;
-    background-image: url("./assets/marker.svg");
+    height:25px;
+    width: 25px;
+    background-image: url("./assets/blueMarker.svg");
     background-repeat:no-repeat;
-    background-color: rgba(0, 0, 0, 0);
-    transition: all 0.2s ease;
+    background-size: contain;
+  
   }
 
-  .marker:hover {
-      height:18px;
-      width:18px;
-      
-  }
-.marker:hover, a, a:hover, ul li a, ul li a:hover, .mapboxgl-popup-content , .mapboxgl-popup-content:hover, .sidebar, .sidebar:hover, div.item, div.item:hover, #orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, div.item:hover .cls-2 {
+
+#mobileNavContainer, #mobileNav, 
+#mobileNavContainer #mobieNav,
+#mobileNavContainer:hover #mobileNav, #mobileNav:hover,
+.marker:hover, a, a:hover, ul li a, ul li a:hover, 
+.mapboxgl-popup-content , .mapboxgl-popup-content:hover, 
+div.item, div.item:hover, 
+#orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, 
+div.item:hover .cls-2 {
     transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease!important;
     -moz-transition: all 0.2s ease !important;
@@ -28,20 +31,24 @@ body {
 }
 
 #appNavBar {
-    background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35);
-    border-bottom:1px solid rgba(2, 67, 141, 1);
-    min-height: 7vh;
-    height: 7vh;
-    max-height: 7vh;
-    padding: 0 2vh 0 2vh;
+
+    background-color: #2584ef;
+    /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
+    border-bottom:1px solid rgba(2, 67, 141, .39);
+    margin: 0 0 0 0;
+    padding: 0 2vw 0 2vw;
     position: fixed;
     top:0;
     width: 100%;
     z-index: 1 !important;
     white-space:nowrap;
+    box-sizing: border-box;
+    height: 60px;
+    min-height:60px;
     
   }
+
+
 
 #appNavBar svg {
     display: none;
@@ -56,24 +63,25 @@ body {
 
 
   #appNavBar h2.summertimeMeals a{
-    font-size:4vh !important;
     color: rgba(255,255,255,.9);
-    line-height: 7vh;
-    font-family: 'proxima-soft-condensed', sans-serif;
+    line-height: 60px;
+    height: 60px;
     display: inline-block;
     float:left;
     text-decoration: none;
+    margin: 0 0 0 0 !important;
+  }
+
+  #appNavBar h2 {
+      margin:0 0 0 0 !important;
+      font-size: 2rem;
   }
   
   .headlineMap {
     color: #5ed7ff;
-    font-family: "proxima-soft-condensed", sans-serif !important;
+ 
   }
 
-  h2.summertimeMeals a:hover {
-      color: rgba(255,255,255,1);
-
-  }
 
 ul#navigationBar {
     margin: 0 0 0 0;
@@ -91,14 +99,19 @@ ul#navigationBar {
 #navigationBar li a {
     color: rgba(255,255,255,.9);
     margin-right: 5vh;
-    font-size: 1.75vh;
+    font-size: .8rem;
+    font-weight:600;
     display: inline-block;
-    height: 6vh;
-    line-height: 6vh;
-    border-bottom: 2px solid rgba(255,255,255,0);
-    padding: 0 1vh;
-    font-family: "proxima-soft-condensed", sans-serif !important;
-text-transform: uppercase;
+    line-height: 60px;
+    height:60px;
+    font-family: sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing:.07vh;
+    padding-top: 3px;
+}
+
+#navigationBar li:last-of-type a {
+    margin-right:0px !important;
 }
   
 #navigationBar li a:hover {
@@ -107,29 +120,58 @@ text-transform: uppercase;
     color: rgba(94, 215, 255,.6)
 }
 
+#navigationBar #menuIcon .cls-1 {
+    fill: rgba(255,255,255,1) !important;
+    opacity: 1 !important;
+}
 
 #listings {
-    height:60vh;
-    /* animation: fadeIn .1s ease ; */
-    /* border-right:1px solid rgba(94, 215, 255, 1);
-    border-left:1px solid rgba(94, 215, 255, 1); */
-    padding:3vh;
+    height:70vh;
+    display:none;
+    margin-top:10px;
     overflow:scroll;
-    margin-top: -1px;
-    /* border-top: 1px solid rgba(255, 86, 34, 1); */
-    /* box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
-      background-color: rgba(61, 133, 226, 0.9); */
+    background-color: #1775E6E6;
+    color: #fff;
+   
+  }
+
+  #listings a {
+      color: #fff;
   }
 
 
   div#bottomlistings {
     height: 4vh;
-    /* background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.7); */
     margin-top: 2vh;
     display: none !important;
     
 }
+
+
+::-webkit-input-placeholder,  ::-moz-placeholder, :-ms-input-placeholder,   ::placeholder {
+    color: #fff !important;
+    font-size: 15px !important;
+    opacity: .75 !important;
+  }
+  ::-moz-placeholder {
+    color: #fff !important;
+    font-size: 15px !important;
+    opacity: .75 !important;
+  }
+  :-ms-input-placeholder {
+    color: #fff !important;
+    opacity: .75 !important;
+    font-size: 15px !important;
+  }
+  ::placeholder {
+    color: #fff !important;
+    font-size: 15px !important;
+    opacity: .75 !important;
+  }
+
+
+
+
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
       display: none !important;
   }
@@ -147,7 +189,7 @@ text-transform: uppercase;
 
 .mapboxgl-popup-content {
     background-color: rgba(0,0,0,0);
-    border: 1px dashed rgba(2, 67, 141, 0.719);
+    border: 1px dashed rgba(2, 67, 141, 0);
     padding:2.5vh;
     border-radius: 10px;
     animation: fadeIn .3s ease 1;
@@ -162,8 +204,7 @@ text-transform: uppercase;
 }
 .mapboxgl-popup-content h3 {
     color: rgba(255,255,255,.9) !important;
-    background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2);
+    background-color: #1866bf;
     border-top-right-radius:8px;
     border-top-left-radius:8px;
     padding:2vh 2vh 1.75vh 2vh;
@@ -190,7 +231,7 @@ text-transform: uppercase;
 
 
 
-  .mapboxgl-popup-content h5 {
+  .mapboxgl-popup-content .placeInfo {
     box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
     background-color: rgba(61, 133, 226, 0.9);
     border-bottom-left-radius:8px;
@@ -203,9 +244,35 @@ text-transform: uppercase;
 
   }
 
-  .mapboxgl-popup-content:hover h5 {
+  .placeInfo h5 {
+      font-size: 1.15vh;
+    letter-spacing: 1px;
+    font-weight: 400;
+
+  }
+
+  .placeInfo a {
+      color: rgba(255,255,255,1);
+      font-size:1.75vh;
+      height: 5vh;
+        line-height: 5vh;
+        border: 1px solid rgba(255,255,255,.4);
+        border-radius:3px;
+        text-align: center;
+        display: block;
+        background-color: rgba(255,255,255,0);
+  }
+
+  .placeInfo a:hover  {
+      text-decoration: none;
+      background-color: rgba(0,0,0,.05);
+      border: 1px solid rgba(255,255,255,0);
+
+  }
+
+  .mapboxgl-popup-content:hover .placeInfo {
     box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
-    color: rgba(255,255,255,1);
+   
     }
 
   .mapboxgl-popup-content:hover h5::before {
@@ -216,62 +283,122 @@ text-transform: uppercase;
       width: 100vw;
   }
   .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
-    padding: 2vh;
-    width:100%;
+    padding: 5px 2vw 5px 2vw;
+    width: 100%;
     margin: 0 0 0 0;
-    text-align:center;
-  }
+    text-align: right;
+    position:absolute;
+    top: 0vh; 
+    right:0;
+    left:0;
+}
 
-  div.item:hover #orangeMarker .cls-1, div.item:hover #orangeMarker .cls-2 {
-      fill: rgba(255, 86, 34, 0.484);
-  }
 
-  input[type="text"] {
-      width: 100%;
-      height:4vh;
-      border-radius: 10px;
-      border: 1px solid rgba(2, 67, 141, 0);
-      text-indent: 3vh;
-  }
 
-  .sidebar {
-      cursor: grab;
-  }
 
-  a.title {
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size:1.25vh;
-      text-decoration: none;
-      /* border-bottom: 1px solid rgba(255, 86, 34, 0.884); */
-      border-bottom:1px solid rgba(115, 89, 81, 0.24);
-      display:block;
-      padding:2.5vh 0 .5vh 0;
-      color: rgb(49, 45, 43);
-      margin: 0 1.5vh 0 3.25vh;
-      /* color: rgba(255,255,255,.9) !important; */
-    /* background-color: rgba(2, 67, 141, 1);
-    box-shadow: inset 0px 0px 30px rgba(94, 215, 255, 0.2); */
+
+.collections {
+    display: none !important;
+}
+
+
+
+.directionslink {
+    display: inline-block;
+    line-height:4vh;
+
+    text-transform: uppercase;
+}
+
+
+
+.meal {
+    margin-left:5px;
+    
+}
+
+
+
+  #expandCollapse, input[type="text"] {
+    margin: 5px 0px 5px 0px;
+    min-height: 40px;
+    height: 40px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size:15px;
+    color: #fff;
+    line-height:40px;
     
   }
 
-  a.title:hover {
-      text-decoration: none;
-  }
-div.item p {
-    margin-top:1vh;
-}
-div.item div {
-    font-size: 1.25vh;
-    /* color: rgba(255,255,255,.9);
-    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
-    background-color: rgba(61, 133, 226, 0.9); */
-    padding:1vh 1.5vh 1.5vh 3.25vh;
+
+  #expandCollapse {
+    background-color: #1e4d8a66;
+    box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35);
+    transition:all 0.2s ease;
+    width: 27vw;
 }
 
-div.item hr {
-    display: none;
+#expandCollapse:hover {
+    background-color: #5ed7ff;
+    box-shadow:inset 0px 0px 0px rgba(0,0,0,0);
+    transition:all 0.2s ease;
 }
+
+
+input[type="text"] {
+    width: 67vw;
+    background-color: #FFF3;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .51);
+    border: none !important;
+    text-indent: 3vh;
+    caret-color:rgba(255, 86, 34, 1);
+    text-align:right;
+    
+
+}
+  a.title {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size:.95rem;
+      border-top:1px solid rgba(255,255,255,.1);
+      display:block;
+      padding:3.5vh 1vh 0 1vh;
+      /* color: rgb(49, 45, 43); */
+      margin: 0 1.5vh 0 1.5vh;
+  }
+
+ 
+
+
+
+.meal.serving {
+    font-weight: 600;
+    margin: 10px 0 auto 0;
+    display: inline-block;
+    color: #fff;
+    /* color: #000; */
+}
+
+.getDirections {
+    font-weight:600;
+    /* color: rgba(0,0,0,0) !important; */
+   
+}
+
+
+
+
+div.item, .meal {
+    /* color: rgba(0,0,0,.6); */
+}
+
+div.item div {
+    font-size: .75rem;
+    padding:0vh 2.5vh 3.5vh 2.5vh;
+    color: rgba(255,255,255,.7);
+}
+
 
 
 #orangeMarker {
@@ -284,56 +411,126 @@ div.item hr {
 }
 
   div.item {
-      overflow: hidden;
-      background: radial-gradient(rgba(255,255,255,.1), rgba(255,255,255,.2), rgba(255,255,255,.9));
-      margin-bottom: 2vh;
-      border-radius:6px;
+  
       position:relative;
   }
 
-  div.item:hover {
-      background-color: rgba(255,255,255,1);
-      
-  }
+
 
   section.pnumber {
       display: block;
-      /* border-top: 1px solid rgba(255,255,255,.1); */
-      /* border-top: 1px solid rgba(0,0,0,.1);
-      margin-top:1.5vh;
-      padding-top:1.5vh; */
+
   }
 
   .pbold {
-      /* color: #fff; */
-      color: #000;
-      font-weight: 700;
+      color: #fff;
+
+      font-weight: 600;
   }
 
-  .sidebar[_ngcontent-c0] {
-    
-    padding: 2vh 2vh 0px 2vh !important;
+  .roundedDistance {
+    margin-bottom: 0px;
+    margin-top: 2vh;
+    animation: fadeIn .3s ease 1;
+    -webkit-animation: fadeIn .3s ease 1;
+    -moz-animation: fadeIn .3s ease 1;
+    -o-animation: fadeIn .3s ease 1;  
+}
+
+
+
+    #mobileNav {
+        display: none !important;
+        opacity:0;
+        list-style-type: none;
+        padding:2vh 2vh 2vh 2vh;
+        background-color: rgba(255,255,255,0);
+        text-align:right;
+        margin-top:5vh;
+        transition: all 0.2s ease;
     }
+
+
+
+    .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+        background-color: #2584ef;
+    }
+
+    .geocoder-pin-right {
+        display: none;
+    }
+  
+
+    
   @media screen and (max-width: 730px) {
+    /* #mobileNav {
+        list-style-type: none;
+        padding:5vh 2vh 2vh 2vh;
+    } */
+    div#mobileNavContainer{ 
+        display: inline-block;
+        
+        position: absolute;
+        right: 2vw;
+        padding-top: 20px;
+    }
+    #mobileNavContainer:hover {
+        height:40vh;
+        width:50vw;
+        
+    }
+    #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
+        display: block !important;
+        padding:6vh 2vw 2vh 2vw;
+        background-color: rgba(255,255,255,.2);
+        opacity: 1;
+        transition: all 0.2s ease;
+        color: rgba(255,255,255,1);
+
+    }
+
+        #mobileNav a {
+            color: rgba(255,255,255,1);
+            line-height:1.5vh;
+        }
         ul#navigationBar{
             display: none !important;
         }
         #appNavBar svg {
             display:inline-block;
             max-height: 3vh;
-            opacity: .8;
-            margin-top: 1vh;
-            float: right;
+            opacity: 1;
             width: 3vh;
 
         }
-        input[type="text"] {
-            width: 100%;
-            height:4vh;
-            border-radius: 10px;
-            border: 1px solid rgba(2, 67, 141, 0);
-            text-indent: 3vh;
+        #menuIcon {
+            float:right;
         }
+        #menuIcon .cls-1 {
+            fill: rgba(255,255,255,1);
+            opacity: 1;
+        }
+        #menuIcon:hover #menuIcon .cls-1 {
+            fill: rgba(255,255,255,.7) !important;
+        }
+
+   
+
+        #expandCollapse {
+            width: 37vw;
+        }
+        #listings {
+            width: 93vw !important; 
+            max-width:93vw;
+
+        }
+
+        input[type="text"] {
+            width: 57vw !important;
+            max-width:57vw;
+        }
+       
+      
     }
 
 
@@ -343,14 +540,3 @@ div.item hr {
 @keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
   
 
-/* .clickShow {
-    margin-top:75vh !important;
-} */
-
-/* .sidebarWrap {
-    top: 0vh !important;
-}
-
-.sidebarWrap.clickShow {
-    top:75vh !important;
-} */
