@@ -23,7 +23,7 @@ app.get('/', function (request, response) {
     response.render('index', {counter: addCount(request)});
 })
 
-app.post('/locate', (request, resp) =>)
+app.post('/locate', (request, resp) =>
 
 // app.post('/add-two', function (request, response){
 //     addCount(request);
