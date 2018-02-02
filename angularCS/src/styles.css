@@ -314,10 +314,7 @@ ul#navigationBar {
 
 
 
-.meal {
-    margin-left:5px;
-    
-}
+
 
 
 
@@ -380,6 +377,7 @@ input[type="text"] {
     margin: 10px 0 auto 0;
     display: inline-block;
     color: #fff;
+    margin-right: 5px;
     /* color: #000; */
 }
 
