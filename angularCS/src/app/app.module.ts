@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { MapService } from './map.service';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    AboutComponent
   ],
   imports: [
     FormsModule,
