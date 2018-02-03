@@ -4,10 +4,9 @@ Angular5 app that allows families to locate free summer meal programs near them.
 
 ## The Need for Summer Meals
 
-During the school year, 62% of Oklahoma kids rely on free-and-reduced meals to receive proper nutrition; 
+During the school year, 62% of Oklahoma kids rely on free-and-reduced meals to receive proper nutrition;
 many of these students do not have access to adequate nutrition outside of school. In Tulsa, a staggering
-84% of students rely on free-and-reduced meals. Individual families, as well as nonprofits could greatly
-http://localhost:1250/#mapbenefit from knowing when and where summer meals programs are available.
+84% of students rely on free-and-reduced meals. Individual families, as well as nonprofits could greatly from knowing when and where summer meals programs are available.
 
 ## Summer Café
 
@@ -17,7 +16,7 @@ begins June 1 and runs through August 4. Meals are provided to all children 18 a
 
 ## Web App
 
-This website will use Mapbox, as well as data provided by Hunger Free Oklahoma, to provide an interactive map that will
+This website uses Mapbox, as well as data provided by Hunger Free Oklahoma, to provide an interactive map that will
 help locate summer meals programs, and get more information on when locations are open, and what is provided.
 
 ## Built With

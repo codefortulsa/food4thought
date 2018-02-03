@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
   <script>
     $(document).ready(function() {
       $('body').bind('touchstart', function(){});
       $('#expandCollapse').html('all meal sites +');
     $(".heading").click(function(){
-      
+
       if( $('.heading').hasClass('.isOpen')){
         $('#listings').slideUp();
         $('#bottomListings').slideUp();
@@ -29,7 +30,7 @@
             }, 800, function(){
               window.location.hash = hash;
             });
-          } 
+          }
         });
         $('#menuIcon').click(function(){
           console.log('well?');

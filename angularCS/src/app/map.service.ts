@@ -12,7 +12,9 @@ export class MapService {
   mealSites: any ;
   mealSitesObservable = new BehaviorSubject(this.mealSites);
 
-  constructor(private _http : Http, private _router : Router) { }
+  constructor(private _http : Http, private _router : Router) {
+
+  }
 
   getAllSites(){
     // this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.datasetToken}/features?access_token=${this.mapToken}`).subscribe(
@@ -25,7 +27,7 @@ export class MapService {
     //     console.log(errors);
     //   }
     // )
-    return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.datasetToken}/features?access_token=${this.mapToken}`).toPromise(); 
+    return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.datasetToken}/features?access_token=${this.mapToken}`).toPromise();
   }
 
 }
