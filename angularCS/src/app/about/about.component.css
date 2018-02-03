@@ -1,3 +1,44 @@
 .aboutus{
-  background-color: white;
+  background-color: #2584EF;
+}
+
+#aboutWrap {
+  width: 100%;
+  padding:8vw;
+  background-color: #2584EF;
+  color: #fff !important;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.bigHeader {
+  margin-top:4vh;
+  font-size:7rem;
+  letter-spacing: -3px;
+  color: rgba(255,255,255,.9);
+}
+
+p {
+  color: rgba(255,255,255,.65);
+  line-height: 2rem;
+  margin-bottom:4em;
+}
+
+.mapsHeader {
+  color: #5ed7ff;
+}
+.jumbotron {
+  background-color: rgba(0,0,0,0) !important;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  margin-bottom: 4em;
+  padding:0 0 0 0;
+}
+
+a {
+  color: #fff;
+}
+
+h2 {
+  text-align:center;
 }

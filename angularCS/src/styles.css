@@ -22,7 +22,9 @@ body {
 .mapboxgl-popup-content , .mapboxgl-popup-content:hover, 
 div.item, div.item:hover, 
 #orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, 
-div.item:hover .cls-2 {
+div.item:hover .cls-2,
+#mobileNav li, #mobileNav li:hover,
+#mobileNav a, #mobileNav a:hover {
     transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease!important;
     -moz-transition: all 0.2s ease !important;
@@ -48,7 +50,11 @@ div.item:hover .cls-2 {
     
   }
 
-
+/* .foodborder {
+    border: 1px solid orange;
+    display:inline-block;
+    padding:10px 20px 10px 20px;
+} */
 
 #appNavBar svg {
     display: none;
@@ -100,7 +106,7 @@ ul#navigationBar {
     color: rgba(255,255,255,.9);
     margin-right: 5vh;
     font-size: .8rem;
-    font-weight:600;
+    font-weight:400;
     display: inline-block;
     line-height: 60px;
     height:60px;
@@ -324,20 +330,21 @@ ul#navigationBar {
     font-size:15px;
     color: #fff;
     line-height:40px;
+    text-align:center;
+    
     
   }
 
 
   #expandCollapse {
     background-color: #1e4d8a66;
-    box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35);
     transition:all 0.2s ease;
     width: 27vw;
+    cursor: pointer;
 }
 
 #expandCollapse:hover {
     background-color: #5ed7ff;
-    box-shadow:inset 0px 0px 0px rgba(0,0,0,0);
     transition:all 0.2s ease;
 }
 
@@ -479,18 +486,61 @@ div.item div {
     }
     #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
         display: block !important;
-        padding:6vh 2vw 2vh 2vw;
-        background-color: rgba(255,255,255,.2);
+        padding:2vh;
+        background-color: rgba(37, 132, 239,.91);
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius:10px;
 
     }
-
+    #mobileNav{
+        animation: fadeIn .3s ease 1;
+        -webkit-animation: fadeIn .3s ease 1;
+        -moz-animation: fadeIn .3s ease 1;
+        -o-animation: fadeIn .3s ease 1;  
+        
+    }
+    
+  
         #mobileNav a {
             color: rgba(255,255,255,1);
-            line-height:1.5vh;
+            line-height:50px;
+            height:50px;
+            display:block;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+            background: rgba(255,255,255,0);
+            text-decoration: none;
+            font-size: 1.5vh;
+            padding:0 2vh 0 2vh;
+            font-weight:400;
+            
         }
+
+        #mobileNav li:last-of-type a {
+            text-align: center;
+            line-height: 60px;
+            height: 60px;
+            font-size: 1rem;
+            color: #fff;
+            border: 1px solid orange;
+            border-radius:4px;
+        }
+
+        #mobileNav li:last-of-type a:hover {
+           background-color: rgba(30, 77, 138, 0.4);
+        }
+
+
+        #mobileNav a:hover {
+            background:  rgba(255,255,255,.1);
+            color: rgba(255,255,255,.8)
+            
+            
+        }
+
+        
         ul#navigationBar{
             display: none !important;
         }
