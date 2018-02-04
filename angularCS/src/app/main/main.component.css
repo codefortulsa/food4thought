@@ -1,0 +1,259 @@
+
+
+
+  
+  
+  .mapboxgl-canvas {
+  
+    min-width: 100vw;
+    position: relative !important;
+  
+  }
+  
+  .tween {
+    transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease!important;
+    -moz-transition: all 0.2s ease !important;
+    -o-transition: all 0.2s ease !important;
+  }
+  
+  
+  
+  
+  
+  
+  ._jumbotron {
+    color: rgba(255,255,255,1) !important;
+    height: 100%;
+    background-image: url("/assets/mapScreen.png");
+    background-attachment: fixed;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    text-align:center;
+   
+   
+  }
+  
+
+  
+  #summertimeMeals {
+    
+    font-size:11.5vh;
+    letter-spacing: -4px;
+    line-height:5vh;
+    padding-top:38vh;
+    color: rgba(255,255,255,.95) !important;
+    margin-bottom: 3vh;
+    
+    
+  }
+  
+  .headlineMap {
+    color: #5ed7ff;
+    
+  
+  }
+  
+  ._lead {
+    
+    padding: 0 2vh 0 2vh;
+    font-size:2.7vh !important;
+    line-height:5vh;
+    
+  }
+  
+  
+  
+  .btn-primary {
+    background-color: rgba(94, 215, 255, 0.47);
+    padding:.95vh 3vh .95vh 3vh;
+    border-radius:3px;
+    font-size:2.75vh;
+    color: rgba(255,255,255,1);
+    line-height: 4vh;
+    border:0px;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgba(94, 215, 255, 1);
+    padding:.95vh 4vh .95vh 4vh;
+    border-radius:6px;
+  }
+  
+  
+  #appNavBar h2.summertimeMeals {
+    font-size:4vh !important;
+  }
+  
+  
+  #first {
+    height: 100vh;
+    min-height: 100vh;
+  }
+  
+  
+  
+  ._container[_ngcontent-c0] {
+    margin-top: 60px;
+    height: 93vh;
+    max-height: 93vh;
+  }
+  
+  ._container2 {
+    position: absolute;
+    width: 100vw;
+    height:100vh;
+    z-index: -100 !important;
+  
+    
+  }
+  
+  
+  
+  #mapSidebarContainer {
+  
+    height:100vh;
+    min-height:100vh;
+    max-height:100vh;
+    position:absolute;
+    
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    z-index: -1 !important;
+    background-color: #2652d7;
+    background: linear-gradient(#1e4ef8, #2652d7);
+
+    
+  }
+  
+  #second::before { 
+    display: block !important;; 
+    content: " " !important;; 
+    margin-top: -60px !important;;
+    height: 60px !important;; 
+    visibility: hidden !important;; 
+    pointer-events: none !important;;
+  }
+  
+  
+  
+  
+  #map {
+    position:fixed;
+    top:60px;
+    bottom: 0;
+    left:0;
+    right:0;
+    height:94vh;
+    min-height:94vh;
+    max-height:100%;
+    z-index: -2 !important;
+  
+  }
+  
+  
+  
+  .pad2[_ngcontent-c0] {
+    padding: 0 0 0 0 !important;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .sidebarWrap {
+      position:fixed;
+      width:27vw;
+      top:65px;
+      left: 2vw;
+      border-radius:4px;
+      z-index: 5;
+  
+  }
+  
+  
+  .heading[_ngcontent-c0] {
+    color: rgba(255,255,255,.9);
+    text-align: center !important;
+  }
+  
+  
+  
+  
+      
+        body {
+  
+          font: 500 20px/26px 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+          margin: 0;
+          padding: 0;
+          margin-bottom: 5%;
+          background-color: white;
+  
+  
+        }
+  
+     
+  
+  
+        
+  
+  /* ======================================================================
+  FLY IN ONTO SPECIFIC ADDRESS CSS STUFF....a few things still don't work correctly
+  ====================================================================== */
+  
+  /* Marker tweaks */
+  
+  .mapboxgl-popup-content h3 {
+    color: #fff !important;
+  }
+  
+  
+  .mapboxgl-popup-content h4 {
+    margin: 0;
+    display: block;
+    padding: 10px;
+    font-weight: 400;
+  }
+  
+  .mapboxgl-popup-content div {
+    padding: 10px;
+  }
+  
+  .mapboxgl-container .leaflet-marker-icon {
+    cursor: pointer;
+  }
+  
+  .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+    margin-top: 15px;
+  }
+  
+  .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+    border-bottom-color: #91c949;
+  }
+  
+  /* ADDING CUSTOM MARKERS STYLING! */
+  .marker {
+    border: none;
+  
+  
+  }
+  
+  .mapboxgl-ctrl-geocoder {
+    border: 0;
+    border-radius: 0;
+    position: relative;
+    top: 0;
+    width: 800px;
+    margin-top: 0;
+  }
+  
+  .mapboxgl-ctrl-geocoder > div {
+    min-width: 100%;
+    margin-left: 0;
+  }
