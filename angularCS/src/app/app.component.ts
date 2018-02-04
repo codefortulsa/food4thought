@@ -241,7 +241,7 @@ export class AppComponent {
       // Create a new link with the class 'title' for each store
       // and fill it with the store address
       var link = listing.appendChild(document.createElement('a'));
-      link.href = '';
+      link.href = '#map';
       link.className = 'title';
       link.setAttribute("dataPosition", i.toString());
       // link.dataPosition = i;

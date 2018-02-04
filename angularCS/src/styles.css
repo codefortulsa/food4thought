@@ -1,5 +1,7 @@
 body {
-    
+    font-family: "nudista-web",sans-serif;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -11,6 +13,7 @@ body {
     background-image: url("./assets/blueMarker.svg");
     background-repeat:no-repeat;
     background-size: contain;
+    opacity: .9;
   
   }
 
@@ -22,7 +25,10 @@ body {
 .mapboxgl-popup-content , .mapboxgl-popup-content:hover, 
 div.item, div.item:hover, 
 #orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, 
-div.item:hover .cls-2 {
+div.item:hover .cls-2,
+#mobileNav li, #mobileNav li:hover,
+#mobileNav a, #mobileNav a:hover,
+input, input:hover {
     transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease!important;
     -moz-transition: all 0.2s ease !important;
@@ -32,8 +38,11 @@ div.item:hover .cls-2 {
 
 #appNavBar {
 
-    background-color: #2584ef;
+    /* background-color: #2584ef; */
     /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
+        background-color: #1c4aef;
+        /* background-color: #2350f3; */
+
     border-bottom:1px solid rgba(2, 67, 141, .39);
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
@@ -48,7 +57,13 @@ div.item:hover .cls-2 {
     
   }
 
-
+  .overlay {
+    /* background-color:#0361edcc; */
+    background-color: #0033ebcc;
+    height: 100%;
+    width:100%;
+    
+  }
 
 #appNavBar svg {
     display: none;
@@ -99,12 +114,10 @@ ul#navigationBar {
 #navigationBar li a {
     color: rgba(255,255,255,.9);
     margin-right: 5vh;
-    font-size: .8rem;
-    font-weight:600;
+    font-size: .75rem;
     display: inline-block;
     line-height: 60px;
     height:60px;
-    font-family: sans-serif !important;
     text-transform: uppercase;
     letter-spacing:.07vh;
     padding-top: 3px;
@@ -117,7 +130,8 @@ ul#navigationBar {
 #navigationBar li a:hover {
     /* border-bottom: 2px solid rgba(255,255,255,1); */
     text-decoration: none !important;
-    color: rgba(94, 215, 255,.6)
+    color: rgba(255,255,255,1);
+   
 }
 
 #navigationBar #menuIcon .cls-1 {
@@ -129,11 +143,29 @@ ul#navigationBar {
     height:70vh;
     display:none;
     margin-top:10px;
-    overflow:scroll;
-    background-color: #1775E6E6;
+    background-color: #2851e7;
     color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
    
   }
+
+  div#featherOut {
+    position: fixed;
+    top: 120px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 90vh;
+    background: radial-gradient(#ffffff00,#ffffff00, #004eff27);
+    z-index: 0;
+    pointer-events: none;
+    display: none;
+}
 
   #listings a {
       color: #fff;
@@ -180,6 +212,7 @@ ul#navigationBar {
 .mapboxgl-popup-close-button {
     top: 3vh;
     right: 3vh;
+    font-size:3vh;
     color: rgba(255,255,255,1);
 }
 
@@ -201,7 +234,7 @@ ul#navigationBar {
 
 .mapboxgl-popup-content h3 {
     color: rgba(255,255,255,.9) !important;
-    background-color: #1866bf;
+    background-color: #2851e7;
     border-top-right-radius:8px;
     border-top-left-radius:8px;
     padding:2vh 2vh 1.75vh 2vh;
@@ -232,7 +265,8 @@ ul#navigationBar {
 
   .mapboxgl-popup-content .placeInfo {
     box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
-    background-color: rgba(61, 133, 226, 0.9);
+    /* background-color: rgba(61, 133, 226, 0.9); */
+    background-color: rgba(0, 110, 253, 0.9);
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
     color: rgba(255,255,255,.86);
@@ -293,7 +327,10 @@ ul#navigationBar {
 }
 
 
-
+#map {
+    background-color: #2652d7;
+    background: linear-gradient(#1e4ef8, #2652d7);
+}
 
 
 .collections {
@@ -324,29 +361,34 @@ ul#navigationBar {
     font-size:15px;
     color: #fff;
     line-height:40px;
+    text-align:center;
+    
     
   }
 
 
   #expandCollapse {
-    background-color: #1e4d8a66;
-    box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35);
+    background-color: rgba(0,0,0,0);
+    border:1px solid rgba(255,255,255,.2);
     transition:all 0.2s ease;
     width: 27vw;
+    cursor: pointer;
 }
 
 #expandCollapse:hover {
-    background-color: #5ed7ff;
-    box-shadow:inset 0px 0px 0px rgba(0,0,0,0);
+    /* background-color: #5ed7ff; */
+    background-color: rgba(0,0,0,.12);
+    border:1px solid rgba(255,255,255,0);
     transition:all 0.2s ease;
 }
 
 
 input[type="text"] {
     width: 67vw;
-    background-color: #FFF3;
-    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .51);
-    border: none !important;
+    background-color: #ffffff14;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .31);
+    border: 1px solid rgba(30, 73, 239,1) !important;
+    outline: none !important;
     padding-right:10px;
     text-indent: 3vh;
     caret-color:rgba(255, 86, 34, 1);
@@ -354,16 +396,32 @@ input[type="text"] {
     
 
 }
+
+input:hover {
+    outline: none !important;
+    border:1px solid rgba(255, 86, 34, .61) !important;
+    background-color: rgba(0,0,0,.12);
+}
+
+input:focus {
+    outline: none !important;
+    border: 1px solid rgba(30, 73, 239,1) !important;
+    background-color: rgba(0,0,0,.10); 
+}
   a.title {
-      font-weight: 600;
+      font-weight: 500;
       text-transform: uppercase;
-      font-size:.95rem;
-      border-top:1px solid rgba(255,255,255,.1);
+      font-size:.85rem;
       display:block;
       padding:3.5vh 1vh 0 1vh;
-      /* color: rgb(49, 45, 43); */
       margin: 0 1.5vh 0 1.5vh;
   }
+
+
+  .suggestions {
+      display: none !important;
+  }
+
 
  
 
@@ -408,11 +466,17 @@ div.item div {
     left: 1.5vh;
 }
 
-  div.item {
-  
-      position:relative;
-  }
+div.item {
+    position: relative;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    margin: 2vh;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0))
+}
 
+div.item:hover {
+    background: linear-gradient(rgba(255,255,255,.01), rgba(255,255,255,.09))
+}
 
 
   section.pnumber {
@@ -451,7 +515,13 @@ div.item div {
 
 
     .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
-        background-color: #2584ef;
+        /* background-color: #2584ef; */
+        /* background-color: #4593eb;
+        background: linear-gradient(#4593eb, #3c8ce9) */
+        /* background: #1c4aef; */
+        /* background:linear-gradient(#1c4aef, #1f4bd3); */
+        background: #1e4ef8;
+        background: linear-gradient(#1e4ef8, #2652d7);
     }
 
     .geocoder-pin-right {
@@ -479,18 +549,70 @@ div.item div {
     }
     #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
         display: block !important;
-        padding:6vh 2vw 2vh 2vw;
-        background-color: rgba(255,255,255,.2);
+        padding:2vh;
+        /* background-color: rgba(37, 132, 239,.91); */
+        /* background-color: rgba(30, 73, 239,1); */
+        /* background-color: #2350f3; */
+        background-color:#1c4aef;
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius:10px;
 
     }
-
+    #mobileNav{
+        animation: fadeIn .3s ease 1;
+        -webkit-animation: fadeIn .3s ease 1;
+        -moz-animation: fadeIn .3s ease 1;
+        -o-animation: fadeIn .3s ease 1;  
+        box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+        
+    }
+    
+  
         #mobileNav a {
             color: rgba(255,255,255,1);
-            line-height:1.5vh;
+            line-height:50px;
+            height:50px;
+            display:block;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+            background: rgba(255,255,255,0);
+            text-decoration: none;
+            font-size: 1.85vh;
+            padding:0 2vh 0 2vh;
+            font-weight:400;
+            
         }
+
+        #mobileNav li:last-of-type a {
+            text-align: center;
+            line-height: 60px;
+            height: 60px;
+            font-size: 1rem;
+            color: #fff;
+            border: 1px solid rgba(255, 86, 34, .91);
+            border-radius:4px;
+        }
+
+        #mobileNav li:last-of-type a:hover {
+           background-color: rgba(30, 77, 138, 0.4);
+           border: 1px solid rgba(255, 166, 0, 0);
+        }
+
+        #mobileNav li:nth-of-type(3) a {
+            border-bottom: none !important;
+            letter-spacing: .04em;
+        }
+
+        #mobileNav a:hover {
+            background:  rgba(255,255,255,.1);
+            color: rgba(255,255,255,.8)
+            
+            
+        }
+
+        
         ul#navigationBar{
             display: none !important;
         }

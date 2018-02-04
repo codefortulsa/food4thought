@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AdminComponent } from './admin/admin.component';
     AppComponent,
     NavigationComponent,
     AboutComponent,
-    AdminComponent
+    AdminComponent,
+    MainComponent
   ],
   imports: [
     FormsModule,
