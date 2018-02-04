@@ -327,7 +327,10 @@ ul#navigationBar {
 }
 
 
-
+#map {
+    background-color: #2652d7;
+    background: linear-gradient(#1e4ef8, #2652d7);
+}
 
 
 .collections {
@@ -468,8 +471,12 @@ div.item {
     border: 1px solid rgba(255,255,255,.1);
     border-radius: 10px;
     margin: 2vh;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0))
 }
 
+div.item:hover {
+    background: linear-gradient(rgba(255,255,255,.01), rgba(255,255,255,.09))
+}
 
 
   section.pnumber {

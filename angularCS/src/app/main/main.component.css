@@ -123,7 +123,9 @@
     bottom: 0;
   
     z-index: -1 !important;
-    
+    background-color: #2652d7;
+    background: linear-gradient(#1e4ef8, #2652d7);
+
     
   }
   

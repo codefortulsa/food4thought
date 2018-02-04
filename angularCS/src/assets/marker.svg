@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 6 9.33">
-<defs>
-<style>.cls-1{fill:#0071bc;opacity:0.43;}.cls-2{fill:url(#linear-gradient);}</style>
-<linearGradient id="linear-gradient" x1="3.31" y1="-5.43" x2="2.81" y2="7.98" gradientUnits="userSpaceOnUse">
-<stop offset="0" stop-color="#0071bc" stop-opacity="0.5"/><stop offset="0.43" stop-color="#0071bc" stop-opacity="0.75"/><stop offset="0.8" stop-color="#0071bc" stop-opacity="0.93"/><stop offset="1" stop-color="#0071bc"/></linearGradient></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><ellipse class="cls-1" cx="3" cy="8.66" rx="2.67" ry="0.67"/><path class="cls-2" d="M3,0A3,3,0,0,0,.41,4.49l2.4,4.16a.22.22,0,0,0,.38,0l2.4-4.16A3,3,0,0,0,3,0ZM3,4.66A1.33,1.33,0,1,1,4.33,3.33,1.33,1.33,0,0,1,3,4.66Z"/>
-</g></g></svg>
