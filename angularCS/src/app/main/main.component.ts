@@ -18,6 +18,7 @@ import { FeatureCollection } from 'geojson';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+    isOpen : Boolean;
     userLoc : UserLocation = new UserLocation();
     mapToken : String;
     mealSites: any;
@@ -164,11 +165,20 @@ export class MainComponent implements OnInit {
     })
   
   
-  
+  var sidebarList = document.getElementById('expandCollapse');
+  sidebarList.innerHTML = 'all meal sites +'
   
   
     // end ngOnInit
   
+  }
+
+
+
+  openSesame(){
+    console.log('maybe this will work');
+    var listingButton = document.getElementById('expandCollapse');
+    listingButton.innerHTML = 'meal sites';
   }
   // This is where your interactions with the symbol layer used to be
    // Now you have interactions with DOM markers instead

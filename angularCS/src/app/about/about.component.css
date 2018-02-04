@@ -2,13 +2,46 @@
   background-color: #2584EF;
 }
 
+.lead[_ngcontent-c2] {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.5vh;
+  color: #ccf1ff;
+  border: 1px dotted rgba(0, 220, 255, 0.41);
+  border-radius: 4px;
+  padding: 21vh 4vh;
+  line-height: 4vh;
+}
+span.mealmapblurb {
+  color: #fff;
+  font-weight: 600;
+}
+
+span.mapblurb {
+  color: #5ed7ff;
+}
+
 #aboutWrap {
   width: 100%;
-  padding:8vw;
+  padding:16vh 8vw 8vw 8vw ;
   background-color: #2584EF;
   color: #fff !important;
   height: 100vh;
   overflow: scroll;
+  background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
+}
+
+.numeral {
+  font-size:30vh;
+  margin-top:30vh;
+  color: rgba(255,255,255,.5);
+  letter-spacing: -5px;
+  vertical-align:top;
+}
+
+.numeralMinor {
+  font-size:10vh;
+  vertical-align: middle;
 }
 
 .bigHeader {
