@@ -32,12 +32,12 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(position => {
-        // this.location = position.coords;
-        this.userGPS = [position.coords.latitude, position.coords.longitude];
-      })
-    }
+    // if(navigator.geolocation){
+    //   navigator.geolocation.getCurrentPosition(position => {
+    //     // this.location = position.coords;
+    //     this.userGPS = [position.coords.latitude, position.coords.longitude];
+    //   })
+    // }
 
     (mapboxgl as any).accessToken = this._mapService.mapToken;
     this.map = new mapboxgl.Map({
