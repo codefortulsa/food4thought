@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
+import { DirectoryComponent } from './directory/directory.component';
 
 const routes: Routes = [
   {
@@ -11,9 +12,14 @@ const routes: Routes = [
     component: MainComponent,
 
   },
-  { path: 'about', 
-    pathMatch: "full", 
-    component: AboutComponent, 
+  {
+    path: 'directory',
+    pathMatch: 'full',
+    component: DirectoryComponent,
+  },
+  { path: 'about',
+    pathMatch: "full",
+    component: AboutComponent,
     children: []},
   { path: 'admin', pathMatch: "full", component: AdminComponent, children: []}
 ];

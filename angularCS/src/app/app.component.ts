@@ -187,7 +187,7 @@ export class AppComponent {
     for(var mealType = 0; mealType <= currentFeature.properties.Meals.length; mealType++){
       if(currentFeature.properties.Meals[mealType] === 'B'){
         mealsServed += 'Breakfast';
-      } 
+      }
       if(currentFeature.properties.Meals[mealType]==='L'){
         if(currentFeature.properties.Meals.length > 1) {
         mealsServed += ', Lunch';
@@ -230,7 +230,7 @@ export class AppComponent {
       // Shorten data.feature.properties to just `prop` so we're not
       // writing this long form over and over again.
       var prop = currentFeature.properties;
-      
+
       // Select the listing container in the HTML
       var listings = document.getElementById('listings');
       // Append a div with the class 'item' for each store
@@ -248,9 +248,9 @@ export class AppComponent {
       link.innerHTML = prop.Name;
 
       // ~*~*~*~*~*~*~* information about which meals are served per location...
-      
+
       var details = listing.appendChild(document.createElement('div'));
-      
+
       details.innerHTML = prop.Address;
 
       details.innerHTML += '<br><span class="meal serving">Serving : </span>'
@@ -260,7 +260,7 @@ export class AppComponent {
         for(let mt = 0; mt <= prop.Meals.length; mt++){
           if(prop.Meals[mt] === 'B') {
             details.innerHTML += '<span class="meal">Breakfast</span>';
-            
+
           } if(prop.Meals[mt]==='L'){
             if(prop.Meals.length === 1){
             details.innerHTML += '<span class="meal">Lunch</span>';
@@ -277,7 +277,7 @@ export class AppComponent {
           }
         }
         // this closes the section tag opened before the prop.Meals.length if statement...
-       
+
       }
       if (prop.Phone) {
         details.innerHTML += '<section class="pnumber"><span class="pbold">Call : </span>' + prop.Phone +'</section>';

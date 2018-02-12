@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/geojson": "^7946.0.0",
+    "angular-2-data-table": "^0.1.2",
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",

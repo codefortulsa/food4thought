@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-
+import { DataTablesModule } from 'angular-datatables';
 import { AppRoutingModule } from './app-routing.module';
 import { MapService } from './map.service';
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
+import { DirectoryComponent } from './directory/directory.component';
+
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { MainComponent } from './main/main.component';
     NavigationComponent,
     AboutComponent,
     AdminComponent,
-    MainComponent
+    MainComponent,
+    DirectoryComponent
   ],
   imports: [
     FormsModule,
     HttpModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataTablesModule
   ],
   providers: [MapService],
   bootstrap: [AppComponent]

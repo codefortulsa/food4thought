@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Meal Sites</h1>
+      <p class="lead">Complete directory of food site locations.</p>
+      <hr class="my-4">
+  </div>
+
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table-striped">
+      <thead>
+        <tr>
+          <!-- <th>ID</th> -->
+          <th>Name</th>
+          <th>Address1</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Meals</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feature of featureSet">
+          <!-- <td>{{ feature.id }}</td> -->
+          <td>{{ feature.Name }}</td>
+          <td>{{ feature.Address1 }}</td>
+          <td>{{ feature.City }}</td>
+          <td>{{ feature.State }}</td>
+          <td>{{ feature.Zip }}</td>
+          <td>{{ feature.Meals }}</td>
+        </tr>
+      </tbody>
+      </table>
+</div>

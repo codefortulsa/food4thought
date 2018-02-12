@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
       <link rel="stylesheet" href="https://use.typekit.net/plx7bvp.css">
       <script>
           (function(d) {
@@ -12,17 +14,14 @@
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
           })(document);
         </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script>
       $(document).ready(function() {
+
         $('body').bind('touchstart', function(){});
         // $('#expandCollapse').html('all meal sites +');
       $(".heading").click(function(){
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> lesleysbranch
         if( $('.heading').hasClass('.isOpen')){
           $('#listings').slideUp();
           $('#bottomListings').slideUp();
@@ -44,11 +43,7 @@
               }, 800, function(){
                 window.location.hash = hash;
               });
-<<<<<<< HEAD
             }
-=======
-            } 
->>>>>>> lesleysbranch
           });
           $('#menuIcon').click(function(){
             console.log('well?');
@@ -57,22 +52,14 @@
 
         });
         </script>
-<<<<<<< HEAD
 
       <meta charset="utf-8">
       <title>MealMaps // Helping families locate free summer meal programs</title>
 
-=======
-      
-      <meta charset="utf-8">
-      <title>MealMaps // Helping families locate free summer meal programs</title>
-
->>>>>>> lesleysbranch
       <base href="/">
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
       <link href='https://api.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
-<<<<<<< HEAD
 
       <!--favi-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,23 +68,20 @@
       <!-- Geocoder plugin -->
       <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
 
-=======
-      
-      <!--favi-->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="icon" type="image/x-icon" href="favicon.png">
-      
-      <!-- Geocoder plugin -->
-      <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
-      
->>>>>>> lesleysbranch
 
       <!-- Turf.js plugin -->
       <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+
+      <!-- DataTables scripts/sheets plugin -->
+      <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+      <script src='https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js'></script>
+      <link href='https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css' rel='stylesheet'>
+
 
   </head>
 
   <body>
     <app-root></app-root>
+
   </body>
 </html>
