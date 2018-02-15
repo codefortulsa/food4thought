@@ -24,7 +24,6 @@ export class AppComponent {
   map:mapboxgl.Map;
   mapService: MapService;
   userGPS: [number, number]= [0, 0];
-  // geocoder: MapboxGeocoder;
 
   constructor(private _mapService: MapService) {
     // this.mealSites = this._mapService.mealSites;
