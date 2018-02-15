@@ -4,12 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "start": "node server-acs.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod",
-    "start": "node server-acs.js"
+    "postinstall": "ng build --aot -prod"
+
   },
   "private": true,
   "dependencies": {
