@@ -40,7 +40,6 @@
     "core-js": "^2.4.1",
     "express": "^4.16.2",
     "datatables.net": "^1.10.16",
-    "datatables.net-dt": "^1.10.16",
     "gl": "^4.0.4",
     "jquery": "^3.3.1",
     "mapbox": "^1.0.0-beta9",
