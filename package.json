@@ -1,5 +1,5 @@
 {
-  "name": "angular-cs",
+  "name": "summerMeals",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -34,8 +34,6 @@
     "@types/geojson": "^7946.0.0",
     "@types/mapbox-gl": "^0.43.0",
     "@yaga/generic-geojson": "^1.0.0",
-    "angular-2-data-table": "^0.1.2",
-    "angular-4-data-table": "^0.4.3",
     "angular-datatables": "^5.0.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
