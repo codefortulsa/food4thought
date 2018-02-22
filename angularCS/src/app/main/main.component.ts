@@ -26,56 +26,56 @@ export class MainComponent implements OnInit {
     mapService: MapService;
     userGPS: [number, number]= [0, 0];
     // geocoder: MapboxGeocoder;
-  
+
     constructor(private _mapService: MapService) {
       // this.mealSites = this._mapService.mealSites;
-  
+
     }
-  
+
     ngOnInit(){
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(position => {
-          // this.location = position.coords;
-          this.userGPS = [position.coords.latitude, position.coords.longitude];
-        })
-      }
-  
+      // if(navigator.geolocation){
+      //   navigator.geolocation.getCurrentPosition(position => {
+      //     // this.location = position.coords;
+      //     this.userGPS = [position.coords.latitude, position.coords.longitude];
+      //   })
+      // }
+      //
       (mapboxgl as any).accessToken = this._mapService.mapToken;
       this.map = new mapboxgl.Map({
         container: 'map',
         // style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
         style: './../assets/style.json'
-  
+
       });
       // This little number loads the data points onto the map :)
       console.log(this._mapService)
       this.map.on('load', (e)=> {
         this._mapService.getAllSites().then((geoData)=>{
-  
+
         this.mealSites = geoData.json();
-  
+
         this.map.addSource('places', {
           type: 'geojson',
           data: this.mealSites
         })
-  
+
         this.buildLocationList(this.mealSites);
         // directions module.......need to finish
         // map.addControl(new MapboxDirections({
         //     accessToken: this._mapService.mapToken
         // }), 'top-left');
         // add geocoder controls
-  
+
         var geocoder = new MapboxGeocoder({
           accessToken: this._mapService.mapToken,
           // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
         });
-  
+
         this.map.addControl(geocoder, 'top-right');
-  
+
         // Add zoom and rotation controls to the map.
         this.map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-  
+
         this.map.addSource('single-point', {
           type: 'geojson',
           data: {
@@ -99,7 +99,7 @@ export class MainComponent implements OnInit {
         geocoder.on('result', (ev) => {
           var searchResult = ev.result.geometry;
           let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
-  
+
           source.setData(searchResult);
           let units:Units = 'miles';
           var options = { units: units};
@@ -129,7 +129,7 @@ export class MainComponent implements OnInit {
             }
           this.buildLocationList(this.mealSites);
         });
-  
+
         console.log(this.mealSites);
         this.mealSites.features.forEach((marker, i) => {
           // Create a div element for the marker
@@ -143,7 +143,7 @@ export class MainComponent implements OnInit {
           new mapboxgl.Marker(el, { offset: [0, -23] })
             .setLngLat(marker.geometry.coordinates)
             .addTo(this.map);
-  
+
             el.addEventListener('click', (e) => {
               // 1. Fly to the point
               this.flyToStore(marker);
@@ -160,17 +160,17 @@ export class MainComponent implements OnInit {
               listing.classList.add('active');
             });
         });
-  
+
       });
     })
-  
-  
+
+
   var sidebarList = document.getElementById('expandCollapse');
   sidebarList.innerHTML = 'all meal sites +'
-  
-  
+
+
     // end ngOnInit
-  
+
   }
 
 
@@ -182,7 +182,7 @@ export class MainComponent implements OnInit {
   }
   // This is where your interactions with the symbol layer used to be
    // Now you have interactions with DOM markers instead
-  
+
     flyToStore(currentFeature) {
     console.log(this.map)
     this.map.flyTo({
@@ -190,14 +190,14 @@ export class MainComponent implements OnInit {
         zoom: 15
       });
     }
-  
+
     createPopUp(currentFeature) {
       var popUps = document.getElementsByClassName('mapboxgl-popup');
       var mealsServed = '';
       for(var mealType = 0; mealType <= currentFeature.properties.Meals.length; mealType++){
         if(currentFeature.properties.Meals[mealType] === 'B'){
           mealsServed += 'Breakfast';
-        } 
+        }
         if(currentFeature.properties.Meals[mealType]==='L'){
           if(currentFeature.properties.Meals.length > 1) {
           mealsServed += ', Lunch';
@@ -219,9 +219,9 @@ export class MainComponent implements OnInit {
       if (popUps[0]) popUps[0].remove();
       console.log(String(this.userGPS[0]));
       var popup = new mapboxgl.Popup({ closeOnClick: false })
-  
+
         .setLngLat(currentFeature.geometry.coordinates)
-  
+
         .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
         '<div class="placeInfo"><h5>' + currentFeature.properties.Address +
           "</h5><p>Serving: "+mealsServed+"</p>"+
@@ -230,9 +230,9 @@ export class MainComponent implements OnInit {
             'Get Directions'+'</a></div>')
         //
         .addTo(this.map);
-  
+
     };
-  
+
     buildLocationList(data) {
       for (var i = 0; i < data.features.length; i++) {
         // Create an array of all the stores and their properties
@@ -240,14 +240,14 @@ export class MainComponent implements OnInit {
         // Shorten data.feature.properties to just `prop` so we're not
         // writing this long form over and over again.
         var prop = currentFeature.properties;
-        
+
         // Select the listing container in the HTML
         var listings = document.getElementById('listings');
         // Append a div with the class 'item' for each store
         var listing = listings.appendChild(document.createElement('div'));
         listing.className = 'item';
         listing.id = "listing-" + i;
-  
+
         // Create a new link with the class 'title' for each store
         // and fill it with the store address
         var link = listing.appendChild(document.createElement('a'));
@@ -256,21 +256,21 @@ export class MainComponent implements OnInit {
         link.setAttribute("dataPosition", i.toString());
         // link.dataPosition = i;
         link.innerHTML = prop.Name;
-  
+
         // ~*~*~*~*~*~*~* information about which meals are served per location...
-        
+
         var details = listing.appendChild(document.createElement('div'));
-        
+
         details.innerHTML = prop.Address;
-  
+
         details.innerHTML += '<br><span class="meal serving">Serving : </span>'
-  
+
         if(prop.Meals.length > 0){
           var mealType = [];
           for(let mt = 0; mt <= prop.Meals.length; mt++){
             if(prop.Meals[mt] === 'B') {
               details.innerHTML += '<span class="meal">Breakfast</span>';
-              
+
             } if(prop.Meals[mt]==='L'){
               if(prop.Meals.length === 1){
               details.innerHTML += '<span class="meal">Lunch</span>';
@@ -287,7 +287,7 @@ export class MainComponent implements OnInit {
             }
           }
           // this closes the section tag opened before the prop.Meals.length if statement...
-         
+
         }
         if (prop.Phone) {
           details.innerHTML += '<section class="pnumber"><span class="pbold">Call : </span>' + prop.Phone +'</section>';
@@ -299,32 +299,32 @@ export class MainComponent implements OnInit {
         details.innerHTML += "<a class='getDirections' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
         +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
           'Get Directions</a>'
-  
+
         link.addEventListener('click', (e) => {
           // Update the currentFeature to the store associated with the clicked link
           console.log((<Element>e.target).getAttribute("dataPosition"));
-  
+
           var clickedListing = data.features[Number.parseInt((<Element>e.target).getAttribute("dataPosition"))];
-  
+
           // 1. Fly to the point associated with the clicked link
           this.flyToStore(clickedListing);
-  
+
           // 2. Close all other popups and display popup for clicked store
           this.createPopUp(clickedListing);
-  
+
           // 3. Highlight listing in sidebar (and remove highlight for all other listings)
           var activeItem = document.getElementsByClassName('active');
-  
+
           if (activeItem[0]) {
             activeItem[0].classList.remove('active');
           }
           (<Element>e.target).parentElement.classList.add('active');
-  
+
         });
-  
+
       }
     }
-  
+
     nearbySites(){
       console.log("getting here");
       console.log(this);
@@ -349,7 +349,7 @@ export class MainComponent implements OnInit {
               speed: null
             }
           }
-  
+
           console.log(featureLocation)
           source.setData(featureLocation);
           let units:Units = 'miles';
@@ -384,7 +384,7 @@ export class MainComponent implements OnInit {
         });
       }
     }
-  
+
     getLocation():Feature<GeoJSONGeometry>{
       console.log("location function is working");
       if(navigator.geolocation){
@@ -416,8 +416,6 @@ export class MainComponent implements OnInit {
         return undefined;
      }
     }
-  
-  
-  }
-  
 
+
+  }
