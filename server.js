@@ -1,11 +1,11 @@
 const express = require("express");
 const path = require("path");
 
-const PORT = 2750;
+const PORT = process.env.PORT || 8082;
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, './angularCS/dist')));
+app.use(express.static(path.join(__dirname, './dist')));
 
 
 app.listen(PORT, ()=> {

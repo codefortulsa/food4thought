@@ -1,44 +1,27 @@
-# Summer Meals
+# AngularCS
 
-Angular5 app that allows families to locate free summer meal programs near them.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
-## The Need for Summer Meals
+## Development server
 
-During the school year, 62% of Oklahoma kids rely on free-and-reduced meals to receive proper nutrition;
-many of these students do not have access to adequate nutrition outside of school. In Tulsa, a staggering
-84% of students rely on free-and-reduced meals. Individual families, as well as nonprofits could greatly from knowing when and where summer meals programs are available.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Summer Café
+## Code scaffolding
 
-Summer Café provides nutritional breakfasts and lunches to children, 18 years of age and younger, free of charge.
-More than 70 sites will be serving breakfast and/or lunch throughout the Tulsa Public Schools district. Summer Café
-begins June 1 and runs through August 4. Meals are provided to all children 18 and under. No application or ID necessary.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Web App
+## Build
 
-This website uses Mapbox, as well as data provided by Hunger Free Oklahoma, to provide an interactive map that will
-help locate summer meals programs, and get more information on when locations are open, and what is provided.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Built With
+## Running unit tests
 
-* [Angular 5](https://angular.io) - Front-end Javascript Framework
-* [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/api/) - Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps
-* [Turf.js](turfjs.org) - An open-source analysis library that performs spatial analysis in the browser and in Node.js.
-* [Node.js](https://nodejs.org/en/) - A JavaScript runtime built on Chrome's V8 JavaScript engine.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Try it out
+## Running end-to-end tests
 
-We are not completely finished with the code. If you would like to run app on localhost follow these steps:
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-* fork code and navigate into root folder in terminal
-```
-cd angularCS
-```
-* install dependencies
-```
-npm install
-```
-* Serve it up. (port number is arbitrary)
-```
-ng serve --port 1309
-```
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
