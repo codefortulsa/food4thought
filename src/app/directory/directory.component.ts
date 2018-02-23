@@ -9,7 +9,7 @@ import { UniFeature } from '../models/uniFeature';
 @Component({
   selector: 'app-directory',
   templateUrl: './directory.component.html',
-  styleUrls: ['./directory.component.css']
+  styleUrls: ['./directory.component.css', './clr-icons.min.css', './clr-ui.min.css']
 })
 export class DirectoryComponent implements OnInit {
   featureSet: UniFeature[] = [];
@@ -22,7 +22,7 @@ export class DirectoryComponent implements OnInit {
       .subscribe(sites => {
         console.log(sites.json().features);
         this.featureSet = this.dataFormat(sites.json().features);
-        
+
       });
     } // ends ngOnInit //
 
