@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { AdminComponent } from './admin/admin.component';
+// import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
 import { DirectoryComponent } from './directory/directory.component';
 
@@ -21,7 +21,7 @@ const routes: Routes = [
     pathMatch: "full",
     component: AboutComponent,
     children: []},
-  { path: 'admin', pathMatch: "full", component: AdminComponent, children: []}
+  // { path: 'admin', pathMatch: "full", component: AdminComponent, children: []}
 ];
 
 @NgModule({

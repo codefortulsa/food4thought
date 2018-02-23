@@ -3,7 +3,7 @@ import { MapService } from './../map.service';
 import { GenericGeoJSONFeature, GenericGeoJSONFeatureCollection } from '@yaga/generic-geojson';
 import { MatTableDataSource } from '@angular/material';
 import { Element } from './tableheader';
-import { DataTableResource } from 'angular-2-data-table';
+// import { DataTableResource } from 'angular-2-data-table';
 
 @Component({
   selector: 'app-admin',
@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit {
       console.log(this);
       console.log("this is in the map service", this.features);
       this.fmtData = this.dataFormat(geoData.json().features);
-      this.siteResource = new DataTableResource(this.fmtData);
+      // this.siteResource = new DataTableResource(this.fmtData);
       this.siteResource.count().then(count => this.siteCount = count);
       console.log("SiteCount: ", this.siteCount);
       console.log("This is fmtData: ", this.fmtData);
