@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-import { DataTablesModule } from 'angular-datatables';
 import { AppRoutingModule } from './app-routing.module';
 import { MapService } from './map.service';
 import { AppComponent } from './app.component';
@@ -28,7 +27,6 @@ import { DirectoryComponent } from './directory/directory.component';
     HttpModule,
     BrowserModule,
     AppRoutingModule,
-    DataTablesModule
   ],
   providers: [MapService],
   bootstrap: [AppComponent]
