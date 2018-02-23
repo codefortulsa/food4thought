@@ -11,6 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
 import { DirectoryComponent } from './directory/directory.component';
 
+import { ClarityModule } from '@clr/angular';
 
 
 @NgModule({
@@ -27,6 +28,8 @@ import { DirectoryComponent } from './directory/directory.component';
     HttpModule,
     BrowserModule,
     AppRoutingModule,
+    ClarityModule.forRoot(),
+
   ],
   providers: [MapService],
   bootstrap: [AppComponent]
