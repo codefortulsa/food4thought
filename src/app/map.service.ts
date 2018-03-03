@@ -9,11 +9,11 @@ import { Router } from "@angular/router";
 export class MapService {
   datasetToken: String = "cjcnxy2y11nq82pmr8qu3zu22"
   mapToken: String = "pk.eyJ1IjoidmljYWdiYXNpIiwiYSI6ImNqY2lpcWE2aTNteGEycWxscDl2NzhpZWQifQ.KJIJ5fZsHtxebZwwROAc5w"
-  mealSites: any ;
-  mealSitesObservable = new BehaviorSubject(this.mealSites);
+  // mealSites: any ;
+  // mealSitesObservable = new BehaviorSubject(this.mealSites);
 
   constructor(private _http : Http, private _router : Router) {
-
+    console.log("this is a test..")
   }
 
   getAllSites(){

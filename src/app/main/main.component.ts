@@ -33,13 +33,7 @@ export class MainComponent implements OnInit {
     }
 
     ngOnInit(){
-      // if(navigator.geolocation){
-      //   navigator.geolocation.getCurrentPosition(position => {
-      //     // this.location = position.coords;
-      //     this.userGPS = [position.coords.latitude, position.coords.longitude];
-      //   })
-      // }
-      //
+
       (mapboxgl as any).accessToken = this._mapService.mapToken;
       this.map = new mapboxgl.Map({
         container: 'map',
@@ -68,7 +62,6 @@ export class MainComponent implements OnInit {
 
         var geocoder = new MapboxGeocoder({
           accessToken: this._mapService.mapToken,
-          // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
         });
 
         this.map.addControl(geocoder, 'top-right');
@@ -416,6 +409,4 @@ export class MainComponent implements OnInit {
         return undefined;
      }
     }
-
-
   }
