@@ -1,10 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { Http, Response } from '@angular/http';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/map';
 
 import { MapService } from './../map.service';
 import { UniFeature } from '../models/uniFeature';
+
+import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
+
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-directory',
@@ -22,7 +31,7 @@ export class DirectoryComponent implements OnInit {
       .subscribe(sites => {
         console.log(sites.json().features);
         this.featureSet = this.dataFormat(sites.json().features);
-        
+
       });
     } // ends ngOnInit //
 
@@ -43,4 +52,5 @@ export class DirectoryComponent implements OnInit {
     console.log("This is newData: ", newData);
     return newData;
   }
+
 }

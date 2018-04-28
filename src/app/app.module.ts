@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { AppRoutingModule } from './app-routing.module';
 import { MapService } from './map.service';
@@ -11,7 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
 import { DirectoryComponent } from './directory/directory.component';
 
-import { ClarityModule } from '@clr/angular';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -24,12 +24,11 @@ import { ClarityModule } from '@clr/angular';
     DirectoryComponent
   ],
   imports: [
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
     HttpModule,
     BrowserModule,
+    MaterialModule,
     AppRoutingModule,
-    ClarityModule.forRoot(),
-
   ],
   providers: [MapService],
   bootstrap: [AppComponent]
