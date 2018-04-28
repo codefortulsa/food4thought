@@ -14,17 +14,17 @@ body {
     background-repeat:no-repeat;
     background-size: contain;
     opacity: .9;
-  
+
   }
 
 
-#mobileNavContainer, #mobileNav, 
+#mobileNavContainer, #mobileNav,
 #mobileNavContainer #mobieNav,
 #mobileNavContainer:hover #mobileNav, #mobileNav:hover,
-.marker:hover, a, a:hover, ul li a, ul li a:hover, 
-.mapboxgl-popup-content , .mapboxgl-popup-content:hover, 
-div.item, div.item:hover, 
-#orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, 
+.marker:hover, a, a:hover, ul li a, ul li a:hover,
+.mapboxgl-popup-content , .mapboxgl-popup-content:hover,
+div.item, div.item:hover,
+#orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1,
 div.item:hover .cls-2,
 #mobileNav li, #mobileNav li:hover,
 #mobileNav a, #mobileNav a:hover,
@@ -40,10 +40,12 @@ input, input:hover {
 
     /* background-color: #2584ef; */
     /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
-        background-color: #1c4aef;
+        /*background-color: #1c4aef; */
         /* background-color: #2350f3; */
 
-    border-bottom:1px solid rgba(2, 67, 141, .39);
+    background-color: rgba(245,148,29,1);
+    border-bottom:1px solid rgba(245, 148, 29,.39);
+    /*border-bottom:1px solid rgba(2, 67, 141, .39);*/
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
     position: fixed;
@@ -54,15 +56,15 @@ input, input:hover {
     box-sizing: border-box;
     height: 60px;
     min-height:60px;
-    
+
   }
 
   .overlay {
-    /* background-color:#0361edcc; */
-    background-color: #0033ebcc;
+    /*background-color:#0361edcc;*/
+    background-color: rgba(245,148,29,.80);
     height: 100%;
     width:100%;
-    
+
   }
 
 #appNavBar svg {
@@ -91,10 +93,10 @@ input, input:hover {
       margin:0 0 0 0 !important;
       font-size: 2rem;
   }
-  
+
   .headlineMap {
     color: #5ed7ff;
- 
+
   }
 
 
@@ -126,12 +128,12 @@ ul#navigationBar {
 #navigationBar li:last-of-type a {
     margin-right:0px !important;
 }
-  
+
 #navigationBar li a:hover {
     /* border-bottom: 2px solid rgba(255,255,255,1); */
     text-decoration: none !important;
     color: rgba(255,255,255,1);
-   
+
 }
 
 #navigationBar #menuIcon .cls-1 {
@@ -143,14 +145,16 @@ ul#navigationBar {
     height:70vh;
     display:none;
     margin-top:10px;
-    background-color: #2851e7;
+    /*background-color: #2851e7;*/
     color: #fff;
     overflow-y: scroll;
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
-   
+    /*background: radial-gradient(#2851e7,#1f48dc,#1a45e4);*/
+    /*background: radial-gradient(rgb(252, 152, 31),rgb(243, 150, 36),rgb(243, 154, 45));*/
+    background-color: rgba(245, 148, 29, 0.95);
+
   }
 
   div#featherOut {
@@ -176,7 +180,7 @@ ul#navigationBar {
     height: 4vh;
     margin-top: 2vh;
     display: none !important;
-    
+
 }
 
 
@@ -228,13 +232,14 @@ ul#navigationBar {
     animation: fadeIn .3s ease 1;
     -webkit-animation: fadeIn .3s ease 1;
     -moz-animation: fadeIn .3s ease 1;
-    -o-animation: fadeIn .3s ease 1;  
+    -o-animation: fadeIn .3s ease 1;
 }
 
 
 .mapboxgl-popup-content h3 {
     color: rgba(255,255,255,.9) !important;
-    background-color: #2851e7;
+    /*background-color: #2851e7;*/
+    background-color: rgba(245,148,29,1);
     border-top-right-radius:8px;
     border-top-left-radius:8px;
     padding:2vh 2vh 1.75vh 2vh;
@@ -244,11 +249,11 @@ ul#navigationBar {
     margin: 0 0 0 0;
     border-bottom: 1px solid rgba(255, 86, 34, 1);
     text-align: left;
-    
+
   }
 
 
- 
+
   h5::before {
     content: 'Street Address :';
     display: block;
@@ -264,9 +269,11 @@ ul#navigationBar {
 }
 
   .mapboxgl-popup-content .placeInfo {
-    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+    /*box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);*/
+    box-shadow: inset 0px 0px 30px rgba(218, 122, 5, 0.4);
     /* background-color: rgba(61, 133, 226, 0.9); */
-    background-color: rgba(0, 110, 253, 0.9);
+    /*background-color: rgba(0, 110, 253, 0.9);*/
+    background-color: rgba(245, 148, 29, 0.9);
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
     color: rgba(255,255,255,.86);
@@ -304,8 +311,8 @@ ul#navigationBar {
   }
 
   .mapboxgl-popup-content:hover .placeInfo {
-    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
-   
+    /*box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);*/
+    box-shadow: inset 0px 0px 30px rgba(218, 122, 5, 0.4);
     }
 
   .mapboxgl-popup-content:hover h5::before {
@@ -321,15 +328,16 @@ ul#navigationBar {
     margin: 0 0 0 0;
     text-align: right;
     position:absolute;
-    top: 0vh; 
+    top: 0vh;
     right:0;
     left:0;
 }
 
 
 #map {
-    background-color: #2652d7;
-    background: linear-gradient(#1e4ef8, #2652d7);
+    /*background-color: #2652d7;*/
+    background-color: rgba(245,148,29,1);
+    /*background: linear-gradient(#1e4ef8, #2652d7);*/
 }
 
 
@@ -362,8 +370,8 @@ ul#navigationBar {
     color: #fff;
     line-height:40px;
     text-align:center;
-    
-    
+
+
   }
 
 
@@ -387,13 +395,15 @@ input[type="text"] {
     width: 67vw;
     background-color: #ffffff14;
     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .31);
-    border: 1px solid rgba(30, 73, 239,1) !important;
+
+    /*border: 1px solid rgba(30, 73, 239,1) !important;*/
+    border: 1px solid rgba(255, 86, 34, .61)!important;
     outline: none !important;
     padding-right:10px;
     text-indent: 3vh;
     caret-color:rgba(255, 86, 34, 1);
     text-align:right;
-    
+
 
 }
 
@@ -405,8 +415,8 @@ input:hover {
 
 input:focus {
     outline: none !important;
-    border: 1px solid rgba(30, 73, 239,1) !important;
-    background-color: rgba(0,0,0,.10); 
+    border: 1px solid rgba(255, 86, 34, 1) !important;
+    background-color: rgba(0,0,0,.10);
 }
   a.title {
       font-weight: 500;
@@ -423,7 +433,7 @@ input:focus {
   }
 
 
- 
+
 
 
 
@@ -439,7 +449,7 @@ input:focus {
 .getDirections {
     font-weight:600;
     /* color: rgba(0,0,0,0) !important; */
-   
+
 }
 
 
@@ -496,7 +506,7 @@ div.item:hover {
     animation: fadeIn .3s ease 1;
     -webkit-animation: fadeIn .3s ease 1;
     -moz-animation: fadeIn .3s ease 1;
-    -o-animation: fadeIn .3s ease 1;  
+    -o-animation: fadeIn .3s ease 1;
 }
 
 
@@ -520,24 +530,26 @@ div.item:hover {
         background: linear-gradient(#4593eb, #3c8ce9) */
         /* background: #1c4aef; */
         /* background:linear-gradient(#1c4aef, #1f4bd3); */
-        background: #1e4ef8;
-        background: linear-gradient(#1e4ef8, #2652d7);
+
+        /*background: #1e4ef8;*/
+        /*background: linear-gradient(#1e4ef8, #2652d7);*/
+        background-color: rgba(245,148,29,1);
     }
 
     .geocoder-pin-right {
         display: none;
     }
-  
 
-    
+
+
   @media screen and (max-width: 730px) {
     /* #mobileNav {
         list-style-type: none;
         padding:5vh 2vh 2vh 2vh;
     } */
-    div#mobileNavContainer{ 
+    div#mobileNavContainer{
         display: inline-block;
-        
+
         position: absolute;
         right: 2vw;
         padding-top: 20px;
@@ -545,7 +557,7 @@ div.item:hover {
     #mobileNavContainer:hover {
         height:40vh;
         width:50vw;
-        
+
     }
     #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
         display: block !important;
@@ -553,7 +565,8 @@ div.item:hover {
         /* background-color: rgba(37, 132, 239,.91); */
         /* background-color: rgba(30, 73, 239,1); */
         /* background-color: #2350f3; */
-        background-color:#1c4aef;
+        /* background-color:#1c4aef; */
+        background-color:rgba(245,148,29,1);
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
@@ -565,12 +578,12 @@ div.item:hover {
         animation: fadeIn .3s ease 1;
         -webkit-animation: fadeIn .3s ease 1;
         -moz-animation: fadeIn .3s ease 1;
-        -o-animation: fadeIn .3s ease 1;  
+        -o-animation: fadeIn .3s ease 1;
         box-shadow: 0px 1px 2px rgba(0,0,0,.2);
-        
+
     }
-    
-  
+
+
         #mobileNav a {
             color: rgba(255,255,255,1);
             line-height:50px;
@@ -582,7 +595,7 @@ div.item:hover {
             font-size: 1.85vh;
             padding:0 2vh 0 2vh;
             font-weight:400;
-            
+
         }
 
         #mobileNav li:last-of-type a {
@@ -608,11 +621,11 @@ div.item:hover {
         #mobileNav a:hover {
             background:  rgba(255,255,255,.1);
             color: rgba(255,255,255,.8)
-            
-            
+
+
         }
 
-        
+
         ul#navigationBar{
             display: none !important;
         }
@@ -634,13 +647,13 @@ div.item:hover {
             fill: rgba(255,255,255,.7) !important;
         }
 
-   
+
 
         #expandCollapse {
             width: 37vw;
         }
         #listings {
-            width: 96vw !important; 
+            width: 96vw !important;
             max-width:96vw;
 
         }
@@ -649,8 +662,8 @@ div.item:hover {
             width: 57vw !important;
             max-width:57vw;
         }
-       
-      
+
+
     }
 
 
@@ -658,5 +671,5 @@ div.item:hover {
 @-moz-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @-webkit-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
-  
+
 

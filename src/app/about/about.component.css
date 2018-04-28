@@ -1,13 +1,15 @@
 .aboutus{
-  background-color: #2584EF;
+  /*background-color: #2584EF;*/
+  background-color: rgba(245,148,29,1);
 }
 
 .lead[_ngcontent-c2] {
   text-align: center;
   font-weight: 500;
-  
+
   color: #ccf1ff;
-  border: 1px dotted rgba(0, 220, 255, 0.41);
+  /*border: 1px dotted rgba(0, 220, 255, 0.41);*/
+  border: 1px dotted rgba(245,148,29,0.5);
   border-radius: 4px;
   padding: 21vh 4vh;
   line-height: 4vh;
@@ -25,7 +27,7 @@
   text-align:left;
   margin:5vh auto;
   display:block;
-  
+
   max-width:800px;
   min-width:300px;
 }
@@ -48,11 +50,12 @@ span.mapblurb {
 #aboutWrap {
   width: 100%;
   padding:16vh 8vw 8vw 8vw ;
-  background-color: #2584EF;
+  /*background-color: #2584EF;*/
+  background-color: rgba(245,148,29,1);
   color: #fff !important;
   height: 100vh;
   overflow: scroll;
-  background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
+  /*background: radial-gradient(#2851e7,#1f48dc,#1a45e4);*/
   text-align:center;
 }
 
@@ -66,7 +69,7 @@ span.mapblurb {
 
 .numeralMinor {
   font-size:2vh;
-  
+
 }
 
 .infolead {
@@ -122,3 +125,9 @@ a {
 h2 {
   text-align:center;
 }
+
+.logo-link {
+  display: inline-block;
+  margin: 0px 40px;
+}
+
