@@ -62,6 +62,8 @@ export class MainComponent implements OnInit {
 
         var geocoder = new MapboxGeocoder({
           accessToken: this._mapService.mapToken,
+          country: 'us',
+          bbox: [-103.000, 33.370, -94.260, 37.000]
         });
 
         this.map.addControl(geocoder, 'top-right');
