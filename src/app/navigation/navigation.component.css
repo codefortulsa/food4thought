@@ -8,7 +8,7 @@ h1.logotype {
   float:left;
   color:#fff;
   font-weight:900;
-  font-size:1.5rem;
+  font-size:1.25rem;
   line-height:60px;
 }
 
@@ -18,4 +18,15 @@ h1.logotype .logotypeOrange {
 
 #navigationBar li a {
   font-weight: 600;
+}
+
+.logo {
+  float:left;
+  height:60px;
+}
+.logo #Layer_1 {
+  display:inline-block;
+}
+#appNavBar #Layer_1{
+width:150px;
 }

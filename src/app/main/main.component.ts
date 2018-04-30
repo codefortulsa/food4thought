@@ -169,10 +169,21 @@ export class MainComponent implements OnInit {
 
 
   openSesame(){
-    console.log('maybe this will work');
-    var listingButton = document.getElementById('expandCollapse');
-    listingButton.innerHTML = 'meal sites';
+    let dropDown = document.getElementById('listings');
+    if(dropDown.classList.contains('isOpen')){
+      dropDown.classList.remove('isOpen')
+      return
+    }
+
+    dropDown.classList.add('isOpen');
+ 
+    
   }
+
+
+
+
+
   // This is where your interactions with the symbol layer used to be
    // Now you have interactions with DOM markers instead
 

@@ -2,10 +2,10 @@
     
 
 <div id="first" class="_container">
-    <div class="_jumbotron">
+ 
       <div class="overlay">
    
-      
+      <div id="landingContent">
       
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 339.9 142.5">
           <title>food4thought_logo_clip</title>
@@ -32,10 +32,11 @@
      
         </svg>
         
-   <a id="foodLink" href="#findfood"><button id="myGeo" (click)="getLocation()" type="Submit" class="btn btn-primary btn-sm center tween">Find Food!</button></a>
+   <a id="foodLink" href="#findfood"><button id="myGeo" (click)="getLocation()" type="Submit" class="btn btn-primary btn-sm center tween">FIND A LOCATION NEAR YOU!</button></a>
 
+  </div><!--closes landingContent-->
     </div><!--closes overlay-->
-  </div><!--closes _jumbotron-->
+
 
   
 </div><!--closes _container-->
@@ -51,8 +52,8 @@
     
       <div id="sbDrag" class="sidebarWrap">
     
-        <div class='heading'>
-            <h6 (click)="openSesame()" id="expandCollapse"></h6>
+        <div id='heading'>
+            <h6 (click)="openSesame()" id="expandCollapse">all locations</h6>
         </div>
         <div id='listings' class='listings'>
           <!--LISTINGS HERE-->
@@ -63,9 +64,7 @@
 
   </div>
 </div>
-<div id="featherOut">
-  
-</div>
+
 
 
 

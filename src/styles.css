@@ -43,7 +43,8 @@ input, input:hover {
         /* background-color: #1c4aef; */
         /* background-color: #2350f3; */
         border-bottom: 1px solid rgba(255, 178, 5, 0.39);
-        background-color: #fc9e2b;
+        /* background-color: #fc9e2b; */
+        background-color: #f69621;
     /* border-bottom:1px solid rgba(2, 67, 141, .39); */
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
@@ -61,9 +62,15 @@ input, input:hover {
   .overlay {
     /* background-color:#0361edcc; */
     /* background-color: #0033ebcc; */
-    background-color: #f69621;
+    /* background-color: #f69621; */
+    background: linear-gradient(#f69621,#ff9716);
     height: 100%;
-    width:100%;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-flow: wrap;
+
     
   }
 
@@ -94,10 +101,7 @@ input, input:hover {
       font-size: 2rem;
   }
   
-  .headlineMap {
-    color: #5ed7ff;
- 
-  }
+
 
 
 ul#navigationBar {
@@ -142,18 +146,38 @@ ul#navigationBar {
 }
 
 #listings {
-    height:70vh;
-    display:none;
+    height:0vh;
+    /* display:none; */
+   visibility:hidden;
     margin-top:10px;
-    background-color: #2851e7;
-    color: #fff;
+    /* background-color: #2851e7; */
+    color: #ffffff00;
     overflow-y: scroll;
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
+
     background: linear-gradient(#f69621, #f2911a,#f69621);
+  
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index:-1;
+
    
+  }
+
+  #heading {
+      z-index:1;
+  }
+
+  #listings.isOpen {
+      
+    color: #ffffff;
+      visibility:visible;
+      height:70vh;
+      transform:translateY(0);
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
   }
 
   div#featherOut {
@@ -213,14 +237,19 @@ ul#navigationBar {
 
 
 .mapboxgl-popup-close-button {
-    top: 3vh;
-    right: 3vh;
-    font-size:3vh;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
     color: rgba(255,255,255,1);
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .mapboxgl-popup-close-button:hover {
-    color: rgba(255, 86, 34, 0.884);
+    color: #ffde16;
+    background-color:rgba(0,0,0,0);
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .mapboxgl-popup-content {
@@ -241,10 +270,10 @@ ul#navigationBar {
     background-color:#fc9e2b;
     border-top-right-radius:8px;
     border-top-left-radius:8px;
-    padding:2vh 2vh 1.75vh 2vh;
-    font-size: 1.35vh;
+    padding:0 2vh 0 2vh;
+    font-size: .7rem;
+    line-height:2rem;
     font-weight:700;
-    letter-spacing: 1px;
     margin: 0 0 0 0;
     /* border-bottom: 1px solid rgba(255, 86, 34, 1); */
     border-bottom: 1px solid #ffde1626;
@@ -257,10 +286,10 @@ ul#navigationBar {
   h5::before {
     content: 'Street Address :';
     display: block;
-    margin-bottom:.5vh;
-    color: rgba(255,255,255,.96);
+    margin-bottom:.25rem;
+    color: rgba(52, 52, 52, 0.96);
     font-weight: 700;
-    font-size:1.25vh;
+    font-size:.55rem;
     text-transform: uppercase;
 }
 
@@ -273,11 +302,12 @@ ul#navigationBar {
 
     /* background-color: rgba(61, 133, 226, 0.9); */
     /* background-color: rgba(0, 110, 253, 0.9); */
-    background-color: #f59724;
-    box-shadow:inset 0px 0px 30px #f19625;
+    background-color: #ffffff;
+    /* box-shadow:inset 0px 0px 30px #f19625; */
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
-    color: rgba(255,255,255,.86);
+    /* color: rgba(255,255,255,.86); */
+    color:rgba(46, 46, 46, 0.86);
     padding: 2vh 2vh 2.25vh 2vh;
     font-size: 1.15vh;
     letter-spacing: 1px;
@@ -293,15 +323,17 @@ ul#navigationBar {
   }
 
   .placeInfo a {
-      color: rgba(255,255,255,1);
-      font-size:1.75vh;
-      height: 5vh;
-        line-height: 5vh;
-        border: 1px solid rgba(255,255,255,.4);
+      /* color: rgba(255,255,255,1); */
+      color: rgb(82, 82, 82);
+      font-size:.65rem;
+      height: 2rem;
+        line-height: 2rem;
+        /* border: 1px solid rgba(255,255,255,.4); */
+        border: 1px solid rgb(242, 242, 242);
         border-radius:3px;
         text-align: center;
         display: block;
-        background-color: rgba(255,255,255,.06);
+        /* background-color: rgba(255,255,255,.06); */
   }
 
   .placeInfo a:hover  {
@@ -312,12 +344,14 @@ ul#navigationBar {
   }
 
   .mapboxgl-popup-content:hover .placeInfo {
-    box-shadow: inset 0px 0px 30px #f59724;
+    /* box-shadow: inset 0px 0px 30px #f59724; */
+    box-shadow: inset 0px 0px 30px #ededed;
    
     }
 
   .mapboxgl-popup-content:hover h5::before {
-    color: rgba(255,255,255,1);
+    /* color: rgba(255,255,255,1); */
+    color:rgba(44, 21, 1, 0.86);
   }
 
   .mapboxgl-ctrl-top-right {

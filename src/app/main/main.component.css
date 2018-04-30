@@ -38,11 +38,7 @@
 
   
   svg#Layer_1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+   
     margin: auto;
     width: 45vw;
     opacity: .95;
@@ -57,25 +53,24 @@
   }
   
   #foodLink {
-    position:absolute;
-    bottom:30vh;
-    left:0;
-    right:0;
+    display:block;
     margin:auto;
   }
   .btn-primary {
     background-color:rgba(255, 183, 94, 0.47);
-    padding: 0.55vh 6vh .55vh 6vh;
+    padding: 0.95vh 4vh .95vh 4vh;
     border-radius:40px;
-    font-size:2.75vh;
+    font-size:1rem;
+    letter-spacing:1px;
+    font-weight:600;
     color: rgba(255,255,255,1);
     border:0px;
   }
   
   .btn-primary:hover {
-    background-color: rgba(94, 215, 255, 1);
-    padding:.95vh 4vh .95vh 4vh;
-    border-radius:6px;
+    background-color: rgba(255,255, 255, 1);
+    padding:.95vh 5vh .95vh 5vh;
+   color: #f69621;
   }
   
   
@@ -228,6 +223,7 @@
   
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
     margin-top: 15px;
+    padding:0px;
   }
   
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
