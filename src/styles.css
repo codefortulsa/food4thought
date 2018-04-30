@@ -40,10 +40,12 @@ input, input:hover {
 
     /* background-color: #2584ef; */
     /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
-        background-color: #1c4aef;
+        /* background-color: #1c4aef; */
         /* background-color: #2350f3; */
 
-    border-bottom:1px solid rgba(2, 67, 141, .39);
+    /* border-bottom:1px solid rgba(2, 67, 141, .39); */
+    background-color: #f68b24;
+    border-bottom: 1px solid #e68221;
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
     position: fixed;
@@ -59,7 +61,7 @@ input, input:hover {
 
   .overlay {
     /* background-color:#0361edcc; */
-    background-color: #0033ebcc;
+    background-color: #fc8c0dcc;;
     height: 100%;
     width:100%;
     
