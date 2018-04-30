@@ -1,10 +1,6 @@
-
-
-
-
 {
     "version": 8,
-    "name": "Bright",
+    "name": "Bright-copy",
     "metadata": {
         "mapbox:autocomposite": true,
         "mapbox:type": "template",
@@ -51,11 +47,11 @@
             },
             "1456163609504.0715": {
                 "name": "Road labels",
-                "collapsed": true
+                "collapsed": false
             },
             "1444849272561.29": {
                 "name": "Place labels",
-                "collapsed": true
+                "collapsed": false
             },
             "1444849290021.1838": {
                 "name": "Road labels",
@@ -67,15 +63,15 @@
             },
             "1444849297111.495": {
                 "name": "POI labels",
-                "collapsed": true
+                "collapsed": false
             }
         }
     },
     "center": [
-        -95.95714699998393,
-        36.127811999957416
+        -95.98760626598335,
+        36.1516915384198
     ],
-    "zoom": 11.823183783610162,
+    "zoom": 13.923661255130058,
     "bearing": 0,
     "pitch": 0,
     "sources": {
@@ -84,14 +80,14 @@
             "type": "vector"
         }
     },
-    "sprite": "mapbox://sprites/lesleynorton/cjd3m83584gf12rnvpp85ma4g",
+    "sprite": "mapbox://sprites/lesleynorton/cjglpbl8q00052spmgxthrxa0",
     "glyphs": "mapbox://fonts/lesleynorton/{fontstack}/{range}.pbf",
     "layers": [
         {
             "id": "background",
             "type": "background",
             "paint": {
-                "background-color": "hsl(0, 0%, 100%)"
+                "background-color": "hsl(228, 59%, 96%)"
             }
         },
         {
@@ -3374,8 +3370,8 @@
                 "text-size": 12
             },
             "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
+                "text-color": "hsl(211, 39%, 50%)",
+                "text-halo-color": "hsla(199, 41%, 96%, 0.85)",
                 "text-halo-width": 1,
                 "text-halo-blur": 0.5
             }
@@ -3419,8 +3415,8 @@
                 "text-size": 12
             },
             "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
+                "text-color": "hsl(211, 39%, 50%)",
+                "text-halo-color": "hsla(199, 41%, 96%, 0.85)",
                 "text-halo-width": 1,
                 "text-halo-blur": 0.5
             }
@@ -3464,8 +3460,8 @@
                 "text-size": 12
             },
             "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
+                "text-color": "hsl(211, 39%, 50%)",
+                "text-halo-color": "hsla(199, 41%, 96%, 0.85)",
                 "text-halo-width": 1,
                 "text-halo-blur": 0.5
             }
@@ -3496,8 +3492,8 @@
                 "text-max-width": 9
             },
             "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
+                "text-color": "hsl(211, 39%, 50%)",
+                "text-halo-color": "hsla(199, 41%, 96%, 0.85)",
                 "text-halo-width": 1,
                 "text-halo-blur": 0.5
             }
@@ -3541,8 +3537,8 @@
                 "text-size": 12
             },
             "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
+                "text-color": "hsl(211, 39%, 50%)",
+                "text-halo-color": "hsla(199, 41%, 96%, 0.85)",
                 "text-halo-width": 1,
                 "text-halo-blur": 0.5
             }
@@ -3588,8 +3584,8 @@
                 "text-size": 12
             },
             "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
+                "text-color": "hsl(211, 39%, 50%)",
+                "text-halo-color": "hsla(199, 41%, 96%, 0.85)",
                 "text-halo-width": 1,
                 "text-halo-blur": 0.5
             }
@@ -3629,7 +3625,7 @@
                 "symbol-placement": "line"
             },
             "paint": {
-                "text-color": "#765",
+                "text-color": "hsl(225, 16%, 51%)",
                 "text-halo-width": 1,
                 "text-halo-blur": 0.5
             }
@@ -3716,7 +3712,7 @@
                 }
             },
             "paint": {
-                "text-color": "#633",
+                "text-color": "hsl(214, 52%, 54%)",
                 "text-halo-color": "rgba(255,255,255,0.8)",
                 "text-halo-width": 1.2
             }
@@ -3756,7 +3752,7 @@
                 }
             },
             "paint": {
-                "text-color": "#333",
+                "text-color": "hsl(214, 52%, 54%)",
                 "text-halo-color": "rgba(255,255,255,0.8)",
                 "text-halo-width": 1.2
             }
@@ -3796,7 +3792,7 @@
                 }
             },
             "paint": {
-                "text-color": "#333",
+                "text-color": "hsl(214, 52%, 54%)",
                 "text-halo-color": "rgba(255,255,255,0.8)",
                 "text-halo-width": 1.2
             }
@@ -3836,7 +3832,7 @@
                 }
             },
             "paint": {
-                "text-color": "#333",
+                "text-color": "hsl(214, 52%, 54%)",
                 "text-halo-color": "rgba(255,255,255,0.8)",
                 "text-halo-width": 1.2
             }
@@ -4407,9 +4403,9 @@
             }
         }
     ],
-    "created": "2018-01-31T22:00:15.975Z",
-    "id": "cjd3m83584gf12rnvpp85ma4g",
-    "modified": "2018-01-31T22:01:00.165Z",
+    "created": "2018-04-30T03:45:56.462Z",
+    "id": "cjglpbl8q00052spmgxthrxa0",
+    "modified": "2018-04-30T04:29:46.290Z",
     "owner": "lesleynorton",
     "visibility": "private",
     "draft": false

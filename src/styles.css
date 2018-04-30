@@ -10,7 +10,7 @@ body {
     cursor: pointer;
     height:25px;
     width: 25px;
-    background-image: url("./assets/blueMarker.svg");
+    background-image: url("./assets/orangeMarker.svg");
     background-repeat:no-repeat;
     background-size: contain;
     opacity: .9;
@@ -40,10 +40,11 @@ input, input:hover {
 
     /* background-color: #2584ef; */
     /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
-        background-color: #1c4aef;
+        /* background-color: #1c4aef; */
         /* background-color: #2350f3; */
-
-    border-bottom:1px solid rgba(2, 67, 141, .39);
+        border-bottom: 1px solid rgba(255, 178, 5, 0.39);
+        background-color: #fc9e2b;
+    /* border-bottom:1px solid rgba(2, 67, 141, .39); */
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
     position: fixed;
@@ -59,7 +60,8 @@ input, input:hover {
 
   .overlay {
     /* background-color:#0361edcc; */
-    background-color: #0033ebcc;
+    /* background-color: #0033ebcc; */
+    background-color: #f69621;
     height: 100%;
     width:100%;
     
@@ -120,7 +122,7 @@ ul#navigationBar {
     height:60px;
     text-transform: uppercase;
     letter-spacing:.07vh;
-    padding-top: 3px;
+  
 }
 
 #navigationBar li:last-of-type a {
@@ -149,7 +151,8 @@ ul#navigationBar {
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
+    /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
+    background: linear-gradient(#f69621, #f2911a,#f69621);
    
   }
 
@@ -234,7 +237,8 @@ ul#navigationBar {
 
 .mapboxgl-popup-content h3 {
     color: rgba(255,255,255,.9) !important;
-    background-color: #2851e7;
+    /* background-color: #2851e7; */
+    background-color:#fc9e2b;
     border-top-right-radius:8px;
     border-top-left-radius:8px;
     padding:2vh 2vh 1.75vh 2vh;
@@ -242,7 +246,8 @@ ul#navigationBar {
     font-weight:700;
     letter-spacing: 1px;
     margin: 0 0 0 0;
-    border-bottom: 1px solid rgba(255, 86, 34, 1);
+    /* border-bottom: 1px solid rgba(255, 86, 34, 1); */
+    border-bottom: 1px solid #ffde1626;
     text-align: left;
     
   }
@@ -264,9 +269,12 @@ ul#navigationBar {
 }
 
   .mapboxgl-popup-content .placeInfo {
-    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+    /* box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4); */
+
     /* background-color: rgba(61, 133, 226, 0.9); */
-    background-color: rgba(0, 110, 253, 0.9);
+    /* background-color: rgba(0, 110, 253, 0.9); */
+    background-color: #f59724;
+    box-shadow:inset 0px 0px 30px #f19625;
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
     color: rgba(255,255,255,.86);
@@ -293,7 +301,7 @@ ul#navigationBar {
         border-radius:3px;
         text-align: center;
         display: block;
-        background-color: rgba(255,255,255,0);
+        background-color: rgba(255,255,255,.06);
   }
 
   .placeInfo a:hover  {
@@ -304,7 +312,7 @@ ul#navigationBar {
   }
 
   .mapboxgl-popup-content:hover .placeInfo {
-    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
+    box-shadow: inset 0px 0px 30px #f59724;
    
     }
 
@@ -377,7 +385,7 @@ ul#navigationBar {
 
 #expandCollapse:hover {
     /* background-color: #5ed7ff; */
-    background-color: rgba(0,0,0,.12);
+    background-color: rgba(0,0,0,.042);
     border:1px solid rgba(255,255,255,0);
     transition:all 0.2s ease;
 }
@@ -386,12 +394,13 @@ ul#navigationBar {
 input[type="text"] {
     width: 67vw;
     background-color: #ffffff14;
-    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .31);
-    border: 1px solid rgba(30, 73, 239,1) !important;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .21);
+    /* border: 1px solid rgba(30, 73, 239,1) !important; */
+    border: 1px solid #ffde1640 !important;
     outline: none !important;
     padding-right:10px;
     text-indent: 3vh;
-    caret-color:rgba(255, 86, 34, 1);
+    caret-color:   #ffde16 !important;;
     text-align:right;
     
 
@@ -399,14 +408,15 @@ input[type="text"] {
 
 input:hover {
     outline: none !important;
-    border:1px solid rgba(255, 86, 34, .61) !important;
-    background-color: rgba(0,0,0,.12);
+    /* border:1px solid rgba(255, 86, 34, .61) !important; */
+    border: 1px solid #ffde1600 !important;
+    background-color: rgba(0,0,0,.032);
 }
 
 input:focus {
     outline: none !important;
-    border: 1px solid rgba(30, 73, 239,1) !important;
-    background-color: rgba(0,0,0,.10); 
+    border: 1px solid #f69621 !important;
+    background-color: rgba(0,0,0,.05); 
 }
   a.title {
       font-weight: 500;
@@ -520,8 +530,9 @@ div.item:hover {
         background: linear-gradient(#4593eb, #3c8ce9) */
         /* background: #1c4aef; */
         /* background:linear-gradient(#1c4aef, #1f4bd3); */
-        background: #1e4ef8;
-        background: linear-gradient(#1e4ef8, #2652d7);
+        /* background: #1e4ef8;
+        background: linear-gradient(#1e4ef8, #2652d7); */
+        background: linear-gradient(#f69621, #f2911a);
     }
 
     .geocoder-pin-right {
@@ -530,7 +541,7 @@ div.item:hover {
   
 
     
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 800px) {
     /* #mobileNav {
         list-style-type: none;
         padding:5vh 2vh 2vh 2vh;
@@ -553,7 +564,7 @@ div.item:hover {
         /* background-color: rgba(37, 132, 239,.91); */
         /* background-color: rgba(30, 73, 239,1); */
         /* background-color: #2350f3; */
-        background-color:#1c4aef;
+        background-color:#fc9e2b;
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
@@ -590,20 +601,20 @@ div.item:hover {
             line-height: 60px;
             height: 60px;
             font-size: 1rem;
+            letter-spacing:2px;
+            font-weight:900;
             color: #fff;
-            border: 1px solid rgba(255, 86, 34, .91);
+            border: 1px solid  #ffde16;
             border-radius:4px;
         }
 
         #mobileNav li:last-of-type a:hover {
-           background-color: rgba(30, 77, 138, 0.4);
-           border: 1px solid rgba(255, 166, 0, 0);
+           background-color: rgba(255,255,255,.91);
+     
+           color:#f69621;
         }
 
-        #mobileNav li:nth-of-type(3) a {
-            border-bottom: none !important;
-            letter-spacing: .04em;
-        }
+ 
 
         #mobileNav a:hover {
             background:  rgba(255,255,255,.1);
