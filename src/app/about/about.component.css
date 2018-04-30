@@ -6,8 +6,8 @@
   text-align: center;
   font-weight: 500;
   
-  color: #ccf1ff;
-  border: 1px dotted rgba(0, 220, 255, 0.41);
+  color: #1d1d1d;
+  border: 1px dotted rgba(0,0,0, 0.41);
   border-radius: 4px;
   padding: 21vh 4vh;
   line-height: 4vh;
@@ -37,7 +37,7 @@
   font-size:2vh;
 }
 span.mealmapblurb {
-  color: #fff;
+  color: #1d1d1d;
   font-weight: 600;
 }
 
@@ -48,18 +48,18 @@ span.mapblurb {
 #aboutWrap {
   width: 100%;
   padding:16vh 8vw 8vw 8vw ;
-  background-color: #2584EF;
-  color: #fff !important;
+  /* background-color: #2584EF; */
+  color:#1d1d1d !important;
   height: 100vh;
   overflow: scroll;
-  background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
+  /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
   text-align:center;
 }
 
 .numeral {
   font-size:5vh;
   margin: 0 0 3vh 0;
-  color: rgba(255,255,255,1);
+  color: #1d1d1d;
   letter-spacing: -1px;
   display:block;
 }
@@ -94,11 +94,11 @@ line-height: 3.5vh;
   margin-top:4vh;
   font-size:7rem;
   letter-spacing: -3px;
-  color: rgba(255,255,255,.9);
+  color: #1d1d1d;
 }
 
 p {
-  color: rgba(255,255,255,.65);
+  color: #1d1d1d;
   line-height: 2.4rem;
   margin-bottom:4em;
 }
@@ -115,7 +115,7 @@ p {
 }
 
 a {
-  color: #fff;
+  color: #1d1d1d;
   text-decoration: underline;
 }
 

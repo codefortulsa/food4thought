@@ -86,21 +86,8 @@ input, input:hover {
   }
 
 
-  #appNavBar h2.summertimeMeals a{
-    color: rgba(255,255,255,.9);
-    line-height: 60px;
-    height: 60px;
-    display: inline-block;
-    float:left;
-    text-decoration: none;
-    margin: 0 0 0 0 !important;
-  }
 
-  #appNavBar h2 {
-      margin:0 0 0 0 !important;
-      font-size: 2rem;
-  }
-  
+
 
 
 
@@ -180,31 +167,35 @@ ul#navigationBar {
       transition: all 0.3s ease;
   }
 
-  div#featherOut {
-    position: fixed;
-    top: 120px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 90vh;
-    background: radial-gradient(#ffffff00,#ffffff00, #004eff27);
-    z-index: 0;
-    pointer-events: none;
-    display: none;
-}
+
+
+  #dropDownIcon {
+      max-width:.6rem;
+      margin-left:1vh !important; 
+  }
+  #dropDownIcon path {
+      fill:#ffffff;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+
+
+
+  #expandCollapse:hover #dropDownIcon path {
+      fill: #ffde16 !important;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+
+
+
+
 
   #listings a {
       color: #fff;
   }
 
 
-  div#bottomlistings {
-    height: 4vh;
-    margin-top: 2vh;
-    display: none !important;
-    
-}
 
 
 ::-webkit-input-placeholder,  ::-moz-placeholder, :-ms-input-placeholder,   ::placeholder {
@@ -309,14 +300,14 @@ ul#navigationBar {
     /* color: rgba(255,255,255,.86); */
     color:rgba(46, 46, 46, 0.86);
     padding: 2vh 2vh 2.25vh 2vh;
-    font-size: 1.15vh;
+    font-size: .6rem;
     letter-spacing: 1px;
     font-weight: 400;
 
   }
 
   .placeInfo h5 {
-      font-size: 1.15vh;
+      font-size: .6rem;
     letter-spacing: 1px;
     font-weight: 400;
 
@@ -401,7 +392,7 @@ ul#navigationBar {
     border-radius: 4px;
     box-sizing: border-box;
     font-size:15px;
-    color: #fff;
+    color: rgba(255,255,255,1);
     line-height:40px;
     text-align:center;
     
@@ -418,6 +409,7 @@ ul#navigationBar {
 }
 
 #expandCollapse:hover {
+    color: rgba(255,255,255,.9);
     /* background-color: #5ed7ff; */
     background-color: rgba(0,0,0,.042);
     border:1px solid rgba(255,255,255,0);
@@ -572,7 +564,8 @@ div.item:hover {
     .geocoder-pin-right {
         display: none;
     }
-  
+
+
 
     
   @media screen and (max-width: 800px) {
@@ -598,7 +591,7 @@ div.item:hover {
         /* background-color: rgba(37, 132, 239,.91); */
         /* background-color: rgba(30, 73, 239,1); */
         /* background-color: #2350f3; */
-        background-color:#fc9e2b;
+        background-color:#f69621;
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
@@ -611,7 +604,7 @@ div.item:hover {
         -webkit-animation: fadeIn .3s ease 1;
         -moz-animation: fadeIn .3s ease 1;
         -o-animation: fadeIn .3s ease 1;  
-        box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+        box-shadow: 0px 3px 2px rgba(0,0,0,.08);
         
     }
     
@@ -630,6 +623,11 @@ div.item:hover {
             
         }
 
+        li:nth-of-type(2) a {
+            border-bottom: none!important;
+        }
+      
+
         #mobileNav li:last-of-type a {
             text-align: center;
             line-height: 60px;
@@ -638,14 +636,17 @@ div.item:hover {
             letter-spacing:2px;
             font-weight:900;
             color: #fff;
-            border: 1px solid  #ffde16;
+            
+            background-color: rgba(255,255,255,0);
+            border: 1px solid  #ffffff40;
             border-radius:4px;
         }
 
         #mobileNav li:last-of-type a:hover {
-           background-color: rgba(255,255,255,.91);
-     
-           color:#f69621;
+      
+           border: 1px solid  #ffffff00;
+           background-color:#ffa500;
+           color:#ffffff;
         }
 
  

@@ -28,5 +28,17 @@ h1.logotype .logotypeOrange {
   display:inline-block;
 }
 #appNavBar #Layer_1{
-width:150px;
+width:112px;
+max-height:60px;
+display:none;
+}
+
+
+
+
+.logo {
+  float: left;
+  height: 60px;
+  display: flex;
+  padding-top: 5px;
 }

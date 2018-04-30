@@ -18,10 +18,26 @@
   }
   
   
+  #revised {
+    max-width:100%;
+    max-width:400px;
+    margin:10vh 0 0 0 ;
+
+}
+
+#revised .outline {
+    opacity:.5 !important;
+}
   
   
-  
-  
+#tagLine {
+  color: #fff;
+  font-size:2rem;
+  font-weight:600;
+  margin:0 0 2.25vh 0;
+  text-shadow: 0px 1px 10px #ce7c03;
+}
+
   ._jumbotron {
     color: rgba(255,255,255,1) !important;
     height: 100%;
@@ -36,12 +52,17 @@
   }
   
 
-  
+  #landingContent {
+    width:100%;
+    padding:3vh;
+    align-self:flex-end;
+  }
   svg#Layer_1 {
    
     margin: auto;
-    width: 45vw;
+    width: 20vw;
     opacity: .95;
+    /* display: none; */
 }
   
   ._lead {
@@ -53,26 +74,37 @@
   }
   
   #foodLink {
-    display:block;
+   align-self:flex-end;
     margin:auto;
   }
-  .btn-primary {
+  #myGeo{
     background-color:rgba(255, 183, 94, 0.47);
+    -webkit-appearance:none !important;
     padding: 0.95vh 4vh .95vh 4vh;
     border-radius:40px;
-    font-size:1rem;
+    font-size:.75rem;
     letter-spacing:1px;
     font-weight:600;
     color: rgba(255,255,255,1);
-    border:0px;
+    border:1px solid rgba(255,255,255,0);
   }
   
-  .btn-primary:hover {
+  #myGeo:hover {
     background-color: rgba(255,255, 255, 1);
     padding:.95vh 5vh .95vh 5vh;
    color: #f69621;
-  }
   
+  }
+  #myGeo:focus {
+    border-color:#fc9e2b;
+    outline: none;
+  }
+  #myGeo:active {
+    border-color:#fc9e2b !important;
+    background-color:#fc9e2b!important;
+ outline: none;
+    
+  }
   
   #appNavBar h2.summertimeMeals {
     font-size:4vh !important;
@@ -250,3 +282,10 @@
     min-width: 100%;
     margin-left: 0;
   }
+
+
+
+@-ms-keyframes wiggle{0%{-ms-transform:rotate(1deg);}50%{-ms-transform:rotate(-1deg);}100%{-ms-transform:rotate(1deg);}}
+@-moz-keyframes wiggle{0%{-moz-transform:rotate(1deg);}50%{-moz-transform:rotate(-1deg);}100%{-moz-transform:rotate(1deg);}}
+@-webkit-keyframes wiggle{0%{-webkit-transform:rotate(1deg);}50%{-webkit-transform:rotate(-1deg);}100%{-webkit-transform:rotate(1deg);}}
+@keyframes wiggle{0%{transform:rotate(1deg);}50%{transform:rotate(-1deg);}100%{transform:rotate(1deg);}}
