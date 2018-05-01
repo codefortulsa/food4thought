@@ -42,17 +42,10 @@ input, input:hover {
     /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
         /* background-color: #1c4aef; */
         /* background-color: #2350f3; */
-<<<<<<< HEAD
-
-    /* border-bottom:1px solid rgba(2, 67, 141, .39); */
-    background-color: #f68b24;
-    border-bottom: 1px solid #e68221;
-=======
         border-bottom: 1px solid rgba(255, 178, 5, 0.39);
         /* background-color: #fc9e2b; */
         background-color: #f69621;
     /* border-bottom:1px solid rgba(2, 67, 141, .39); */
->>>>>>> lesleynorton_
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
     position: fixed;
@@ -68,13 +61,9 @@ input, input:hover {
 
   .overlay {
     /* background-color:#0361edcc; */
-<<<<<<< HEAD
-    background-color: #fc8c0dcc;;
-=======
     /* background-color: #0033ebcc; */
     /* background-color: #f69621; */
     background: linear-gradient(#f69621,#ff9716);
->>>>>>> lesleynorton_
     height: 100%;
     text-align:center;
     display:flex;
