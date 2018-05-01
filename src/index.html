@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+      <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
       <link rel="stylesheet" href="https://use.typekit.net/plx7bvp.css">
@@ -19,21 +20,7 @@
       $(document).ready(function() {
 
         $('body').bind('touchstart', function(){});
-        // $('#expandCollapse').html('all meal sites +');
-      $(".heading").click(function(){
 
-        if( $('.heading').hasClass('.isOpen')){
-          $('#listings').slideUp();
-          $('#bottomListings').slideUp();
-          $('#expandCollapse').html('all meal sites +');
-          $('.heading').removeClass('.isOpen')
-        } else {
-        $('#listings').slideDown();
-        $('#bottomListings').slideDown();
-        $('.heading').addClass('.isOpen');
-        $('#expandCollapse').html('meal sites :');
-        }
-      })
         $("a").on('click', function(event) {
             if (this.hash !== "") {
               event.preventDefault();
@@ -54,7 +41,7 @@
         </script>
 
       <meta charset="utf-8">
-      <title>MealMaps // Helping families locate free summer meal programs</title>
+      <title>Food4Though // Helping families locate free summer meal programs</title>
 
       <base href="/">
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
