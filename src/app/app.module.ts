@@ -12,7 +12,8 @@ import { MainComponent } from './main/main.component';
 import { DirectoryComponent } from './directory/directory.component';
 
 import { ClarityModule } from '@clr/angular';
-import { FooterComponent } from './footer/footer.component';
+
+
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     AdminComponent,
     MainComponent,
     DirectoryComponent,
-    FooterComponent
+
+ 
   ],
   imports: [
     FormsModule,

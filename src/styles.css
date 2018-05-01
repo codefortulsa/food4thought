@@ -42,10 +42,11 @@ input, input:hover {
     /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
         /* background-color: #1c4aef; */
         /* background-color: #2350f3; */
-        border-bottom: 1px solid rgba(255, 178, 5, 0.39);
+        /* border-bottom: 1px solid rgba(255, 178, 5, 0.39); */
         /* background-color: #fc9e2b; */
         background-color: #f69621;
     /* border-bottom:1px solid rgba(2, 67, 141, .39); */
+    border-bottom:1px solid #ffde1652;
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
     position: fixed;
@@ -54,8 +55,7 @@ input, input:hover {
     z-index: 1 !important;
     white-space:nowrap;
     box-sizing: border-box;
-    height: 60px;
-    min-height:60px;
+
     
   }
 
@@ -63,7 +63,7 @@ input, input:hover {
     /* background-color:#0361edcc; */
     /* background-color: #0033ebcc; */
     /* background-color: #f69621; */
-    background: linear-gradient(#f69621,#ff9716);
+    background: linear-gradient(#f69621d9,#ff9716fc);
     height: 100%;
     text-align:center;
     display:flex;
@@ -71,7 +71,7 @@ input, input:hover {
     justify-content: center;
     flex-flow: wrap;
 
-    
+
   }
 
 #appNavBar svg {
@@ -107,13 +107,16 @@ ul#navigationBar {
 #navigationBar li a {
     color: rgba(255,255,255,.9);
     margin-right: 5vh;
-    font-size: .75rem;
+    font-size: .6rem;
     display: inline-block;
-    line-height: 60px;
-    height:60px;
+
     text-transform: uppercase;
     letter-spacing:.07vh;
-  
+}
+
+h1.logotype, #navigationBar li a, #appNavBar, .logo {
+    height: 50px;
+    line-height:50px;
 }
 
 #navigationBar li:last-of-type a {
@@ -136,7 +139,7 @@ ul#navigationBar {
     height:0vh;
     /* display:none; */
    visibility:hidden;
-    margin-top:10px;
+    margin-top:8px;
     /* background-color: #2851e7; */
     color: #ffffff00;
     overflow-y: scroll;
@@ -144,8 +147,8 @@ ul#navigationBar {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 
-    background: linear-gradient(#f69621, #f2911a,#f69621);
-  
+    /* background: linear-gradient(#f69621, #f2911a,#f69621); */
+    background: #f4f2f4;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index:-1;
@@ -191,8 +194,9 @@ ul#navigationBar {
 
 
 
-  #listings a {
-      color: #fff;
+  #listings a, .meal.serving, .pbold {
+      color: rgba(0,0,0,.7);
+      font-weight:600;
   }
 
 
@@ -360,10 +364,7 @@ ul#navigationBar {
 }
 
 
-#map {
-    background-color: #2652d7;
-    background: linear-gradient(#1e4ef8, #2652d7);
-}
+
 
 
 .collections {
@@ -386,7 +387,7 @@ ul#navigationBar {
 
 
   #expandCollapse, input[type="text"] {
-    margin: 5px 0px 5px 0px;
+    margin: 3px 0px 3px 0px;
     min-height: 40px;
     height: 40px;
     border-radius: 4px;
@@ -447,7 +448,7 @@ input:focus {
   a.title {
       font-weight: 500;
       text-transform: uppercase;
-      font-size:.85rem;
+      font-size:.65rem;
       display:block;
       padding:3.5vh 1vh 0 1vh;
       margin: 0 1.5vh 0 1.5vh;
@@ -458,16 +459,21 @@ input:focus {
       display: none !important;
   }
 
-
+  .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+      display:none !important;
+      opacity: 0 !important;
+  }
  
-
+  .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
+      margin: 0 10px 50px 0;
+  }
 
 
 .meal.serving {
     font-weight: 600;
     margin: 10px 0 auto 0;
     display: inline-block;
-    color: #fff;
+
     margin-right: 5px;
     /* color: #000; */
 }
@@ -486,9 +492,10 @@ div.item, .meal {
 }
 
 div.item div {
-    font-size: .75rem;
+    font-size: .65rem;
     padding:0vh 2.5vh 3.5vh 2.5vh;
-    color: rgba(255,255,255,.7);
+    /* color: rgba(255,255,255,.7); */
+    color:rgba(0,0,0,.65);
 }
 
 
@@ -504,14 +511,16 @@ div.item div {
 
 div.item {
     position: relative;
-    border: 1px solid rgba(255,255,255,.1);
+    /* border: 1px solid rgba(255,255,255,.1); */
+    border: 1px solid rgba(122, 74, 52, 0.1);
     border-radius: 10px;
     margin: 2vh;
     background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0))
 }
 
 div.item:hover {
-    background: linear-gradient(rgba(255,255,255,.01), rgba(255,255,255,.09))
+    /* background: linear-gradient(rgba(255,255,255,.01), rgba(255,255,255,.09)) */
+    background: linear-gradient(rgba(0,0,0,.01), rgba(0,0,0,.01));
 }
 
 
@@ -520,11 +529,7 @@ div.item:hover {
 
   }
 
-  .pbold {
-      color: #fff;
 
-      font-weight: 600;
-  }
 
   .roundedDistance {
     margin-bottom: 0px;
@@ -544,7 +549,7 @@ div.item:hover {
         padding:2vh 2vh 2vh 2vh;
         background-color: rgba(255,255,255,0);
         text-align:right;
-        margin-top:39px;
+        margin-top:29px;
         transition: all 0.2s ease;
     }
 
