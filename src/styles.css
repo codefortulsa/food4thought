@@ -583,7 +583,7 @@ div.item:hover {
         
         position: absolute;
         right: 2vw;
-        padding-top: 20px;
+        padding-top: 16px;
     }
     #mobileNavContainer:hover {
         height:40vh;
@@ -667,12 +667,19 @@ div.item:hover {
         ul#navigationBar{
             display: none !important;
         }
+        #appNavBar.landing #menuIcon .cls-1 {
+            fill: #333;
+        }
         #appNavBar svg {
             display:inline-block;
             max-height: 3vh;
             opacity: 1;
             width: 3vh;
 
+        }
+
+        #appNavBar #menuIcon .cls-1 {
+            fill:white;
         }
         #menuIcon {
             float:right;
@@ -699,6 +706,10 @@ div.item:hover {
         input[type="text"] {
             width: 57vw !important;
             max-width:57vw;
+        }
+
+        #landingContent #revised {
+            width:auto;
         }
        
       
