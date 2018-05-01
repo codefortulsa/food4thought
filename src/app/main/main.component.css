@@ -147,8 +147,10 @@
     bottom: 0;
   
     z-index: -1 !important;
-    background-color: #2652d7;
-    background: linear-gradient(#1e4ef8, #2652d7);
+    /* background-color: #2652d7;
+    background: linear-gradient(#1e4ef8, #2652d7); */
+    background-color: #f69621;
+    background:linear-gradient(#f69621, #ce7c03);
 
     
   }
