@@ -8,7 +8,7 @@ import { MapService } from './../map.service';
 import { UniFeature } from '../models/uniFeature';
 
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
-
+import { environment } from "../../environments/environment";
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
@@ -21,19 +21,37 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./directory.component.css']
 })
 export class DirectoryComponent implements OnInit {
+  e = environment;
   featureSet: UniFeature[] = [];
+  displayedColumns2 = ["id", "Name", "Address1", "City", "State", "Zip", "Meals"];
+  dataSource = new MatTableDataSource();
 
-  constructor(private _http: Http, private _mService: MapService ) { }
+  resultsLength = 0;
+  isLoadingResults = false;
+  isRateLimitReached = false;
 
-  ngOnInit(): void {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-    this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this._mService.datasetToken}/features?access_token=${this._mService.mapToken}`)
-      .subscribe(sites => {
-        console.log(sites.json().features);
-        this.featureSet = this.dataFormat(sites.json().features);
 
-      });
-    } // ends ngOnInit //
+  constructor(private _http: Http, private _mService: MapService ) {
+    this._mService.getAllSites2().subscribe(sites => {
+      this.dataSource.data = this.dataFormat(sites.json().features);
+    })
+
+  } // constructor
+
+  ngAfterViewInit() {
+   this.dataSource.paginator = this.paginator;
+   this.dataSource.sort = this.sort;
+  }
+  ngOnInit(): void {} // ends ngOnInit //
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
 
   dataFormat(data : any[] ){
     let newData: any[] = [];
@@ -49,8 +67,7 @@ export class DirectoryComponent implements OnInit {
       newData.push(new_obj);
     }
 
-    console.log("This is newData: ", newData);
+    console.log("dataFormatting");
     return newData;
   }
-
 }

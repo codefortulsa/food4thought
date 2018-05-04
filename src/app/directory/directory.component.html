@@ -4,8 +4,69 @@
       <p class="lead">Complete directory of food site locations.</p>
       <p class="lead">(Site still under construction...)</p>
       <hr class="my-4">
-
   </div>
 
-  
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  <div class="example-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.Name}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Address1">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.Address1}} </mat-cell>
+      </ng-container>
+
+      <!-- City Column -->
+      <ng-container matColumnDef="City">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
+        <mat-cell *matCellDef="let row" > {{row.City}} </mat-cell>
+      </ng-container>
+
+      <!-- State Column -->
+      <ng-container matColumnDef="State">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> State </mat-header-cell>
+        <mat-cell *matCellDef="let row" > {{row.State}} </mat-cell>
+      </ng-container>
+
+      <!-- Zip Column -->
+      <ng-container matColumnDef="Zip">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Zip </mat-header-cell>
+        <mat-cell *matCellDef="let row" > {{row.Zip}} </mat-cell>
+      </ng-container>
+
+      <!-- Meals Column -->
+      <ng-container matColumnDef="Meals">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Meals </mat-header-cell>
+        <mat-cell *matCellDef="let row" > {{row.Meals}} </mat-cell>
+      </ng-container>
+
+      <!-- [style.color]="row.color" -->
+
+
+      <!-- Header Settings -->
+      <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
+      <mat-row (click)="openDialog(row.id)" *matRowDef="let row; columns: displayedColumns2;">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[25, 50, 75, 100]"></mat-paginator>
+  </div>
+
 </div>

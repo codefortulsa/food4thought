@@ -12,7 +12,7 @@ import { MainComponent } from './main/main.component';
 import { DirectoryComponent } from './directory/directory.component';
 
 import { MaterialModule } from './material.module';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { MaterialModule } from './material.module';
     DirectoryComponent
   ],
   imports: [
+    BrowserAnimationsModule
     FormsModule, ReactiveFormsModule,
     HttpModule,
     BrowserModule,
