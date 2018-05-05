@@ -6,12 +6,19 @@
       <hr class="my-4">
   </div>
 
-  <div class="example-header">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field>
-  </div>
-  <div class="example-container mat-elevation-z8">
+    <mat-card class="side-filter">
+      <mat-card-header>
+        <mat-card-title>Search & Filter Area</mat-card-title>
+      </mat-card-header>
+      <div class="dir-header">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+
+    <div class="directory-table mat-elevation-z8">
 
     <mat-table [dataSource]="dataSource" matSort>
 

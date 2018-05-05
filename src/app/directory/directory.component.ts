@@ -33,7 +33,6 @@ export class DirectoryComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-
   constructor(private _http: Http, private _mService: MapService ) {
     this._mService.getAllSites2().subscribe(sites => {
       this.dataSource.data = this.dataFormat(sites.json().features);
