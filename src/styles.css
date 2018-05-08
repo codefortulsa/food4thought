@@ -14,17 +14,17 @@ body {
     background-repeat:no-repeat;
     background-size: contain;
     opacity: .9;
-  
+
   }
 
 
-#mobileNavContainer, #mobileNav, 
+#mobileNavContainer, #mobileNav,
 #mobileNavContainer #mobieNav,
 #mobileNavContainer:hover #mobileNav, #mobileNav:hover,
-.marker:hover, a, a:hover, ul li a, ul li a:hover, 
-.mapboxgl-popup-content , .mapboxgl-popup-content:hover, 
-div.item, div.item:hover, 
-#orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1, 
+.marker:hover, a, a:hover, ul li a, ul li a:hover,
+.mapboxgl-popup-content , .mapboxgl-popup-content:hover,
+div.item, div.item:hover,
+#orangeMarker .cls-1, #orangeMarker .cls-2, div.item:hover .cls-1,
 div.item:hover .cls-2,
 #mobileNav li, #mobileNav li:hover,
 #mobileNav a, #mobileNav a:hover,
@@ -54,7 +54,7 @@ input, input:hover {
     box-sizing: border-box;
     height: 60px;
     min-height:60px;
-    
+
   }
 
   .overlay {
@@ -62,7 +62,7 @@ input, input:hover {
     background-color: #0033ebcc;
     height: 100%;
     width:100%;
-    
+
   }
 
 #appNavBar svg {
@@ -91,10 +91,10 @@ input, input:hover {
       margin:0 0 0 0 !important;
       font-size: 2rem;
   }
-  
+
   .headlineMap {
     color: #5ed7ff;
- 
+
   }
 
 
@@ -126,12 +126,12 @@ ul#navigationBar {
 #navigationBar li:last-of-type a {
     margin-right:0px !important;
 }
-  
+
 #navigationBar li a:hover {
     /* border-bottom: 2px solid rgba(255,255,255,1); */
     text-decoration: none !important;
     color: rgba(255,255,255,1);
-   
+
 }
 
 #navigationBar #menuIcon .cls-1 {
@@ -150,7 +150,7 @@ ul#navigationBar {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
-   
+
   }
 
   div#featherOut {
@@ -176,7 +176,7 @@ ul#navigationBar {
     height: 4vh;
     margin-top: 2vh;
     display: none !important;
-    
+
 }
 
 
@@ -228,7 +228,7 @@ ul#navigationBar {
     animation: fadeIn .3s ease 1;
     -webkit-animation: fadeIn .3s ease 1;
     -moz-animation: fadeIn .3s ease 1;
-    -o-animation: fadeIn .3s ease 1;  
+    -o-animation: fadeIn .3s ease 1;
 }
 
 
@@ -244,11 +244,11 @@ ul#navigationBar {
     margin: 0 0 0 0;
     border-bottom: 1px solid rgba(255, 86, 34, 1);
     text-align: left;
-    
+
   }
 
 
- 
+
   h5::before {
     content: 'Street Address :';
     display: block;
@@ -305,7 +305,7 @@ ul#navigationBar {
 
   .mapboxgl-popup-content:hover .placeInfo {
     box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
-   
+
     }
 
   .mapboxgl-popup-content:hover h5::before {
@@ -321,7 +321,7 @@ ul#navigationBar {
     margin: 0 0 0 0;
     text-align: right;
     position:absolute;
-    top: 0vh; 
+    top: 0vh;
     right:0;
     left:0;
 }
@@ -362,8 +362,8 @@ ul#navigationBar {
     color: #fff;
     line-height:40px;
     text-align:center;
-    
-    
+
+
   }
 
 
@@ -393,7 +393,7 @@ input[type="text"] {
     text-indent: 3vh;
     caret-color:rgba(255, 86, 34, 1);
     text-align:right;
-    
+
 
 }
 
@@ -406,7 +406,7 @@ input:hover {
 input:focus {
     outline: none !important;
     border: 1px solid rgba(30, 73, 239,1) !important;
-    background-color: rgba(0,0,0,.10); 
+    background-color: rgba(0,0,0,.10);
 }
   a.title {
       font-weight: 500;
@@ -423,7 +423,7 @@ input:focus {
   }
 
 
- 
+
 
 
 
@@ -439,7 +439,7 @@ input:focus {
 .getDirections {
     font-weight:600;
     /* color: rgba(0,0,0,0) !important; */
-   
+
 }
 
 
@@ -496,7 +496,7 @@ div.item:hover {
     animation: fadeIn .3s ease 1;
     -webkit-animation: fadeIn .3s ease 1;
     -moz-animation: fadeIn .3s ease 1;
-    -o-animation: fadeIn .3s ease 1;  
+    -o-animation: fadeIn .3s ease 1;
 }
 
 
@@ -527,17 +527,17 @@ div.item:hover {
     .geocoder-pin-right {
         display: none;
     }
-  
 
-    
+
+
   @media screen and (max-width: 730px) {
     /* #mobileNav {
         list-style-type: none;
         padding:5vh 2vh 2vh 2vh;
     } */
-    div#mobileNavContainer{ 
+    div#mobileNavContainer{
         display: inline-block;
-        
+
         position: absolute;
         right: 2vw;
         padding-top: 20px;
@@ -545,7 +545,7 @@ div.item:hover {
     #mobileNavContainer:hover {
         height:40vh;
         width:50vw;
-        
+
     }
     #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
         display: block !important;
@@ -565,12 +565,12 @@ div.item:hover {
         animation: fadeIn .3s ease 1;
         -webkit-animation: fadeIn .3s ease 1;
         -moz-animation: fadeIn .3s ease 1;
-        -o-animation: fadeIn .3s ease 1;  
+        -o-animation: fadeIn .3s ease 1;
         box-shadow: 0px 1px 2px rgba(0,0,0,.2);
-        
+
     }
-    
-  
+
+
         #mobileNav a {
             color: rgba(255,255,255,1);
             line-height:50px;
@@ -582,7 +582,7 @@ div.item:hover {
             font-size: 1.85vh;
             padding:0 2vh 0 2vh;
             font-weight:400;
-            
+
         }
 
         #mobileNav li:last-of-type a {
@@ -608,11 +608,11 @@ div.item:hover {
         #mobileNav a:hover {
             background:  rgba(255,255,255,.1);
             color: rgba(255,255,255,.8)
-            
-            
+
+
         }
 
-        
+
         ul#navigationBar{
             display: none !important;
         }
@@ -634,13 +634,13 @@ div.item:hover {
             fill: rgba(255,255,255,.7) !important;
         }
 
-   
+
 
         #expandCollapse {
             width: 37vw;
         }
         #listings {
-            width: 96vw !important; 
+            width: 96vw !important;
             max-width:96vw;
 
         }
@@ -649,8 +649,8 @@ div.item:hover {
             width: 57vw !important;
             max-width:57vw;
         }
-       
-      
+
+
     }
 
 
@@ -658,5 +658,5 @@ div.item:hover {
 @-moz-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @-webkit-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
-  
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
