@@ -24,7 +24,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     DirectoryComponent
   ],
   imports: [
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     FormsModule, ReactiveFormsModule,
     HttpModule,
     BrowserModule,
