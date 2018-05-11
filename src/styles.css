@@ -10,11 +10,16 @@ body {
     cursor: pointer;
     height:25px;
     width: 25px;
-    background-image: url("./assets/blueMarker.svg");
+    background-image: url("./assets/orangeMarker.svg");
     background-repeat:no-repeat;
     background-size: contain;
+<<<<<<< HEAD
     opacity: .9;
 
+=======
+    opacity: 1;
+  
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
   }
 
 
@@ -40,10 +45,12 @@ input, input:hover {
 
     /* background-color: #2584ef; */
     /* box-shadow: inset 0px 0px 30px rgba(0, 100, 134, 0.35); */
-        background-color: #1c4aef;
+        /* background-color: #1c4aef; */
         /* background-color: #2350f3; */
-
-    border-bottom:1px solid rgba(2, 67, 141, .39);
+        border-bottom: 1px solid rgba(255, 178, 5, 0.39);
+        /* background-color: #fc9e2b; */
+        background-color: #f69621;
+    /* border-bottom:1px solid rgba(2, 67, 141, .39); */
     margin: 0 0 0 0;
     padding: 0 2vw 0 2vw;
     position: fixed;
@@ -59,10 +66,22 @@ input, input:hover {
 
   .overlay {
     /* background-color:#0361edcc; */
-    background-color: #0033ebcc;
+    /* background-color: #0033ebcc; */
+    /* background-color: #f69621; */
+    background: linear-gradient(#f69621,#ff9716);
     height: 100%;
+<<<<<<< HEAD
     width:100%;
 
+=======
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-flow: wrap;
+
+    
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
   }
 
 #appNavBar svg {
@@ -77,16 +96,8 @@ input, input:hover {
   }
 
 
-  #appNavBar h2.summertimeMeals a{
-    color: rgba(255,255,255,.9);
-    line-height: 60px;
-    height: 60px;
-    display: inline-block;
-    float:left;
-    text-decoration: none;
-    margin: 0 0 0 0 !important;
-  }
 
+<<<<<<< HEAD
   #appNavBar h2 {
       margin:0 0 0 0 !important;
       font-size: 2rem;
@@ -96,6 +107,10 @@ input, input:hover {
     color: #5ed7ff;
 
   }
+=======
+
+
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
 
 
 ul#navigationBar {
@@ -120,7 +135,7 @@ ul#navigationBar {
     height:60px;
     text-transform: uppercase;
     letter-spacing:.07vh;
-    padding-top: 3px;
+  
 }
 
 #navigationBar li:last-of-type a {
@@ -140,44 +155,83 @@ ul#navigationBar {
 }
 
 #listings {
-    height:70vh;
-    display:none;
+    height:0vh;
+    /* display:none; */
+   visibility:hidden;
     margin-top:10px;
-    background-color: #2851e7;
-    color: #fff;
+    /* background-color: #2851e7; */
+    color: #ffffff00;
     overflow-y: scroll;
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+<<<<<<< HEAD
     background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
 
+=======
+
+    background: linear-gradient(#f69621, #f2911a,#f69621);
+  
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index:-1;
+
+   
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
   }
 
-  div#featherOut {
-    position: fixed;
-    top: 120px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 90vh;
-    background: radial-gradient(#ffffff00,#ffffff00, #004eff27);
-    z-index: 0;
-    pointer-events: none;
-    display: none;
-}
+  #heading {
+      z-index:1;
+  }
+
+  #listings.isOpen {
+      
+    color: #ffffff;
+      visibility:visible;
+      height:70vh;
+      transform:translateY(0);
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+
+
+
+  #dropDownIcon {
+      max-width:.6rem;
+      margin-left:1vh !important; 
+  }
+  #dropDownIcon path {
+      fill:#ffffff;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+
+
+
+  #expandCollapse:hover #dropDownIcon path {
+      fill: #ffde16 !important;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+
+
+
+
 
   #listings a {
       color: #fff;
   }
 
 
+<<<<<<< HEAD
   div#bottomlistings {
     height: 4vh;
     margin-top: 2vh;
     display: none !important;
 
 }
+=======
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
 
 
 ::-webkit-input-placeholder,  ::-moz-placeholder, :-ms-input-placeholder,   ::placeholder {
@@ -210,14 +264,19 @@ ul#navigationBar {
 
 
 .mapboxgl-popup-close-button {
-    top: 3vh;
-    right: 3vh;
-    font-size:3vh;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
     color: rgba(255,255,255,1);
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .mapboxgl-popup-close-button:hover {
-    color: rgba(255, 86, 34, 0.884);
+    color: #ffde16;
+    background-color:rgba(0,0,0,0);
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .mapboxgl-popup-content {
@@ -234,15 +293,17 @@ ul#navigationBar {
 
 .mapboxgl-popup-content h3 {
     color: rgba(255,255,255,.9) !important;
-    background-color: #2851e7;
+    /* background-color: #2851e7; */
+    background-color:#fc9e2b;
     border-top-right-radius:8px;
     border-top-left-radius:8px;
-    padding:2vh 2vh 1.75vh 2vh;
-    font-size: 1.35vh;
+    padding:0 2vh 0 2vh;
+    font-size: .7rem;
+    line-height:2rem;
     font-weight:700;
-    letter-spacing: 1px;
     margin: 0 0 0 0;
-    border-bottom: 1px solid rgba(255, 86, 34, 1);
+    /* border-bottom: 1px solid rgba(255, 86, 34, 1); */
+    border-bottom: 1px solid #ffde1626;
     text-align: left;
 
   }
@@ -252,10 +313,10 @@ ul#navigationBar {
   h5::before {
     content: 'Street Address :';
     display: block;
-    margin-bottom:.5vh;
-    color: rgba(255,255,255,.96);
+    margin-bottom:.25rem;
+    color: rgba(52, 52, 52, 0.96);
     font-weight: 700;
-    font-size:1.25vh;
+    font-size:.55rem;
     text-transform: uppercase;
 }
 
@@ -264,36 +325,42 @@ ul#navigationBar {
 }
 
   .mapboxgl-popup-content .placeInfo {
-    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4);
+    /* box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .4); */
+
     /* background-color: rgba(61, 133, 226, 0.9); */
-    background-color: rgba(0, 110, 253, 0.9);
+    /* background-color: rgba(0, 110, 253, 0.9); */
+    background-color: #ffffff;
+    /* box-shadow:inset 0px 0px 30px #f19625; */
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
-    color: rgba(255,255,255,.86);
+    /* color: rgba(255,255,255,.86); */
+    color:rgba(46, 46, 46, 0.86);
     padding: 2vh 2vh 2.25vh 2vh;
-    font-size: 1.15vh;
+    font-size: .6rem;
     letter-spacing: 1px;
     font-weight: 400;
 
   }
 
   .placeInfo h5 {
-      font-size: 1.15vh;
+      font-size: .6rem;
     letter-spacing: 1px;
     font-weight: 400;
 
   }
 
   .placeInfo a {
-      color: rgba(255,255,255,1);
-      font-size:1.75vh;
-      height: 5vh;
-        line-height: 5vh;
-        border: 1px solid rgba(255,255,255,.4);
+      /* color: rgba(255,255,255,1); */
+      color: rgb(82, 82, 82);
+      font-size:.65rem;
+      height: 2rem;
+        line-height: 2rem;
+        /* border: 1px solid rgba(255,255,255,.4); */
+        border: 1px solid rgb(242, 242, 242);
         border-radius:3px;
         text-align: center;
         display: block;
-        background-color: rgba(255,255,255,0);
+        /* background-color: rgba(255,255,255,.06); */
   }
 
   .placeInfo a:hover  {
@@ -304,12 +371,19 @@ ul#navigationBar {
   }
 
   .mapboxgl-popup-content:hover .placeInfo {
+<<<<<<< HEAD
     box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
 
+=======
+    /* box-shadow: inset 0px 0px 30px #f59724; */
+    box-shadow: inset 0px 0px 30px #ededed;
+   
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
     }
 
   .mapboxgl-popup-content:hover h5::before {
-    color: rgba(255,255,255,1);
+    /* color: rgba(255,255,255,1); */
+    color:rgba(44, 21, 1, 0.86);
   }
 
   .mapboxgl-ctrl-top-right {
@@ -359,7 +433,7 @@ ul#navigationBar {
     border-radius: 4px;
     box-sizing: border-box;
     font-size:15px;
-    color: #fff;
+    color: rgba(255,255,255,1);
     line-height:40px;
     text-align:center;
 
@@ -376,8 +450,9 @@ ul#navigationBar {
 }
 
 #expandCollapse:hover {
+    color: rgba(255,255,255,.9);
     /* background-color: #5ed7ff; */
-    background-color: rgba(0,0,0,.12);
+    background-color: rgba(0,0,0,.042);
     border:1px solid rgba(255,255,255,0);
     transition:all 0.2s ease;
 }
@@ -386,12 +461,13 @@ ul#navigationBar {
 input[type="text"] {
     width: 67vw;
     background-color: #ffffff14;
-    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .31);
-    border: 1px solid rgba(30, 73, 239,1) !important;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .21);
+    /* border: 1px solid rgba(30, 73, 239,1) !important; */
+    border: 1px solid #ffde1640 !important;
     outline: none !important;
     padding-right:10px;
     text-indent: 3vh;
-    caret-color:rgba(255, 86, 34, 1);
+    caret-color:   #ffde16 !important;;
     text-align:right;
 
 
@@ -399,14 +475,20 @@ input[type="text"] {
 
 input:hover {
     outline: none !important;
-    border:1px solid rgba(255, 86, 34, .61) !important;
-    background-color: rgba(0,0,0,.12);
+    /* border:1px solid rgba(255, 86, 34, .61) !important; */
+    border: 1px solid #ffde1600 !important;
+    background-color: rgba(0,0,0,.032);
 }
 
 input:focus {
     outline: none !important;
+<<<<<<< HEAD
     border: 1px solid rgba(30, 73, 239,1) !important;
     background-color: rgba(0,0,0,.10);
+=======
+    border: 1px solid #f69621 !important;
+    background-color: rgba(0,0,0,.05); 
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
 }
   a.title {
       font-weight: 500;
@@ -520,17 +602,26 @@ div.item:hover {
         background: linear-gradient(#4593eb, #3c8ce9) */
         /* background: #1c4aef; */
         /* background:linear-gradient(#1c4aef, #1f4bd3); */
-        background: #1e4ef8;
-        background: linear-gradient(#1e4ef8, #2652d7);
+        /* background: #1e4ef8;
+        background: linear-gradient(#1e4ef8, #2652d7); */
+        background: linear-gradient(#f69621, #f2911a);
     }
 
     .geocoder-pin-right {
         display: none;
     }
+<<<<<<< HEAD
 
 
 
   @media screen and (max-width: 730px) {
+=======
+
+
+
+    
+  @media screen and (max-width: 800px) {
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
     /* #mobileNav {
         list-style-type: none;
         padding:5vh 2vh 2vh 2vh;
@@ -553,7 +644,7 @@ div.item:hover {
         /* background-color: rgba(37, 132, 239,.91); */
         /* background-color: rgba(30, 73, 239,1); */
         /* background-color: #2350f3; */
-        background-color:#1c4aef;
+        background-color:#f69621;
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
@@ -565,9 +656,15 @@ div.item:hover {
         animation: fadeIn .3s ease 1;
         -webkit-animation: fadeIn .3s ease 1;
         -moz-animation: fadeIn .3s ease 1;
+<<<<<<< HEAD
         -o-animation: fadeIn .3s ease 1;
         box-shadow: 0px 1px 2px rgba(0,0,0,.2);
 
+=======
+        -o-animation: fadeIn .3s ease 1;  
+        box-shadow: 0px 3px 2px rgba(0,0,0,.08);
+        
+>>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
     }
 
 
@@ -585,25 +682,33 @@ div.item:hover {
 
         }
 
+        li:nth-of-type(2) a {
+            border-bottom: none!important;
+        }
+      
+
         #mobileNav li:last-of-type a {
             text-align: center;
             line-height: 60px;
             height: 60px;
             font-size: 1rem;
+            letter-spacing:2px;
+            font-weight:900;
             color: #fff;
-            border: 1px solid rgba(255, 86, 34, .91);
+            
+            background-color: rgba(255,255,255,0);
+            border: 1px solid  #ffffff40;
             border-radius:4px;
         }
 
         #mobileNav li:last-of-type a:hover {
-           background-color: rgba(30, 77, 138, 0.4);
-           border: 1px solid rgba(255, 166, 0, 0);
+      
+           border: 1px solid  #ffffff00;
+           background-color:#ffa500;
+           color:#ffffff;
         }
 
-        #mobileNav li:nth-of-type(3) a {
-            border-bottom: none !important;
-            letter-spacing: .04em;
-        }
+ 
 
         #mobileNav a:hover {
             background:  rgba(255,255,255,.1);
