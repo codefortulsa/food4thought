@@ -19,7 +19,8 @@
   
   
   #revised {
-    max-width:100%;
+   width:40vh;
+
     max-width:400px;
     margin:10vh 0 0 0 ;
 
@@ -34,8 +35,9 @@
   color: #fff;
   font-size:2rem;
   font-weight:600;
-  margin:0 0 2.25vh 0;
+  margin:0 0 0 0;
   text-shadow: 0px 1px 10px #ce7c03;
+  width:100%;
 }
 
   ._jumbotron {
@@ -78,21 +80,25 @@
     margin:auto;
   }
   #myGeo{
-    background-color:rgba(255, 183, 94, 0.47);
+    
     -webkit-appearance:none !important;
     padding: 0.95vh 4vh .95vh 4vh;
     border-radius:40px;
     font-size:.75rem;
     letter-spacing:1px;
     font-weight:600;
-    color: rgba(255,255,255,1);
+    
     border:1px solid rgba(255,255,255,0);
+    margin:0 0 2vh 0;
+    color: #333;
+    background-color: rgba(255,255, 255, 1);
   }
   
   #myGeo:hover {
-    background-color: rgba(255,255, 255, 1);
+    background-color:rgba(255, 183, 94, 0.47);
+    color: rgba(255,255,255,1);
     padding:.95vh 5vh .95vh 5vh;
-   color: #f69621;
+   
   
   }
   #myGeo:focus {
@@ -105,21 +111,24 @@
  outline: none;
     
   }
-  
-  #appNavBar h2.summertimeMeals {
-    font-size:4vh !important;
-  }
-  
+
   
   #first {
     height: 100vh;
     min-height: 100vh;
   }
-  
+
+
+  #imageBackground {
+    background-image: url("./../../assets/kids.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;;
+    height:100%;
+  }
   
   
   ._container[_ngcontent-c0] {
-    margin-top: 60px;
+    margin-top: 50px;
     height: 93vh;
     max-height: 93vh;
   }
@@ -147,8 +156,10 @@
     bottom: 0;
   
     z-index: -1 !important;
-    background-color: #2652d7;
-    background: linear-gradient(#1e4ef8, #2652d7);
+    /* background-color: #2652d7;
+    background: linear-gradient(#1e4ef8, #2652d7); */
+    background-color: #f69621;
+    background:linear-gradient(#f69621, #ce7c03);
 
     
   }
@@ -167,23 +178,40 @@
   
   #map {
     position:fixed;
-    top:60px;
+    top:50px;
     bottom: 0;
     left:0;
     right:0;
-    height:94vh;
-    min-height:94vh;
-    max-height:100%;
+    
+   
+   
     z-index: -2 !important;
   
   }
   
-  
+  .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+    display: none !important;
+  }
   
   .pad2[_ngcontent-c0] {
     padding: 0 0 0 0 !important;
   }
-  
+  div#blurb {
+   
+    font-size: .55rem;
+    background: #fffffff0;
+    color: #1d1d1d;
+    height: 25px;
+    z-index: 6;
+    position: fixed;
+    bottom: 0;
+    left: auto;
+    right: 10px;
+    text-align: right;
+    padding: 1vh 2vh 3.5vh 2vh;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
   
   
   
@@ -194,7 +222,7 @@
   .sidebarWrap {
       position:fixed;
       width:27vw;
-      top:65px;
+      top:55px;
       left: 2vw;
       border-radius:4px;
       z-index: 5;

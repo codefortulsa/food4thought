@@ -2,7 +2,7 @@
     
 
 <div id="first" class="_container">
- 
+ <div id="imageBackground">
       <div class="overlay">
     
       <div id="landingContent">
@@ -84,7 +84,7 @@
   <a id="foodLink" href="#findfood"><button id="myGeo" (click)="getLocation()" type="Submit" class="tween">FIND A LOCATION NEAR YOU!</button></a>
     </div><!--closes overlay-->
 
-
+  </div>
   
 </div><!--closes _container-->
 
@@ -95,10 +95,10 @@
 
 
   <div id="mapSidebarContainer">
-    
+
     
       <div id="sbDrag" class="sidebarWrap inactive">
-    
+
         <div id='heading'>
             <h6 (click)="openSesame()" id="expandCollapse">all locations
                 <svg id="dropDownIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41">
@@ -111,13 +111,18 @@
         </div>
         <div id='listings' class='listings'>
           <!--LISTINGS HERE-->
+
         </div>
       <div id='map' class='map pad2'></div>
-
+      <div id="blurb">
+        Meals are eaten onsite and are  for children 18 or younger.
+  
+      </div>
     </div><!-- closes mapSidebarContainer-->
- 
+   
   </div>
 </div>
+
 
 
 

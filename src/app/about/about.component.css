@@ -1,6 +1,4 @@
-.aboutus{
-  background-color: #2584EF;
-}
+
 
 .lead[_ngcontent-c2] {
   text-align: center;
@@ -41,16 +39,14 @@ span.mealmapblurb {
   font-weight: 600;
 }
 
-span.mapblurb {
-  color: #5ed7ff;
-}
+
 
 #aboutWrap {
   width: 100%;
   padding:16vh 8vw 8vw 8vw ;
   /* background-color: #2584EF; */
   color:#1d1d1d !important;
-  height: 100vh;
+  min-height: 100vh;
   overflow: scroll;
   /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
   text-align:center;
@@ -103,9 +99,6 @@ p {
   margin-bottom:4em;
 }
 
-.mapsHeader {
-  color: #5ed7ff;
-}
 .jumbotron {
   background-color: rgba(0,0,0,0) !important;
   color: #fff;
@@ -122,3 +115,15 @@ a {
 h2 {
   text-align:center;
 }
+
+#sponsors {
+  background-color: #d4d1cc;
+display: flex;
+padding: 10vh;
+}
+
+#sponsors a , #sponsors a svg{
+  max-height:10vh;
+  margin:auto;
+}
+

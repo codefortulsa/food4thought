@@ -14,6 +14,8 @@ import { DirectoryComponent } from './directory/directory.component';
 import { MaterialModule } from './material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AboutComponent,
     AdminComponent,
     MainComponent,
-    DirectoryComponent
+    DirectoryComponent,
+
+ 
   ],
   imports: [
     BrowserAnimationsModule,
