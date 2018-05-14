@@ -1,3 +1,28 @@
 .directory {
   padding: 3% 3%;
 }
+
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  width: 100%;
+  overflow: auto;
+  max-height: auto;
+  display: inline-block;
+}
+.mat-card {
+  width: 25%;
+  height: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.directory-table {
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
+}

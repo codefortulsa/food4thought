@@ -1,0 +1,17 @@
+.example-full-width {
+  width: 75%;
+}
+.siteMap {
+  width: 55%;
+  height: 100%;
+  /* outline: #00000 solid 10px;
+  background-color: lightblue; */
+  display: inline-block;
+  vertical-align: top;
+}
+
+.formsy {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
