@@ -4,7 +4,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 .marker {
     border: none;
     cursor: pointer;
@@ -13,15 +13,9 @@ body {
     background-image: url("./assets/orangeMarker.svg");
     background-repeat:no-repeat;
     background-size: contain;
-<<<<<<< HEAD
+
     opacity: .9;
-
-=======
-    opacity: 1;
-  
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
   }
-
 
 #mobileNavContainer, #mobileNav,
 #mobileNavContainer #mobieNav,
@@ -60,14 +54,6 @@ input, input:hover {
     z-index: 1 !important;
     white-space:nowrap;
     box-sizing: border-box;
-<<<<<<< HEAD
-
-    
-=======
-    height: 60px;
-    min-height:60px;
-
->>>>>>> master
   }
 
   .overlay {
@@ -76,22 +62,11 @@ input, input:hover {
     /* background-color: #f69621; */
     background: linear-gradient(#f69621d9,#ff9716fc);
     height: 100%;
-<<<<<<< HEAD
-    width:100%;
-
-=======
     text-align:center;
     display:flex;
     align-items:center;
     justify-content: center;
     flex-flow: wrap;
-
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
->>>>>>> master
   }
 
 #appNavBar svg {
@@ -107,7 +82,7 @@ input, input:hover {
 
 
 
-<<<<<<< HEAD
+
   #appNavBar h2 {
       margin:0 0 0 0 !important;
       font-size: 2rem;
@@ -117,10 +92,7 @@ input, input:hover {
     color: #5ed7ff;
 
   }
-=======
 
-
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
 
 
 ul#navigationBar {
@@ -178,19 +150,13 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-<<<<<<< HEAD
     background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
-
-=======
 
     /* background: linear-gradient(#f69621, #f2911a,#f69621); */
     background: #f4f2f4;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index:-1;
-
-   
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
   }
 
   #heading {
@@ -198,7 +164,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
   }
 
   #listings.isOpen {
-      
+
     color: #ffffff;
       visibility:visible;
       height:70vh;
@@ -211,7 +177,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 
   #dropDownIcon {
       max-width:.6rem;
-      margin-left:1vh !important; 
+      margin-left:1vh !important;
   }
   #dropDownIcon path {
       fill:#ffffff;
@@ -237,15 +203,14 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
   }
 
 
-<<<<<<< HEAD
+
   div#bottomlistings {
     height: 4vh;
     margin-top: 2vh;
     display: none !important;
 
 }
-=======
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
+
 
 
 ::-webkit-input-placeholder,  ::-moz-placeholder, :-ms-input-placeholder,   ::placeholder {
@@ -385,14 +350,10 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
   }
 
   .mapboxgl-popup-content:hover .placeInfo {
-<<<<<<< HEAD
-    box-shadow: inset 0px 0px 30px rgba(2, 67, 141, .6);
 
-=======
     /* box-shadow: inset 0px 0px 30px #f59724; */
     box-shadow: inset 0px 0px 30px #ededed;
-   
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
+
     }
 
   .mapboxgl-popup-content:hover h5::before {
@@ -493,13 +454,8 @@ input:hover {
 
 input:focus {
     outline: none !important;
-<<<<<<< HEAD
-    border: 1px solid rgba(30, 73, 239,1) !important;
-    background-color: rgba(0,0,0,.10);
-=======
     border: 1px solid #f69621 !important;
-    background-color: rgba(0,0,0,.05); 
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
+    background-color: rgba(0,0,0,.05);
 }
   a.title {
       font-weight: 500;
@@ -515,20 +471,15 @@ input:focus {
       display: none !important;
   }
 
-<<<<<<< HEAD
   .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
       display:none !important;
       opacity: 0 !important;
   }
- 
+
   .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
       margin: 0 10px 50px 0;
   }
-=======
 
-
-
->>>>>>> master
 
 
 .meal.serving {
@@ -631,18 +582,12 @@ div.item:hover {
     .geocoder-pin-right {
         display: none;
     }
-<<<<<<< HEAD
+
 
 
 
   @media screen and (max-width: 730px) {
-=======
 
-
-
-    
-  @media screen and (max-width: 800px) {
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
     /* #mobileNav {
         list-style-type: none;
         padding:5vh 2vh 2vh 2vh;
@@ -677,15 +622,8 @@ div.item:hover {
         animation: fadeIn .3s ease 1;
         -webkit-animation: fadeIn .3s ease 1;
         -moz-animation: fadeIn .3s ease 1;
-<<<<<<< HEAD
         -o-animation: fadeIn .3s ease 1;
-        box-shadow: 0px 1px 2px rgba(0,0,0,.2);
-
-=======
-        -o-animation: fadeIn .3s ease 1;  
         box-shadow: 0px 3px 2px rgba(0,0,0,.08);
-        
->>>>>>> f24054516591172d3a94b12a587f2b84ca921e11
     }
 
 
@@ -706,7 +644,7 @@ div.item:hover {
         li:nth-of-type(2) a {
             border-bottom: none!important;
         }
-      
+
 
         #mobileNav li:last-of-type a {
             text-align: center;
@@ -716,20 +654,20 @@ div.item:hover {
             letter-spacing:2px;
             font-weight:900;
             color: #fff;
-            
+
             background-color: rgba(255,255,255,0);
             border: 1px solid  #ffffff40;
             border-radius:4px;
         }
 
         #mobileNav li:last-of-type a:hover {
-      
+
            border: 1px solid  #ffffff00;
            background-color:#ffa500;
            color:#ffffff;
         }
 
- 
+
 
         #mobileNav a:hover {
             background:  rgba(255,255,255,.1);
@@ -783,15 +721,11 @@ div.item:hover {
             max-width:57vw;
         }
 
-<<<<<<< HEAD
+
         #landingContent #revised {
             width:auto;
         }
-       
-      
-=======
 
->>>>>>> master
     }
 
 
@@ -800,4 +734,3 @@ div.item:hover {
 @-webkit-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
