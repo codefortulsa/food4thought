@@ -23,9 +23,20 @@ export class MapService {
   getAllSites2(){
     console.log("Getting all the sitez.....");
     return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.datasetToken}/features?access_token=${this.mapToken}`);
+
     }
   }
   export interface UniFeature {
+  id: string;
+  Name: string;
+  Address1: string;
+  City: string;
+  State: string;
+  Zip: string;
+  Meals: string;
+
+}
+export interface UniFeature {
   id: string;
   Name: string;
   Address1: string;

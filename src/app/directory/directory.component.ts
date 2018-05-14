@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogboxComponent } from "../dialogbox/dialogbox.component";
 import { Http, Response } from '@angular/http';
 import { Subject } from 'rxjs/Subject';
-
 
 import { MapService } from './../map.service';
 import { UniFeature } from '../models/uniFeature';
@@ -24,12 +24,15 @@ import 'rxjs/add/operator/map';
 export class DirectoryComponent implements OnInit {
   e = environment;
   featureSet: UniFeature[] = [];
+
   displayedColumns2 = ["Name", "Address1", "City", "State", "Zip", "Meals"];
+
   dataSource = new MatTableDataSource();
 
   resultsLength = 0;
   isLoadingResults = false;
   isRateLimitReached = false;
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -76,6 +79,7 @@ export class DirectoryComponent implements OnInit {
       console.log("this is the result:", res);
     return res;
     }
+
 
   dataFormat(data : any[] ){
     let newData: any[] = [];

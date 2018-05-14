@@ -13,8 +13,8 @@ body {
     background-image: url("./assets/orangeMarker.svg");
     background-repeat:no-repeat;
     background-size: contain;
-    opacity: 1;
 
+    opacity: .9;
   }
 
 #mobileNavContainer, #mobileNav,
@@ -54,8 +54,6 @@ input, input:hover {
     z-index: 1 !important;
     white-space:nowrap;
     box-sizing: border-box;
-
-
   }
 
   .overlay {
@@ -69,8 +67,6 @@ input, input:hover {
     align-items:center;
     justify-content: center;
     flex-flow: wrap;
-
-
   }
 
 #appNavBar svg {
@@ -87,6 +83,15 @@ input, input:hover {
 
 
 
+  #appNavBar h2 {
+      margin:0 0 0 0 !important;
+      font-size: 2rem;
+  }
+
+  .headlineMap {
+    color: #5ed7ff;
+
+  }
 
 
 
@@ -145,14 +150,13 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
 
     /* background: linear-gradient(#f69621, #f2911a,#f69621); */
     background: #f4f2f4;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index:-1;
-
-
   }
 
   #heading {
@@ -198,6 +202,14 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
       font-weight:600;
   }
 
+
+
+  div#bottomlistings {
+    height: 4vh;
+    margin-top: 2vh;
+    display: none !important;
+
+}
 
 
 
@@ -338,6 +350,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
   }
 
   .mapboxgl-popup-content:hover .placeInfo {
+
     /* box-shadow: inset 0px 0px 30px #f59724; */
     box-shadow: inset 0px 0px 30px #ededed;
 
@@ -468,6 +481,7 @@ input:focus {
   }
 
 
+
 .meal.serving {
     font-weight: 600;
     margin: 10px 0 auto 0;
@@ -572,7 +586,8 @@ div.item:hover {
 
 
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 730px) {
+
     /* #mobileNav {
         list-style-type: none;
         padding:5vh 2vh 2vh 2vh;
@@ -609,7 +624,6 @@ div.item:hover {
         -moz-animation: fadeIn .3s ease 1;
         -o-animation: fadeIn .3s ease 1;
         box-shadow: 0px 3px 2px rgba(0,0,0,.08);
-
     }
 
 
@@ -707,10 +721,10 @@ div.item:hover {
             max-width:57vw;
         }
 
+
         #landingContent #revised {
             width:auto;
         }
-
 
     }
 
@@ -719,3 +733,4 @@ div.item:hover {
 @-moz-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @-webkit-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+
