@@ -2,3 +2,62 @@
   width: 40px;
   height: 40px;
 }
+
+
+h1.logotype {
+  float:left;
+  color:#fff;
+  font-weight:900;
+  font-size:1.25rem;
+
+}
+
+h1.logotype .logotypeOrange {
+  color: #ffde16
+}
+
+#navigationBar li a {
+  font-weight: 600;
+}
+
+/* .logo {
+  float:left;
+  height:60px;
+} */
+.logo #Layer_1 {
+  display:inline-block;
+}
+#appNavBar #Layer_1{
+width:112px;
+max-height:60px;
+display:none;
+}
+
+
+
+.logo {
+  float: left;
+  height: 60px;
+  display: flex;
+  padding-top: 5px;
+}
+
+
+
+#appNavBar.landing {
+  background-color:#fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom:1px solid #ffde16;
+  
+
+}
+
+#appNavBar.landing h1.logotype, #appNavBar.landing #navigationBar li a {
+  color: #333;
+}
+
+#appNavBar {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}

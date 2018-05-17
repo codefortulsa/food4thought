@@ -1,15 +1,25 @@
+<<<<<<< HEAD
 .aboutus{
   /*background-color: #2584EF;*/
   background-color: rgba(245,148,29,1);
 }
+=======
+
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
 
 .lead[_ngcontent-c2] {
   text-align: center;
   font-weight: 500;
+<<<<<<< HEAD
 
   color: #ccf1ff;
   /*border: 1px dotted rgba(0, 220, 255, 0.41);*/
   border: 1px dotted rgba(245,148,29,0.5);
+=======
+  
+  color: #1d1d1d;
+  border: 1px dotted rgba(0,0,0, 0.41);
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
   border-radius: 4px;
   padding: 21vh 4vh;
   line-height: 4vh;
@@ -39,30 +49,36 @@
   font-size:2vh;
 }
 span.mealmapblurb {
-  color: #fff;
+  color: #1d1d1d;
   font-weight: 600;
 }
 
-span.mapblurb {
-  color: #5ed7ff;
-}
+
 
 #aboutWrap {
   width: 100%;
   padding:16vh 8vw 8vw 8vw ;
+<<<<<<< HEAD
   /*background-color: #2584EF;*/
   background-color: rgba(245,148,29,1);
   color: #fff !important;
   height: 100vh;
   overflow: scroll;
   /*background: radial-gradient(#2851e7,#1f48dc,#1a45e4);*/
+=======
+  /* background-color: #2584EF; */
+  color:#1d1d1d !important;
+  min-height: 100vh;
+  overflow: scroll;
+  /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
   text-align:center;
 }
 
 .numeral {
   font-size:5vh;
   margin: 0 0 3vh 0;
-  color: rgba(255,255,255,1);
+  color: #1d1d1d;
   letter-spacing: -1px;
   display:block;
 }
@@ -97,18 +113,15 @@ line-height: 3.5vh;
   margin-top:4vh;
   font-size:7rem;
   letter-spacing: -3px;
-  color: rgba(255,255,255,.9);
+  color: #1d1d1d;
 }
 
 p {
-  color: rgba(255,255,255,.65);
+  color: #1d1d1d;
   line-height: 2.4rem;
   margin-bottom:4em;
 }
 
-.mapsHeader {
-  color: #5ed7ff;
-}
 .jumbotron {
   background-color: rgba(0,0,0,0) !important;
   color: #fff;
@@ -118,7 +131,7 @@ p {
 }
 
 a {
-  color: #fff;
+  color: #1d1d1d;
   text-decoration: underline;
 }
 
@@ -126,8 +139,20 @@ h2 {
   text-align:center;
 }
 
+<<<<<<< HEAD
 .logo-link {
   display: inline-block;
   margin: 0px 40px;
+=======
+#sponsors {
+  background-color: #d4d1cc;
+display: flex;
+padding: 10vh;
+}
+
+#sponsors a , #sponsors a svg{
+  max-height:10vh;
+  margin:auto;
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
 }
 

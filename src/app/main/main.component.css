@@ -16,11 +16,37 @@
     -moz-transition: all 0.2s ease !important;
     -o-transition: all 0.2s ease !important;
   }
+<<<<<<< HEAD
 
 
 
 
 
+=======
+  
+  
+  #revised {
+   width:40vh;
+
+    max-width:400px;
+    margin:10vh 0 0 0 ;
+
+}
+
+#revised .outline {
+    opacity:.5 !important;
+}
+  
+  
+#tagLine {
+  color: #fff;
+  font-size:2rem;
+  font-weight:600;
+  margin:0 0 0 0;
+  text-shadow: 0px 1px 10px #ce7c03;
+  width:100%;
+}
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
 
   ._jumbotron {
     color: rgba(255,255,255,1) !important;
@@ -35,6 +61,7 @@
 
   }
 
+<<<<<<< HEAD
 
 
   #summertimeMeals {
@@ -55,6 +82,21 @@
 
   }
 
+=======
+  #landingContent {
+    width:100%;
+    padding:3vh;
+    align-self:flex-end;
+  }
+  svg#Layer_1 {
+   
+    margin: auto;
+    width: 20vw;
+    opacity: .95;
+    /* display: none; */
+}
+  
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
   ._lead {
 
     padding: 0 2vh 0 2vh;
@@ -62,6 +104,7 @@
     line-height:5vh;
 
   }
+<<<<<<< HEAD
 
 
 
@@ -90,15 +133,67 @@
   }
 
 
+=======
+  
+  #foodLink {
+   align-self:flex-end;
+    margin:auto;
+  }
+  #myGeo{
+    
+    -webkit-appearance:none !important;
+    padding: 0.95vh 4vh .95vh 4vh;
+    border-radius:40px;
+    font-size:.75rem;
+    letter-spacing:1px;
+    font-weight:600;
+    
+    border:1px solid rgba(255,255,255,0);
+    margin:0 0 2vh 0;
+    color: #333;
+    background-color: rgba(255,255, 255, 1);
+  }
+  
+  #myGeo:hover {
+    background-color:rgba(255, 183, 94, 0.47);
+    color: rgba(255,255,255,1);
+    padding:.95vh 5vh .95vh 5vh;
+   
+  
+  }
+  #myGeo:focus {
+    border-color:#fc9e2b;
+    outline: none;
+  }
+  #myGeo:active {
+    border-color:#fc9e2b !important;
+    background-color:#fc9e2b!important;
+ outline: none;
+    
+  }
+
+  
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
   #first {
     height: 100vh;
     min-height: 100vh;
   }
 
 
+<<<<<<< HEAD
 
+=======
+  #imageBackground {
+    background-image: url("./../../assets/kids.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;;
+    height:100%;
+  }
+  
+  
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
   ._container[_ngcontent-c0] {
-    margin-top: 60px;
+    margin-top: 50px;
     height: 93vh;
     max-height: 93vh;
   }
@@ -126,10 +221,17 @@
     bottom: 0;
 
     z-index: -1 !important;
+<<<<<<< HEAD
     /*background-color: #2652d7;*/
     background-color: rgba(245,148,29,1);
     /*background: linear-gradient(#1e4ef8, #2652d7);*/
 
+=======
+    /* background-color: #2652d7;
+    background: linear-gradient(#1e4ef8, #2652d7); */
+    background-color: #f69621;
+    background:linear-gradient(#f69621, #ce7c03);
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
 
   }
 
@@ -147,16 +249,17 @@
 
   #map {
     position:fixed;
-    top:60px;
+    top:50px;
     bottom: 0;
     left:0;
     right:0;
-    height:94vh;
-    min-height:94vh;
-    max-height:100%;
+    
+   
+   
     z-index: -2 !important;
 
   }
+<<<<<<< HEAD
 
 
 
@@ -171,10 +274,43 @@
 
 
 
+=======
+  
+  .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+    display: none !important;
+  }
+  
+  .pad2[_ngcontent-c0] {
+    padding: 0 0 0 0 !important;
+  }
+  div#blurb {
+   
+    font-size: .55rem;
+    background: #fffffff0;
+    color: #1d1d1d;
+    height: 25px;
+    z-index: 6;
+    position: fixed;
+    bottom: 0;
+    left: auto;
+    right: 10px;
+    text-align: right;
+    padding: 1vh 2vh 3.5vh 2vh;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+  
+  
+  
+  
+  
+  
+  
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
   .sidebarWrap {
       position:fixed;
       width:27vw;
-      top:65px;
+      top:55px;
       left: 2vw;
       border-radius:4px;
       z-index: 5;
@@ -235,6 +371,7 @@
 
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
     margin-top: 15px;
+    padding:0px;
   }
 
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
@@ -261,3 +398,13 @@
     min-width: 100%;
     margin-left: 0;
   }
+<<<<<<< HEAD
+=======
+
+
+
+@-ms-keyframes wiggle{0%{-ms-transform:rotate(1deg);}50%{-ms-transform:rotate(-1deg);}100%{-ms-transform:rotate(1deg);}}
+@-moz-keyframes wiggle{0%{-moz-transform:rotate(1deg);}50%{-moz-transform:rotate(-1deg);}100%{-moz-transform:rotate(1deg);}}
+@-webkit-keyframes wiggle{0%{-webkit-transform:rotate(1deg);}50%{-webkit-transform:rotate(-1deg);}100%{-webkit-transform:rotate(1deg);}}
+@keyframes wiggle{0%{transform:rotate(1deg);}50%{transform:rotate(-1deg);}100%{transform:rotate(1deg);}}
+>>>>>>> d3ca48c5b27f92541e3d67f08f9c4ed910666aad
