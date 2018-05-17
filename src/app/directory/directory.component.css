@@ -1,5 +1,8 @@
 .directory {
   padding: 3% 3%;
+  margin:50px auto 0 auto;
+
+  width:70%;
 }
 
 .mat-form-field {
@@ -12,17 +15,235 @@
   overflow: auto;
   max-height: auto;
   display: inline-block;
+  text-align:left;
 }
 .mat-card {
-  width: 25%;
   height: 50%;
-  display: inline-block;
-  vertical-align: top;
+  margin:20% auto 10% auto;
 }
+
+.mat-card, .directory-table, h2 {
+  width:100;
+  
+}
+
+.directory-table, h2 {
+  margin:auto;
+}
+
+.mat-cell {
+  font-size:12px;
+}
+
+h2 {
+
+  border: 1px solid rgba(0,0,0,.12);
+  padding-top: 20px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom: none;
+  line-height:65px;
+  padding:0 25px;
+  display:inline-block;
+  font-weight:600;
+}
+
+
+div, .mat-table, .mat-cell, .mat-sort-header-button, .mat-form-field {
+  font-family: 'Nudista', sans-serif !important;
+
+
+}
+
+button.mat-sort-header-button, .mat-sort-header-container, .mat-header-cell {
+  font-weight:600;
+  color:#333;
+  font-size:14px !important;
+  
+
+}
+
+
+span.locationName {
+  font-family: 'Nudista', sans-serif;
+  display:block;
+  font-weight:600;
+  text-transform: uppercase;
+  color: #333;
+}
+
+span.locationAddress,  .diaMeals {
+  color: rgb(96, 96, 96);
+  font-weight:200;
+}
+
+
+
+.mat-row.ng-star-inserted {
+  background-color:rgba(255, 255, 255, 0.963);
+  padding: 15px 25px;
+
+}
+
+.mat-row.ng-star-inserted:hover {
+  background-color: rgba(239, 241, 251, 0.437);
+}
+
+.mat-row.ng-star-inserted, .mat-row.ng-star-inserted:hover {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#mealLocations {
+  z-index:3;
+  position:fixed;
+  top:50px;
+  right:2vw;
+  text-transform:uppercase;
+  border-bottom: 1px solid #ffde16;
+  border-left: 1px solid #ffde16;
+  border-right: 1px solid #ffde16;
+  padding: 1.5vh 2vh 1vh 2vh;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgba(255,255,255,1);
+  color: #333;
+  text-align:center;
+}
+
+#mealLocations h1 {
+  font-size:1rem;
+  line-height:1rem;
+  font-weight:600;
+  margin:0 0 0 0;
+  padding:0 0 0 0;
+  
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: none !important;
+}
+
+/deep/ .mat-input-underline {
+
+  height:3px !important;
+  background-color: rgba(255, 222, 22,1) !important;
+
+}
+
+/deep/ .mat-form-field-ripple {
+  background-color: rgba(255, 222, 22,1);
+  height:5px;
+
+}
+
+/deep/ .mat-form-field-infix input:focus {
+  background:white;
+  border: 1px solid rgba(255,222,22,.61) !important;
+
+}
+#mealLoc {
+  display:none;
+}
+
+
+
+.workinOnIt {
+  font-size:.6rem;
+  color: rgba(0,0,0,.6);
+  margin:0 0 0 0;
+  padding:0 0 0 0;
+}
+
+
 
 .directory-table {
-  width: 70%;
-  display: inline-block;
-  vertical-align: top;
+  box-shadow: none !important;
+border: 1px solid rgba(0,0,0,.12);
+
 
 }
+
+.locationAddress {
+  display:block;
+}
+
+.currentlyServing {
+  font-weight:600;
+  color: #333;
+  margin-top:15px;
+ 
+
+}
+
+.currentlyServing, .diaMeals {
+  display:none;
+}
+
+
+/deep/ .formsy {
+  display: block !important;
+  width:100% !important;
+}
+
+/deep/ .example-full-width {
+  width: 100% !important;
+}
+
+/deep/ .mat-form-field-infix {
+  pointer-events: none !important;
+}
+
+/deep/ .formsy .mat-form-field-underline {
+  display: none !important;}
+
+
+  /deep/ .mat-paginator-container {
+    justify-content: center !important;
+  }
+
+  /deep/ .mat-paginator-decrement, /deep/ .mat-paginator-increment {
+    border-top: 2px solid #ffde16 !important;
+    border-right: 2px solid #ffde16 !important;
+}
+
+
+/deep/ mat-paginator .mat-input-underline {
+  display: none !important;
+}
+
+/deep/ .mat-select-arrow{
+  color: #ffde16 !important;
+}
+  @media screen and (max-width: 800px) { 
+
+
+    .currentlyServing, .diaMeals {
+      display: inline-block;
+    }
+
+    .mat-cell.cdk-column-Meals.mat-column-Meals.ng-star-inserted {
+      display:none;
+    }
+
+    .mat-header-row.ng-star-inserted {
+      display: none;
+    }
+    
+    .directory {
+      width:85%;
+    }
+
+    #mealLocations {
+      display:none;
+    }
+
+    .mat-form-field {
+      font-size:12px;
+    }
+
+    .mat-card {
+      padding:0 0 0 0 !important;
+    }
+  }
+  

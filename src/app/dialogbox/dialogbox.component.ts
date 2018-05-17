@@ -42,7 +42,7 @@ export class DialogboxComponent implements OnInit {
   console.log(this.map)
   this.map.flyTo({
       center: this.data.gps,
-      zoom: 9
+      zoom: 8
     });
   }
 

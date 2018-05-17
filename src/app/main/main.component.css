@@ -22,7 +22,7 @@
    width:40vh;
 
     max-width:400px;
-    margin:10vh 0 0 0 ;
+    margin:20vh 0 0 0 ;
 
 }
 
@@ -33,7 +33,7 @@
   
 #tagLine {
   color: #fff;
-  font-size:2rem;
+  font-size:2.5vh;
   font-weight:600;
   margin:0 0 0 0;
   text-shadow: 0px 1px 10px #ce7c03;
@@ -57,7 +57,7 @@
   #landingContent {
     width:100%;
     padding:3vh;
-    align-self:flex-end;
+   
   }
   svg#Layer_1 {
    
@@ -76,8 +76,8 @@
   }
   
   #foodLink {
-   align-self:flex-end;
-    margin:auto;
+    display:block;
+    margin:13vh auto 0 auto;
   }
   #myGeo{
     
@@ -90,8 +90,8 @@
     
     border:1px solid rgba(255,255,255,0);
     margin:0 0 2vh 0;
-    color: #333;
-    background-color: rgba(255,255, 255, 1);
+    color: #fff;
+    background-color: rgba(255,255, 255, .21);
   }
   
   #myGeo:hover {
@@ -149,7 +149,7 @@
     height:100vh;
     min-height:100vh;
     max-height:100vh;
-    position:absolute;
+    position:fixed;
     
     left: 0;
     right: 0;
@@ -158,8 +158,8 @@
     z-index: -1 !important;
     /* background-color: #2652d7;
     background: linear-gradient(#1e4ef8, #2652d7); */
-    background-color: #f69621;
-    background:linear-gradient(#f69621, #ce7c03);
+    background-color: #fff;
+ 
 
     
   }
@@ -303,14 +303,25 @@
     position: relative;
     top: 0;
     width: 800px;
-    margin-top: 0;
+    margin-top: 0; 
   }
   
   .mapboxgl-ctrl-geocoder > div {
     min-width: 100%;
     margin-left: 0;
   }
+  
+  
 
+  @media screen and (max-width: 800px) {
+
+      h2#tagline {
+        width:100%;
+        margin:auto;
+        font-size: 2.5vh !important;
+    }
+
+     }
 
 
 @-ms-keyframes wiggle{0%{-ms-transform:rotate(1deg);}50%{-ms-transform:rotate(-1deg);}100%{-ms-transform:rotate(1deg);}}
