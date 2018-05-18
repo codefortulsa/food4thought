@@ -16,28 +16,34 @@ export class NavigationComponent implements OnInit {
 
       window.addEventListener("scroll", function(e){
         let clientHeight = document.documentElement.clientHeight;
-        let  landingOverlay = document.getElementById('first').scrollHeight;
-        let  scrollSnap = landingOverlay -200; 
-        let yOffSet = window.pageYOffset;
-        if(yOffSet > clientHeight-200){
-          document.getElementById('appNavBar').classList.remove('landing');
+        if(document.getElementById('first')){
+          let  landingOverlay = document.getElementById('first').scrollHeight;
+          let  scrollSnap = landingOverlay -200; 
+          let yOffSet = window.pageYOffset;
+          if(yOffSet > clientHeight-200){
+            document.getElementById('appNavBar').classList.remove('landing');
+          }
+          if (document.getElementById('first') === null){
+            return;
+          }else {
+          
+
+          if(yOffSet > scrollSnap){
+          window.scrollTo(0,landingOverlay);
+      
+          
+        
+
+          
         }
-        if (document.getElementById('first') === null){
-          return;
-        }else {
-        
-
-        if(yOffSet > scrollSnap){
-        console.log('scroller has passed half way mark')
-        window.scrollTo(0,landingOverlay);
-     
-        
+      }
+      }
+      else{
        
-
+          document.getElementById('appNavBar').classList.add('landing');
         
       }
-    }
-    })
+  })
 
 
     // })

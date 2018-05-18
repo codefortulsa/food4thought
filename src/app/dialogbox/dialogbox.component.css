@@ -2,16 +2,89 @@
   width: 75%;
 }
 .siteMap {
-  width: 55%;
-  height: 100%;
+  width: 100%;
+  max-height:400px;
   /* outline: #00000 solid 10px;
   background-color: lightblue; */
   display: inline-block;
   vertical-align: top;
+  height:30vh;
 }
 
 .formsy {
   width: 40%;
   display: inline-block;
   vertical-align: top;
+}
+
+
+
+/deep/ .mat-dialog-container {
+  margin:auto;
+  width:50%;
+  min-width:300px;
+  max-width:700px;
+  padding:0;
+}
+
+
+
+
+.diaName, .diaAddress, .diaCity, .currentlyServing, .diaMeals {
+  display: block;
+}
+
+
+
+#dialogueInfo {
+  padding:25px;
+  font-size:12px;
+ color: rgb(96, 96, 96);
+ font-weight:200;
+}
+
+.diaName, .currentlyServing {
+  font-weight:600;
+  color:#333;
+  text-transform:uppercase;
+}
+
+.currentlyServing {
+  margin-top:15px;
+}
+
+.feature-form {
+  margin: 0 25px 25px 25px !important;
+}
+
+.mat-button {
+  width:100%;
+  border:1px solid #ddd;
+}
+
+
+.mapboxgl-marker {
+  height:25px;
+  width: 25px;
+  /* background-image: url("./assets/orangeMarker.svg");
+  background-repeat:no-repeat;
+  background-size: contain; */
+}
+
+/deep/ button.mat-button, /deep/ button.mat-button:hover {
+  -webkit-transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
+}
+/deep/ .mat-button-focus-overlay {
+  background-color: #eff1fb74 !important;
+  border: 1px solid #eff1fb;
+  
+}
+
+/deep/ span.mat-button-wrapper {
+  color: #333 !important;
+}
+
+/deep/ button:focus {
+  outline: none !important;
 }

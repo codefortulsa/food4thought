@@ -1,5 +1,5 @@
 body {
-    font-family: "Yantramanav",sans-serif;
+    font-family: "Nudista",sans-serif;
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -13,8 +13,7 @@ body {
     background-image: url("./assets/orangeMarker.svg");
     background-repeat:no-repeat;
     background-size: contain;
-
-    opacity: .9;
+    opacity: 1;
   }
 
 #mobileNavContainer, #mobileNav,
@@ -145,15 +144,15 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
    visibility:hidden;
     margin-top:8px;
     /* background-color: #2851e7; */
-    color: #ffffff00;
+  
     overflow-y: scroll;
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
+    /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
 
     /* background: linear-gradient(#f69621, #f2911a,#f69621); */
-    background: #f4f2f4;
+    background: #eff1fb;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index:-1;
@@ -165,7 +164,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 
   #listings.isOpen {
 
-    color: #ffffff;
+ 
       visibility:visible;
       height:70vh;
       transform:translateY(0);
@@ -243,8 +242,8 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 
 
 .mapboxgl-popup-close-button {
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     font-size: 1rem;
     color: rgba(255,255,255,1);
     -webkit-transition: all 0.2s ease-out;
@@ -604,6 +603,11 @@ div.item:hover {
         width:50vw;
 
     }
+
+    #appNavBar.landing #mobileNavContainer:hover #mobileNav, #appNavBar.landing #mobileNav:hover {
+        background-color: #ffffff;
+        color: #333;
+    }
     #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
         display: block !important;
         padding:2vh;
@@ -616,6 +620,7 @@ div.item:hover {
         color: rgba(255,255,255,1);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius:10px;
+        margin-top: 33px;
 
     }
     #mobileNav{
@@ -626,17 +631,22 @@ div.item:hover {
         box-shadow: 0px 3px 2px rgba(0,0,0,.08);
     }
 
+    #appNavBar.landing #mobileNav a {
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+
 
         #mobileNav a {
             color: rgba(255,255,255,1);
-            line-height:50px;
-            height:50px;
+            line-height:40px;
+            height:40px;
             display:block;
             border-bottom: 1px solid rgba(255,255,255,.1);
             background: rgba(255,255,255,0);
             text-decoration: none;
-            font-size: 1.85vh;
-            padding:0 2vh 0 2vh;
+            font-size: 1.45vh;
+            padding:0 .5vh 0 .5vh;
             font-weight:400;
 
         }
@@ -645,12 +655,16 @@ div.item:hover {
             border-bottom: none!important;
         }
 
+        #appNavBar.landing #mobileNav li:last-of-type a {
+            color: #333;
+            border:1px solid #eee;
+        }
 
         #mobileNav li:last-of-type a {
             text-align: center;
             line-height: 60px;
             height: 60px;
-            font-size: 1rem;
+            font-size: .9rem;
             letter-spacing:2px;
             font-weight:900;
             color: #fff;
@@ -725,6 +739,8 @@ div.item:hover {
         #landingContent #revised {
             width:auto;
         }
+
+       
 
     }
 

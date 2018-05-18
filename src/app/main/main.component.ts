@@ -37,8 +37,8 @@ export class MainComponent implements OnInit {
       (mapboxgl as any).accessToken = this._mapService.mapToken;
       this.map = new mapboxgl.Map({
         container: 'map',
-        // style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
-        style: './../assets/style.json'
+        style: './../assets/style.json',
+      
 
       });
       // This little number loads the data points onto the map :)
