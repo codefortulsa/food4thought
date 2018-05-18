@@ -16,6 +16,9 @@ body {
     opacity: 1;
   }
 
+  .marker:hover {
+      opacity: .75;
+  }
 #mobileNavContainer, #mobileNav,
 #mobileNavContainer #mobieNav,
 #mobileNavContainer:hover #mobileNav, #mobileNav:hover,
@@ -26,7 +29,7 @@ div.item, div.item:hover,
 div.item:hover .cls-2,
 #mobileNav li, #mobileNav li:hover,
 #mobileNav a, #mobileNav a:hover,
-input, input:hover {
+input, input:hover, #navigationBar li a, #navigationBar li a:hover, .marker, .marker:hover {
     transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease!important;
     -moz-transition: all 0.2s ease !important;
@@ -110,11 +113,15 @@ ul#navigationBar {
 #navigationBar li a {
     color: rgba(255,255,255,.9);
     margin-right: 5vh;
-    font-size: .6rem;
+    font-size: .65rem;
     display: inline-block;
-
+    opacity: 1;
     text-transform: uppercase;
     letter-spacing:.07vh;
+}
+
+#navigationBar li a:hover {
+    opacity: .6;
 }
 
 h1.logotype, #navigationBar li a, #appNavBar, .logo {
@@ -147,6 +154,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
   
     overflow-y: scroll;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
@@ -459,9 +467,9 @@ input:focus {
   a.title {
       font-weight: 500;
       text-transform: uppercase;
-      font-size:.65rem;
+      font-size:.8rem;
       display:block;
-      padding:3.5vh 1vh 0 1vh;
+      padding:2.5vh 1vh 0 1vh;
       margin: 0 1.5vh 0 1.5vh;
   }
 
@@ -497,6 +505,12 @@ input:focus {
 }
 
 
+div#findfood {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+}
 
 
 div.item, .meal {
@@ -504,8 +518,8 @@ div.item, .meal {
 }
 
 div.item div {
-    font-size: .65rem;
-    padding:0vh 2.5vh 3.5vh 2.5vh;
+    font-size: .75rem;
+    padding:0vh 2.5vh 2.5vh 2.5vh;
     /* color: rgba(255,255,255,.7); */
     color:rgba(0,0,0,.65);
 }
@@ -605,8 +619,8 @@ div.item:hover {
     }
 
     #appNavBar.landing #mobileNavContainer:hover #mobileNav, #appNavBar.landing #mobileNav:hover {
-        background-color: #ffffff;
-        color: #333;
+        background-color:rgba(246, 150, 33,.1);
+        color: #fff;
     }
     #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
         display: block !important;
@@ -614,7 +628,7 @@ div.item:hover {
         /* background-color: rgba(37, 132, 239,.91); */
         /* background-color: rgba(30, 73, 239,1); */
         /* background-color: #2350f3; */
-        background-color:#f69621;
+        background-color:rgba(246, 150, 33,1);
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
@@ -632,7 +646,7 @@ div.item:hover {
     }
 
     #appNavBar.landing #mobileNav a {
-        color: #333;
+        color: #fff;
         border-bottom: 1px solid #eee;
     }
 
@@ -648,15 +662,18 @@ div.item:hover {
             font-size: 1.45vh;
             padding:0 .5vh 0 .5vh;
             font-weight:400;
+            opacity: 1;
 
         }
-
+        #mobileNav a:hover {
+            opacity: .6;
+        }
         li:nth-of-type(2) a {
             border-bottom: none!important;
         }
 
         #appNavBar.landing #mobileNav li:last-of-type a {
-            color: #333;
+            color: #fff;
             border:1px solid #eee;
         }
 
@@ -675,7 +692,7 @@ div.item:hover {
         }
 
         #mobileNav li:last-of-type a:hover {
-
+            opacity:1;
            border: 1px solid  #ffffff00;
            background-color:#ffa500;
            color:#ffffff;
@@ -694,9 +711,7 @@ div.item:hover {
         ul#navigationBar{
             display: none !important;
         }
-        #appNavBar.landing #menuIcon .cls-1 {
-            fill: #333;
-        }
+ 
         #appNavBar svg {
             display:inline-block;
             max-height: 3vh;

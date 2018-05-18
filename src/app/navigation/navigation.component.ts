@@ -11,9 +11,19 @@ export class NavigationComponent implements OnInit {
 
 
     ngOnInit() {
-      
-      
 
+      if(document.getElementById('first')){
+        document.getElementById('appNavBar').classList.add('landing');
+      }
+      
+      
+      let links = document.getElementsByTagName('a');
+      for (var i = 0; i < links.length ; i++)
+          {
+              links[i].addEventListener("click", function () { 
+                document.getElementById('appNavBar').classList.remove('landing');
+               }, false);
+          }
       window.addEventListener("scroll", function(e){
         let clientHeight = document.documentElement.clientHeight;
         if(document.getElementById('first')){
@@ -31,19 +41,11 @@ export class NavigationComponent implements OnInit {
           if(yOffSet > scrollSnap){
           window.scrollTo(0,landingOverlay);
       
-          
-        
-
-          
         }
       }
       }
-      else{
-       
-          document.getElementById('appNavBar').classList.add('landing');
-        
-      }
-  })
+      })
+  
 
 
     // })

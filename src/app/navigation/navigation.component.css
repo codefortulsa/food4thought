@@ -45,7 +45,7 @@ display:none;
 
 
 #appNavBar.landing {
-  background-color:#fff;
+  background-color:#ffffff00;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border-bottom:1px solid #ffde16;
@@ -54,7 +54,7 @@ display:none;
 }
 
 #appNavBar.landing h1.logotype, #appNavBar.landing #navigationBar li a {
-  color: #333;
+  color: #fff;
 }
 
 #appNavBar {
