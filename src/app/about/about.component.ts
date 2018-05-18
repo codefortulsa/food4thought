@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -10,6 +10,14 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(){
+    let top = document.getElementById('top');
+    if (top != null) {
+      top.scrollIntoView();
+      top = null;
+    }
   }
 
 }
