@@ -89,7 +89,7 @@ span.locationAddress,  .diaMeals {
   background-color: rgba(239, 241, 251, 0.437);
 }
 
-.mat-row.ng-star-inserted, .mat-row.ng-star-inserted:hover {
+.mat-row.ng-star-inserted, .mat-row.ng-star-inserted:hover, div#hoverPopUp{
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
@@ -142,9 +142,6 @@ span.locationAddress,  .diaMeals {
   border: 1px solid rgba(255,222,22,.61) !important;
 
 }
-#mealLoc {
-  display:none;
-}
 
 
 
@@ -180,6 +177,76 @@ border: 1px solid rgba(0,0,0,.12);
   display:none;
 }
 
+#hoverPopUp span{
+  position:absolute;
+  top:1vh;
+  right:1.5vh;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events:all !important;
+  cursor:pointer !important;
+  outline: none;
+  border: 0px solid rgba(0,0,0,0);
+  background: rgba(255,255,255,0);
+  display: block;
+}
+
+#hoverPopUp span::before {
+  content: '['
+}
+
+#hoverPopUp span::after {
+  content: ']';
+}
+
+#hoverPopUp span:hover {
+  color:red;
+
+}
+#inputWrap div#hoverPopUp {
+  opacity:0;
+  width: 250px;
+  height: 140px;
+  position:relative;
+  font-size:.5rem;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3vh;
+  line-height: 1.1rem;
+  visibility:hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align:justify;
+
+
+}
+
+
+#inputWrap:hover div#hoverPopUp {
+  opacity:1;
+  visibility: visible ;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#mealLoc path {
+  stroke:  rgba(255, 222, 22,1);
+  fill:none;
+}
+
+#mealLoc  {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  height:100%;
+}
+
+
+
+
 
 /deep/ .formsy {
   display: block !important;
@@ -191,7 +258,7 @@ border: 1px solid rgba(0,0,0,.12);
 }
 
 /deep/ .mat-form-field-infix {
-  pointer-events: none !important;
+  /* pointer-events: none !important; */
 }
 
 /deep/ .formsy .mat-form-field-underline {

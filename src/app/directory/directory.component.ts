@@ -128,4 +128,8 @@ export class DirectoryComponent implements OnInit {
     // console.log(data);
     return newData;
   }
+
+  // closeThis() {
+  //  document.getElementById('hoverPopUp').classList.add('stayClosed');
+  // }
 }

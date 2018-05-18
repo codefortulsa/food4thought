@@ -26,7 +26,7 @@ export class DialogboxComponent implements OnInit {
     this.map = new mapboxgl.Map({
           container: 'siteMap',
           style: './../assets/style.json',
-          zoom: 5,
+          zoom: 8,
           center: this.data.gps
       });
 

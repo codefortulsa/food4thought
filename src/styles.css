@@ -13,8 +13,7 @@ body {
     background-image: url("./assets/orangeMarker.svg");
     background-repeat:no-repeat;
     background-size: contain;
-
-    opacity: .9;
+    opacity: 1;
   }
 
 #mobileNavContainer, #mobileNav,
@@ -145,15 +144,15 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
    visibility:hidden;
     margin-top:8px;
     /* background-color: #2851e7; */
-    color: #ffffff00;
+  
     overflow-y: scroll;
     overflow-x: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: radial-gradient(#2851e7,#1f48dc,#1a45e4);
+    /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
 
     /* background: linear-gradient(#f69621, #f2911a,#f69621); */
-    background: #f4f2f4;
+    background: #eff1fb;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index:-1;
@@ -165,7 +164,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 
   #listings.isOpen {
 
-    color: #ffffff;
+ 
       visibility:visible;
       height:70vh;
       transform:translateY(0);
@@ -243,8 +242,8 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 
 
 .mapboxgl-popup-close-button {
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     font-size: 1rem;
     color: rgba(255,255,255,1);
     -webkit-transition: all 0.2s ease-out;

@@ -4,31 +4,27 @@
 </div><!--closes mealLocations-->
 
 <div class="directory">
-<svg id="mealLoc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.82 188.47">
-  <defs>
-    <style>
-      .outline {
-        stroke: #333;
-        fill:none;
-      }  
-    </style>
-  </defs>
-    <path _ngcontent-c2="" class="outline" d="M504.56,93.47V244.65a5.68,5.68,0,0,0,5.68,5.68h277l24,21.38V250.32H832a5.68,5.68,0,0,0,5.68-5.68V93.47A5.68,5.68,0,0,0,832,87.8H510.24A5.68,5.68,0,0,0,504.56,93.47Z" transform="translate(-504.06 -87.3)"></path>
-</svg>
-      <!-- <h6>Seach the complete directory of food site locations or browse the list.</h6>
-      <p class="workinOnIt">(Site still under construction...)</p> -->
   
-
+<!-- <div id="inputWrap">
+    <div id="hoverPopUp">
+        <span (click)="closeThis()"> close </span>
+          <p>You can filter the list of meal sites by entering things like your zipcode or what kind of meal you'd like to find (breakfast, lunch, snacks).</p>
+    <svg id="mealLoc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.82 188.47">
+    
+        <path _ngcontent-c2="" class="outline" d="M504.56,93.47V244.65a5.68,5.68,0,0,0,5.68,5.68h277l24,21.38V250.32H832a5.68,5.68,0,0,0,5.68-5.68V93.47A5.68,5.68,0,0,0,832,87.8H510.24A5.68,5.68,0,0,0,504.56,93.47Z" transform="translate(-504.06 -87.3)"></path>
+    </svg>
+    
+    </div>-->
 
     <mat-card class="side-filter">
-
+      
       <div class="dir-header">
         <mat-form-field id="searchField">
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search The Directory & Filter Your Results">
         </mat-form-field>
       </div>
     </mat-card>
-
+  <!-- </div> -->
     <h2>All Meal Sites:</h2>
     <div class="directory-table mat-elevation-z8">
     
