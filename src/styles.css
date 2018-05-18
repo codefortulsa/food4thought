@@ -619,8 +619,8 @@ div.item:hover {
     }
 
     #appNavBar.landing #mobileNavContainer:hover #mobileNav, #appNavBar.landing #mobileNav:hover {
-        background-color: #ffffff;
-        color: #333;
+        background-color:rgba(246, 150, 33,.1);
+        color: #fff;
     }
     #mobileNavContainer:hover #mobileNav, #mobileNav:hover {
         display: block !important;
@@ -628,7 +628,7 @@ div.item:hover {
         /* background-color: rgba(37, 132, 239,.91); */
         /* background-color: rgba(30, 73, 239,1); */
         /* background-color: #2350f3; */
-        background-color:#f69621;
+        background-color:rgba(246, 150, 33,1);
         opacity: 1;
         transition: all 0.2s ease;
         color: rgba(255,255,255,1);
@@ -646,7 +646,7 @@ div.item:hover {
     }
 
     #appNavBar.landing #mobileNav a {
-        color: #333;
+        color: #fff;
         border-bottom: 1px solid #eee;
     }
 
@@ -673,7 +673,7 @@ div.item:hover {
         }
 
         #appNavBar.landing #mobileNav li:last-of-type a {
-            color: #333;
+            color: #fff;
             border:1px solid #eee;
         }
 
@@ -711,9 +711,7 @@ div.item:hover {
         ul#navigationBar{
             display: none !important;
         }
-        #appNavBar.landing #menuIcon .cls-1 {
-            fill: #333;
-        }
+ 
         #appNavBar svg {
             display:inline-block;
             max-height: 3vh;
