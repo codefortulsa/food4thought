@@ -1,5 +1,8 @@
+
+
 .directory {
   padding: 3% 3%;
+  overflow:hidden; /*I added this in but can be removed later, I am guessing here. Chromaticdeth19xx*/
 }
 
 .mat-form-field {
@@ -9,7 +12,7 @@
 
 .mat-table {
   width: 100%;
-  overflow: auto;
+  overflow: auto; /*Here is the overflow set to auto again, I'm flying blind here and I am guessing that setting this to hidden will work. Chromaticdeth19xx*/
   max-height: auto;
   display: inline-block;
 }
