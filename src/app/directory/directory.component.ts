@@ -40,6 +40,7 @@ export class DirectoryComponent implements OnInit {
   constructor(private _http: Http, public dialog: MatDialog, private _mService: MapService ) {
     this._mService.getAllSites2().subscribe(sites => {
       this.dataSource2.data = this.dataFormat(sites.json().features);
+      console.log("DS2:", this.dataSource2.data);
       this.condensedData = this.dataSource2.data;
       for(let x = 0; x < this.condensedData.length; x++){
         var mealString = '';
@@ -74,7 +75,7 @@ export class DirectoryComponent implements OnInit {
     // this.dataSource.sort = this.sort;
     this.dataSource2.paginator = this.paginator;
     this.dataSource2.sort = this.sort;
-   
+
     }
     ngOnInit(): void {} // ends ngOnInit //
 
