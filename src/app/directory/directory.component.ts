@@ -7,6 +7,9 @@ import { Subject } from 'rxjs/Subject';
 
 import { MapService } from './../map.service';
 import { UniFeature } from '../models/uniFeature';
+import * as turf from "@turf/turf";
+import { Units, Coord, Feature } from '@turf/turf';
+import { GeoJSONSource, GeoJSONGeometry } from 'mapbox-gl/dist/mapbox-gl';
 
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
 import { environment } from "../../environments/environment";
@@ -38,36 +41,77 @@ export class DirectoryComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private _http: Http, public dialog: MatDialog, private _mService: MapService ) {
-    this._mService.getAllSites2().subscribe(sites => {
+    this._mService.getSites18().then(sites => {
       this.dataSource2.data = this.dataFormat(sites.json().features);
+
+
+      if(this._mService.userGPS[0] === 0 && navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position => {
+          console.log("client location", position.coords);
+          this._mService.userGPS = [position.coords.latitude, position.coords.longitude];
+        });
+      }
+      else if(this._mService.userGPS[0] + this._mService.userGPS[1] !== 0)
+      {
+        let units:Units = 'miles';
+        // let searchResult = <Coord>locate;
+        var options = { units: units};
+        console.log("TURF WORK....");
+        this.dataSource2.data.forEach((site) => {
+          Object.defineProperty(site, 'distance', {
+            value: turf.distance(<Coord>this._mService.userGPS, site.gps, options),
+            writable: true,
+            enumerable: true,
+            configurable: true
+          });
+        });
+        console.log("TURF Distance added", this.dataSource2.data);
+        // if(this.dataSource2.data[0].distance !== null)
+        // {
+        //   this.dataSource2.data.sort((a, b) => {
+        //     if (a.distance > b.distance) {
+        //       return 1;
+        //     }
+        //     if (a.distance < b.distance) {
+        //       return -1;
+        //     }
+        //     // a must be equal to b
+        //     return 0;
+        //   });
+        // }
+
+      }
+
       console.log("DS2:", this.dataSource2.data);
+      console.log("UserLocation: ", this._mService.userGPS);
       this.condensedData = this.dataSource2.data;
-      for(let x = 0; x < this.condensedData.length; x++){
+      for(let x = 0; x < this.dataSource2.data.length; x++){
         var mealString = '';
-        if(this.condensedData[x]['Meals'].length === 1) {
-          if(this.condensedData[x]['Meals'] == 'B'){
-            this.condensedData[x]['Meals'] = 'Breakfast ';
+        if(this.dataSource2.data[x]['MealServed'].length === 1) {
+          if(this.dataSource2.data[x]['MealServed'] == 'B'){
+            this.dataSource2.data[x]['MealServed'] = 'Breakfast ';
           };
-          if(this.condensedData[x]['Meals'] == 'L'){
-            this.condensedData[x]['Meals'] = 'Lunch ';
+          if(this.dataSource2.data[x]['MealServed'] == 'L'){
+            this.dataSource2.data[x]['MealServed'] = 'Lunch ';
           };
-          if(this.condensedData[x]['Meals']=='S'){
-            this.condensedData[x]['Meals'] = 'Snacks ';
+          if(this.dataSource2.data[x]['MealServed']=='S'){
+            this.dataSource2.data[x]['MealServed'] = 'Snacks ';
           }
         }
         else {
-          if(this.condensedData[x]['Meals'] == 'B L S'){
-           this.condensedData[x]['Meals']= 'Breakfast, Lunch, Snacks';
+          if(this.dataSource2.data[x]['MealServed'] == 'B L S'){
+           this.dataSource2.data[x]['MealServed']= 'Breakfast, Lunch, Snacks';
           }
           else {
-            if(this.condensedData[x]['Meals'] === 'B L'){
-              this.condensedData[x]['Meals'] = 'Breakfast, Lunch';
+            if(this.dataSource2.data[x]['MealServed'] === 'B L'){
+              this.dataSource2.data[x]['MealServed'] = 'Breakfast, Lunch';
             }
           }
         }
       }
-  }
-  )
+
+  }) // Observable/Promise
+
   } // constructor
 
     ngAfterViewInit() {
@@ -116,7 +160,7 @@ export class DirectoryComponent implements OnInit {
       let data_obj = data[x];
       new_obj['id'] = data_obj['id'];
 
-      new_obj['gps'] = data_obj.geometry.coordinates;
+      new_obj['gps'] = data_obj.geometry.coordinates.reverse();
 
       let keys = Object.keys(data_obj['properties']);
       for (let j = 0; j < keys.length; j++) {

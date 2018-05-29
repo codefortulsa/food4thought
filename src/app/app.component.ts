@@ -21,6 +21,7 @@ export class AppComponent {
   userLoc : UserLocation = new UserLocation();
   mapToken : String;
   mealSites: any;
+  
   map:mapboxgl.Map;
   mapService: MapService;
   userGPS: [number, number]= [0, 0];
@@ -39,7 +40,7 @@ export class AppComponent {
     //   })
     // }
 
-    (mapboxgl as any).accessToken = this._mapService.mapToken;
+    (mapboxgl as any).accessToken = this._mapService.env.mapToken;
     this.map = new mapboxgl.Map({
       container: 'map',
       // style: 'mapbox://styles/vicagbasi/cjcjqksly12r62rloz0ps1xmm'
@@ -66,7 +67,7 @@ export class AppComponent {
       // add geocoder controls
 
       var geocoder = new MapboxGeocoder({
-        accessToken: this._mapService.mapToken,
+        accessToken: this._mapService.env.mapToken,
         // bbox: [[33.932536, -103.007813], [37.097360, -94.438477]]
       });
 
