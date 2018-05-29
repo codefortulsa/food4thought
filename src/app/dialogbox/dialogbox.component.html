@@ -1,38 +1,45 @@
-<h1 class="text-center" >Site Details</h1>
 
-<div class="formsy">
-<form class="feature-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Site Name" value="{{ data.Name }}">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Street Address" value="{{ data.Address1 }}">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="City" value="{{ data.City }}">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="State" value="{{ data.State }}">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Zip Code" value="{{ data.Zip }}">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Meals" value="{{ data.Meals }}">
-  </mat-form-field>
-
-  <br>
-  <button mat-button mat-dialog-close>Close</button>
-
-
-</form>
-</div>
 <div class="siteMap" id="siteMap"></div>
+<div class="formsy">
+<div id="dialogueInfo">
+    <span class="diaName">{{ data.Name }}</span>
+    <span class="diaAddress">{{ data.Address1 }}</span>
+    <span class="diaCity">{{ data.City }}, {{ data.State }} {{ data.Zip }}</span>
+    <span class="currentlyServing">Meals Served at {{ data.Name }}:</span>
+    <span class="diaMeals">{{ data.Meals }}</span>
+</div><!-- closes dialogueInfo-->
+
+</div><!--closes formsy-->
+<form class="feature-form">
+    <!-- <mat-form-field class="example-full-width">
+      <input matInput placeholder="Site Name" value="{{ data.Name }}">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Street Address" value="{{ data.Address1 }}">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="City" value="{{ data.City }}">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="State" value="{{ data.State }}">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Zip Code" value="{{ data.Zip }}">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Meals" value="{{ data.Meals }}">
+    </mat-form-field>
+  
+    <br> -->
+    <button mat-button mat-dialog-close>Close</button>
+  
+  
+  </form>
 <!-- <ul>
   <li> Name: {{ data.Name }} </li>
   <li> Address1: {{ data.Address1 }} </li>

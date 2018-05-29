@@ -119,11 +119,14 @@ h2 {
 #sponsors {
   background-color: #d4d1cc;
 display: flex;
-padding: 10vh;
+padding: 10vh 2vh;
 }
 
 #sponsors a , #sponsors a svg{
   max-height:10vh;
   margin:auto;
+  width:20vw;
+  display: inline-block;
 }
+
 
