@@ -38,7 +38,7 @@ export class MainComponent implements OnInit {
       this.map = new mapboxgl.Map({
         container: 'map',
         style: './../assets/style.json',
-      
+
 
       });
       // This little number loads the data points onto the map :)
@@ -173,7 +173,7 @@ export class MainComponent implements OnInit {
     let dropDown = document.getElementById('listings');
     let dropWrap = document.getElementById('sbDrag');
     let icon = document.getElementById('vertical');
- 
+
     if(dropDown.classList.contains('isOpen')){
       dropDown.classList.remove('isOpen');
       icon.setAttribute('d','M52.2,70.5a.74.74,0,0,0,.8-.66V54.92h0V45.08h0V30.16a.74.74,0,0,0-.8-.66H47.8a.74.74,0,0,0-.8.66V45.08h0v9.84h0V69.84a.74.74,0,0,0,.8.66Z');
@@ -184,8 +184,8 @@ export class MainComponent implements OnInit {
     dropDown.classList.add('isOpen');
     icon.setAttribute('d','M52.2,52a2.56,2.56,0,0,0,.8-.06V50.48h0v-1h0V48.06a2.56,2.56,0,0,0-.8-.06H47.8a2.56,2.56,0,0,0-.8.06v1.46h0v1h0v1.46a2.56,2.56,0,0,0,.8.06Z');
     icon.setAttribute('transform','translate(-29.5, -29.5)');
- 
-    
+
+
   }
 
 
