@@ -47,7 +47,7 @@ span.mealmapblurb {
   /* background-color: #2584EF; */
   color:#1d1d1d !important;
   min-height: 100vh;
-  overflow: scroll;
+  overflow-x: hidden; /*this gets rid of the horizontal scroll bar at the bottom of the page. Chromaticdeth19xx*/ 
   /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
   text-align:center;
 }

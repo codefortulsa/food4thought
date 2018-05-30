@@ -108,11 +108,18 @@ export class DirectoryComponent implements OnInit {
   } // constructor
 
     ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    let top = document.getElementById('top');
+    if (top != null) {
+      top.scrollIntoView();
+      top = null;
+    }//This puts the user's viewport at the top of the page upon loading. Chromaticdeth19XX 
+      
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
     this.dataSource2.paginator = this.paginator;
     this.dataSource2.sort = this.sort;
-
     }
     ngOnInit(): void {} // ends ngOnInit //
 

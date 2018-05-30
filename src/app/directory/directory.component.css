@@ -1,7 +1,9 @@
+
+
 .directory {
   padding: 3% 3%;
+  overflow:hidden; /*This hides the horizontal scroll bar at the bottom of the page. Chromaticdeth19xx*/
   margin:50px auto 0 auto;
-
   width:70%;
 }
 
@@ -12,7 +14,7 @@
 
 .mat-table {
   width: 100%;
-  overflow: auto;
+  overflow: auto; /*Here is the overflow set to auto again, I'm flying blind here and I am guessing that setting this to hidden will work. Chromaticdeth19xx*/
   max-height: auto;
   display: inline-block;
   text-align:left;
