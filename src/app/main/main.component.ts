@@ -319,21 +319,21 @@ export class MainComponent implements OnInit {
 
         details.innerHTML += '<br><span class="meal serving">Serving : </span>'
 
-        if(prop.Meals.length > 0){
+        if(prop.MealServed.length > 0){
           var mealType = [];
-          for(let mt = 0; mt <= prop.Meals.length; mt++){
-            if(prop.Meals[mt] === 'B') {
+          for(let mt = 0; mt <= prop.MealServed.length; mt++){
+            if(prop.MealServed[mt] === 'B') {
               details.innerHTML += '<span class="meal">Breakfast</span>';
 
-            } if(prop.Meals[mt]==='L'){
-              if(prop.Meals.length === 1){
+            } if(prop.MealServed[mt]==='L'){
+              if(prop.MealServed.length === 1){
               details.innerHTML += '<span class="meal">Lunch</span>';
               } else {
                 details.innerHTML += '<span class="meal">, Lunch</span>'
               }
             }
-            if(prop.Meals[mt] === 'S'){
-              if(prop.Meals.length > 1) {
+            if(prop.MealServed[mt] === 'S'){
+              if(prop.MealServed.length > 1) {
                 details.innerHTML += '<span class="meal">, Snacks</span>'
               } else {
                 details.innerHTML += '<span class="meal">Snacks</span>'
@@ -433,7 +433,7 @@ export class MainComponent implements OnInit {
           }
         } // this closes the section tag opened before the prop.Meals.length if statement...
         if (prop.StartDate) {
-          details.innerHTML += '<section class="pnumber"><span class="pbold">StartDate : </span>' + prop.StartDate +'</section>';
+          details.innerHTML += '<section class="pnumber"><span class="pbold">Start Date : </span>' + prop.StartDate +'</section>';
         }
         if (prop.Phone) {
           details.innerHTML += '<section class="pnumber"><span class="pbold">Call : </span>' + prop.Phone +'</section>';

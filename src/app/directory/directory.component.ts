@@ -44,14 +44,7 @@ export class DirectoryComponent implements OnInit {
     this._mService.getSites18().then(sites => {
       this.dataSource2.data = this.dataFormat(sites.json().features);
 
-
-      if(this._mService.userGPS[0] === 0 && navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(position => {
-          console.log("client location", position.coords);
-          this._mService.userGPS = [position.coords.latitude, position.coords.longitude];
-        });
-      }
-      else if(this._mService.userGPS[0] + this._mService.userGPS[1] !== 0)
+      if(this._mService.userGPS[0] + this._mService.userGPS[1] !== 0)
       {
         let units:Units = 'miles';
         // let searchResult = <Coord>locate;
@@ -66,6 +59,7 @@ export class DirectoryComponent implements OnInit {
           });
         });
         console.log("TURF Distance added", this.dataSource2.data);
+        // DEFAULT SORT BY DISTANCE ONCE DISTANCE IS ADDED CORRECTLY
         // if(this.dataSource2.data[0].distance !== null)
         // {
         //   this.dataSource2.data.sort((a, b) => {
@@ -79,7 +73,6 @@ export class DirectoryComponent implements OnInit {
         //     return 0;
         //   });
         // }
-
       }
 
       console.log("DS2:", this.dataSource2.data);
@@ -152,25 +145,20 @@ export class DirectoryComponent implements OnInit {
     return res;
     }
 
-
   dataFormat(data : any[] ){
     let newData: any[] = [];
     for (let x = 0; x < data.length; x++){
       let new_obj = {};
       let data_obj = data[x];
       new_obj['id'] = data_obj['id'];
-
       new_obj['gps'] = data_obj.geometry.coordinates.reverse();
-
       let keys = Object.keys(data_obj['properties']);
+
       for (let j = 0; j < keys.length; j++) {
         new_obj[keys[j]] = data_obj['properties'][keys[j]];
       }
       newData.push(new_obj);
     }
-
-    // console.log("dataFormatting");
-    // console.log(data);
     return newData;
   }
 

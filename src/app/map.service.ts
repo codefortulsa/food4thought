@@ -28,6 +28,17 @@ export class MapService {
     console.log('Getting all the new 2018 sites from new data set....');
     return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.env.ms18}/features?access_token=${this.env.mapToken}`).toPromise();
   }
-  
 
+  getClientLocation(){
+    if(this.userGPS[0] === 0 && navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        console.log("client location", position.coords);
+        return [position.coords.latitude, position.coords.longitude];
+      });
+    }
+    else
+    {
+      return [0, 0];
+    }
+  }
   }

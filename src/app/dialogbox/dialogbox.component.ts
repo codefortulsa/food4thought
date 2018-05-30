@@ -27,7 +27,7 @@ export class DialogboxComponent implements OnInit {
           container: 'siteMap',
           style: './../assets/style.json',
           zoom: 8,
-          center: this.data.gps
+          center: this.data.gps.reverse()
       });
 
     this.flyToStore();
