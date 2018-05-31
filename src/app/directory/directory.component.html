@@ -1,7 +1,7 @@
-<div id="mealLocations">
+<!-- <div id="mealLocations">
   <h1>Meal Locations</h1>
   <span class="workinOnIt">Under Construction</span>
-</div><!--closes mealLocations-->
+</div> --> <!--closes mealLocations-->
 
 <div class="directory">
 
@@ -25,7 +25,7 @@
       </div>
     </mat-card>
   <!-- </div> -->
-    <h2>All Meal Sites:</h2>
+
     <div class="directory-table mat-elevation-z8">
 
     <mat-table [dataSource]="dataSource2" matSort>
@@ -38,7 +38,7 @@
 
       <!-- Name Column -->
       <ng-container matColumnDef="Name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Location Name + Address : </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Locations </mat-header-cell>
         <mat-cell *matCellDef="let row">
           <span class="locationName"> {{row.Name}} </span>
           <span class="locationAddress">{{ row.FullAddress }}</span>
@@ -51,7 +51,7 @@
 
       <!-- Meals Column -->
       <ng-container matColumnDef="Meals">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Meals Served :</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Meals </mat-header-cell>
         <mat-cell *matCellDef="let row" > {{row.MealServed}} </mat-cell>
       </ng-container>
 
