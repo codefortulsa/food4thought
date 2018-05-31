@@ -42,8 +42,29 @@
         <mat-cell *matCellDef="let row">
           <span class="locationName"> {{row.Name}} </span>
           <span class="locationAddress">{{ row.FullAddress }}</span>
-          <span class="currentlyServing">Meals Served:</span>
-          <span class="diaMeals">{{ row.MealServed }}</span>
+          
+            <p *ngIf="row.Phone.length > 0" class="currentlyServing telephone">Phone:
+            <a class="diaMeals" href="tel:{{row.Phone}}">{{ row.Phone }}</a></p>
+       
+ 
+              <p *ngIf="row.MealServed.length > 0" class="currentlyServing">Meals Served:
+              <span class="diaMeals">{{ row.MealServed }}</span></p>
+      
+
+              <p *ngIf="row.DaysOpen.length > 0" class="currentlyServing">Days Open:
+              <span class="diaMeals">{{ row.DaysOpen }}</span></p>
+          
+          <p class="locationName servingTimes" *ngIf ="row.BreakfastTime.length > 0 || row.LunchTime.length > 0 || row.SnackTime.length >0">Serving Hours:</p>
+              <p *ngIf="row.BreakfastTime.length > 0" class="currentlyServing">Breakfast:
+              <span class="diaMeals">{{ row.BreakfastTime }}</span></p>
+          
+         
+              <p *ngIf="row.LunchTime.length > 0" class="currentlyServing">Lunch:
+              <span class="diaMeals">{{ row.LunchTime }}</span></p>
+          
+          
+              <p *ngIf="row.SnackTime.length > 0" class="currentlyServing">Snacks: <span class="diaMeals">{{ row.SnackTime }}</span></p>
+         
         </mat-cell>
       </ng-container>
 
@@ -52,7 +73,25 @@
       <!-- Meals Column -->
       <ng-container matColumnDef="Meals">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Meals Served :</mat-header-cell>
-        <mat-cell *matCellDef="let row" > {{row.MealServed}} </mat-cell>
+        <mat-cell *matCellDef="let row" >
+            <p *ngIf="row.MealServed.length > 0" class="currentlyServing">Serving:
+                <span class="diaMeals">{{ row.MealServed }}</span></p>
+        
+  
+                <p *ngIf="row.DaysOpen.length > 0" class="currentlyServing">Days Open:
+                <span class="diaMeals">{{ row.DaysOpen }}</span></p>
+            
+            <span class="locationName servingTimes" *ngIf ="row.BreakfastTime.length > 0 || row.LunchTime.length > 0 || row.SnackTime.length >0">Serving Hours:</span>
+                <p *ngIf="row.BreakfastTime.length > 0" class="currentlyServing">Breakfast:
+                <span class="diaMeals">{{ row.BreakfastTime }}</span></p>
+            
+           
+                <p *ngIf="row.LunchTime.length > 0" class="currentlyServing">Lunch:
+                <span class="diaMeals">{{ row.LunchTime }}</span></p>
+            
+            
+                <p *ngIf="row.SnackTime.length > 0" class="currentlyServing">Snacks: <span class="diaMeals">{{ row.SnackTime }}</span></p>
+        </mat-cell>
       </ng-container>
 
 

@@ -52,7 +52,7 @@ export class DirectoryComponent implements OnInit {
         console.log("TURF WORK....");
         this.dataSource2.data.forEach((site) => {
           Object.defineProperty(site, 'distance', {
-            value: turf.distance(<Coord>this._mService.userGPS, site.gps, options),
+            // value: turf.distance(<Coord>this._mService.userGPS, site.gps, options),
             writable: true,
             enumerable: true,
             configurable: true

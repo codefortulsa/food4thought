@@ -36,7 +36,6 @@
 }
 
 h2 {
-
   border: 1px solid rgba(0,0,0,.12);
   padding-top: 20px;
   border-top-right-radius: 5px;
@@ -48,19 +47,14 @@ h2 {
   font-weight:600;
 }
 
-
 div, .mat-table, .mat-cell, .mat-sort-header-button, .mat-form-field {
   font-family: 'Nudista', sans-serif !important;
-
-
 }
 
 button.mat-sort-header-button, .mat-sort-header-container, .mat-header-cell {
   font-weight:600;
   color:#333;
   font-size:14px !important;
-  
-
 }
 
 
@@ -77,12 +71,9 @@ span.locationAddress,  .diaMeals {
   font-weight:200;
 }
 
-
-
 .mat-row.ng-star-inserted {
   background-color:rgba(255, 255, 255, 0.963);
   padding: 15px 25px;
-
 }
 
 .mat-row.ng-star-inserted:hover {
@@ -117,7 +108,6 @@ span.locationAddress,  .diaMeals {
   font-weight:600;
   margin:0 0 0 0;
   padding:0 0 0 0;
-  
 }
 
 .mat-card:not([class*="mat-elevation-z"]) {
@@ -125,25 +115,19 @@ span.locationAddress,  .diaMeals {
 }
 
 /deep/ .mat-input-underline {
-
   height:3px !important;
   background-color: rgba(255, 222, 22,1) !important;
-
 }
 
 /deep/ .mat-form-field-ripple {
   background-color: rgba(255, 222, 22,1);
   height:5px;
-
 }
 
 /deep/ .mat-form-field-infix input:focus {
   background:white;
   border: 1px solid rgba(255,222,22,.61) !important;
-
 }
-
-
 
 .workinOnIt {
   font-size:.6rem;
@@ -152,31 +136,34 @@ span.locationAddress,  .diaMeals {
   padding:0 0 0 0;
 }
 
+mat-row p {
+  display:block !important;
+  margin: 0 0 0 0;
+}
 
+.servingTimes {
+  margin-top: 15px;
+  padding-top: 15px;
+}
 
 .directory-table {
   box-shadow: none !important;
-border: 1px solid rgba(0,0,0,.12);
-
-
+  border: 1px solid rgba(0,0,0,.12);
 }
 
 .locationAddress {
   display:block;
+  margin-bottom: 15px;
 }
 
 .currentlyServing {
   font-weight:600;
   color: #333;
-  margin-top:15px;
- 
-
+  margin-top: 3px !important;
 }
-
-.currentlyServing, .diaMeals {
-  display:none;
+.mat-cell.cdk-column-Meals.mat-column-Meals.ng-star-inserted {
+  margin: 15px auto 15px auto;
 }
-
 #hoverPopUp span{
   position:absolute;
   top:1vh;
@@ -219,8 +206,6 @@ border: 1px solid rgba(0,0,0,.12);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   text-align:justify;
-
-
 }
 
 
@@ -282,15 +267,28 @@ border: 1px solid rgba(0,0,0,.12);
 /deep/ .mat-select-arrow{
   color: #ffde16 !important;
 }
+
+.mat-cell.cdk-column-Name.mat-column-Name.ng-star-inserted p {
+  display: none !important;
+}
+.mat-cell.cdk-column-Name.mat-column-Name.ng-star-inserted p.currentlyServing.telephone {
+  display: block !important;
+}
   @media screen and (max-width: 800px) { 
 
+    mat-row p, .mat-cell.cdk-column-Name.mat-column-Name.ng-star-inserted p {
+      display: block !important;
+    }
 
+    .mat-cell.cdk-column-Meals.mat-column-Meals.ng-star-inserted p {
+      display: block !important;
+    }
     .currentlyServing, .diaMeals {
       display: inline-block;
     }
 
     .mat-cell.cdk-column-Meals.mat-column-Meals.ng-star-inserted {
-      display:none;
+      display:none !important;
     }
 
     .mat-header-row.ng-star-inserted {
