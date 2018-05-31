@@ -44,37 +44,37 @@ export class DirectoryComponent implements OnInit {
     this._mService.getSites18().then(sites => {
       this.dataSource2.data = this.dataFormat(sites.json().features);
 
-      if(this._mService.userGPS[0] + this._mService.userGPS[1] !== 0)
-      {
-        let units:Units = 'miles';
-        // let searchResult = <Coord>locate;
-        var options = { units: units};
-        console.log("TURF WORK....");
-        console.log(this.dataSource2.data);
-        this.dataSource2.data.forEach((site) => {
-          Object.defineProperty(site, 'distance', {
-            value: turf.distance(<Coord>this._mService.userGPS, site.gps, options),
-            writable: true,
-            enumerable: true,
-            configurable: true
-          });
-        });
-        console.log("TURF Distance added", this.dataSource2.data);
-        // DEFAULT SORT BY DISTANCE ONCE DISTANCE IS ADDED CORRECTLY
-        // if(this.dataSource2.data[0].distance !== null)
-        // {
-        //   this.dataSource2.data.sort((a, b) => {
-        //     if (a.distance > b.distance) {
-        //       return 1;
-        //     }
-        //     if (a.distance < b.distance) {
-        //       return -1;
-        //     }
-        //     // a must be equal to b
-        //     return 0;
-        //   });
-        // }
-      }
+      // if(this._mService.userGPS[0] + this._mService.userGPS[1] !== 0)
+      // {
+      //   let units:Units = 'miles';
+      //   // let searchResult = <Coord>locate;
+      //   var options = { units: units};
+      //   console.log("TURF WORK....");
+      //   console.log(this.dataSource2.data);
+      //   this.dataSource2.data.forEach((site) => {
+      //     Object.defineProperty(site, 'distance', {
+      //       value: turf.distance(<Coord>this._mService.userGPS, site.gps, options),
+      //       writable: true,
+      //       enumerable: true,
+      //       configurable: true
+      //     });
+      //   });
+      //   console.log("TURF Distance added", this.dataSource2.data);
+      //   // DEFAULT SORT BY DISTANCE ONCE DISTANCE IS ADDED CORRECTLY
+      //   if(this.dataSource2.data[0].distance !== null)
+      //   {
+      //     this.dataSource2.data.sort((a, b) => {
+      //       if (a.distance > b.distance) {
+      //         return 1;
+      //       }
+      //       if (a.distance < b.distance) {
+      //         return -1;
+      //       }
+      //       // a must be equal to b
+      //       return 0;
+      //     });
+      //   }
+      // }
 
       console.log("DS2:", this.dataSource2.data);
       console.log("UserLocation: ", this._mService.userGPS);
