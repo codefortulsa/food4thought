@@ -479,7 +479,7 @@ export class MainComponent implements OnInit {
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
           console.log("client location", position.coords);
-
+          this._mapService.userGPS = [position.coords.latitude, position.coords.longitude];
           // this.location = position.coords;
           let featureLocation:Feature<GeoJSONGeometry> = {
             type: "Feature",
@@ -511,7 +511,7 @@ export class MainComponent implements OnInit {
               configurable: true
             });
           });
-          console.log(this.mealSites.features);
+          console.log("After adding distance attribute", this.mealSites.features);
           this.mealSites.features.sort((a, b) => {
             if (a.properties.distance > b.properties.distance) {
               return 1;
@@ -527,7 +527,7 @@ export class MainComponent implements OnInit {
             listings.removeChild(listings.firstChild);
           }
           this.flyToStore(featureLocation);
-          this.buildLocationList(this.mealSites);
+          this.buildLocationList_18(this.mealSites);
         });
       }
     }
