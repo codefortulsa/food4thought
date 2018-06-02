@@ -191,6 +191,8 @@ export class MainComponent implements OnInit {
     dropDown.classList.add('isOpen');
     icon.setAttribute('d','M52.2,52a2.56,2.56,0,0,0,.8-.06V50.48h0v-1h0V48.06a2.56,2.56,0,0,0-.8-.06H47.8a2.56,2.56,0,0,0-.8.06v1.46h0v1h0v1.46a2.56,2.56,0,0,0,.8.06Z');
     icon.setAttribute('transform','translate(-29.5, -29.5)');
+
+    
   }
 
   // This is where your interactions with the symbol layer used to be
