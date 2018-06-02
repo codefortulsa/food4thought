@@ -1,15 +1,17 @@
-
 <div class="siteMap" id="siteMap"></div>
 <div class="formsy">
-<div id="dialogueInfo">
-    <span class="diaName">{{ data.Name }}</span>
-    <span class="diaAddress">{{ data.FullAddress }}</span>
-    <!-- <span class="diaCity">{{ data.City }}, {{ data.State }} {{ data.Zip }}</span> -->
-    <span class="currentlyServing">Meals Served at {{ data.Name }}:</span>
-    <span class="diaMeals">{{ data.MealServed }}</span>
-</div><!-- closes dialogueInfo-->
+  <div id="dialogueInfo">
+      <span class="diaName">{{ data.Name }}</span>
+      <span class="diaAddress">{{ data.Address1 }}</span>
+      <span class="diaCity">{{ data.City }}, {{ data.State }} {{ data.Zip }}</span>
+      <span class="currentlyServing">Meals Served at {{ data.Name }}:</span>
+      <span *ngIf="data.MealServed.length > 0" class="diaMeals">{{ data.MealServed }}</span>
+      <a href="tel:{{ data.Phone }}" class="call-location">Call Now ( {{ data.Phone }} ) </a>
+  </div><!-- closes dialogueInfo-->
   
+
 </div><!--closes formsy-->
 <form class="feature-form">
-  <button class="close" mat-button mat-dialog-close>Close</button>
+
+  <button mat-button mat-dialog-close>Back To Directory</button>
 </form>
