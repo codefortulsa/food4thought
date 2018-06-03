@@ -15,24 +15,30 @@
     </mat-card>
   </div>
   <!-- </div> -->
-    <h2>All Meal Sites: </h2>
+    <div class="table-header-wrapper">
+      <h2>All Meal Sites: </h2>
+      <span class="callHungerFree">For questions about this program,<br />or help finding a meal site call Hunger Free Oklahoma<br />at 918-591-2460</span>
+    </div>
     <div class="directory-table mat-elevation-z8">
 
     <mat-table [dataSource]="dataSource2" matSort>
 
       <!-- ID Column -->
-      <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
-      </ng-container>
+ 
 
       <!-- Name Column -->
       <ng-container matColumnDef="Name">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Location Name + Address</mat-header-cell>
         <mat-cell *matCellDef="let row">
           <div class="info-title">
-            <span class="locationName locationTitle"> {{row.Name}} </span>
+            <span class="locationName locationTitle"> {{row.Name}}</span>
             <span class="locationAddress">{{ row.FullAddress }}</span>
+
+            
+            <!--######## *~*~*~*~*~*~ drop miles away & get directionsdata in here *~*~*~**~*~*~*~~ ############ -->
+            <span class="miles-away">::: <span class="currentlyServing">XYZ</span> miles::: <a href="/" alt="get directions" class="get-directions">Get Directions</a></span>
+            
+
           </div>
           <div class="information-container">
             <div class="info-wrapper">
@@ -50,6 +56,7 @@
               <a class="diaMeals" href="tel:{{row.Phone}}">{{ row.Phone }}</a></p>
               <p *ngIf="row.DaysOpen.length > 0" class="currentlyServing">Days Open:
               <span class="diaMeals">{{ row.DaysOpen }}</span></p>
+              <p *ngIf="row.StartDate.length > 0" class="currentlyServing">From <span class="diaMeals">{{ row.StartDate }}</span> to <span class="diaMeals"> {{ row.EndDate }}</span></p>
             </div>
         </div><!--closes information-container-->
         </mat-cell>

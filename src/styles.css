@@ -250,8 +250,8 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 
 
 .mapboxgl-popup-close-button {
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 2.25rem;
+    right: 2.25rem;
     font-size: 1rem;
     color: rgba(255,255,255,1);
     -webkit-transition: all 0.2s ease-out;
@@ -268,7 +268,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 .mapboxgl-popup-content {
     background-color: rgba(0,0,0,0);
     border: 1px dashed rgba(2, 67, 141, 0);
-    padding:2.5vh;
+    padding:2rem;
     border-radius: 10px;
     animation: fadeIn .3s ease 1;
     -webkit-animation: fadeIn .3s ease 1;
