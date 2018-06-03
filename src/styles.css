@@ -668,7 +668,7 @@ div.item:hover {
         #mobileNav a:hover {
             opacity: .6;
         }
-        li:nth-of-type(2) a {
+        li:nth-of-type(3) a {
             border-bottom: none!important;
         }
 

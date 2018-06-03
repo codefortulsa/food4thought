@@ -19,13 +19,39 @@
   margin-top:20vh;
 }
 
-#aboutWrap p {
+#aboutWrap h1, #aboutWrap h2, #aboutWrap h3, #aboutWrap h4 {
+  font-size:25px !important;
+  border-bottom: 2px solid #ffde16;
+  margin-top:10vh !important;
+  
+}
+#aboutWrap p, #aboutWrap ul, #aboutWrap h1, #aboutWrap h2, #aboutWrap h3, #aboutWrap h4 {
   text-align:left;
   margin:5vh auto;
   display:block;
   
   max-width:800px;
   min-width:300px;
+}
+
+#aboutWrap ul {
+  padding: 0 0 0 0;
+  list-style-type: none;
+}
+
+#aboutWrap ul li {
+  line-height:20px;
+  position:relative;
+  padding-left:15px;
+  margin-bottom:20px;
+}
+#aboutWrap ul li::before {
+  content: '-';
+  position:absolute;
+  left:0;
+  font-weight:700;
+  color:#ffde16;
+  margin-right: 5px;
 }
 
 .lead p {
@@ -49,7 +75,7 @@ span.mealmapblurb {
   min-height: 100vh;
   overflow: scroll;
   /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
-  text-align:center;
+  text-align:left;
 }
 
 .numeral {

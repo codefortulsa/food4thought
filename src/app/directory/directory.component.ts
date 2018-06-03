@@ -29,7 +29,7 @@ export class DirectoryComponent implements OnInit {
   featureSet: UniFeature[] = [];
   condensedData: Object[];
   displayedColumns2 = ["Name", "Address1", "City", "State", "Zip", "Meals"];
-  displayColumns = ["Name",  "Meals"];
+  displayColumns = ["Name"];
   dataSource = new MatTableDataSource();
   dataSource2 = new MatTableDataSource();
   resultsLength = 0;
