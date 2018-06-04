@@ -1,4 +1,17 @@
-
+#aboutWrap {
+  max-width:800px;
+  min-width:300px;
+  width:90%;
+  margin:auto;
+  margin-top:15vh;
+  /* background-color: #2584EF; */
+  color:#1d1d1d !important;
+  min-height: 100vh;
+  overflow: scroll;
+  /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
+  text-align:left;
+  
+}
 
 .lead[_ngcontent-c2] {
   text-align: center;
@@ -23,15 +36,13 @@
   font-size:25px !important;
   border-bottom: 2px solid #ffde16;
   margin-top:10vh !important;
+
   
 }
 #aboutWrap p, #aboutWrap ul, #aboutWrap h1, #aboutWrap h2, #aboutWrap h3, #aboutWrap h4 {
   text-align:left;
-  margin:5vh auto;
+  margin:5vh 0;
   display:block;
-  
-  max-width:800px;
-  min-width:300px;
 }
 
 #aboutWrap ul {
@@ -46,7 +57,7 @@
   margin-bottom:20px;
 }
 #aboutWrap ul li::before {
-  content: '-';
+  content: '+';
   position:absolute;
   left:0;
   font-weight:700;
@@ -65,18 +76,6 @@ span.mealmapblurb {
   font-weight: 600;
 }
 
-
-
-#aboutWrap {
-  width: 100%;
-  padding:16vh 8vw 8vw 8vw ;
-  /* background-color: #2584EF; */
-  color:#1d1d1d !important;
-  min-height: 100vh;
-  overflow: scroll;
-  /* background: radial-gradient(#2851e7,#1f48dc,#1a45e4); */
-  text-align:left;
-}
 
 .numeral {
   font-size:5vh;

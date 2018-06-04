@@ -12,7 +12,7 @@ mat-card.side-filter {
   overflow: hidden !important;
   box-sizing: border-box !important;
   display: flex !important;
-  width:100%;
+  width:90%;
 }
 
 .information-container {
@@ -38,6 +38,7 @@ mat-card.side-filter {
 
 
 .mat-input-infix.mat-form-field-infix {
+  padding-top: 0px !important;
   margin: 0 0 0 0;
 }
 
@@ -87,7 +88,7 @@ left: 15px !important;
 }
 div.dir-header {
   display:inline-block;
-  width:80%;
+  width:100%;
   white-space: nowrap;
 
 }
@@ -135,16 +136,32 @@ div.dir-header {
   font-size:12px;
 }
 
-h2 {
+.table-header-wrapper {
+  
+  
+  display:inline-block;
+  
+}
+
+.table-header-wrapper h2 {
   border: 1px solid rgba(0,0,0,.12);
   padding-top: 20px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border-bottom: none;
-  line-height:65px;
-  padding:0 25px;
   display:inline-block;
   font-weight:600;
+  line-height:75px;
+  height:75px;
+  vertical-align:middle;
+  padding:0 25px;
+}
+
+.table-header-wrapper span {
+  display: inline-block;
+  font-size:13px;
+  vertical-align:middle;
+  padding:0 25px;
 }
 
 
@@ -171,6 +188,12 @@ span.locationName {
   font-size: calc(13px + .65vh);
 }
 
+.locationName.servingTimes {
+  font-weight: 600;
+  color: #333;
+  
+}
+
 span.locationAddress,  .diaMeals {
   color: rgb(96, 96, 96);
   font-weight:200;
@@ -195,10 +218,6 @@ span.locationAddress,  .diaMeals {
   box-shadow: none !important;
 }
 
-mat-header-row.mat-header-row.ng-star-inserted[_ngcontent-c2] {
-  border-top: 0px !important;
-}
-
 .directory-header {
   position: fixed;
   top: 50px;
@@ -208,7 +227,7 @@ mat-header-row.mat-header-row.ng-star-inserted[_ngcontent-c2] {
   width:100%;
   min-height:50px;
   white-space: nowrap;
-  padding: .5vw 2vw .5vw 2vw;
+  padding: .5vw 0 .5vw 0;
   border-bottom: 1px solid rgba(0,0,0,.12);
   box-shadow: 1px 1px 3px rgba(239, 241, 251, 0.437);
 
@@ -252,6 +271,11 @@ mat-row p {
 }
 
 .locationAddress {
+  display:block;
+
+}
+
+.miles-away {
   display:block;
   margin-bottom: 15px;
 }
@@ -329,10 +353,6 @@ mat-row p {
   height:100%;
 }
 
-mat-header-row.mat-header-row.ng-star-inserted {
-  border-top:1px solid rgba(0,0,0,.12);
-
-}
 
 
 
@@ -376,14 +396,34 @@ mat-header-row.mat-header-row.ng-star-inserted {
 
   @media screen and (max-width: 800px) { 
 
+    .table-header-wrapper {
+      width: 100%;
+    }
+
+    .table-header-wrapper h2 {
+      border-bottom: 1px solid rgba(0,0,0,.12);
+      display: block;
+      text-align:center;
+      width:100%;
+
+    }
+
+    .table-header-wrapper span {
+      display: block;
+      border-right: 1px solid rgba(0,0,0,.12);
+      border-left: 1px solid rgba(0,0,0,.12);
+      width:100%;
+      text-align:center;
+      padding-top:25px;
+      padding-bottom: 25px;
+      font-size:12px;
+      width:100%;
+      background-color: rgba(239, 241, 251, 0.437);
+    }
+  
     .information-container{
       flex-direction:column;
       flex-flow:column-reverse;
-    }
-
-
-    div.dir-header {
-      width: 100%;
     }
 
     #search-help-info {
