@@ -16,28 +16,28 @@
   </div>
   <!-- </div> -->
     <div class="table-header-wrapper">
-      <h2>All Meal Sites: </h2>
-      <span class="callHungerFree">For questions about this program,<br />or help finding a meal site call Hunger Free Oklahoma<br />at 918-591-2460</span>
+      <h2>Available Sites</h2>
+      <span class="callHungerFree">For questions about this program,<br />or help finding a meal site call Hunger Free Oklahoma<br />at (918)591-2460.</span>
     </div>
     <div class="directory-table mat-elevation-z8">
 
     <mat-table [dataSource]="dataSource2" matSort>
 
       <!-- ID Column -->
- 
+
 
       <!-- Name Column -->
       <ng-container matColumnDef="Name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Location Name + Address</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
         <mat-cell *matCellDef="let row">
           <div class="info-title">
             <span class="locationName locationTitle"> {{row.Name}}</span>
             <span class="locationAddress">{{ row.FullAddress }}</span>
 
-            
+
             <!--######## *~*~*~*~*~*~ drop miles away & get directionsdata in here *~*~*~**~*~*~*~~ ############ -->
-            <span class="miles-away">::: <span class="currentlyServing">XYZ</span> miles::: <a href="/" alt="get directions" class="get-directions">Get Directions</a></span>
-            
+            <!-- <span class="miles-away">::: <span class="currentlyServing">XYZ</span> miles::: <a href="/" alt="get directions" class="get-directions">Get Directions</a></span> -->
+
 
           </div>
           <div class="information-container">

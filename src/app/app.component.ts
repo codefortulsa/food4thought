@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MapService } from './map.service';
-import { NgForm } from "@angular/forms";
-
 
 @Component({
   selector: 'app-root',
@@ -10,5 +7,5 @@ import { NgForm } from "@angular/forms";
 })
 export class AppComponent {
 
-  constructor(private _mapService: MapService) {}
+
 }
