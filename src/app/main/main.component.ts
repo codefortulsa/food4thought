@@ -350,8 +350,7 @@ export class MainComponent implements OnInit {
           var roundedDistance = Math.round(prop.distance * 100) / 100;
           details.innerHTML += '<p class="roundedDistance">' + roundedDistance + ' miles away</p>';
         }
-        details.innerHTML += "<a class='getDirections' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
-        +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
+        details.innerHTML += "<a class='getDirections' href='https://www.google.com/maps/dir/?api=1&"+"destination="+currentFeature.properties.FullAddress+"&travelmode=driving' target='_blank'>"+
           'Get Directions</a>'
 
         link.addEventListener('click', (e) => {
