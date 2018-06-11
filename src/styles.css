@@ -1,3 +1,4 @@
+
 body {
     font-family: "Nudista",sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -151,7 +152,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
    visibility:hidden;
     margin-top:8px;
     /* background-color: #2851e7; */
-  
+
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -172,7 +173,7 @@ h1.logotype, #navigationBar li a, #appNavBar, .logo {
 
   #listings.isOpen {
 
- 
+
       visibility:visible;
       height:70vh;
       transform:translateY(0);
@@ -711,7 +712,7 @@ div.item:hover {
         ul#navigationBar{
             display: none !important;
         }
- 
+
         #appNavBar svg {
             display:inline-block;
             max-height: 3vh;
@@ -755,7 +756,7 @@ div.item:hover {
             width:auto;
         }
 
-       
+
 
     }
 
@@ -764,4 +765,3 @@ div.item:hover {
 @-moz-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @-webkit-keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
 @keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
-

@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
 
     mapToken : String;
     mealSites: any;
-    mealSites18: any;
+    // mealSites18: any;
     map:mapboxgl.Map;
     mapService: MapService;
     userGPS: [number, number]= [0, 0];
@@ -33,11 +33,11 @@ export class MainComponent implements OnInit {
     }
 
     ngOnInit(){
-      this._mapService.getSites18().then((gdata) => {
-        this.mealSites18 = gdata.json();
-
-        console.log(this.mealSites18);
-      });
+      // this._mapService.getSites18().then((gdata) => {
+      //   this.mealSites18 = gdata.json();
+      //
+      //   console.log(this.mealSites18);
+      // });
 
       (mapboxgl as any).accessToken = this._mapService.env.mapToken;
       this.map = new mapboxgl.Map({
@@ -59,11 +59,7 @@ export class MainComponent implements OnInit {
         })
 
         this.buildLocationList_18(this.mealSites);
-        // directions module.......need to finish
-        // map.addControl(new MapboxDirections({
-        //     accessToken: this._mapService.mapToken
-        // }), 'top-left');
-        // add geocoder controls
+
 
         var geocoder = new MapboxGeocoder({
           accessToken: this._mapService.env.mapToken,
@@ -236,8 +232,11 @@ export class MainComponent implements OnInit {
         .setLngLat(currentFeature.geometry.coordinates)
 
         .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
-        '<div class="placeInfo"><h5>' + currentFeature.properties.Address +
-          "</h5><p>Serving: "+mealsServed+"</p>"+
+        '<div class="placeInfo">'+
+          '<h5>'+currentFeature.properties.Address+"</h5>"+
+            "<p class=siteProp>Serving:"+mealsServed+"</p>"+
+            "<p class=siteProp>Days Open: "+currentFeature.properties.DaysOpen+"</p>"+
+            "<p class=siteProp>Contact: "+currentFeature.properties.Phone+"</p>"+
           "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
           +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
             'Get Directions'+'</a></div>')
@@ -278,10 +277,13 @@ export class MainComponent implements OnInit {
         .setLngLat(currentFeature.geometry.coordinates)
 
         .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
-        '<div class="placeInfo"><h5>' + currentFeature.properties.FullAddress +
-          "</h5><p>Serving: "+mealsServed+"</p>"+
+        '<div class="placeInfo">'+
+          '<h5>'+currentFeature.properties.FullAddress+"</h5>"+
+          "<p class=siteProp>Serving:"+mealsServed+"</p>"+
+          "<p class=siteProp>Days Open: "+currentFeature.properties.DaysOpen+"</p>"+
+          "<p class=siteProp>Contact: "+currentFeature.properties.Phone+"</p>"+
           "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
-          +String(this.userGPS[1])+"&destination="+currentFeature.properties.FullAddress+"&travelmode=driving' target='_blank'>"+
+          +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
             'Get Directions'+'</a></div>')
         //
         .addTo(this.map);
