@@ -44,7 +44,7 @@
             <div class="info-wrapper">
                 <p *ngIf="row.MealServed.length > 0" class="currentlyServing">Meals Served:
                 <span class="diaMeals">{{ row.MealServed }}</span></p>
-                <p class="locationName servingTimes" *ngIf ="row.BreakfastTime.length > 0 || row.LunchTime.length > 0 || row.SnackTime.length >0">Hours:</p>
+                <p class="locationName servingTimes" *ngIf ="row.BreakfastTime.length > 0 || row.LunchTime.length > 0 || row.SnackTime.length >0"><u>Hours</u></p>
                 <p *ngIf="row.BreakfastTime.length > 0" class="currentlyServing">Breakfast:
                 <span class="diaMeals">{{ row.BreakfastTime }}</span></p>
                 <p *ngIf="row.LunchTime.length > 0" class="currentlyServing">Lunch:
