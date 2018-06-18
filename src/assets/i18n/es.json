@@ -1,0 +1,29 @@
+{
+  "ABOUT": {
+    "header1": "¿Qué es el Programa de Comidas de Verano de Oklahoma?",
+    "section1": "El Programa de Comidas de Verano de Oklahoma es administrado por el Departamento de Educación del Estado de Oklahoma. Mientras la escuela ha terminado antes del verano, más de 100 organizaciones patrocinadoras, que prestan servicio en cientos de sitios en todo el estado, ofrecen comidas gratis a los niños de hasta 18 años. Muchos sitios sirven el desayuno y el almuerzo o el almuerzo y una botana.",
+    "s1_l1": "Cualquier niño puede recibir una comida.",
+    "s1_l2": "Las comidas deben ser comido en el sitio donde se las han recibido.",
+    "s1_l3": "No se necesita identificación para participar.",
+    "s1_l4": "Los niños no necesitan estar acompañados.",
+    "header2": "¿Cómo encuentro un sitio cerca de mí?",
+    "s2_l1": "Al hacer clic en el botón “Buscar comida” en la esquina superior derecha de su pantalla, se mostrará un mapa de los sitios más cercanos a su ubicación actual. Por favor permita que el sitio obtenga su ubicación para ordenar los sitios más cercanos a usted.",
+    "s2_l2": "Use la barra de búsqueda ubicada en la parte superior de la página para buscar un sitio cerca de una ubicación diferente.",
+    "s2_l3": "Vaya al 'Directorio Completo' para buscar a través de la lista completa de ubicaciones de sitios disponibles.",
+    "s2_l4": "Seleccione el botón 'Obtener indicaciones' para las indicaciones de Google Map al sitio.",
+    "header3": "Sobre este sitio web:",
+    "section3": "Este mapa fue creado en colaboración con Code for Tulsa, Hunger Free Oklahoma y el Departamento de Educación del Estado de Oklahoma para ayudar a las familias a encontrar sitios para comer en verano más rápido que nunca. Para preguntas sobre este programa o ayuda para encontrar un sitio de comida, llame a Hunger Free Oklahoma al (918)591-2460.",
+    "header4": "Sobre los socios: ",
+    "code4tulsa": "Code for Tulsa se encuentra entre las 70 brigadas nacionales de Code for America que ayudan a los especialistas en códigos y datos a llevar sus habilidades tecnológicas al proceso de conectar a las personas con sus gobiernos locales. La brigada de Tulsa fue una de las primeras en organizarse cuando se expandieron las ideas del Code for America a partir de 2009.",
+    "hungerfree": "Hunger Free Oklahoma trabaja para traer una voz unificada y estatal a los problemas y soluciones que rodean el hambre, con el objetivo de garantizar que todos los habitantes de Oklahoma tengan acceso a los alimentos economicos y nutritivos. Estamos aprovechando el poder de la colaboración para resolver el hambre en Oklahoma al mejorar los sistemas, las políticas y las prácticas.",
+    "statedept": "El Departamento de Educación del Estado de Oklahoma se encarga de determinar las políticas y dirigir la administración y supervisión del sistema escolar público de Oklahoma. Esto incluye la administración del programa de comidas de verano, programas de desayuno y almuerzo escolar y programas de comidas después de la escuela."
+  },
+  "NAV": {
+    "about": "Sobre nosotros",
+    "fulldirectory": "Directorio completo",
+    "findfood": "Encuentre comida",
+    "contact": "Contactarse"
+  },
+  "allLoactions": "Todas ubicaciones"
+
+}

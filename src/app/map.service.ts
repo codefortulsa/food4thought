@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Observable } from "rxjs/Observable";
 import { Router } from "@angular/router";
 import { environment as env } from "environments/environment";
+import { TranslateService } from "@ngx-translate/core";
 
 @Injectable()
 export class MapService {
@@ -14,9 +15,14 @@ export class MapService {
   mealSites18: any;
   userGPS: [number, number]= [0, 0];
   env: any = env;
-  constructor(private _http : Http, private _router : Router) {
-    console.log("this is a test..")
+  constructor(private _http : Http, private _router : Router, private translate: TranslateService) {
 
+  }
+
+  switchLanguage(language: string) {
+    var lang = (language == 'en') ? "English" : "Spanish";
+    console.log(`Changing language to ${lang}!`)
+    this.translate.use(language);
   }
 
   getAllSites(){
