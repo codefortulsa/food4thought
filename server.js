@@ -6,7 +6,7 @@ const forceHTTPS = require("expressjs-force-https").forceHTTPS;
 const app = express();
 
 app.use(express.static(path.join(__dirname, './dist')));
-app.use(forceHTTPS);
+// app.use(forceHTTPS);
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
 app.get('/*', function(req, res) {
