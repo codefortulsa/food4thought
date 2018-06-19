@@ -1,11 +1,11 @@
-
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 body {
     font-family: "Nudista",sans-serif;
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*  */
 .marker {
     border: none;
     cursor: pointer;
