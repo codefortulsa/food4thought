@@ -1,4 +1,9 @@
 {
+  "MAIN": {
+    "no_cost": "NO-COST MEALS FOR KIDS",
+    "all_summer": "ALL SUMMER!",
+    "find_food": "FIND FOOD"
+  },
   "ABOUT": {
     "header1": "What is the Oklahoma Summer Meals Program?",
     "section1": "The Oklahoma Summer Meals Program is administered by the Oklahoma State Department of Education. While school is out for the summer, over 100 sponsoring organizations, serving hundreds of sites across the state, provide no-cost meals to kids 18 and younger. Many sites serve both breakfast and lunch or lunch and a snack.",

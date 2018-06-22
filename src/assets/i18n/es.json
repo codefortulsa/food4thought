@@ -1,4 +1,10 @@
 {
+  "MAIN": {
+    "no_cost": "COMIDAS GRATIS PARA LOS NINOS",
+    "all_summer": "TODO EL VERANO!",
+    "find_food": "ENCUENTRE COMIDA"
+
+  },
   "ABOUT": {
     "header1": "¿Qué es el Programa de Comidas de Verano de Oklahoma?",
     "section1": "El Programa de Comidas de Verano de Oklahoma es administrado por el Departamento de Educación del Estado de Oklahoma. Mientras la escuela ha terminado antes del verano, más de 100 organizaciones patrocinadoras, que prestan servicio en cientos de sitios en todo el estado, ofrecen comidas gratis a los niños de hasta 18 años. Muchos sitios sirven el desayuno y el almuerzo o el almuerzo y una botana.",
@@ -24,6 +30,10 @@
     "findfood": "Encuentre comida",
     "contact": "Contactarse"
   },
-  "allLoactions": "Todas ubicaciones"
-
+  "allLoactions": "Todas ubicaciones",
+  "DIRECTORY": {
+    "available": "",
+    "for_more": "",
+    "locations": ""
+  }
 }
