@@ -58,7 +58,7 @@ export class MainComponent implements OnInit {
           data: this.mealSites
         })
 
-        this.buildLocationList_18(this.mealSites);
+        this.buildLocationList(this.mealSites);
         // directions module.......need to finish
         // map.addControl(new MapboxDirections({
         //     accessToken: this._mapService.mapToken
@@ -135,7 +135,7 @@ export class MainComponent implements OnInit {
             while (listings.firstChild) {
               listings.removeChild(listings.firstChild);
             }
-          this.buildLocationList_18(this.mealSites);
+          this.buildLocationList(this.mealSites);
         }); // GeoCoder.On
 
 
@@ -157,7 +157,7 @@ export class MainComponent implements OnInit {
               // 1. Fly to the point
               this.flyToStore(marker);
               // 2. Close all other popups and display popup for clicked store
-              this.createPopUp_18(marker);
+              this.createPopUp(marker);
               // 3. Highlight listing in sidebar (and remove highlight for all other listings)
               var activeItem = document.getElementsByClassName('active');
               e.stopPropagation();
@@ -207,48 +207,6 @@ export class MainComponent implements OnInit {
     createPopUp(currentFeature) {
       var popUps = document.getElementsByClassName('mapboxgl-popup');
       var mealsServed = '';
-      for(var mealType = 0; mealType <= currentFeature.properties.Meals.length; mealType++){
-        if(currentFeature.properties.Meals[mealType] === 'B'){
-          mealsServed += 'Breakfast';
-        }
-        if(currentFeature.properties.Meals[mealType]==='L'){
-          if(currentFeature.properties.Meals.length > 1) {
-          mealsServed += ', Lunch';
-        }
-         else{
-          mealsServed += 'Lunch'
-        }
-      }
-      if(currentFeature.properties.Meals[mealType]==='S'){
-        if(currentFeature.properties.Meals.length > 1) {
-          mealsServed += ', Snacks';
-        }
-        else {
-          mealsServed += 'Snacks';
-        }
-      }
-    }
-      // Check if there is already a popup on the map and if so, remove it
-      if (popUps[0]) popUps[0].remove();
-      console.log(String(this.userGPS[0]));
-      var popup = new mapboxgl.Popup({ closeOnClick: false })
-
-        .setLngLat(currentFeature.geometry.coordinates)
-
-        .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
-        '<div class="placeInfo"><h5>' + currentFeature.properties.Address +
-          "</h5><p>Serving: "+mealsServed+"</p>"+
-          "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
-          +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
-            'Get Directions'+'</a></div>')
-        //
-        .addTo(this.map);
-
-    };
-
-    createPopUp_18(currentFeature) {
-      var popUps = document.getElementsByClassName('mapboxgl-popup');
-      var mealsServed = '';
       for(var mealType = 0; mealType <= currentFeature.properties.MealServed.length; mealType++){
         if(currentFeature.properties.MealServed[mealType] === 'B'){
           mealsServed += 'Breakfast';
@@ -289,96 +247,6 @@ export class MainComponent implements OnInit {
     };
 
     buildLocationList(data) {
-      for (var i = 0; i < data.features.length; i++) {
-        // Create an array of all the stores and their properties
-        var currentFeature = data.features[i];
-        // Shorten data.feature.properties to just `prop` so we're not
-        // writing this long form over and over again.
-        var prop = currentFeature.properties;
-
-        // Select the listing container in the HTML
-        var listings = document.getElementById('listings');
-        // Append a div with the class 'item' for each store
-        var listing = listings.appendChild(document.createElement('div'));
-        listing.className = 'item';
-        listing.id = "listing-" + i;
-
-        // Create a new link with the class 'title' for each store
-        // and fill it with the store address
-        var link = listing.appendChild(document.createElement('a'));
-        link.href = '#map';
-        link.className = 'title';
-        link.setAttribute("dataPosition", i.toString());
-        // link.dataPosition = i;
-        link.innerHTML = prop.Name;
-
-        // ~*~*~*~*~*~*~* information about which meals are served per location...
-        var details = listing.appendChild(document.createElement('div'));
-
-        details.innerHTML = prop.Address;
-
-        details.innerHTML += '<br><span class="meal serving">Serving : </span>'
-
-        if(prop.MealServed.length > 0){
-          var mealType = [];
-          for(let mt = 0; mt <= prop.MealServed.length; mt++){
-            if(prop.MealServed[mt] === 'B') {
-              details.innerHTML += '<span class="meal">Breakfast</span>';
-
-            } if(prop.MealServed[mt]==='L'){
-              if(prop.MealServed.length === 1){
-              details.innerHTML += '<span class="meal">Lunch</span>';
-              } else {
-                details.innerHTML += '<span class="meal">, Lunch</span>'
-              }
-            }
-            if(prop.MealServed[mt] === 'S'){
-              if(prop.MealServed.length > 1) {
-                details.innerHTML += '<span class="meal">, Snacks</span>'
-              } else {
-                details.innerHTML += '<span class="meal">Snacks</span>'
-              }
-            }
-          }
-          // this closes the section tag opened before the prop.Meals.length if statement...
-
-        }
-        if (prop.Phone) {
-          details.innerHTML += '<section class="pnumber"><span class="pbold">Call : </span>' + prop.Phone +'</section>';
-        }
-        if (prop.distance) {
-          var roundedDistance = Math.round(prop.distance * 100) / 100;
-          details.innerHTML += '<p class="roundedDistance">' + roundedDistance + ' miles away</p>';
-        }
-        details.innerHTML += "<a class='getDirections' href='https://www.google.com/maps/dir/?api=1&"+"destination="+currentFeature.properties.FullAddress+"&travelmode=driving' target='_blank'>"+
-          'Get Directions</a>'
-
-        link.addEventListener('click', (e) => {
-          // Update the currentFeature to the store associated with the clicked link
-          console.log((<Element>e.target).getAttribute("dataPosition"));
-
-          var clickedListing = data.features[Number.parseInt((<Element>e.target).getAttribute("dataPosition"))];
-
-          // 1. Fly to the point associated with the clicked link
-          this.flyToStore(clickedListing);
-
-          // 2. Close all other popups and display popup for clicked store
-          this.createPopUp(clickedListing);
-
-          // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-          var activeItem = document.getElementsByClassName('active');
-
-          if (activeItem[0]) {
-            activeItem[0].classList.remove('active');
-          }
-          (<Element>e.target).parentElement.classList.add('active');
-
-        });
-
-      }
-    }
-
-    buildLocationList_18(data) {
       for (var i = 0; i < data.features.length; i++) {
         // Create an array of all the stores and their properties
         var currentFeature = data.features[i];
@@ -455,7 +323,7 @@ export class MainComponent implements OnInit {
           this.flyToStore(clickedListing);
 
           // 2. Close all other popups and display popup for clicked store
-          this.createPopUp_18(clickedListing);
+          this.createPopUp(clickedListing);
 
           // 3. Highlight listing in sidebar (and remove highlight for all other listings)
           var activeItem = document.getElementsByClassName('active');
@@ -526,7 +394,7 @@ export class MainComponent implements OnInit {
             listings.removeChild(listings.firstChild);
           }
           this.flyToStore(featureLocation);
-          this.buildLocationList_18(this.mealSites);
+          this.buildLocationList(this.mealSites);
         });
       }
     }

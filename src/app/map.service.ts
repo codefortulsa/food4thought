@@ -7,38 +7,15 @@ import { environment as env } from "environments/environment";
 
 @Injectable()
 export class MapService {
-  // datasetToken: String = "cjcnxy2y11nq82pmr8qu3zu22";
-  // mapToken: String = "pk.eyJ1IjoidmljYWdiYXNpIiwiYSI6ImNqY2lpcWE2aTNteGEycWxscDl2NzhpZWQifQ.KJIJ5fZsHtxebZwwROAc5w";
-  // featureSet: UniFeature[] = [];
+
   mealSites: any;
   mealSites18: any;
   userGPS: [number, number]= [0, 0];
   env: any = env;
-  constructor(private _http : Http, private _router : Router) {
-    console.log("this is a test..")
-
-  }
-
-  getAllSites(){
-    console.log("Getting all the sites.....");
-    return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.env.datasetToken}/features?access_token=${this.env.mapToken}`).toPromise();
-  }
+  constructor(private _http : Http, private _router : Router) {}
 
   getSites18(){
     console.log('Getting all the new 2018 sites from new data set....');
-    return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.env.ms18}/features?access_token=${this.env.mapToken}`).toPromise();
+    return this._http.get(`https://api.mapbox.com/datasets/v1/vicagbasi/${this.env.ms18_062218}/features?access_token=${this.env.mapToken}`).toPromise();
   }
-
-  getClientLocation(){
-    if(this.userGPS[0] === 0 && navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(position => {
-        console.log("client location", position.coords);
-        return [position.coords.latitude, position.coords.longitude];
-      });
-    }
-    else
-    {
-      return [0, 0];
-    }
-  }
-  }
+}
