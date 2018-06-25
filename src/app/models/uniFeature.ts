@@ -24,7 +24,7 @@ export interface Geometry {
     type: string;
 }
 
-export interface RootObject {
+export interface UniFeature {
     type: string;
     properties: Properties;
     geometry: Geometry;
