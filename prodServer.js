@@ -2,9 +2,11 @@ const express = require("express");
 const path = require("path");
 
 const PORT = process.env.PORT || 8080;
+const forceHTTPS = require("expressjs-force-https").forceHTTPS;
 const app = express();
 
 app.use(express.static(path.join(__dirname, './dist')));
+app.use(forceHTTPS);
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
