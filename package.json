@@ -1,6 +1,6 @@
 {
-  "name": "angular-cs",
-  "version": "0.0.0",
+  "name": "MealMaps",
+  "version": "0.7.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

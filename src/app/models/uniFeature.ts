@@ -30,3 +30,8 @@ export interface UniFeature {
     geometry: Geometry;
     id: string;
 }
+
+export interface FeatureCollection {
+  type: string;
+  features: UniFeature[];
+}

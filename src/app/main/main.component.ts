@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
 
     ngOnInit(){
       this._mapService.getSites18().then((gdata) => {
-        this.mealSites18 = gdata.json();
+        this.mealSites18 = gdata;
 
         console.log(this.mealSites18);
       });
@@ -51,7 +51,7 @@ export class MainComponent implements OnInit {
       this.map.on('load', (e)=> {
         this._mapService.getSites18().then((geoData)=>{
 
-        this.mealSites = geoData.json();
+        this.mealSites = geoData;
 
         this.map.addSource('places', {
           type: 'geojson',
