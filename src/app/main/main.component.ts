@@ -277,7 +277,7 @@ export class MainComponent implements OnInit {
 
         details.innerHTML = prop.FullAddress;
 
-        details.innerHTML += '<br><span class="meal serving">Serving : </span>'
+        details.innerHTML += '<br><span class="meal serving">Serving : </span>';
 
         if(prop.MealServed.length > 0){
           var mealType = [];
@@ -301,6 +301,8 @@ export class MainComponent implements OnInit {
             }
           }
         } // this closes the section tag opened before the prop.Meals.length if statement...
+        details.innerHTML += '<br><span class="meal serving">Status : </span><span class="meal">'+prop.Status+'</span>';
+
         if (prop.StartDate) {
           details.innerHTML += '<section class="pnumber"><span class="pbold">Start Date : </span>' + prop.StartDate +'</section>';
         }
