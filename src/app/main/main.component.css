@@ -1,23 +1,26 @@
 
 
+  /* WHY ISN"T THIS WORKING! ugh */
+  .siteProp {
+    margin-bottom: 0rem !important;
+  }
 
-  
-  
+
   .mapboxgl-canvas {
-  
+
     min-width: 100vw;
     position: relative !important;
-  
+
   }
-  
+
   .tween {
     transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease!important;
     -moz-transition: all 0.2s ease !important;
     -o-transition: all 0.2s ease !important;
   }
-  
-  
+
+
   #revised {
    width:40vh;
 
@@ -29,8 +32,8 @@
 #revised .outline {
     opacity:.5 !important;
 }
-  
-  
+
+
 #tagLine {
   color: #fff;
   font-size:2.5vh;
@@ -49,57 +52,57 @@
     background-repeat:no-repeat;
     background-size:cover;
     text-align:center;
-   
-   
+
+
   }
-  
+
 
   #landingContent {
     width:100%;
     padding:3vh;
-   
+
   }
   svg#Layer_1 {
-   
+
     margin: auto;
     width: 20vw;
     opacity: .95;
     /* display: none; */
 }
-  
+
   ._lead {
-    
+
     padding: 0 2vh 0 2vh;
     font-size:2.7vh !important;
     line-height:5vh;
-    
+
   }
-  
+
   #foodLink {
     display:block;
     margin:13vh auto 0 auto;
   }
   #myGeo{
-    
+
     -webkit-appearance:none !important;
     padding: 0.95vh 4vh .95vh 4vh;
     border-radius:40px;
     font-size:.75rem;
     letter-spacing:1px;
     font-weight:600;
-    
+
     border:1px solid rgba(255,255,255,0);
     margin:0 0 2vh 0;
     color: #333;
     background-color: rgba(255,255, 255, .9);
   }
-  
+
   #myGeo:hover {
     background-color:rgba(255, 183, 94, 0.47);
     color: rgba(255,255,255,1);
     padding:.95vh 5vh .95vh 5vh;
-   
-  
+
+
   }
   #myGeo:focus {
     border-color:#fc9e2b;
@@ -109,10 +112,10 @@
     border-color:#fc9e2b !important;
     background-color:#fc9e2b!important;
  outline: none;
-    
+
   }
 
-  
+
   #first {
     height: 100vh;
     min-height: 100vh;
@@ -125,79 +128,79 @@
     background-size: cover;;
     height:100%;
   }
-  
-  
+
+
   ._container[_ngcontent-c0] {
     margin-top: 50px;
     height: 93vh;
     max-height: 93vh;
   }
-  
+
   ._container2 {
     position: absolute;
     width: 100vw;
     height:100vh;
     z-index: -100 !important;
-  
-    
+
+
   }
-  
-  
-  
+
+
+
   #mapSidebarContainer {
-  
+
     height:100vh;
     min-height:100vh;
     max-height:100vh;
     position:fixed;
-    
+
     left: 0;
     right: 0;
     bottom: 0;
-  
+
     z-index: -1 !important;
     /* background-color: #2652d7;
     background: linear-gradient(#1e4ef8, #2652d7); */
     background-color: #fff;
- 
 
-    
+
+
   }
-  
-  #second::before { 
-    display: block !important;; 
-    content: " " !important;; 
+
+  #second::before {
+    display: block !important;;
+    content: " " !important;;
     margin-top: -60px !important;;
-    height: 60px !important;; 
-    visibility: hidden !important;; 
+    height: 60px !important;;
+    visibility: hidden !important;;
     pointer-events: none !important;;
   }
-  
-  
-  
-  
+
+
+
+
   #map {
     position:fixed;
     top:50px;
     bottom: 0;
     left:0;
     right:0;
-    
-   
-   
+
+
+
     z-index: -2 !important;
-  
+
   }
-  
+
   .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
     display: none !important;
   }
-  
+
   .pad2[_ngcontent-c0] {
     padding: 0 0 0 0 !important;
   }
   div#blurb {
-   
+
     font-size: .55rem;
     background: #fffffff0;
     color: #1d1d1d;
@@ -212,13 +215,13 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   .sidebarWrap {
       position:fixed;
       width:27vw;
@@ -226,92 +229,92 @@
       left: 2vw;
       border-radius:4px;
       z-index: 5;
-  
+
   }
-  
-  
+
+
   .heading[_ngcontent-c0] {
     color: rgba(255,255,255,.9);
     text-align: center !important;
   }
-  
-  
-  
-  
-      
+
+
+
+
+
         body {
-  
+
           font: 500 20px/26px 'Helvetica Neue', Helvetica, Arial, Sans-serif;
           margin: 0;
           padding: 0;
           margin-bottom: 5%;
           background-color: white;
-  
-  
+
+
         }
-  
-     
-  
-  
-        
-  
+
+
+
+
+
+
   /* ======================================================================
   FLY IN ONTO SPECIFIC ADDRESS CSS STUFF....a few things still don't work correctly
   ====================================================================== */
-  
+
   /* Marker tweaks */
-  
+
   .mapboxgl-popup-content h3 {
     color: #fff !important;
   }
-  
-  
+
+
   .mapboxgl-popup-content h4 {
     margin: 0;
     display: block;
     padding: 10px;
     font-weight: 400;
   }
-  
+
   .mapboxgl-popup-content div {
     padding: 10px;
   }
-  
+
   .mapboxgl-container .leaflet-marker-icon {
     cursor: pointer;
   }
-  
+
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
     margin-top: 15px;
     padding:0px;
   }
-  
+
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
     border-bottom-color: #91c949;
   }
-  
+
   /* ADDING CUSTOM MARKERS STYLING! */
   .marker {
     border: none;
-  
-  
+
+
   }
-  
+
   .mapboxgl-ctrl-geocoder {
     border: 0;
     border-radius: 0;
     position: relative;
     top: 0;
     width: 800px;
-    margin-top: 0; 
+    margin-top: 0;
   }
-  
+
   .mapboxgl-ctrl-geocoder > div {
     min-width: 100%;
     margin-left: 0;
   }
-  
-  
+
+
 
   @media screen and (max-width: 800px) {
 

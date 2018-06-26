@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
 
     ngOnInit(){
       this._mapService.getSites18().then((gdata) => {
-        this.mealSites18 = gdata.json();
+        this.mealSites18 = gdata;
 
         console.log(this.mealSites18);
       });
@@ -51,7 +51,7 @@ export class MainComponent implements OnInit {
       this.map.on('load', (e)=> {
         this._mapService.getSites18().then((geoData)=>{
 
-        this.mealSites = geoData.json();
+        this.mealSites = geoData;
 
         this.map.addSource('places', {
           type: 'geojson',
@@ -238,6 +238,8 @@ export class MainComponent implements OnInit {
         .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
         '<div class="placeInfo"><h5>' + currentFeature.properties.FullAddress +
           "</h5><p>Serving: "+mealsServed+"</p>"+
+          "<p class=siteProp>Days Open: "+currentFeature.properties.DaysOpen+"</p>"+
+          "<p class=siteProp>Contact: "+currentFeature.properties.Phone+"</p>"+
           "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
           +String(this.userGPS[1])+"&destination="+currentFeature.properties.FullAddress+"&travelmode=driving' target='_blank'>"+
             'Get Directions'+'</a></div>')

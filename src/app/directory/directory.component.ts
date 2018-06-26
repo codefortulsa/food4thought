@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogboxComponent } from "../dialogbox/dialogbox.component";
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
 
 import { MapService } from './../map.service';
@@ -40,9 +40,10 @@ export class DirectoryComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private _http: Http, public dialog: MatDialog, private _mService: MapService ) {
-    this._mService.getSites18().then(sites => {
-      this.dataSource2.data = this.dataFormat(sites.json().features);
+  constructor(private _http: HttpClient, public dialog: MatDialog, private _mService: MapService ) {
+    this._mService.getSites18().then((sites) => {
+
+      this.dataSource2.data = this.dataFormat(sites.features);
 
       // if(this._mService.userGPS[0] + this._mService.userGPS[1] !== 0)
       // {
