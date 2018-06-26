@@ -9,7 +9,7 @@ import { MapService } from './../map.service';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private ms: MapService ) {}
+  constructor(public ms: MapService ) {}
 
   ngOnInit() {
   }
