@@ -2,7 +2,8 @@
   "MAIN": {
     "no_cost": "COMIDAS GRATIS PARA LOS NINOS",
     "all_summer": "TODO EL VERANO!",
-    "find_food": "ENCUENTRE COMIDA"
+    "find_food": "ENCUENTRE COMIDA",
+    "get_directory": "OBTENER LAS DIRECCIONES"
 
   },
   "ABOUT": {
@@ -32,8 +33,20 @@
   },
   "allLoactions": "Todas ubicaciones",
   "DIRECTORY": {
-    "available": "",
-    "for_more": "",
-    "locations": ""
+    "search_filter": "BUSCAR + FILTRAR<br>UBICACIONES DE SERVICIO",
+    "available": "Sitios Disponibles",
+    "for_more": "Para preguntas sobre este programa,<br/>o ayuda para encontrar un sitio de comida, llámenos en Hunger Free Oklahoma<br />al (918)591-2460.",
+    "locations": "Ubicación",
+    "phone": "Teléfono",
+    "days_open": "Días abiertos",
+    "from": "Desde", "to": "hasta",
+    "status": "Estado",
+    "meal_served": "Comidas Servidas",
+    "hours": "Horas",
+    "breakfast": "Desayuno",
+    "lunch": "Almuerzo",
+    "snacks": "Aperitivos",
+    "search_meals": "Buscar en el directorio de sitios de comidas"
+
   }
 }

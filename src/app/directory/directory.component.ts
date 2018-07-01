@@ -83,15 +83,8 @@ export class DirectoryComponent implements OnInit {
       for(let x = 0; x < this.dataSource2.data.length; x++){
         var mealString = '';
         if(this.dataSource2.data[x]['MealServed'].length === 1) {
-          if(this.dataSource2.data[x]['MealServed'] == 'B'){
-            this.dataSource2.data[x]['MealServed'] = 'Breakfast ';
-          };
-          if(this.dataSource2.data[x]['MealServed'] == 'L'){
-            this.dataSource2.data[x]['MealServed'] = 'Lunch ';
-          };
-          if(this.dataSource2.data[x]['MealServed']=='S'){
-            this.dataSource2.data[x]['MealServed'] = 'Snacks ';
-          }
+          this.dataSource2.data[x]['MealServed'] = (this.dataSource2.data[x]['MealServed'] == 'B') ? "Breakfast ":
+          (this.dataSource2.data[x]['MealServed'] == 'L') ? "Lunch ": "Snacks ";
         }
         else {
           if(this.dataSource2.data[x]['MealServed'] == 'B L S'){
@@ -101,8 +94,20 @@ export class DirectoryComponent implements OnInit {
             if(this.dataSource2.data[x]['MealServed'] === 'B L'){
               this.dataSource2.data[x]['MealServed'] = 'Breakfast, Lunch';
             }
+            else if(this.dataSource2.data[x]['MealServed'] === 'L S'){
+              this.dataSource2.data[x]['MealServed'] = 'Lunch, Snacks';
+            }
           }
         }
+
+        // switch(true){
+        //   case this.dataSource2.data[x]['MealServed'].length == 1:
+        //     this.dataSource2.data[x]['MealServed'] = (this.dataSource2.data[x]['MealServed'] == 'B') ? "Breakfast ":
+        //     (this.dataSource2.data[x]['MealServed'] == 'L') ? "Lunch ": "Snacks ";
+        //
+        //   case this.dataSource2.data[x]['MealServed'].length == 3:
+        //
+        // }
       }
 
   }) // Observable/Promise

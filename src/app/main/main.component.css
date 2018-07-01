@@ -1,10 +1,15 @@
 
 
   /* WHY ISN"T THIS WORKING! ugh */
-  .siteProp {
+  p {
+    margin-top: 0 !important;
     margin-bottom: 0rem !important;
   }
 
+  .snackBar {
+    background: black;
+    color: white;
+  }
 
   .mapboxgl-canvas {
 

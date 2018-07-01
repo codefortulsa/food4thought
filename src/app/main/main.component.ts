@@ -4,12 +4,13 @@ import { NgForm } from "@angular/forms";
 import * as mapboxgl from 'mapbox-gl';
 import * as MapboxGeocoder from 'mapbox-gl-geocoder';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
-
+import { DeviceDetectorService } from 'ngx-device-detector';
 import * as turf from "@turf/turf";
 import { Units, Coord, Feature } from '@turf/turf';
 import { GeoJSONSource, GeoJSONGeometry } from 'mapbox-gl/dist/mapbox-gl';
 import { FeatureCollection } from 'geojson';
-
+import { MatSnackBar } from '@angular/material';
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-main',
@@ -21,22 +22,26 @@ export class MainComponent implements OnInit {
 
     mapToken : String;
     mealSites: any;
-    mealSites18: any;
     map:mapboxgl.Map;
     mapService: MapService;
     userGPS: [number, number]= [0, 0];
     // geocoder: MapboxGeocoder;
 
-    constructor(private _mapService: MapService) {
-      // this.mealSites = this._mapService.mealSites;
-
+    constructor(private _mapService: MapService, public snackBar: MatSnackBar,
+      private deviceService: DeviceDetectorService, private translate: TranslateService) {
+      console.log(this.deviceService.getDeviceInfo());
     }
 
     ngOnInit(){
-      this._mapService.getSites18().then((gdata) => {
-        this.mealSites18 = gdata;
 
-        console.log(this.mealSites18);
+      let esNotif = this.snackBar.open("Would you like to view in Spanish?", "Click Here for Espanol!", {
+        duration: 7000,
+        extraClasses: ["snackBar"]
+      });
+
+      esNotif.onAction().subscribe(info => {
+        console.log("Changing app to Spanish translation!!!!");
+        this._mapService.switchLanguage("es");
       });
 
       (mapboxgl as any).accessToken = this._mapService.env.mapToken;
@@ -44,10 +49,9 @@ export class MainComponent implements OnInit {
         container: 'map',
         style: './../assets/style.json',
 
-
       });
-      // This little number loads the data points onto the map :)
 
+      // This little number loads the data points onto the map :)
       this.map.on('load', (e)=> {
         this._mapService.getSites18().then((geoData)=>{
 
@@ -59,11 +63,6 @@ export class MainComponent implements OnInit {
         })
 
         this.buildLocationList(this.mealSites);
-        // directions module.......need to finish
-        // map.addControl(new MapboxDirections({
-        //     accessToken: this._mapService.mapToken
-        // }), 'top-left');
-        // add geocoder controls
 
         var geocoder = new MapboxGeocoder({
           accessToken: this._mapService.env.mapToken,
@@ -99,8 +98,12 @@ export class MainComponent implements OnInit {
         var geobtn = document.getElementById("myGeo")
 
         // "Find Food" event listener..
-        geobtn.addEventListener("click", ()=>{this.nearbySites()});
+        geobtn.addEventListener("click", ()=>{
+          this.nearbySites();
+          window.setTimeout(this.openSesame(), 3500);
+        });
 
+        // search for location in Oklahoma and order sites by proximity
         geocoder.on('result', (ev) => {
           var searchResult = ev.result.geometry;
           let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
@@ -237,7 +240,7 @@ export class MainComponent implements OnInit {
 
         .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
         '<div class="placeInfo"><h5>' + currentFeature.properties.FullAddress +
-          "</h5><p>Serving: "+mealsServed+"</p>"+
+          "</h5><p class=siteProp>Serving: "+mealsServed+"</p>"+
           "<p class=siteProp>Days Open: "+currentFeature.properties.DaysOpen+"</p>"+
           "<p class=siteProp>Contact: "+currentFeature.properties.Phone+"</p>"+
           "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
@@ -301,11 +304,12 @@ export class MainComponent implements OnInit {
             }
           }
         } // this closes the section tag opened before the prop.Meals.length if statement...
-        details.innerHTML += '<br><span class="meal serving">Status : </span><span class="meal">'+prop.Status+'</span>';
+        details.innerHTML += '<br><span class="meal serving">'+this.comTranslate('DIRECTORY.status')+' : </span><span class="meal">'+prop.Status+'</span>';
 
         if (prop.StartDate) {
           details.innerHTML += '<section class="pnumber"><span class="pbold">Start Date : </span>' + prop.StartDate +'</section>';
         }
+        
         if (prop.Phone) {
           details.innerHTML += '<section class="pnumber"><span class="pbold">Call : </span>' + prop.Phone +'</section>';
         }
@@ -341,7 +345,9 @@ export class MainComponent implements OnInit {
 
       }
     }
-
+    comTranslate(jsonKey: string): string | Object{
+      return this.translate.instant(jsonKey);
+    }
     nearbySites(){
       console.log("nearby Sites function");
 

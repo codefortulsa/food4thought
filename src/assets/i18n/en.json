@@ -2,7 +2,8 @@
   "MAIN": {
     "no_cost": "NO-COST MEALS FOR KIDS",
     "all_summer": "ALL SUMMER!",
-    "find_food": "FIND FOOD"
+    "find_food": "FIND FOOD",
+    "get_directory": "GET DIRECTORY"
   },
   "ABOUT": {
     "header1": "What is the Oklahoma Summer Meals Program?",
@@ -29,5 +30,21 @@
     "findfood": "FIND FOOD",
     "contact": "CONTACT"
   },
-  "allLoactions": "All Locations"
+  "allLoactions": "All Locations",
+  "DIRECTORY": {
+    "search_filter": "SEARCH + FILTER<br>SERVING LOCATIONS",
+    "available": "Available Sites",
+    "for_more": "For questions about this program,<br />or help finding a meal site call Hunger Free Oklahoma<br />at (918)591-2460.",
+    "locations": "Locations",
+    "phone": "Phone",
+    "days_open": "Days Open",
+    "from": "From", "to": "to",
+    "status": "Status",
+    "meal_served": "Meals Served",
+    "hours": "Hours",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "snacks": "Snacks",
+    "search_meals": "Search the Meal Site Directory"
+  }
 }
