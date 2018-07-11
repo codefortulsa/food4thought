@@ -3,8 +3,20 @@
     "no_cost": "COMIDAS GRATIS PARA LOS NINOS",
     "all_summer": "TODO EL VERANO!",
     "find_food": "ENCUENTRE COMIDA",
-    "get_directory": "OBTENER LAS DIRECCIONES"
-
+    "get_directions": "OBTENER LAS DIRECCIONES",
+    "start_date": "Comienzo",
+    "end_date": "Fecha Final",
+    "contact": "Tocar",
+    "days_open": "Días abiertos",
+    "serving": "Comidas servidas",
+    "miles_away": "Obtener las direcciones",
+    "street_address": "Dirección",
+    "breakfast": "Desayuno",
+    "lunch": "Almuerzo",
+    "dinner": "Cena",
+    "snacks": "Botanas",
+    "open": "Abierto",
+    "closed": "Cerrado"
   },
   "ABOUT": {
     "header1": "¿Qué es el Programa de Comidas de Verano de Oklahoma?",

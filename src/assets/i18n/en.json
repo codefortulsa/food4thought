@@ -3,7 +3,20 @@
     "no_cost": "NO-COST MEALS FOR KIDS",
     "all_summer": "ALL SUMMER!",
     "find_food": "FIND FOOD",
-    "get_directory": "GET DIRECTORY"
+    "get_directions": "Get Directions",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "contact": "Contact",
+    "days_open": "Days Open",
+    "serving": "Serving",
+    "miles_away": "miles away",
+    "street_address": "Street Address",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "snacks": "Snacks",
+    "open": "Open",
+    "closed": "Closed"
   },
   "ABOUT": {
     "header1": "What is the Oklahoma Summer Meals Program?",

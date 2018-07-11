@@ -18,6 +18,7 @@
     <div class="table-header-wrapper">
       <h2>{{ 'DIRECTORY.available' | translate }}</h2>
       <span class="callHungerFree" [innerHTML]="'DIRECTORY.for_more' | translate"></span>
+      <!-- <mat-chip (click)="nearbySites()">Nearby</mat-chip> -->
     </div>
     <div class="directory-table mat-elevation-z8">
 
@@ -36,7 +37,8 @@
 
 
             <!--######## *~*~*~*~*~*~ drop miles away & get directionsdata in here *~*~*~**~*~*~*~~ ############ -->
-            <!-- <span class="miles-away">::: <span class="currentlyServing">XYZ</span> miles::: <a href="/" alt="get directions" class="get-directions">Get Directions</a></span> -->
+            <span class="miles-away" *ngIf="row.Distance !== undefined"><span class="currentlyServing">{{ row.Distance }}</span> miles away </span>
+            <!-- <a href="/" alt="get directions" class="get-directions">Get Directions</a> -->
 
 
           </div>

@@ -4,7 +4,10 @@
   min-width:300px;
   max-width:1100px;
 }
-
+.mat-chip {
+    font-size: 21px;
+    line-height: 30px;
+}
 mat-card.side-filter {
   max-width: 1100px;
   min-width: 300px;
@@ -48,7 +51,7 @@ mat-card.side-filter {
   border-radius: 5px;
   box-shadow: inset 1px 1px 18px #ffa50000;
   text-indent: 15px;
-  
+
 }
 
 #mat-input-0:hover {
@@ -68,7 +71,7 @@ mat-card.side-filter {
   top: 0;
   bottom: 0;
   margin: auto;
-  line-height: 60px !important; 
+  line-height: 60px !important;
 left: 15px !important;
 }
 
@@ -95,7 +98,7 @@ div.dir-header {
 
 #search-help-info {
   display:inline-block;
-  width:18%;
+  width:27%;
   font-weight:600;
   text-align:right;
   background-color: rgba(255,255,255,.7);
@@ -109,10 +112,10 @@ div.dir-header {
   border: 1px solid;
   border-radius: 0px 0px 3px 3px;
   border-top: 0px !important; */
- 
+
   min-width:200px;
   vertical-align:top;
-  
+
 }
 
 #search-help-info span {
@@ -137,10 +140,10 @@ div.dir-header {
 }
 
 .table-header-wrapper {
-  
-  
+
+
   display:inline-block;
-  
+
 }
 
 .table-header-wrapper h2 {
@@ -191,7 +194,7 @@ span.locationName {
 .locationName.servingTimes {
   font-weight: 600;
   color: #333;
-  
+
 }
 
 span.locationAddress,  .diaMeals {
@@ -305,7 +308,7 @@ mat-row p {
 #hoverPopUp span::before {
   content: '['
 }
- 
+
 #hoverPopUp span::after {
   content: ']';
 }
@@ -394,7 +397,7 @@ mat-row p {
 
 
 
-  @media screen and (max-width: 800px) { 
+  @media screen and (max-width: 800px) {
 
     .table-header-wrapper {
       width: 100%;
@@ -420,7 +423,7 @@ mat-row p {
       width:100%;
       background-color: rgba(239, 241, 251, 0.437);
     }
-  
+
     .information-container{
       flex-direction:column;
       flex-flow:column-reverse;
@@ -449,7 +452,7 @@ mat-row p {
     .mat-header-row.ng-star-inserted {
       display: none;
     }
-    
+
 
     #mealLocations {
       display:none;

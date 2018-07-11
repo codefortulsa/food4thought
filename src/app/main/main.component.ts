@@ -4,7 +4,7 @@ import { NgForm } from "@angular/forms";
 import * as mapboxgl from 'mapbox-gl';
 import * as MapboxGeocoder from 'mapbox-gl-geocoder';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
-import { DeviceDetectorService } from 'ngx-device-detector';
+// import { DeviceDetectorService } from 'ngx-device-detector';
 import * as turf from "@turf/turf";
 import { Units, Coord, Feature } from '@turf/turf';
 import { GeoJSONSource, GeoJSONGeometry } from 'mapbox-gl/dist/mapbox-gl';
@@ -25,30 +25,26 @@ export class MainComponent implements OnInit {
     map:mapboxgl.Map;
     mapService: MapService;
     userGPS: [number, number]= [0, 0];
-    // geocoder: MapboxGeocoder;
 
-    constructor(private _mapService: MapService, public snackBar: MatSnackBar,
-      private deviceService: DeviceDetectorService, private translate: TranslateService) {
-      console.log(this.deviceService.getDeviceInfo());
+    constructor(private _mapService: MapService, public snackBar: MatSnackBar, private translate: TranslateService) {
     }
 
     ngOnInit(){
+        var esNotif = this.snackBar.open("Would you like to view in Spanish?", "Click Here for Espanol!", {
+          duration: 7000,
+          extraClasses: ["snackBar"]
+        });
+        esNotif.onAction().subscribe(info => {
+          console.log("Changing app to Spanish translation!!!!");
+          this._mapService.switchLanguage("es");
+        });
 
-      let esNotif = this.snackBar.open("Would you like to view in Spanish?", "Click Here for Espanol!", {
-        duration: 7000,
-        extraClasses: ["snackBar"]
-      });
 
-      esNotif.onAction().subscribe(info => {
-        console.log("Changing app to Spanish translation!!!!");
-        this._mapService.switchLanguage("es");
-      });
 
       (mapboxgl as any).accessToken = this._mapService.env.mapToken;
       this.map = new mapboxgl.Map({
         container: 'map',
         style: './../assets/style.json',
-
       });
 
       // This little number loads the data points onto the map :)
@@ -100,7 +96,7 @@ export class MainComponent implements OnInit {
         // "Find Food" event listener..
         geobtn.addEventListener("click", ()=>{
           this.nearbySites();
-          window.setTimeout(this.openSesame(), 3500);
+          window.setTimeout(this.openSesame(), 1000);
         });
 
         // search for location in Oklahoma and order sites by proximity
@@ -209,43 +205,29 @@ export class MainComponent implements OnInit {
 
     createPopUp(currentFeature) {
       var popUps = document.getElementsByClassName('mapboxgl-popup');
-      var mealsServed = '';
-      for(var mealType = 0; mealType <= currentFeature.properties.MealServed.length; mealType++){
-        if(currentFeature.properties.MealServed[mealType] === 'B'){
-          mealsServed += 'Breakfast';
-        }
-        if(currentFeature.properties.MealServed[mealType]==='L'){
-          if(currentFeature.properties.MealServed.length > 1) {
-          mealsServed += ', Lunch';
-        }
-         else{
-          mealsServed += 'Lunch'
-        }
+      var mealsServed;
+
+      var res = currentFeature.properties.MealServed.trim().split(" ");
+      var newArray = [];
+      for(var x = 0; x < res.length; x++){
+        newArray[x] = (res[x] === 'B') ? this.comTranslate('MAIN.breakfast')+" : "+currentFeature.properties.BreakfastTime :
+                      (res[x] === 'L') ? this.comTranslate('MAIN.lunch')+" : "+currentFeature.properties.LunchTime :
+                      this.comTranslate('MAIN.snacks')+" : "+currentFeature.properties.SnackTime;
       }
-      if(currentFeature.properties.MealServed[mealType]==='S'){
-        if(currentFeature.properties.MealServed.length > 1) {
-          mealsServed += ', Snacks';
-        }
-        else {
-          mealsServed += 'Snacks';
-        }
-      }
-    }
+      mealsServed = newArray.join(", ");
       // Check if there is already a popup on the map and if so, remove it
       if (popUps[0]) popUps[0].remove();
       console.log(String(this.userGPS[0]));
       var popup = new mapboxgl.Popup({ closeOnClick: false })
-
         .setLngLat(currentFeature.geometry.coordinates)
 
         .setHTML('<h3>'+currentFeature.properties.Name+'</h3>'+
         '<div class="placeInfo"><h5>' + currentFeature.properties.FullAddress +
-          "</h5><p class=siteProp>Serving: "+mealsServed+"</p>"+
-          "<p class=siteProp>Days Open: "+currentFeature.properties.DaysOpen+"</p>"+
-          "<p class=siteProp>Contact: "+currentFeature.properties.Phone+"</p>"+
-          "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
-          +String(this.userGPS[1])+"&destination="+currentFeature.properties.FullAddress+"&travelmode=driving' target='_blank'>"+
-            'Get Directions'+'</a></div>')
+          "</h5><p class=siteProp style='margin-bottom: 0rem'>"+this.comTranslate('MAIN.serving')+": "+mealsServed+"</p>"+
+          "<p class=siteProp style='margin-bottom: 0rem'>"+this.comTranslate('MAIN.days_open')+": "+currentFeature.properties.DaysOpen+"</p>"+
+          "<p class=siteProp style='margin-bottom: 0rem'>"+this.comTranslate('MAIN.contact')+": "+currentFeature.properties.Phone+"</p>"+
+          "<a class='directionslink' href='https://www.google.com/maps/dir/?api=1&destination="+currentFeature.properties.FullAddress+"&travelmode=driving' target='_blank'>"+
+            this.comTranslate('MAIN.get_directions')+'</a></div>')
         //
         .addTo(this.map);
 
@@ -260,7 +242,7 @@ export class MainComponent implements OnInit {
         var prop = currentFeature.properties;
 
         // Select the listing container in the HTML
-        var listings = document.getElementById('listings');
+        var listings : any = document.getElementById('listings');
         // Append a div with the class 'item' for each store
         var listing = listings.appendChild(document.createElement('div'));
         listing.className = 'item';
@@ -280,38 +262,24 @@ export class MainComponent implements OnInit {
 
         details.innerHTML = prop.FullAddress;
 
-        details.innerHTML += '<br><span class="meal serving">Serving : </span>';
+        details.innerHTML += '<br><span class="meal serving">'+this.comTranslate('MAIN.serving')+' : </span>';
 
-        if(prop.MealServed.length > 0){
-          var mealType = [];
-          for(let mt = 0; mt <= prop.MealServed.length; mt++){
-            if(prop.MealServed[mt] === 'B') {
-              details.innerHTML += '<span class="meal">Breakfast</span>';
+        var res = prop.MealServed.trim().split(" ");
+        var newArray = [];
+        for(var x = 0; x < res.length; x++){
+          newArray[x] = (res[x] === 'B') ? this.comTranslate('MAIN.breakfast'): (res[x] === 'L') ? this.comTranslate('MAIN.lunch') : this.comTranslate('MAIN.snacks');
+        }
+        var strMeals = newArray.join(", ");
+        details.innerHTML += '<span class="meal">'+strMeals+'</span>';
 
-            } if(prop.MealServed[mt]==='L'){
-              if(prop.MealServed.length === 1){
-              details.innerHTML += '<span class="meal">Lunch</span>';
-              } else {
-                details.innerHTML += '<span class="meal">, Lunch</span>'
-              }
-            }
-            if(prop.MealServed[mt] === 'S'){
-              if(prop.MealServed.length > 1) {
-                details.innerHTML += '<span class="meal">, Snacks</span>'
-              } else {
-                details.innerHTML += '<span class="meal">Snacks</span>'
-              }
-            }
-          }
-        } // this closes the section tag opened before the prop.Meals.length if statement...
         details.innerHTML += '<br><span class="meal serving">'+this.comTranslate('DIRECTORY.status')+' : </span><span class="meal">'+prop.Status+'</span>';
 
         if (prop.StartDate) {
-          details.innerHTML += '<section class="pnumber"><span class="pbold">Start Date : </span>' + prop.StartDate +'</section>';
+          details.innerHTML += '<section class="pnumber"><span class="pbold">'+this.comTranslate('MAIN.start_date')+' : </span>' + prop.StartDate +'</section>';
         }
-        
+
         if (prop.Phone) {
-          details.innerHTML += '<section class="pnumber"><span class="pbold">Call : </span>' + prop.Phone +'</section>';
+          details.innerHTML += '<section class="pnumber"><span class="pbold">'+this.comTranslate('MAIN.contact')+' : </span>' + prop.Phone +'</section>';
         }
         if (prop.distance) {
           var roundedDistance = Math.round(prop.distance * 100) / 100;
@@ -319,7 +287,7 @@ export class MainComponent implements OnInit {
         }
         details.innerHTML += "<a class='getDirections' href='https://www.google.com/maps/dir/?api=1&origin="+String(this.userGPS[0])+"+"
         +String(this.userGPS[1])+"&destination="+currentFeature.properties.Address+"&travelmode=driving' target='_blank'>"+
-          'Get Directions</a>'
+          this.comTranslate('MAIN.get_directions')+'</a>'
 
         link.addEventListener('click', (e) => {
           // Update the currentFeature to the store associated with the clicked link
@@ -349,13 +317,12 @@ export class MainComponent implements OnInit {
       return this.translate.instant(jsonKey);
     }
     nearbySites(){
-      console.log("nearby Sites function");
+      console.log("nearby Sites");
 
-      console.log(this._mapService);
       let source:mapboxgl.GeoJSONSource = <GeoJSONSource>this.map.getSource('single-point');
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
-          console.log("client location", position.coords);
+          console.log(position);
           this._mapService.userGPS = [position.coords.latitude, position.coords.longitude];
           // this.location = position.coords;
           let featureLocation:Feature<GeoJSONGeometry> = {
@@ -399,7 +366,7 @@ export class MainComponent implements OnInit {
             // a must be equal to b
             return 0;
           });
-          var listings = document.getElementById('listings');
+          var listings : any = document.getElementById('listings');
           while (listings.firstChild) {
             listings.removeChild(listings.firstChild);
           }

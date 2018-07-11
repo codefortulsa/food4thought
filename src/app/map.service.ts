@@ -15,7 +15,8 @@ export class MapService {
   mealSites18: any;
   userGPS: [number, number]= [0, 0];
   env: any = env;
-  constructor(private _http : HttpClient, private _router : Router, private translate: TranslateService) {}
+  constructor(private _http : HttpClient, private _router : Router, private translate: TranslateService) {
+  }
 
   getSites18(): Promise<any> {
     console.log('Getting all the new 2018 sites from new data set....');
@@ -26,5 +27,15 @@ export class MapService {
     var lang = (language == 'en') ? "English" : "Spanish";
     console.log(`Changing language to ${lang}!`)
     this.translate.use(language);
+  }
+
+  getLocation():void{
+    console.log(" getLocation() function is working");
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        console.log("MAP SERVICE COORDINATES: ",[position.coords.latitude, position.coords.longitude]);
+        this.userGPS = [position.coords.latitude, position.coords.longitude];
+      });
+    }
   }
 }
