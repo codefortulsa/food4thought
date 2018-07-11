@@ -1,0 +1,63 @@
+{
+  "MAIN": {
+    "no_cost": "NO-COST MEALS FOR KIDS",
+    "all_summer": "ALL SUMMER!",
+    "find_food": "FIND FOOD",
+    "get_directions": "Get Directions",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "contact": "Contact",
+    "days_open": "Days Open",
+    "serving": "Serving",
+    "miles_away": "miles away",
+    "street_address": "Street Address",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "snacks": "Snacks",
+    "open": "Open",
+    "closed": "Closed"
+  },
+  "ABOUT": {
+    "header1": "What is the Oklahoma Summer Meals Program?",
+    "section1": "The Oklahoma Summer Meals Program is administered by the Oklahoma State Department of Education. While school is out for the summer, over 100 sponsoring organizations, serving hundreds of sites across the state, provide no-cost meals to kids 18 and younger. Many sites serve both breakfast and lunch or lunch and a snack.",
+    "s1_l1": "Any child can receive a meal.",
+    "s1_l2": "Meals must be eaten on site.",
+    "s1_l3": "No ID is necessary to participate.",
+    "s1_l4": "Children do not need to be accompanied.",
+    "header2": "How do I find a site near me?",
+    "s2_l1":"Clicking the “Find Food” button in the top right-hand corner of your screen will show a map of the nearest sites near your current location. Please allow to site to obtain your location to sort sites closest to you!",
+    "s2_l2":"Use the search bar located at the top of the page to look for a site near a different location.",
+    "s2_l3":"Go to 'Full Directory' to search through complete list of available site locations.",
+    "s2_l4":"Select the “Get Directions” button for Google Map directions to the site.",
+    "header3":"About this website:",
+    "section3": "This map was created in partnership with Code for Tulsa, Hunger Free Oklahoma, and the Oklahoma State Department of Education to help families locate summer meal sites faster than ever before. For questions about this program or help finding a meal site, call Hunger Free Oklahoma at (918)591-2460.",
+    "header4": "About the partners: ",
+    "code4tulsa": "Code for Tulsa is among about 70 Code for America “brigades” nationwide that help code and data specialist bring their technology skills to the process of connecting people to their local governments. The Tulsa brigade was one of the earliest to organize as the Code for America ideas expanded starting in 2009.",
+    "hungerfree": "Hunger Free Oklahoma works to bring a unified, statewide voice to the issues and solutions surrounding hunger, with a goal to ensure all Oklahomans have access to affordable, nutritious food. We are leveraging the power of collaboration to solve hunger in Oklahoma by improving systems, policies, and practices.",
+    "statedept": "The Oklahoma State Department of Education is charged with determining the policies and directing the administration and supervision of the public school system of Oklahoma. This includes administering the summer meals program, school breakfast and lunch programs, and afterschool meal programs."
+  },
+  "NAV": {
+    "about": "ABOUT",
+    "fulldirectory": "FULL DIRECTORY",
+    "findfood": "FIND FOOD",
+    "contact": "CONTACT"
+  },
+  "allLoactions": "All Locations",
+  "DIRECTORY": {
+    "search_filter": "SEARCH + FILTER<br>SERVING LOCATIONS",
+    "available": "Available Sites",
+    "for_more": "For questions about this program,<br />or help finding a meal site call Hunger Free Oklahoma<br />at (918)591-2460.",
+    "locations": "Locations",
+    "phone": "Phone",
+    "days_open": "Days Open",
+    "from": "From", "to": "to",
+    "status": "Status",
+    "meal_served": "Meals Served",
+    "hours": "Hours",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "snacks": "Snacks",
+    "search_meals": "Search the Meal Site Directory"
+  }
+}

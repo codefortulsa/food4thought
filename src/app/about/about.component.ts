@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { MapService } from './../map.service';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(public ms: MapService ) {}
 
   ngOnInit() {
   }

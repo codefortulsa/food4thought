@@ -3,7 +3,7 @@
   <div id="dialogueInfo">
       <span class="diaName">{{ data.Name }}</span>
       <a href="https://www.google.com/maps/dir/?api=1&destination={{ data.FullAddress }}&travelmode=driving" target='_blank'><span class="diaAddress">{{ data.FullAddress }}</span></a>
-      <span class="currentlyServing">Meals Served:</span>
+      <span class="currentlyServing">{{ 'DIRECTORY.meal_served' | translate }}:</span>
       <span *ngIf="data.MealServed.length > 0" class="diaMeals">{{ data.MealServed }}</span>
       <a href="tel:{{ data.Phone }}" class="call-location">Call Now ( {{ data.Phone }} ) </a>
   </div><!-- closes dialogueInfo-->

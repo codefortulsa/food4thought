@@ -4,7 +4,7 @@
   <div class="directory-header">
     <mat-card class="side-filter">
       <div id="search-help-info">
-        <span>SEARCH + FILTER<br>SERVING LOCATIONS</span>
+        <span [innerHTML]="'DIRECTORY.search_filter' | translate"></span>
       </div>
 
       <div class="dir-header">
@@ -16,8 +16,9 @@
   </div>
   <!-- </div> -->
     <div class="table-header-wrapper">
-      <h2>Available Sites</h2>
-      <span class="callHungerFree">For questions about this program,<br />or help finding a meal site call Hunger Free Oklahoma<br />at (918)591-2460.</span>
+      <h2>{{ 'DIRECTORY.available' | translate }}</h2>
+      <span class="callHungerFree" [innerHTML]="'DIRECTORY.for_more' | translate"></span>
+      <!-- <mat-chip (click)="nearbySites()">Nearby</mat-chip> -->
     </div>
     <div class="directory-table mat-elevation-z8">
 
@@ -28,7 +29,7 @@
 
       <!-- Name Column -->
       <ng-container matColumnDef="Name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'DIRECTORY.locations' | translate }}</mat-header-cell>
         <mat-cell *matCellDef="let row">
           <div class="info-title">
             <span class="locationName locationTitle"> {{row.Name}}</span>
@@ -36,29 +37,30 @@
 
 
             <!--######## *~*~*~*~*~*~ drop miles away & get directionsdata in here *~*~*~**~*~*~*~~ ############ -->
-            <!-- <span class="miles-away">::: <span class="currentlyServing">XYZ</span> miles::: <a href="/" alt="get directions" class="get-directions">Get Directions</a></span> -->
+            <span class="miles-away" *ngIf="row.Distance !== undefined"><span class="currentlyServing">{{ row.Distance }}</span> miles away </span>
+            <!-- <a href="/" alt="get directions" class="get-directions">Get Directions</a> -->
 
 
           </div>
           <div class="information-container">
             <div class="info-wrapper">
-                <p *ngIf="row.MealServed.length > 0" class="currentlyServing">Status:
+                <p *ngIf="row.MealServed.length > 0" class="currentlyServing">{{ 'DIRECTORY.status' | translate }}:
                 <span class="diaMeals">{{ row.Status }}</span></p>
-                <p *ngIf="row.MealServed.length > 0" class="currentlyServing">Meals Served:
+                <p *ngIf="row.MealServed.length > 0" class="currentlyServing">{{ 'DIRECTORY.meal_served' | translate }}:
                 <span class="diaMeals">{{ row.MealServed }}</span></p>
-                <p class="locationName servingTimes" *ngIf ="row.BreakfastTime.length > 0 || row.LunchTime.length > 0 || row.SnackTime.length >0"><u>Hours</u></p>
-                <p *ngIf="row.BreakfastTime.length > 0" class="currentlyServing">Breakfast:
+                <p class="locationName servingTimes" *ngIf ="row.BreakfastTime.length > 0 || row.LunchTime.length > 0 || row.SnackTime.length >0"><u>{{ 'DIRECTORY.hours' | translate }}</u></p>
+                <p *ngIf="row.BreakfastTime.length > 0" class="currentlyServing">{{ 'DIRECTORY.breakfast' | translate }}:
                 <span class="diaMeals">{{ row.BreakfastTime }}</span></p>
-                <p *ngIf="row.LunchTime.length > 0" class="currentlyServing">Lunch:
+                <p *ngIf="row.LunchTime.length > 0" class="currentlyServing">{{ 'DIRECTORY.lunch' | translate }}:
                 <span class="diaMeals">{{ row.LunchTime }}</span></p>
-                <p *ngIf="row.SnackTime.length > 0" class="currentlyServing">Snacks: <span class="diaMeals">{{ row.SnackTime }}</span></p>
+                <p *ngIf="row.SnackTime.length > 0" class="currentlyServing">{{ 'DIRECTORY.snacks' | translate }}: <span class="diaMeals">{{ row.SnackTime }}</span></p>
               </div>
             <div class="info-wrapper">
-              <p *ngIf="row.Phone.length > 0" class="currentlyServing telephone">Phone:
+              <p *ngIf="row.Phone.length > 0" class="currentlyServing telephone">{{ 'DIRECTORY.phone' | translate }}:
               <a class="diaMeals" href="tel:{{row.Phone}}">{{ row.Phone }}</a></p>
-              <p *ngIf="row.DaysOpen.length > 0" class="currentlyServing">Days Open:
+              <p *ngIf="row.DaysOpen.length > 0" class="currentlyServing">{{ 'DIRECTORY.days_open' | translate }}:
               <span class="diaMeals">{{ row.DaysOpen }}</span></p>
-              <p *ngIf="row.StartDate.length > 0" class="currentlyServing">From <span class="diaMeals">{{ row.StartDate }}</span> to <span class="diaMeals"> {{ row.EndDate }}</span></p>
+              <p *ngIf="row.StartDate.length > 0" class="currentlyServing">{{ 'DIRECTORY.from' | translate }} <span class="diaMeals">{{ row.StartDate }}</span> {{ 'DIRECTORY.to' | translate }} <span class="diaMeals"> {{ row.EndDate }}</span></p>
             </div>
         </div><!--closes information-container-->
         </mat-cell>

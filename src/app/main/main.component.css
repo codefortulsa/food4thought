@@ -1,10 +1,9 @@
 
 
-  /* WHY ISN"T THIS WORKING! ugh */
-  .siteProp {
-    margin-bottom: 0rem !important;
+  .snackBar {
+    background: black;
+    color: white;
   }
-
 
   .mapboxgl-canvas {
 
@@ -323,8 +322,12 @@
         margin:auto;
         font-size: 2.5vh !important;
     }
-
-     }
+  }
+  /* WHY ISN"T THIS WORKING! ugh */
+  /* .placeInfo p {
+    margin-top: 0 !important;
+    margin-bottom: 0rem !important;
+  } */
 
 
 @-ms-keyframes wiggle{0%{-ms-transform:rotate(1deg);}50%{-ms-transform:rotate(-1deg);}100%{-ms-transform:rotate(1deg);}}
