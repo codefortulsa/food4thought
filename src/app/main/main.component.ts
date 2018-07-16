@@ -30,6 +30,7 @@ export class MainComponent implements OnInit {
     }
 
     ngOnInit(){
+      setTimeout(() => {
         var esNotif = this.snackBar.open("Would you like to view in Spanish?", "Click Here for Espanol!", {
           duration: 7000,
           extraClasses: ["snackBar"]
@@ -38,8 +39,7 @@ export class MainComponent implements OnInit {
           console.log("Changing app to Spanish translation!!!!");
           this._mapService.switchLanguage("es");
         });
-
-
+      });
 
       (mapboxgl as any).accessToken = this._mapService.env.mapToken;
       this.map = new mapboxgl.Map({
