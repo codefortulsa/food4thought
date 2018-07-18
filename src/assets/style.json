@@ -80,7 +80,7 @@
             "type": "vector"
         }
     },
-    "sprite": "mapbox://sprites/lesleynorton/cjglpbl8q00052spmgxthrxa0",
+    "sprite": "",
     "glyphs": "mapbox://fonts/lesleynorton/{fontstack}/{range}.pbf",
     "layers": [
         {
