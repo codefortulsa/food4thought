@@ -9,6 +9,11 @@ import { TranslateService } from "@ngx-translate/core";
 export class AppComponent {
   constructor(private translate: TranslateService) {
       this.translate.addLangs(['en', 'es']);
-      this.translate.setDefaultLang('en');
+      if(document.domain.toLowerCase().includes("meal")){
+        this.translate.setDefaultLang('en');
+      }
+      else{
+        this.translate.setDefaultLang("es");
+      }
     }
 }
